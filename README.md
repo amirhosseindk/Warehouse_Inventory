@@ -5,7 +5,7 @@ This project is a warehouse management system that allows you to manage informat
 
 Prerequisites To run this project, you will need:
 Visual Studio 2022 or later .NET 6 or later Installation Clone the repository
-bash Copy code git clone https://github.com/amirhosseindk/SamAirAPIs.git Open the solution file (SamAirAPIs.sln) in Visual Studio.
+bash Copy code git clone https://github.com/amirhosseindk/Warehouse_Inventory.git Open the solution file (Warehouse_Inventory.sln) in Visual Studio.
 Build the solution.
 Run the project.
 
