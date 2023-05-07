@@ -12,17 +12,6 @@ namespace Domain.Entities
         public Guid InventoryId { get; set; }
 
         /// <summary>
-        /// The foreign key to the inventory item's Commodity.
-        /// </summary>
-        [Required]
-        public Guid CommodityId { get; set; }
-        /// <summary>
-        /// The inventory item's Commodity.
-        /// </summary>
-        [ForeignKey(nameof(CommodityId))]
-        public virtual Commodity Commodity { get; set; }
-
-        /// <summary>
         /// The foreign key to the inventory item's warehouse.
         /// </summary>
         [Required]

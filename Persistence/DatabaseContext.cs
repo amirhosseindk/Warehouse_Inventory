@@ -24,7 +24,13 @@ namespace Persistence
         public DbSet<InsideTransfer> InsideTransfers { get; set; }
         public DbSet<InventoryTurnover> InventoryTurnovers { get; set; }
         public DbSet<InventoryItemList> InventoryItemLists { get; set; }
-
+        public DbSet<BuyRequest> BuyRequests { get; set; }
+        public DbSet<BuyRequestItemList> buyRequestItemLists { get; set; }
+        public DbSet<ConsumerInvoice> ConsumerInvoices { get; set; }
+        public DbSet<InsideTransferItemList> insideTransferItemLists { get; set; }
+        public DbSet<ReceiptItemList> ReceiptItemList { get; set; }
+        public DbSet<RequisitionItemList> RequisitionItemList { get; set; }
+        public DbSet<SupplierInvoice> supplierInvoices { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=.;Database=Warehouse_Inventory;User Id=sa;Password=P@ssw0rd09198799866;TrustServerCertificate=true");

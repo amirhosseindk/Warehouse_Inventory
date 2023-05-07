@@ -12,27 +12,9 @@ namespace Domain.Entities
         public Guid InventoryRequisitionId { get; set; }
 
         /// <summary>
-        /// The foreign key to the inventory requisition's Commodity.
+        /// The list of items in the Requisition.
         /// </summary>
-        [Required]
-        public Guid CommodityId { get; set; }
-        /// <summary>
-        /// The inventory requisition's Commodity.
-        /// </summary>
-        [ForeignKey(nameof(CommodityId))]
-        public virtual Commodity Commodity { get; set; }
-
-        /// <summary>
-        /// The foreign key to the consumer Commodity.
-        /// </summary>
-        [Required]
-        public Guid ConsumerID { get; set; }
-        /// <summary>
-        /// The inventory requisition's consumer.
-        /// </summary>
-        [ForeignKey(nameof(ConsumerID))]
-        public virtual Consumer Consumer { get; set; }
-
+        public virtual ICollection<RequisitionItemList> RequisitionItems { get; set; }
 
         /// <summary>
         /// The foreign key to the inventory requisition's warehouse.
@@ -56,5 +38,10 @@ namespace Domain.Entities
         /// </summary>
         [Required]
         public DateTime RequisitionDate { get; set; }
+
+        /// <summary>
+        /// List of consumers
+        /// </summary>
+        public virtual List<Consumer> Consumers { get; set; }
     }
 }

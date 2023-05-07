@@ -1,15 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class InventoryReceipt
+    public class SupplierInvoice
     {
         /// <summary>
-        /// The unique identifier for the inventory receipt.
+        /// The unique identifier for the SupplierInvoice.
         /// </summary>
         [Key]
-        public Guid InventoryReceiptId { get; set; }
+        public Guid SupplierInvoiceId { get; set; }
 
         /// <summary>
         /// The list of items in the Receipt.
@@ -20,12 +20,12 @@ namespace Domain.Entities
         /// The foreign key to the inventory receipt's warehouse.
         /// </summary>
         [Required]
-        public Guid InventoryId { get; set; }
+        public Guid WarehouseId { get; set; }
         /// <summary>
         /// The warehouse for the inventory receipt.
         /// </summary>
-        [ForeignKey(nameof(InventoryId))]
-        public virtual Inventory Inventory { get; set; }
+        [ForeignKey(nameof(WarehouseId))]
+        public virtual Warehouse Warehouse { get; set; }
 
         /// <summary>
         /// The total quantity of the inventory receipt.
@@ -41,10 +41,5 @@ namespace Domain.Entities
         /// The date of the inventory receipt.
         /// </summary>
         public DateTime ReceiptDate { get; set; }
-
-        /// <summary>
-        /// List of consumers
-        /// </summary>
-        public virtual List<Supplier> Suppliers { get; set; }
     }
 }

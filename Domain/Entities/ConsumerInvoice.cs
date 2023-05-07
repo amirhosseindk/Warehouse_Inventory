@@ -1,31 +1,36 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class InventoryReceipt
+    public class ConsumerInvoice
     {
         /// <summary>
-        /// The unique identifier for the inventory receipt.
+        /// The unique identifier for the inventory requisition.
         /// </summary>
         [Key]
-        public Guid InventoryReceiptId { get; set; }
+        public Guid ConsumerInvoiceId { get; set; }
 
         /// <summary>
-        /// The list of items in the Receipt.
+        /// The list of items in the Requisition.
         /// </summary>
-        public virtual ICollection<ReceiptItemList> ReceiptItems { get; set; }
+        public virtual ICollection<RequisitionItemList> RequisitionItems { get; set; }
 
         /// <summary>
         /// The foreign key to the inventory receipt's warehouse.
         /// </summary>
         [Required]
-        public Guid InventoryId { get; set; }
+        public Guid WarehouseId { get; set; }
         /// <summary>
         /// The warehouse for the inventory receipt.
         /// </summary>
-        [ForeignKey(nameof(InventoryId))]
-        public virtual Inventory Inventory { get; set; }
+        [ForeignKey(nameof(WarehouseId))]
+        public virtual Warehouse Warehouse { get; set; }
 
         /// <summary>
         /// The total quantity of the inventory receipt.
@@ -40,11 +45,6 @@ namespace Domain.Entities
         /// <summary>
         /// The date of the inventory receipt.
         /// </summary>
-        public DateTime ReceiptDate { get; set; }
-
-        /// <summary>
-        /// List of consumers
-        /// </summary>
-        public virtual List<Supplier> Suppliers { get; set; }
+        public DateTime RequisitiontDate { get; set; }
     }
 }

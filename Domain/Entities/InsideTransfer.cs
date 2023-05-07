@@ -12,15 +12,9 @@ namespace Domain.Entities
         public Guid InsideTransferId { get; set; }
 
         /// <summary>
-        /// The foreign key to the inside transfer's Commodity.
+        /// The list of items in the InsideTransfer.
         /// </summary>
-        [Required]
-        public Guid CommodityId { get; set; }
-        /// <summary>
-        /// The inside transfer's Commodity.
-        /// </summary>
-        [ForeignKey(nameof(CommodityId))]
-        public virtual Commodity Commodity { get; set; }
+        public virtual ICollection<InsideTransferItemList> InsideTransferItems { get; set; }
 
         /// <summary>
         /// The foreign key to the inside transfer's source inventory.
