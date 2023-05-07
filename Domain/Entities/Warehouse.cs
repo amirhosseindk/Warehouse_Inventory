@@ -8,19 +8,19 @@ namespace Domain.Entities
         /// The unique identifier for the warehouse.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid WarehouseId { get; set; }
 
         /// <summary>
         /// The name of the warehouse.
         /// </summary>
         [Required]
-        public string Name { get; set; }
+        public string WarehouseName { get; set; }
 
         /// <summary>
         /// The Location of the warehouse.
         /// </summary>
         [Required]
-        public string Location { get; set; }
+        public string WarehouseLocation { get; set; }
 
         /// <summary>
         /// The inventory items stored in this warehouse.

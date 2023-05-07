@@ -9,24 +9,24 @@ namespace Domain.Entities
         /// The unique identifier for the inside transfer.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid InsideTransferId { get; set; }
 
         /// <summary>
-        /// The foreign key to the inside transfer's product.
+        /// The foreign key to the inside transfer's Commodity.
         /// </summary>
         [Required]
-        public int ProductId { get; set; }
+        public Guid CommodityId { get; set; }
         /// <summary>
-        /// The inside transfer's product.
+        /// The inside transfer's Commodity.
         /// </summary>
-        [ForeignKey(nameof(ProductId))]
-        public virtual Product Product { get; set; }
+        [ForeignKey(nameof(CommodityId))]
+        public virtual Commodity Commodity { get; set; }
 
         /// <summary>
         /// The foreign key to the inside transfer's source inventory.
         /// </summary>
         [Required]
-        public int SourceInventoryId { get; set; }
+        public Guid SourceInventoryId { get; set; }
         /// <summary>
         /// The source inventory for the inside transfer.
         /// </summary>
@@ -37,7 +37,7 @@ namespace Domain.Entities
         /// The foreign key to the inside transfer's destination inventory.
         /// </summary>
         [Required]
-        public int DestinationInventoryId { get; set; }
+        public Guid DestinationInventoryId { get; set; }
         /// <summary>
         /// The destination inventory for the inside transfer.
         /// </summary>

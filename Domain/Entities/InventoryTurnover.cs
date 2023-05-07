@@ -9,13 +9,13 @@ namespace Domain.Entities
         /// The unique identifier for the inventory turnover.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid InventoryTurnoverId { get; set; }
 
         /// <summary>
         /// The foreign key to the inventory turnover's inventory.
         /// </summary>
         [Required]
-        public int InventoryId { get; set; }
+        public Guid InventoryId { get; set; }
         /// <summary>
         /// The inventory for the inventory turnover.
         /// </summary>

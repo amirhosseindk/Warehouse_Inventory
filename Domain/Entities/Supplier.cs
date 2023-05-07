@@ -8,26 +8,26 @@ namespace Domain.Entities
         /// The unique identifier for the supplier.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid SupplierId { get; set; }
         /// <summary>
         /// The name of the supplier.
         /// </summary>
         [Required]
-        public string Name { get; set; }
+        public string SupplierName { get; set; }
         /// <summary>
         /// The email of the supplier.
         /// </summary>
         [Required]
-        public string Email { get; set; }
+        public string SupplierEmail { get; set; }
         /// <summary>
         /// The number of the supplier.
         /// </summary>
         [Required]
-        public string Phone { get; set; }
+        public string SupplierPhone { get; set; }
         /// <summary>
-        /// The products supplied by this supplier.
+        /// The Commodities supplied by this supplier.
         /// </summary>
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Commodity> Commodities { get; set; }
     }
 
 }

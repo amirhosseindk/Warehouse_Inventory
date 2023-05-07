@@ -11,7 +11,7 @@ namespace Persistence
         }
 
         // Your DbSet properties for each entity
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Commodity> Commodities { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<MadeInCountry> MadeInCountries { get; set; }
@@ -23,6 +23,7 @@ namespace Persistence
         public DbSet<InventoryReceipt> InventoryReceipts { get; set; }
         public DbSet<InsideTransfer> InsideTransfers { get; set; }
         public DbSet<InventoryTurnover> InventoryTurnovers { get; set; }
+        public DbSet<InventoryItemList> InventoryItemLists { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,6 +38,7 @@ namespace Persistence
             }
 
             // Any additional modelBuilder configurations
+            //Add-Migration InitialCreate -Project Persistence -StartupProject Persistence 
         }
     }
 }

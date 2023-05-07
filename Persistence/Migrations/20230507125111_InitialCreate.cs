@@ -15,132 +15,123 @@ namespace Persistence.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.CategoryId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Consumers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ConsumerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ConsumerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConsumerEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConsumerPhone = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Consumers", x => x.Id);
+                    table.PrimaryKey("PK_Consumers", x => x.ConsumerId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "MadeInCountries",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    MadeInCountryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MadeInCountryName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MadeInCountries", x => x.Id);
+                    table.PrimaryKey("PK_MadeInCountries", x => x.MadeInCountryId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Suppliers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    SupplierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SupplierName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SupplierEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SupplierPhone = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Suppliers", x => x.Id);
+                    table.PrimaryKey("PK_Suppliers", x => x.SupplierId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "UnitMeasures",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    UnitMeasureId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UnitMeasureName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UnitMeasures", x => x.Id);
+                    table.PrimaryKey("PK_UnitMeasures", x => x.UnitMeasureId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Warehouses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    WarehouseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    WarehouseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WarehouseLocation = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Warehouses", x => x.Id);
+                    table.PrimaryKey("PK_Warehouses", x => x.WarehouseId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Commodities",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UnitPrice = table.Column<decimal>(type: "decimal(19,4)", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    SupplierId = table.Column<int>(type: "int", nullable: false),
-                    MadeInCountryCountryId = table.Column<int>(type: "int", nullable: false),
-                    UnitMeasureId = table.Column<int>(type: "int", nullable: false),
-                    ConsumerId = table.Column<int>(type: "int", nullable: true)
+                    CommodityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CommodityName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SupplierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MadeInCountryCountryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UnitMeasureId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ConsumerId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Commodities", x => x.CommodityId);
                     table.ForeignKey(
-                        name: "FK_Products_Categories_CategoryId",
+                        name: "FK_Commodities_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "Id",
+                        principalColumn: "CategoryId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Products_Consumers_ConsumerId",
+                        name: "FK_Commodities_Consumers_ConsumerId",
                         column: x => x.ConsumerId,
                         principalTable: "Consumers",
-                        principalColumn: "Id",
+                        principalColumn: "ConsumerId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Products_MadeInCountries_MadeInCountryCountryId",
+                        name: "FK_Commodities_MadeInCountries_MadeInCountryCountryId",
                         column: x => x.MadeInCountryCountryId,
                         principalTable: "MadeInCountries",
-                        principalColumn: "Id",
+                        principalColumn: "MadeInCountryId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Products_Suppliers_SupplierId",
+                        name: "FK_Commodities_Suppliers_SupplierId",
                         column: x => x.SupplierId,
                         principalTable: "Suppliers",
-                        principalColumn: "Id",
+                        principalColumn: "SupplierId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Products_UnitMeasures_UnitMeasureId",
+                        name: "FK_Commodities_UnitMeasures_UnitMeasureId",
                         column: x => x.UnitMeasureId,
                         principalTable: "UnitMeasures",
-                        principalColumn: "Id",
+                        principalColumn: "UnitMeasureId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -148,26 +139,25 @@ namespace Persistence.Migrations
                 name: "Inventories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    WarehouseId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
+                    InventoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CommodityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    WarehouseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TotalQuantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Inventories", x => x.Id);
+                    table.PrimaryKey("PK_Inventories", x => x.InventoryId);
                     table.ForeignKey(
-                        name: "FK_Inventories_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
+                        name: "FK_Inventories_Commodities_CommodityId",
+                        column: x => x.CommodityId,
+                        principalTable: "Commodities",
+                        principalColumn: "CommodityId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Inventories_Warehouses_WarehouseId",
                         column: x => x.WarehouseId,
                         principalTable: "Warehouses",
-                        principalColumn: "Id",
+                        principalColumn: "WarehouseId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -175,34 +165,33 @@ namespace Persistence.Migrations
                 name: "InsideTransfers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    SourceInventoryId = table.Column<int>(type: "int", nullable: false),
-                    DestinationInventoryId = table.Column<int>(type: "int", nullable: false),
+                    InsideTransferId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CommodityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SourceInventoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DestinationInventoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TotalQuantity = table.Column<int>(type: "int", nullable: false),
                     TransferDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InsideTransfers", x => x.Id);
+                    table.PrimaryKey("PK_InsideTransfers", x => x.InsideTransferId);
+                    table.ForeignKey(
+                        name: "FK_InsideTransfers_Commodities_CommodityId",
+                        column: x => x.CommodityId,
+                        principalTable: "Commodities",
+                        principalColumn: "CommodityId",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_InsideTransfers_Inventories_DestinationInventoryId",
                         column: x => x.DestinationInventoryId,
                         principalTable: "Inventories",
-                        principalColumn: "Id",
+                        principalColumn: "InventoryId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_InsideTransfers_Inventories_SourceInventoryId",
                         column: x => x.SourceInventoryId,
                         principalTable: "Inventories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_InsideTransfers_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
+                        principalColumn: "InventoryId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -210,35 +199,34 @@ namespace Persistence.Migrations
                 name: "InventoryReceipts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    InventoryId = table.Column<int>(type: "int", nullable: false),
-                    SupplierId = table.Column<int>(type: "int", nullable: false),
+                    InventoryReceiptId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CommodityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    InventoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SupplierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TotalQuantity = table.Column<int>(type: "int", nullable: false),
                     TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ReceiptDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InventoryReceipts", x => x.Id);
+                    table.PrimaryKey("PK_InventoryReceipts", x => x.InventoryReceiptId);
+                    table.ForeignKey(
+                        name: "FK_InventoryReceipts_Commodities_CommodityId",
+                        column: x => x.CommodityId,
+                        principalTable: "Commodities",
+                        principalColumn: "CommodityId",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_InventoryReceipts_Inventories_InventoryId",
                         column: x => x.InventoryId,
                         principalTable: "Inventories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_InventoryReceipts_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
+                        principalColumn: "InventoryId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_InventoryReceipts_Suppliers_SupplierId",
                         column: x => x.SupplierId,
                         principalTable: "Suppliers",
-                        principalColumn: "Id",
+                        principalColumn: "SupplierId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -246,34 +234,33 @@ namespace Persistence.Migrations
                 name: "InventoryRequisitions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    ConsumerID = table.Column<int>(type: "int", nullable: false),
-                    InventoryId = table.Column<int>(type: "int", nullable: false),
+                    InventoryRequisitionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CommodityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ConsumerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    InventoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TotalQuantity = table.Column<int>(type: "int", nullable: false),
                     RequisitionDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InventoryRequisitions", x => x.Id);
+                    table.PrimaryKey("PK_InventoryRequisitions", x => x.InventoryRequisitionId);
+                    table.ForeignKey(
+                        name: "FK_InventoryRequisitions_Commodities_CommodityId",
+                        column: x => x.CommodityId,
+                        principalTable: "Commodities",
+                        principalColumn: "CommodityId",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_InventoryRequisitions_Consumers_ConsumerID",
                         column: x => x.ConsumerID,
                         principalTable: "Consumers",
-                        principalColumn: "Id",
+                        principalColumn: "ConsumerId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_InventoryRequisitions_Inventories_InventoryId",
                         column: x => x.InventoryId,
                         principalTable: "Inventories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_InventoryRequisitions_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
+                        principalColumn: "InventoryId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -281,9 +268,8 @@ namespace Persistence.Migrations
                 name: "InventoryTurnovers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    InventoryId = table.Column<int>(type: "int", nullable: false),
+                    InventoryTurnoverId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    InventoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TotalQuantitySold = table.Column<int>(type: "int", nullable: false),
                     TotalQuantityPurchased = table.Column<int>(type: "int", nullable: false),
                     PeriodStart = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -293,14 +279,44 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InventoryTurnovers", x => x.Id);
+                    table.PrimaryKey("PK_InventoryTurnovers", x => x.InventoryTurnoverId);
                     table.ForeignKey(
                         name: "FK_InventoryTurnovers_Inventories_InventoryId",
                         column: x => x.InventoryId,
                         principalTable: "Inventories",
-                        principalColumn: "Id",
+                        principalColumn: "InventoryId",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Commodities_CategoryId",
+                table: "Commodities",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Commodities_ConsumerId",
+                table: "Commodities",
+                column: "ConsumerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Commodities_MadeInCountryCountryId",
+                table: "Commodities",
+                column: "MadeInCountryCountryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Commodities_SupplierId",
+                table: "Commodities",
+                column: "SupplierId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Commodities_UnitMeasureId",
+                table: "Commodities",
+                column: "UnitMeasureId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InsideTransfers_CommodityId",
+                table: "InsideTransfers",
+                column: "CommodityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_InsideTransfers_DestinationInventoryId",
@@ -308,19 +324,14 @@ namespace Persistence.Migrations
                 column: "DestinationInventoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InsideTransfers_ProductId",
-                table: "InsideTransfers",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_InsideTransfers_SourceInventoryId",
                 table: "InsideTransfers",
                 column: "SourceInventoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Inventories_ProductId",
+                name: "IX_Inventories_CommodityId",
                 table: "Inventories",
-                column: "ProductId");
+                column: "CommodityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Inventories_WarehouseId",
@@ -328,19 +339,24 @@ namespace Persistence.Migrations
                 column: "WarehouseId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_InventoryReceipts_CommodityId",
+                table: "InventoryReceipts",
+                column: "CommodityId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_InventoryReceipts_InventoryId",
                 table: "InventoryReceipts",
                 column: "InventoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InventoryReceipts_ProductId",
-                table: "InventoryReceipts",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_InventoryReceipts_SupplierId",
                 table: "InventoryReceipts",
                 column: "SupplierId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InventoryRequisitions_CommodityId",
+                table: "InventoryRequisitions",
+                column: "CommodityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_InventoryRequisitions_ConsumerID",
@@ -353,39 +369,9 @@ namespace Persistence.Migrations
                 column: "InventoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InventoryRequisitions_ProductId",
-                table: "InventoryRequisitions",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_InventoryTurnovers_InventoryId",
                 table: "InventoryTurnovers",
                 column: "InventoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_CategoryId",
-                table: "Products",
-                column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_ConsumerId",
-                table: "Products",
-                column: "ConsumerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_MadeInCountryCountryId",
-                table: "Products",
-                column: "MadeInCountryCountryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_SupplierId",
-                table: "Products",
-                column: "SupplierId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_UnitMeasureId",
-                table: "Products",
-                column: "UnitMeasureId");
         }
 
         /// <inheritdoc />
@@ -407,7 +393,7 @@ namespace Persistence.Migrations
                 name: "Inventories");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Commodities");
 
             migrationBuilder.DropTable(
                 name: "Warehouses");

@@ -9,24 +9,24 @@ namespace Domain.Entities
         /// The unique identifier for the inventory receipt.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid InventoryReceiptId { get; set; }
 
         /// <summary>
-        /// The foreign key to the inventory receipt's product.
+        /// The foreign key to the inventory receipt's Commodity.
         /// </summary>
         [Required]
-        public int ProductId { get; set; }
+        public Guid CommodityId { get; set; }
         /// <summary>
-        /// The inventory receipt's product.
+        /// The inventory receipt's Commodity.
         /// </summary>
-        [ForeignKey(nameof(ProductId))]
-        public virtual Product Product { get; set; }
+        [ForeignKey(nameof(CommodityId))]
+        public virtual Commodity Commodity { get; set; }
 
         /// <summary>
         /// The foreign key to the inventory receipt's warehouse.
         /// </summary>
         [Required]
-        public int InventoryId { get; set; }
+        public Guid InventoryId { get; set; }
         /// <summary>
         /// The warehouse for the inventory receipt.
         /// </summary>
@@ -37,7 +37,7 @@ namespace Domain.Entities
         /// The foreign key to the inventory receipt's supplier.
         /// </summary>
         [Required]
-        public int SupplierId { get; set; }
+        public Guid SupplierId { get; set; }
         /// <summary>
         /// The supplier for the inventory receipt.
         /// </summary>
@@ -58,18 +58,5 @@ namespace Domain.Entities
         /// The date of the inventory receipt.
         /// </summary>
         public DateTime ReceiptDate { get; set; }
-
-        public decimal ProductTotalPrice
-        {
-            get
-            {
-                return Product.UnitPrice * TotalQuantity;
-            }
-        }
-
-        public static decimal AllProductsTotalPrice(IEnumerable<InventoryReceipt> receipts)
-        {
-            return receipts.Sum(r => r.ProductTotalPrice);
-        }
     }
 }

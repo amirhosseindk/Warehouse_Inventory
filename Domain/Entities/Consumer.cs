@@ -8,26 +8,26 @@ namespace Domain.Entities
         /// The unique identifier for the Consumer.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid ConsumerId { get; set; }
         /// <summary>
         /// The name of the Consumer.
         /// </summary>
         [Required]
-        public string Name { get; set; }
+        public string ConsumerName { get; set; }
         /// <summary>
         /// The email of the Consumer.
         /// </summary>
         [Required]
-        public string Email { get; set; }
+        public string ConsumerEmail { get; set; }
         /// <summary>
         /// The number of the Consumer.
         /// </summary>
         [Required]
-        public string Phone { get; set; }
+        public string ConsumerPhone { get; set; }
         /// <summary>
-        /// The products consumed by this Consumer.
+        /// The Commodities consumed by this Consumer.
         /// </summary>
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Commodity> Commodities { get; set; }
     }
 
 }

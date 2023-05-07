@@ -8,17 +8,17 @@ namespace Domain.Entities
         /// The unique identifier for the unit of measurement.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid UnitMeasureId { get; set; }
 
         /// <summary>
         /// The name of the unit of measurement.
         /// </summary>
         [Required]
-        public string Name { get; set; }
+        public string UnitMeasureName { get; set; }
 
         /// <summary>
-        /// The products using this unit of measurement.
+        /// The Commodities using this unit of measurement.
         /// </summary>
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Commodity> Commodities { get; set; }
     }
 }

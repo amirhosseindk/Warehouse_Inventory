@@ -9,26 +9,26 @@ namespace Domain.Entities
         /// The unique identifier for the inventory requisition.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid InventoryRequisitionId { get; set; }
 
         /// <summary>
-        /// The foreign key to the inventory requisition's product.
+        /// The foreign key to the inventory requisition's Commodity.
         /// </summary>
         [Required]
-        public int ProductId { get; set; }
+        public Guid CommodityId { get; set; }
         /// <summary>
-        /// The inventory requisition's product.
+        /// The inventory requisition's Commodity.
         /// </summary>
-        [ForeignKey(nameof(ProductId))]
-        public virtual Product Product { get; set; }
+        [ForeignKey(nameof(CommodityId))]
+        public virtual Commodity Commodity { get; set; }
 
         /// <summary>
-        /// The foreign key to the consumer product.
+        /// The foreign key to the consumer Commodity.
         /// </summary>
         [Required]
-        public int ConsumerID { get; set; }
+        public Guid ConsumerID { get; set; }
         /// <summary>
-        /// The inventory requisition's consyner.
+        /// The inventory requisition's consumer.
         /// </summary>
         [ForeignKey(nameof(ConsumerID))]
         public virtual Consumer Consumer { get; set; }
@@ -38,7 +38,7 @@ namespace Domain.Entities
         /// The foreign key to the inventory requisition's warehouse.
         /// </summary>
         [Required]
-        public int InventoryId { get; set; }
+        public Guid InventoryId { get; set; }
         /// <summary>
         /// The warehouse for the inventory requisition.
         /// </summary>
@@ -56,18 +56,5 @@ namespace Domain.Entities
         /// </summary>
         [Required]
         public DateTime RequisitionDate { get; set; }
-
-        public decimal ProductTotalPrice
-        {
-            get
-            {
-                return Product.UnitPrice * TotalQuantity;
-            }
-        }
-
-        public static decimal AllProductsTotalPrice(IEnumerable<InventoryRequisition> requisitions)
-        {
-            return requisitions.Sum(r => r.ProductTotalPrice);
-        }
     }
 }

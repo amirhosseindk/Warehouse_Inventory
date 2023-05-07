@@ -8,17 +8,17 @@ namespace Domain.Entities
         /// The unique identifier for the category.
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public Guid CategoryId { get; set; }
 
         /// <summary>
         /// The name of the category.
         /// </summary>
         [Required]
-        public string Name { get; set; }
+        public string CategoryName { get; set; }
 
         /// <summary>
-        /// The products in this category.
+        /// The Commodities in this category.
         /// </summary>
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Commodity> Commodities { get; set; }
     }
 }

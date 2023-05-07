@@ -12,7 +12,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230429032452_InitialCreate")]
+    [Migration("20230507125111_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -27,62 +27,96 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("CategoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
+                    b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Commodity", b =>
+                {
+                    b.Property<Guid>("CommodityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CommodityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ConsumerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("MadeInCountryCountryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UnitMeasureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("CommodityId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ConsumerId");
+
+                    b.HasIndex("MadeInCountryCountryId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.HasIndex("UnitMeasureId");
+
+                    b.ToTable("Commodities");
+                });
+
             modelBuilder.Entity("Domain.Entities.Consumer", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("ConsumerId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Email")
+                    b.Property<string>("ConsumerEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("ConsumerName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("ConsumerPhone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ConsumerId");
 
                     b.ToTable("Consumers");
                 });
 
             modelBuilder.Entity("Domain.Entities.InsideTransfer", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("InsideTransferId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("CommodityId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("DestinationInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("DestinationInventoryId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SourceInventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("SourceInventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("TotalQuantity")
                         .HasColumnType("int");
@@ -90,11 +124,11 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("TransferDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+                    b.HasKey("InsideTransferId");
+
+                    b.HasIndex("CommodityId");
 
                     b.HasIndex("DestinationInventoryId");
-
-                    b.HasIndex("ProductId");
 
                     b.HasIndex("SourceInventoryId");
 
@@ -103,24 +137,22 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Inventory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("InventoryId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CommodityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("TotalQuantity")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("WarehouseId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.HasKey("InventoryId");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WarehouseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
+                    b.HasIndex("CommodityId");
 
                     b.HasIndex("WarehouseId");
 
@@ -129,23 +161,21 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.InventoryReceipt", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("InventoryReceiptId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("CommodityId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("InventoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("InventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ReceiptDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SupplierId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
@@ -153,11 +183,11 @@ namespace Persistence.Migrations
                     b.Property<int>("TotalQuantity")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("InventoryReceiptId");
+
+                    b.HasIndex("CommodityId");
 
                     b.HasIndex("InventoryId");
-
-                    b.HasIndex("ProductId");
 
                     b.HasIndex("SupplierId");
 
@@ -166,20 +196,18 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.InventoryRequisition", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("InventoryRequisitionId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("CommodityId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ConsumerID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ConsumerID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("InventoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("InventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("RequisitionDate")
                         .HasColumnType("datetime2");
@@ -187,27 +215,25 @@ namespace Persistence.Migrations
                     b.Property<int>("TotalQuantity")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("InventoryRequisitionId");
+
+                    b.HasIndex("CommodityId");
 
                     b.HasIndex("ConsumerID");
 
                     b.HasIndex("InventoryId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("InventoryRequisitions");
                 });
 
             modelBuilder.Entity("Domain.Entities.InventoryTurnover", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("InventoryTurnoverId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("InventoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("InventoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("PeriodEnd")
                         .HasColumnType("datetime2");
@@ -227,7 +253,7 @@ namespace Persistence.Migrations
                     b.Property<decimal>("TurnoverRate")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("InventoryTurnoverId");
 
                     b.HasIndex("InventoryId");
 
@@ -236,270 +262,103 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.MadeInCountry", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("MadeInCountryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
+                    b.Property<string>("MadeInCountryName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("MadeInCountryId");
 
                     b.ToTable("MadeInCountries");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ConsumerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MadeInCountryCountryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SupplierId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UnitMeasureId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(19,4)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("ConsumerId");
-
-                    b.HasIndex("MadeInCountryCountryId");
-
-                    b.HasIndex("SupplierId");
-
-                    b.HasIndex("UnitMeasureId");
-
-                    b.ToTable("Products");
-                });
-
             modelBuilder.Entity("Domain.Entities.Supplier", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("SupplierId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Email")
+                    b.Property<string>("SupplierEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("SupplierName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("SupplierPhone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("SupplierId");
 
                     b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("Domain.Entities.UnitMeasure", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("UnitMeasureId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
+                    b.Property<string>("UnitMeasureName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("UnitMeasureId");
 
                     b.ToTable("UnitMeasures");
                 });
 
             modelBuilder.Entity("Domain.Entities.Warehouse", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("WarehouseId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Location")
+                    b.Property<string>("WarehouseLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("WarehouseName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("WarehouseId");
 
                     b.ToTable("Warehouses");
                 });
 
-            modelBuilder.Entity("Domain.Entities.InsideTransfer", b =>
-                {
-                    b.HasOne("Domain.Entities.Inventory", "DestinationInventory")
-                        .WithMany()
-                        .HasForeignKey("DestinationInventoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Inventory", "SourceInventory")
-                        .WithMany()
-                        .HasForeignKey("SourceInventoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("DestinationInventory");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("SourceInventory");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Inventory", b =>
-                {
-                    b.HasOne("Domain.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Warehouse", "Warehouse")
-                        .WithMany("Inventories")
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Warehouse");
-                });
-
-            modelBuilder.Entity("Domain.Entities.InventoryReceipt", b =>
-                {
-                    b.HasOne("Domain.Entities.Inventory", "Inventory")
-                        .WithMany()
-                        .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Supplier", "Supplier")
-                        .WithMany()
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Inventory");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Supplier");
-                });
-
-            modelBuilder.Entity("Domain.Entities.InventoryRequisition", b =>
-                {
-                    b.HasOne("Domain.Entities.Consumer", "Consumer")
-                        .WithMany()
-                        .HasForeignKey("ConsumerID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Inventory", "Inventory")
-                        .WithMany()
-                        .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Consumer");
-
-                    b.Navigation("Inventory");
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Domain.Entities.InventoryTurnover", b =>
-                {
-                    b.HasOne("Domain.Entities.Inventory", "Inventory")
-                        .WithMany()
-                        .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Inventory");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Product", b =>
+            modelBuilder.Entity("Domain.Entities.Commodity", b =>
                 {
                     b.HasOne("Domain.Entities.Category", "Category")
-                        .WithMany("Products")
+                        .WithMany("Commodities")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Consumer", null)
-                        .WithMany("Products")
+                        .WithMany("Commodities")
                         .HasForeignKey("ConsumerId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Domain.Entities.MadeInCountry", "MadeInCountry")
-                        .WithMany("Products")
+                        .WithMany("Commodities")
                         .HasForeignKey("MadeInCountryCountryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Supplier", "Supplier")
-                        .WithMany("Products")
+                        .WithMany("Commodities")
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.UnitMeasure", "UnitMeasure")
-                        .WithMany("Products")
+                        .WithMany("Commodities")
                         .HasForeignKey("UnitMeasureId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -513,29 +372,140 @@ namespace Persistence.Migrations
                     b.Navigation("UnitMeasure");
                 });
 
+            modelBuilder.Entity("Domain.Entities.InsideTransfer", b =>
+                {
+                    b.HasOne("Domain.Entities.Commodity", "Commodity")
+                        .WithMany()
+                        .HasForeignKey("CommodityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Inventory", "DestinationInventory")
+                        .WithMany()
+                        .HasForeignKey("DestinationInventoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Inventory", "SourceInventory")
+                        .WithMany()
+                        .HasForeignKey("SourceInventoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Commodity");
+
+                    b.Navigation("DestinationInventory");
+
+                    b.Navigation("SourceInventory");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Inventory", b =>
+                {
+                    b.HasOne("Domain.Entities.Commodity", "Commodity")
+                        .WithMany()
+                        .HasForeignKey("CommodityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Warehouse", "Warehouse")
+                        .WithMany("Inventories")
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Commodity");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("Domain.Entities.InventoryReceipt", b =>
+                {
+                    b.HasOne("Domain.Entities.Commodity", "Commodity")
+                        .WithMany()
+                        .HasForeignKey("CommodityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Inventory", "Inventory")
+                        .WithMany()
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Commodity");
+
+                    b.Navigation("Inventory");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("Domain.Entities.InventoryRequisition", b =>
+                {
+                    b.HasOne("Domain.Entities.Commodity", "Commodity")
+                        .WithMany()
+                        .HasForeignKey("CommodityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Consumer", "Consumer")
+                        .WithMany()
+                        .HasForeignKey("ConsumerID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Inventory", "Inventory")
+                        .WithMany()
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Commodity");
+
+                    b.Navigation("Consumer");
+
+                    b.Navigation("Inventory");
+                });
+
+            modelBuilder.Entity("Domain.Entities.InventoryTurnover", b =>
+                {
+                    b.HasOne("Domain.Entities.Inventory", "Inventory")
+                        .WithMany()
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inventory");
+                });
+
             modelBuilder.Entity("Domain.Entities.Category", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Commodities");
                 });
 
             modelBuilder.Entity("Domain.Entities.Consumer", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Commodities");
                 });
 
             modelBuilder.Entity("Domain.Entities.MadeInCountry", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Commodities");
                 });
 
             modelBuilder.Entity("Domain.Entities.Supplier", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Commodities");
                 });
 
             modelBuilder.Entity("Domain.Entities.UnitMeasure", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Commodities");
                 });
 
             modelBuilder.Entity("Domain.Entities.Warehouse", b =>
