@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             UserDataGridView = new DataGridView();
             UserStartDate = new DataGridViewTextBoxColumn();
             UserID = new DataGridViewTextBoxColumn();
@@ -57,14 +57,14 @@
             UserDataGridView.AllowUserToDeleteRows = false;
             UserDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             UserDataGridView.BackgroundColor = Color.LemonChiffon;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            UserDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            UserDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             UserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { UserStartDate, UserID, UserFirstName, UserLastName, UserTel, UserUsername, UserPassword, UserAge, UserGender, UserBirthdate, UserEndDate, UserActive, UserDescription });
             UserDataGridView.Location = new Point(13, 48);
@@ -195,7 +195,9 @@
             // UserNewButton
             // 
             UserNewButton.Anchor = AnchorStyles.Bottom;
+            UserNewButton.Appearance.BackColor = Color.Pink;
             UserNewButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            UserNewButton.Appearance.Options.UseBackColor = true;
             UserNewButton.Appearance.Options.UseFont = true;
             UserNewButton.Location = new Point(38, 585);
             UserNewButton.Margin = new Padding(4);
@@ -207,7 +209,9 @@
             // UserEditButton
             // 
             UserEditButton.Anchor = AnchorStyles.Bottom;
+            UserEditButton.Appearance.BackColor = Color.Pink;
             UserEditButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            UserEditButton.Appearance.Options.UseBackColor = true;
             UserEditButton.Appearance.Options.UseFont = true;
             UserEditButton.Location = new Point(532, 585);
             UserEditButton.Margin = new Padding(4);
@@ -219,7 +223,9 @@
             // UserStatusButton
             // 
             UserStatusButton.Anchor = AnchorStyles.Bottom;
+            UserStatusButton.Appearance.BackColor = Color.Pink;
             UserStatusButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            UserStatusButton.Appearance.Options.UseBackColor = true;
             UserStatusButton.Appearance.Options.UseFont = true;
             UserStatusButton.Location = new Point(1012, 585);
             UserStatusButton.Margin = new Padding(4);
@@ -245,7 +251,6 @@
             Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(8);
             Name = "UsersForm";
-            ShowInTaskbar = false;
             Text = "UsersForm";
             Load += UsersForm_Load;
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).EndInit();

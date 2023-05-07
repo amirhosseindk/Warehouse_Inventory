@@ -39,8 +39,8 @@ namespace MyApplication
             ProductStatusButton.Text =
                 resource.GetString(name: nameof(ProductStatusButton));
 
-            InvoiceNewButton.Text =
-                resource.GetString(name: nameof(InvoiceNewButton));
+            PrintInventoryReceiptButton.Text =
+                resource.GetString(name: nameof(PrintInventoryReceiptButton));
 
             ProductDataGridView.Columns[0].HeaderText =
                 resource.GetString(name: nameof(ProductBuyDate));
@@ -64,24 +64,27 @@ namespace MyApplication
                 resource.GetString(name: nameof(ProductStoreroom));
 
             ProductDataGridView.Columns[7].HeaderText =
-                resource.GetString(name: nameof(ProductStoreKepper));
+                resource.GetString(name: nameof(ProductImage));
 
             ProductDataGridView.Columns[8].HeaderText =
-                resource.GetString(name: nameof(ProductStock));
+                resource.GetString(name: nameof(ProductStoreKepper));
 
             ProductDataGridView.Columns[9].HeaderText =
-                resource.GetString(name: nameof(ProductUnit));
+                resource.GetString(name: nameof(ProductStock));
 
             ProductDataGridView.Columns[10].HeaderText =
-                resource.GetString(name: nameof(ProductUnitSales));
+                resource.GetString(name: nameof(ProductUnit));
 
             ProductDataGridView.Columns[11].HeaderText =
-                resource.GetString(name: nameof(ProductRegistrar));
+                resource.GetString(name: nameof(ProductUnitSales));
 
             ProductDataGridView.Columns[12].HeaderText =
-                resource.GetString(name: nameof(ProductRegisterDate));
+                resource.GetString(name: nameof(ProductRegistrar));
 
             ProductDataGridView.Columns[13].HeaderText =
+                resource.GetString(name: nameof(ProductRegisterDate));
+
+            ProductDataGridView.Columns[14].HeaderText =
                 resource.GetString(name: nameof(ProductDescription));
 
             PriceManagmentToolStripMenuItem.Text =
@@ -99,12 +102,16 @@ namespace MyApplication
         // Loaded
         private void ProductsForm_Load(object sender, EventArgs e)
         {
-
+            if (ApplicationSettings.CurrentCulture == ApplicationSettings.Languages.Farsi)
+            {
+                this.RightToLeft = RightToLeft.Yes;
+                this.RightToLeftLayout = true;
+            }
         }
 
         #region  ContextMenu
 
-        // CintextMenu 
+        // ContextMenu 
         private void ContextMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem? button = sender as ToolStripMenuItem;

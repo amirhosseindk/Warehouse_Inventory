@@ -88,6 +88,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add To Request.
+        /// </summary>
+        public static string AddToRequestButton {
+            get {
+                return ResourceManager.GetString("AddToRequestButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add To Shoping.
+        /// </summary>
+        public static string AddToShopingButton {
+            get {
+                return ResourceManager.GetString("AddToShopingButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup.
         /// </summary>
         public static string BackupButton {
@@ -106,11 +124,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string CountLabel {
+            get {
+                return ResourceManager.GetString("CountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Countries.
         /// </summary>
         public static string CountriesButton {
             get {
                 return ResourceManager.GetString("CountriesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        public static string CustomerCode {
+            get {
+                return ResourceManager.GetString("CustomerCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FirstName.
+        /// </summary>
+        public static string CustomerFirstName {
+            get {
+                return ResourceManager.GetString("CustomerFirstName", resourceCulture);
             }
         }
         
@@ -124,11 +169,74 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
+        public static string CustomerLabel {
+            get {
+                return ResourceManager.GetString("CustomerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LastName.
+        /// </summary>
+        public static string CustomerLastName {
+            get {
+                return ResourceManager.GetString("CustomerLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customers.
         /// </summary>
         public static string CustomersButton {
             get {
                 return ResourceManager.GetString("CustomersButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customers Form.
+        /// </summary>
+        public static string CustomersForm {
+            get {
+                return ResourceManager.GetString("CustomersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tel.
+        /// </summary>
+        public static string CustomerTel {
+            get {
+                return ResourceManager.GetString("CustomerTel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string CustomerType {
+            get {
+                return ResourceManager.GetString("CustomerType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string DateLabel {
+            get {
+                return ResourceManager.GetString("DateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string DeleteButton {
+            get {
+                return ResourceManager.GetString("DeleteButton", resourceCulture);
             }
         }
         
@@ -147,6 +255,42 @@ namespace Resources {
         public static string ExitButton {
             get {
                 return ResourceManager.GetString("ExitButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factors.
+        /// </summary>
+        public static string FactorInMainFormButton {
+            get {
+                return ResourceManager.GetString("FactorInMainFormButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Transfer Register.
+        /// </summary>
+        public static string InventoryTransferButton {
+            get {
+                return ResourceManager.GetString("InventoryTransferButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfers.
+        /// </summary>
+        public static string InventoryTransferInMainFormButton {
+            get {
+                return ResourceManager.GetString("InventoryTransferInMainFormButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice Register.
+        /// </summary>
+        public static string InvoiceButton {
+            get {
+                return ResourceManager.GetString("InvoiceButton", resourceCulture);
             }
         }
         
@@ -180,9 +324,18 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Enter/Exit.
         /// </summary>
-        public static string LoginHistor {
+        public static string LoginsHistorButton {
             get {
-                return ResourceManager.GetString("LoginHistor", resourceCulture);
+                return ResourceManager.GetString("LoginsHistorButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maesure Units.
+        /// </summary>
+        public static string MaesureUnitsButton {
+            get {
+                return ResourceManager.GetString("MaesureUnitsButton", resourceCulture);
             }
         }
         
@@ -210,6 +363,24 @@ namespace Resources {
         public static string MessagesButton {
             get {
                 return ResourceManager.GetString("MessagesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Messages.
+        /// </summary>
+        public static string MessagesInMainFormButton {
+            get {
+                return ResourceManager.GetString("MessagesInMainFormButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number.
+        /// </summary>
+        public static string NumberLabel {
+            get {
+                return ResourceManager.GetString("NumberLabel", resourceCulture);
             }
         }
         
@@ -250,6 +421,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print Inventory Receipt.
+        /// </summary>
+        public static string PrintInventoryReceiptButton {
+            get {
+                return ResourceManager.GetString("PrintInventoryReceiptButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Inventory Transfer.
+        /// </summary>
+        public static string PrintInventoryTransferButton {
+            get {
+                return ResourceManager.GetString("PrintInventoryTransferButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Invoice.
+        /// </summary>
+        public static string PrintInvoiceButton {
+            get {
+                return ResourceManager.GetString("PrintInvoiceButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Buy Date.
         /// </summary>
         public static string ProductBuyDate {
@@ -259,11 +457,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Product Code.
+        ///   Looks up a localized string similar to Code.
         /// </summary>
         public static string ProductCode {
             get {
                 return ResourceManager.GetString("ProductCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string ProductCount {
+            get {
+                return ResourceManager.GetString("ProductCount", resourceCulture);
             }
         }
         
@@ -295,11 +502,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        public static string ProductImage {
+            get {
+                return ResourceManager.GetString("ProductImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invoice No.
         /// </summary>
         public static string ProductInvoiceNo {
             get {
                 return ResourceManager.GetString("ProductInvoiceNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Price.
+        /// </summary>
+        public static string ProductLastPrice {
+            get {
+                return ResourceManager.GetString("ProductLastPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Stock.
+        /// </summary>
+        public static string ProductLastStock {
+            get {
+                return ResourceManager.GetString("ProductLastStock", resourceCulture);
             }
         }
         
@@ -439,6 +673,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registrar.
+        /// </summary>
+        public static string RegistrarLabel {
+            get {
+                return ResourceManager.GetString("RegistrarLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reports.
         /// </summary>
         public static string ReportsButton {
@@ -448,11 +691,128 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reports.
+        /// </summary>
+        public static string ReportsInMainFormButton {
+            get {
+                return ResourceManager.GetString("ReportsInMainFormButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request Form.
+        /// </summary>
+        public static string RequestForm {
+            get {
+                return ResourceManager.GetString("RequestForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request.
+        /// </summary>
+        public static string RequestInMainFormButton {
+            get {
+                return ResourceManager.GetString("RequestInMainFormButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string RequestProductCount {
+            get {
+                return ResourceManager.GetString("RequestProductCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Name.
+        /// </summary>
+        public static string RequestProductName {
+            get {
+                return ResourceManager.GetString("RequestProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Price.
+        /// </summary>
+        public static string RequestProductPrice {
+            get {
+                return ResourceManager.GetString("RequestProductPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit.
+        /// </summary>
+        public static string RequestProductUnit {
+            get {
+                return ResourceManager.GetString("RequestProductUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Row.
+        /// </summary>
+        public static string RequestRow {
+            get {
+                return ResourceManager.GetString("RequestRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requests.
+        /// </summary>
+        public static string RequestsButton {
+            get {
+                return ResourceManager.GetString("RequestsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rials.
+        /// </summary>
+        public static string RialsLabel {
+            get {
+                return ResourceManager.GetString("RialsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string SearchCustomerLabel {
+            get {
+                return ResourceManager.GetString("SearchCustomerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string SearchLabel {
             get {
                 return ResourceManager.GetString("SearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string SearchProductLabel {
+            get {
+                return ResourceManager.GetString("SearchProductLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shopings.
+        /// </summary>
+        public static string ShopingInMainFormButton {
+            get {
+                return ResourceManager.GetString("ShopingInMainFormButton", resourceCulture);
             }
         }
         
@@ -493,6 +853,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Supplers Form.
+        /// </summary>
+        public static string SupplersForm {
+            get {
+                return ResourceManager.GetString("SupplersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inventory System.
         /// </summary>
         public static string SystemNameLabel {
@@ -502,11 +871,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Units.
+        ///   Looks up a localized string similar to Total Amount.
         /// </summary>
-        public static string UnitsButton {
+        public static string TotalAmountLabel {
             get {
-                return ResourceManager.GetString("UnitsButton", resourceCulture);
+                return ResourceManager.GetString("TotalAmountLabel", resourceCulture);
             }
         }
         

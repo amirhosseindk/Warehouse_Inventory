@@ -1,6 +1,6 @@
-﻿namespace MyApplication
+﻿namespace MyApplication.Ui
 {
-    partial class CustomerForm
+    partial class StoreroomForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             SuspendLayout();
             // 
-            // CustomerForm
+            // StoreroomForm
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(298, 268);
-            Name = "CustomerForm";
-            Text = "CustomerForm";
-            Load += CustomerForm_Load;
+            Name = "StoreroomForm";
+            Text = "StoreroomForm";
+            Load += StoreroomForm_Load;
             ResumeLayout(false);
         }
 

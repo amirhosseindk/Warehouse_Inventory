@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             ProductDataGridView = new DataGridView();
             ProductBuyDate = new DataGridViewTextBoxColumn();
             ProductCode = new DataGridViewTextBoxColumn();
@@ -38,6 +38,7 @@
             ProductInvoiceNo = new DataGridViewTextBoxColumn();
             ProductSuppler = new DataGridViewTextBoxColumn();
             ProductStoreroom = new DataGridViewTextBoxColumn();
+            ProductImage = new DataGridViewTextBoxColumn();
             ProductStoreKepper = new DataGridViewTextBoxColumn();
             ProductStock = new DataGridViewTextBoxColumn();
             ProductUnit = new DataGridViewTextBoxColumn();
@@ -47,7 +48,7 @@
             ProductDescription = new DataGridViewTextBoxColumn();
             SearchLabel = new Usf.WinForms.Forms.Label();
             SearchTextBox = new Usf.WinForms.Forms.TextBox();
-            InvoiceNewButton = new Usf.WinForms.Forms.Button();
+            PrintInventoryReceiptButton = new Usf.WinForms.Forms.Button();
             ProductNewButton = new Usf.WinForms.Forms.Button();
             ProductEditButton = new Usf.WinForms.Forms.Button();
             ProductStatusButton = new Usf.WinForms.Forms.Button();
@@ -64,16 +65,16 @@
             ProductDataGridView.AllowUserToDeleteRows = false;
             ProductDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ProductDataGridView.BackgroundColor = Color.LemonChiffon;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductDataGridView.Columns.AddRange(new DataGridViewColumn[] { ProductBuyDate, ProductCode, ProductName, ProductCountry, ProductInvoiceNo, ProductSuppler, ProductStoreroom, ProductStoreKepper, ProductStock, ProductUnit, ProductUnitSales, ProductRegistrar, ProductRegisterDate, ProductDescription });
+            ProductDataGridView.Columns.AddRange(new DataGridViewColumn[] { ProductBuyDate, ProductCode, ProductName, ProductCountry, ProductInvoiceNo, ProductSuppler, ProductStoreroom, ProductImage, ProductStoreKepper, ProductStock, ProductUnit, ProductUnitSales, ProductRegistrar, ProductRegisterDate, ProductDescription });
             ProductDataGridView.Location = new Point(12, 49);
             ProductDataGridView.Margin = new Padding(4);
             ProductDataGridView.Name = "ProductDataGridView";
@@ -129,6 +130,13 @@
             ProductStoreroom.HeaderText = "Storeroom";
             ProductStoreroom.Name = "ProductStoreroom";
             ProductStoreroom.ReadOnly = true;
+            // 
+            // ProductImage
+            // 
+            ProductImage.HeaderText = "Image";
+            ProductImage.Name = "ProductImage";
+            ProductImage.ReadOnly = true;
+            ProductImage.Width = 110;
             // 
             // ProductStoreKepper
             // 
@@ -205,22 +213,26 @@
             SearchTextBox.TabIndex = 2;
             SearchTextBox.TextAlign = HorizontalAlignment.Center;
             // 
-            // InvoiceNewButton
+            // PrintInventoryReceiptButton
             // 
-            InvoiceNewButton.Anchor = AnchorStyles.Bottom;
-            InvoiceNewButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            InvoiceNewButton.Appearance.Options.UseFont = true;
-            InvoiceNewButton.Location = new Point(1023, 585);
-            InvoiceNewButton.Margin = new Padding(4);
-            InvoiceNewButton.Name = "InvoiceNewButton";
-            InvoiceNewButton.Size = new Size(274, 64);
-            InvoiceNewButton.TabIndex = 4;
-            InvoiceNewButton.Text = "Invoice";
+            PrintInventoryReceiptButton.Anchor = AnchorStyles.Bottom;
+            PrintInventoryReceiptButton.Appearance.BackColor = Color.Pink;
+            PrintInventoryReceiptButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            PrintInventoryReceiptButton.Appearance.Options.UseBackColor = true;
+            PrintInventoryReceiptButton.Appearance.Options.UseFont = true;
+            PrintInventoryReceiptButton.Location = new Point(1023, 585);
+            PrintInventoryReceiptButton.Margin = new Padding(4);
+            PrintInventoryReceiptButton.Name = "PrintInventoryReceiptButton";
+            PrintInventoryReceiptButton.Size = new Size(274, 64);
+            PrintInventoryReceiptButton.TabIndex = 4;
+            PrintInventoryReceiptButton.Text = "Inventory Receipt";
             // 
             // ProductNewButton
             // 
             ProductNewButton.Anchor = AnchorStyles.Bottom;
+            ProductNewButton.Appearance.BackColor = Color.Pink;
             ProductNewButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            ProductNewButton.Appearance.Options.UseBackColor = true;
             ProductNewButton.Appearance.Options.UseFont = true;
             ProductNewButton.Location = new Point(21, 585);
             ProductNewButton.Margin = new Padding(4);
@@ -232,7 +244,9 @@
             // ProductEditButton
             // 
             ProductEditButton.Anchor = AnchorStyles.Bottom;
+            ProductEditButton.Appearance.BackColor = Color.Pink;
             ProductEditButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            ProductEditButton.Appearance.Options.UseBackColor = true;
             ProductEditButton.Appearance.Options.UseFont = true;
             ProductEditButton.Location = new Point(355, 585);
             ProductEditButton.Margin = new Padding(4);
@@ -244,7 +258,9 @@
             // ProductStatusButton
             // 
             ProductStatusButton.Anchor = AnchorStyles.Bottom;
+            ProductStatusButton.Appearance.BackColor = Color.Pink;
             ProductStatusButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            ProductStatusButton.Appearance.Options.UseBackColor = true;
             ProductStatusButton.Appearance.Options.UseFont = true;
             ProductStatusButton.Location = new Point(689, 585);
             ProductStatusButton.Margin = new Padding(4);
@@ -288,7 +304,7 @@
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1318, 654);
-            Controls.Add(InvoiceNewButton);
+            Controls.Add(PrintInventoryReceiptButton);
             Controls.Add(ProductNewButton);
             Controls.Add(ProductEditButton);
             Controls.Add(ProductStatusButton);
@@ -298,7 +314,6 @@
             Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(7, 8, 7, 8);
             Name = "ProductsForm";
-            ShowInTaskbar = false;
             Text = "ProductsForm";
             Load += ProductsForm_Load;
             ((System.ComponentModel.ISupportInitialize)ProductDataGridView).EndInit();
@@ -312,10 +327,13 @@
         private DataGridView ProductDataGridView;
         private Usf.WinForms.Forms.TextBox SearchTextBox;
         private Usf.WinForms.Forms.Label SearchLabel;
-        private Usf.WinForms.Forms.Button InvoiceNewButton;
+        private Usf.WinForms.Forms.Button PrintInventoryReceiptButton;
         private Usf.WinForms.Forms.Button ProductNewButton;
         private Usf.WinForms.Forms.Button ProductEditButton;
         private Usf.WinForms.Forms.Button ProductStatusButton;
+        private ToolStripMenuItem PriceManagmentToolStripMenuItem;
+        private ToolStripMenuItem StockManagmentToolStripMenuItem;
+        private ContextMenuStrip ProductContextMenuStrip;
         private DataGridViewTextBoxColumn ProductBuyDate;
         private DataGridViewTextBoxColumn ProductCode;
         private DataGridViewTextBoxColumn ProductName;
@@ -323,6 +341,7 @@
         private DataGridViewTextBoxColumn ProductInvoiceNo;
         private DataGridViewTextBoxColumn ProductSuppler;
         private DataGridViewTextBoxColumn ProductStoreroom;
+        private DataGridViewTextBoxColumn ProductImage;
         private DataGridViewTextBoxColumn ProductStoreKepper;
         private DataGridViewTextBoxColumn ProductStock;
         private DataGridViewTextBoxColumn ProductUnit;
@@ -330,8 +349,5 @@
         private DataGridViewTextBoxColumn ProductRegistrar;
         private DataGridViewTextBoxColumn ProductRegisterDate;
         private DataGridViewTextBoxColumn ProductDescription;
-        private ToolStripMenuItem PriceManagmentToolStripMenuItem;
-        private ToolStripMenuItem StockManagmentToolStripMenuItem;
-        private ContextMenuStrip ProductContextMenuStrip;
     }
 }

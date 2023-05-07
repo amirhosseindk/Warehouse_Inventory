@@ -126,26 +126,74 @@
   <data name="AccessForm" xml:space="preserve">
     <value>Access Users Form</value>
   </data>
+  <data name="AddToRequestButton" xml:space="preserve">
+    <value>Add To Request</value>
+  </data>
+  <data name="AddToShopingButton" xml:space="preserve">
+    <value>Add To Shoping</value>
+  </data>
   <data name="BackupButton" xml:space="preserve">
     <value>Backup</value>
   </data>
   <data name="BackupForm" xml:space="preserve">
     <value>Backup Form</value>
   </data>
+  <data name="CountLabel" xml:space="preserve">
+    <value>Count</value>
+  </data>
   <data name="CountriesButton" xml:space="preserve">
     <value>Countries</value>
+  </data>
+  <data name="CustomerCode" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="CustomerFirstName" xml:space="preserve">
+    <value>FirstName</value>
   </data>
   <data name="CustomerForm" xml:space="preserve">
     <value>Customer Form</value>
   </data>
+  <data name="CustomerLabel" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="CustomerLastName" xml:space="preserve">
+    <value>LastName</value>
+  </data>
   <data name="CustomersButton" xml:space="preserve">
     <value>Customers</value>
+  </data>
+  <data name="CustomersForm" xml:space="preserve">
+    <value>Customers Form</value>
+  </data>
+  <data name="CustomerTel" xml:space="preserve">
+    <value>Tel</value>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DeleteButton" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="EnterButton" xml:space="preserve">
     <value>Enter</value>
   </data>
   <data name="ExitButton" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="FactorInMainFormButton" xml:space="preserve">
+    <value>Factors</value>
+  </data>
+  <data name="InventoryTransferButton" xml:space="preserve">
+    <value>Inventory Transfer Register</value>
+  </data>
+  <data name="InventoryTransferInMainFormButton" xml:space="preserve">
+    <value>Transfers</value>
+  </data>
+  <data name="InvoiceButton" xml:space="preserve">
+    <value>Invoice Register</value>
   </data>
   <data name="InvoiceNewButton" xml:space="preserve">
     <value>Invoice New</value>
@@ -156,8 +204,11 @@
   <data name="LoginForm" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="LoginHistor" xml:space="preserve">
+  <data name="LoginsHistorButton" xml:space="preserve">
     <value>Enter/Exit</value>
+  </data>
+  <data name="MaesureUnitsButton" xml:space="preserve">
+    <value>Maesure Units</value>
   </data>
   <data name="MainForm" xml:space="preserve">
     <value>Inventory System</value>
@@ -167,6 +218,12 @@
   </data>
   <data name="MessagesButton" xml:space="preserve">
     <value>Messages</value>
+  </data>
+  <data name="MessagesInMainFormButton" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="NumberLabel" xml:space="preserve">
+    <value>Number</value>
   </data>
   <data name="PasswordButton" xml:space="preserve">
     <value>Password</value>
@@ -180,11 +237,23 @@
   <data name="PriceManagmentToolStripMenuItem" xml:space="preserve">
     <value>Price Managment</value>
   </data>
+  <data name="PrintInventoryReceiptButton" xml:space="preserve">
+    <value>Print Inventory Receipt</value>
+  </data>
+  <data name="PrintInventoryTransferButton" xml:space="preserve">
+    <value>Print Inventory Transfer</value>
+  </data>
+  <data name="PrintInvoiceButton" xml:space="preserve">
+    <value>Print Invoice</value>
+  </data>
   <data name="ProductBuyDate" xml:space="preserve">
     <value>Buy Date</value>
   </data>
   <data name="ProductCode" xml:space="preserve">
-    <value>Product Code</value>
+    <value>Code</value>
+  </data>
+  <data name="ProductCount" xml:space="preserve">
+    <value>Count</value>
   </data>
   <data name="ProductCountry" xml:space="preserve">
     <value>Country</value>
@@ -195,8 +264,17 @@
   <data name="ProductEditButton" xml:space="preserve">
     <value>Product Edit</value>
   </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
   <data name="ProductInvoiceNo" xml:space="preserve">
     <value>Invoice No</value>
+  </data>
+  <data name="ProductLastPrice" xml:space="preserve">
+    <value>Last Price</value>
+  </data>
+  <data name="ProductLastStock" xml:space="preserve">
+    <value>Last Stock</value>
   </data>
   <data name="ProductName" xml:space="preserve">
     <value>Product Name</value>
@@ -243,11 +321,53 @@
   <data name="ProductUnitSales" xml:space="preserve">
     <value>Unit Sales</value>
   </data>
+  <data name="RegistrarLabel" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
   <data name="ReportsButton" xml:space="preserve">
     <value>Reports</value>
   </data>
+  <data name="ReportsInMainFormButton" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="RequestForm" xml:space="preserve">
+    <value>Request Form</value>
+  </data>
+  <data name="RequestInMainFormButton" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="RequestProductCount" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="RequestProductName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="RequestProductPrice" xml:space="preserve">
+    <value>Product Price</value>
+  </data>
+  <data name="RequestProductUnit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="RequestRow" xml:space="preserve">
+    <value>Row</value>
+  </data>
+  <data name="RequestsButton" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="RialsLabel" xml:space="preserve">
+    <value>Rials</value>
+  </data>
+  <data name="SearchCustomerLabel" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <data name="SearchLabel" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="SearchProductLabel" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ShopingInMainFormButton" xml:space="preserve">
+    <value>Shopings</value>
   </data>
   <data name="StockManagmentToolStripMenuItem" xml:space="preserve">
     <value>StockManagment</value>
@@ -261,11 +381,14 @@
   <data name="SupplersButton" xml:space="preserve">
     <value>Supplers</value>
   </data>
+  <data name="SupplersForm" xml:space="preserve">
+    <value>Supplers Form</value>
+  </data>
   <data name="SystemNameLabel" xml:space="preserve">
     <value>Inventory System</value>
   </data>
-  <data name="UnitsButton" xml:space="preserve">
-    <value>Units</value>
+  <data name="TotalAmountLabel" xml:space="preserve">
+    <value>Total Amount</value>
   </data>
   <data name="UserActive" xml:space="preserve">
     <value>Status</value>

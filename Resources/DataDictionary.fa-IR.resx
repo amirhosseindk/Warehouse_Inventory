@@ -126,26 +126,74 @@
   <data name="AccessForm" xml:space="preserve">
     <value>فرم دسترسی کاربران</value>
   </data>
+  <data name="AddToRequestButton" xml:space="preserve">
+    <value>افزودن به درخواست</value>
+  </data>
+  <data name="AddToShopingButton" xml:space="preserve">
+    <value>افزودن به خرید</value>
+  </data>
   <data name="BackupButton" xml:space="preserve">
     <value>پشتیبان گیری</value>
   </data>
   <data name="BackupForm" xml:space="preserve">
     <value>فرم پشتیبان گیری</value>
   </data>
+  <data name="CountLabel" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
   <data name="CountriesButton" xml:space="preserve">
     <value>کشورها</value>
+  </data>
+  <data name="CustomerCode" xml:space="preserve">
+    <value>کد</value>
+  </data>
+  <data name="CustomerFirstName" xml:space="preserve">
+    <value>نام</value>
   </data>
   <data name="CustomerForm" xml:space="preserve">
     <value>فرم مشتریان</value>
   </data>
+  <data name="CustomerLabel" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="CustomerLastName" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
   <data name="CustomersButton" xml:space="preserve">
     <value>مشتریان</value>
+  </data>
+  <data name="CustomersForm" xml:space="preserve">
+    <value>فرم مشتریان</value>
+  </data>
+  <data name="CustomerTel" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="DeleteButton" xml:space="preserve">
+    <value>حذف</value>
   </data>
   <data name="EnterButton" xml:space="preserve">
     <value>ورود</value>
   </data>
   <data name="ExitButton" xml:space="preserve">
     <value>خروج</value>
+  </data>
+  <data name="FactorInMainFormButton" xml:space="preserve">
+    <value>فاکتور</value>
+  </data>
+  <data name="InventoryTransferButton" xml:space="preserve">
+    <value>ثبت حواله</value>
+  </data>
+  <data name="InventoryTransferInMainFormButton" xml:space="preserve">
+    <value>حواله</value>
+  </data>
+  <data name="InvoiceButton" xml:space="preserve">
+    <value>ثبت فاکتور</value>
   </data>
   <data name="InvoiceNewButton" xml:space="preserve">
     <value>فاکتور جدید</value>
@@ -156,8 +204,11 @@
   <data name="LoginForm" xml:space="preserve">
     <value>ورود به سیستم</value>
   </data>
-  <data name="LoginHistor" xml:space="preserve">
+  <data name="LoginsHistorButton" xml:space="preserve">
     <value>ورود/خروج</value>
+  </data>
+  <data name="MaesureUnitsButton" xml:space="preserve">
+    <value>واحد اندازه گیری</value>
   </data>
   <data name="MainForm" xml:space="preserve">
     <value>سیستم انبارداری</value>
@@ -167,6 +218,12 @@
   </data>
   <data name="MessagesButton" xml:space="preserve">
     <value>پیامک</value>
+  </data>
+  <data name="MessagesInMainFormButton" xml:space="preserve">
+    <value>پیامک</value>
+  </data>
+  <data name="NumberLabel" xml:space="preserve">
+    <value>شماره</value>
   </data>
   <data name="PasswordButton" xml:space="preserve">
     <value>رمز عبور</value>
@@ -180,11 +237,23 @@
   <data name="PriceManagmentToolStripMenuItem" xml:space="preserve">
     <value>مدیریت قیمت</value>
   </data>
+  <data name="PrintInventoryReceiptButton" xml:space="preserve">
+    <value>چاپ قبض انبار</value>
+  </data>
+  <data name="PrintInventoryTransferButton" xml:space="preserve">
+    <value>چاپ حواله انبار</value>
+  </data>
+  <data name="PrintInvoiceButton" xml:space="preserve">
+    <value>چاپ فاکتور</value>
+  </data>
   <data name="ProductBuyDate" xml:space="preserve">
     <value>تاریخ خرید</value>
   </data>
   <data name="ProductCode" xml:space="preserve">
-    <value>کد کالا</value>
+    <value>کد</value>
+  </data>
+  <data name="ProductCount" xml:space="preserve">
+    <value>تعداد</value>
   </data>
   <data name="ProductCountry" xml:space="preserve">
     <value>کشور</value>
@@ -195,8 +264,17 @@
   <data name="ProductEditButton" xml:space="preserve">
     <value>ویرایش کالا</value>
   </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>تصویر کالا</value>
+  </data>
   <data name="ProductInvoiceNo" xml:space="preserve">
     <value>فاکتور</value>
+  </data>
+  <data name="ProductLastPrice" xml:space="preserve">
+    <value>آخرین قیمت</value>
+  </data>
+  <data name="ProductLastStock" xml:space="preserve">
+    <value>آخرین موجودی</value>
   </data>
   <data name="ProductName" xml:space="preserve">
     <value>نام کالا</value>
@@ -246,11 +324,53 @@
   <data name="ProductUnitSales" xml:space="preserve">
     <value>فروش</value>
   </data>
+  <data name="RegistrarLabel" xml:space="preserve">
+    <value>ثبت کننده</value>
+  </data>
   <data name="ReportsButton" xml:space="preserve">
     <value>گزارشات</value>
   </data>
+  <data name="ReportsInMainFormButton" xml:space="preserve">
+    <value>گزارش</value>
+  </data>
+  <data name="RequestForm" xml:space="preserve">
+    <value>فرم درخواست</value>
+  </data>
+  <data name="RequestInMainFormButton" xml:space="preserve">
+    <value>درخواست</value>
+  </data>
+  <data name="RequestProductCount" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
+  <data name="RequestProductName" xml:space="preserve">
+    <value>نام کالا</value>
+  </data>
+  <data name="RequestProductPrice" xml:space="preserve">
+    <value>قیمت کالا</value>
+  </data>
+  <data name="RequestProductUnit" xml:space="preserve">
+    <value>واحد مقدار</value>
+  </data>
+  <data name="RequestRow" xml:space="preserve">
+    <value>ردیف</value>
+  </data>
+  <data name="RequestsButton" xml:space="preserve">
+    <value>درخواست ها</value>
+  </data>
+  <data name="RialsLabel" xml:space="preserve">
+    <value>ریال</value>
+  </data>
+  <data name="SearchCustomerLabel" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
   <data name="SearchLabel" xml:space="preserve">
     <value>جستجو</value>
+  </data>
+  <data name="SearchProductLabel" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="ShopingInMainFormButton" xml:space="preserve">
+    <value>خرید</value>
   </data>
   <data name="StockManagmentToolStripMenuItem" xml:space="preserve">
     <value>مدیریت موجودی</value>
@@ -258,14 +378,20 @@
   <data name="StorekeepersButton" xml:space="preserve">
     <value>انبارداران</value>
   </data>
+  <data name="StoreroomsButton" xml:space="preserve">
+    <value>انبارها</value>
+  </data>
   <data name="SupplersButton" xml:space="preserve">
     <value>فروشندگان</value>
+  </data>
+  <data name="SupplersForm" xml:space="preserve">
+    <value>فرم فروشندگان</value>
   </data>
   <data name="SystemNameLabel" xml:space="preserve">
     <value>سیستم انبارداری</value>
   </data>
-  <data name="UnitsButton" xml:space="preserve">
-    <value>واحدها</value>
+  <data name="TotalAmountLabel" xml:space="preserve">
+    <value>مبلغ کل</value>
   </data>
   <data name="UserActive" xml:space="preserve">
     <value>وضعیت</value>

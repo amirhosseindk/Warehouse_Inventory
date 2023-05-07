@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyApplication
+namespace MyApplication.Ui
 {
-    public partial class CustomerForm : Usf.WinForms.Forms.Form
+    public partial class StoreroomForm : Usf.WinForms.Forms.Form
     {
-        public CustomerForm()
+        public StoreroomForm()
         {
             InitializeComponent();
 
@@ -24,13 +24,13 @@ namespace MyApplication
                ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
             this.Text =
-                resource.GetString(name: nameof(CustomerForm));
+                resource.GetString(name: nameof(StoreroomForm));
 
-            #endregion / Language
+            #endregion /Language
         }
 
         // Loaded
-        private void CustomerForm_Load(object sender, EventArgs e)
+        private void StoreroomForm_Load(object sender, EventArgs e)
         {
             if (ApplicationSettings.CurrentCulture == ApplicationSettings.Languages.Farsi)
             {

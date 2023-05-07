@@ -31,6 +31,7 @@ namespace Persistence
         public DbSet<ReceiptItemList> ReceiptItemList { get; set; }
         public DbSet<RequisitionItemList> RequisitionItemList { get; set; }
         public DbSet<SupplierInvoice> supplierInvoices { get; set; }
+        public DbSet<User> users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=.;Database=Warehouse_Inventory;User Id=sa;Password=P@ssw0rd09198799866;TrustServerCertificate=true");

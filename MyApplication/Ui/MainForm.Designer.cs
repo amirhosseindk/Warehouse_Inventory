@@ -32,20 +32,24 @@
             toolStrip1 = new ToolStrip();
             MenuButton = new ToolStripDropDownButton();
             UsersButton = new ToolStripMenuItem();
-            SupplersButton = new ToolStripMenuItem();
             CustomersButton = new ToolStripMenuItem();
+            ProductsButton = new ToolStripMenuItem();
+            SupplersButton = new ToolStripMenuItem();
             StoreroomsButton = new ToolStripMenuItem();
             StorekeepersButton = new ToolStripMenuItem();
-            UnitsButton = new ToolStripMenuItem();
+            MaesureUnitsButton = new ToolStripMenuItem();
             CountriesButton = new ToolStripMenuItem();
-            LoginHistorButton = new ToolStripMenuItem();
+            LoginsHistorButton = new ToolStripMenuItem();
             AccessButton = new ToolStripMenuItem();
             PasswordButton = new ToolStripMenuItem();
             BackupButton = new ToolStripMenuItem();
             AboutButton = new ToolStripMenuItem();
-            ProductsButton = new ToolStripButton();
-            ReportsButton = new ToolStripButton();
-            MessagesButton = new ToolStripButton();
+            RequestInMainFormButton = new ToolStripButton();
+            InventoryTransferInMainFormButton = new ToolStripButton();
+            FactorInMainFormButton = new ToolStripButton();
+            ShopingInMainFormButton = new ToolStripButton();
+            ReportsInMainFormButton = new ToolStripButton();
+            MessagesInMainFormButton = new ToolStripButton();
             pictureBox1 = new PictureBox();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -55,17 +59,17 @@
             // 
             toolStrip1.BackColor = Color.PowderBlue;
             toolStrip1.Font = new Font("IRANYekan Medium", 11.999999F, FontStyle.Bold, GraphicsUnit.Point);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { MenuButton, ProductsButton, ReportsButton, MessagesButton });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { MenuButton, RequestInMainFormButton, InventoryTransferInMainFormButton, FactorInMainFormButton, ShopingInMainFormButton, ReportsInMainFormButton, MessagesInMainFormButton });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(429, 79);
+            toolStrip1.Size = new Size(788, 83);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
             // MenuButton
             // 
             MenuButton.AutoSize = false;
-            MenuButton.DropDownItems.AddRange(new ToolStripItem[] { UsersButton, SupplersButton, CustomersButton, StoreroomsButton, StorekeepersButton, UnitsButton, CountriesButton, LoginHistorButton, AccessButton, PasswordButton, BackupButton, AboutButton });
+            MenuButton.DropDownItems.AddRange(new ToolStripItem[] { UsersButton, CustomersButton, ProductsButton, SupplersButton, StoreroomsButton, StorekeepersButton, MaesureUnitsButton, CountriesButton, LoginsHistorButton, AccessButton, PasswordButton, BackupButton, AboutButton });
             MenuButton.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
             MenuButton.Image = (Image)resources.GetObject("MenuButton.Image");
             MenuButton.ImageScaling = ToolStripItemImageScaling.None;
@@ -86,6 +90,26 @@
             UsersButton.Text = "Users";
             UsersButton.Click += MenuButton_Click;
             // 
+            // CustomersButton
+            // 
+            CustomersButton.BackColor = Color.DeepSkyBlue;
+            CustomersButton.Image = (Image)resources.GetObject("CustomersButton.Image");
+            CustomersButton.ImageScaling = ToolStripItemImageScaling.None;
+            CustomersButton.Name = "CustomersButton";
+            CustomersButton.Size = new Size(216, 54);
+            CustomersButton.Text = "Customers";
+            CustomersButton.Click += MenuButton_Click;
+            // 
+            // ProductsButton
+            // 
+            ProductsButton.BackColor = Color.LightSkyBlue;
+            ProductsButton.Image = (Image)resources.GetObject("ProductsButton.Image");
+            ProductsButton.ImageScaling = ToolStripItemImageScaling.None;
+            ProductsButton.Name = "ProductsButton";
+            ProductsButton.Size = new Size(216, 54);
+            ProductsButton.Text = "Products";
+            ProductsButton.Click += MenuButton_Click;
+            // 
             // SupplersButton
             // 
             SupplersButton.BackColor = Color.DeepSkyBlue;
@@ -94,65 +118,61 @@
             SupplersButton.Name = "SupplersButton";
             SupplersButton.Size = new Size(216, 54);
             SupplersButton.Text = "Suppler";
-            // 
-            // CustomersButton
-            // 
-            CustomersButton.BackColor = Color.LightSkyBlue;
-            CustomersButton.Image = (Image)resources.GetObject("CustomersButton.Image");
-            CustomersButton.ImageScaling = ToolStripItemImageScaling.None;
-            CustomersButton.Name = "CustomersButton";
-            CustomersButton.Size = new Size(216, 54);
-            CustomersButton.Text = "Customer";
-            CustomersButton.Click += MenuButton_Click;
+            SupplersButton.Click += MenuButton_Click;
             // 
             // StoreroomsButton
             // 
-            StoreroomsButton.BackColor = Color.DeepSkyBlue;
+            StoreroomsButton.BackColor = Color.LightSkyBlue;
             StoreroomsButton.Image = (Image)resources.GetObject("StoreroomsButton.Image");
             StoreroomsButton.ImageScaling = ToolStripItemImageScaling.None;
             StoreroomsButton.Name = "StoreroomsButton";
             StoreroomsButton.Size = new Size(216, 54);
             StoreroomsButton.Text = "Storeroom";
+            StoreroomsButton.Click += MenuButton_Click;
             // 
             // StorekeepersButton
             // 
-            StorekeepersButton.BackColor = Color.LightSkyBlue;
+            StorekeepersButton.BackColor = Color.DeepSkyBlue;
             StorekeepersButton.Image = (Image)resources.GetObject("StorekeepersButton.Image");
             StorekeepersButton.ImageScaling = ToolStripItemImageScaling.None;
             StorekeepersButton.Name = "StorekeepersButton";
             StorekeepersButton.Size = new Size(216, 54);
             StorekeepersButton.Text = "Storekeeper";
+            StorekeepersButton.Click += MenuButton_Click;
             // 
-            // UnitsButton
+            // MaesureUnitsButton
             // 
-            UnitsButton.BackColor = Color.DeepSkyBlue;
-            UnitsButton.Image = (Image)resources.GetObject("UnitsButton.Image");
-            UnitsButton.ImageScaling = ToolStripItemImageScaling.None;
-            UnitsButton.Name = "UnitsButton";
-            UnitsButton.Size = new Size(216, 54);
-            UnitsButton.Text = "Unit";
+            MaesureUnitsButton.BackColor = Color.LightSkyBlue;
+            MaesureUnitsButton.Image = (Image)resources.GetObject("MaesureUnitsButton.Image");
+            MaesureUnitsButton.ImageScaling = ToolStripItemImageScaling.None;
+            MaesureUnitsButton.Name = "MaesureUnitsButton";
+            MaesureUnitsButton.Size = new Size(216, 54);
+            MaesureUnitsButton.Text = "Unit";
+            MaesureUnitsButton.Click += MenuButton_Click;
             // 
             // CountriesButton
             // 
-            CountriesButton.BackColor = Color.LightSkyBlue;
+            CountriesButton.BackColor = Color.DeepSkyBlue;
             CountriesButton.Image = (Image)resources.GetObject("CountriesButton.Image");
             CountriesButton.ImageScaling = ToolStripItemImageScaling.None;
             CountriesButton.Name = "CountriesButton";
             CountriesButton.Size = new Size(216, 54);
             CountriesButton.Text = "Country";
+            CountriesButton.Click += MenuButton_Click;
             // 
-            // LoginHistorButton
+            // LoginsHistorButton
             // 
-            LoginHistorButton.BackColor = Color.DeepSkyBlue;
-            LoginHistorButton.Image = (Image)resources.GetObject("LoginHistorButton.Image");
-            LoginHistorButton.ImageScaling = ToolStripItemImageScaling.None;
-            LoginHistorButton.Name = "LoginHistorButton";
-            LoginHistorButton.Size = new Size(216, 54);
-            LoginHistorButton.Text = "Login Histor";
+            LoginsHistorButton.BackColor = Color.LightSkyBlue;
+            LoginsHistorButton.Image = (Image)resources.GetObject("LoginsHistorButton.Image");
+            LoginsHistorButton.ImageScaling = ToolStripItemImageScaling.None;
+            LoginsHistorButton.Name = "LoginsHistorButton";
+            LoginsHistorButton.Size = new Size(216, 54);
+            LoginsHistorButton.Text = "Login Histor";
+            LoginsHistorButton.Click += MenuButton_Click;
             // 
             // AccessButton
             // 
-            AccessButton.BackColor = Color.LightSkyBlue;
+            AccessButton.BackColor = Color.DeepSkyBlue;
             AccessButton.Image = (Image)resources.GetObject("AccessButton.Image");
             AccessButton.ImageScaling = ToolStripItemImageScaling.None;
             AccessButton.Name = "AccessButton";
@@ -162,7 +182,7 @@
             // 
             // PasswordButton
             // 
-            PasswordButton.BackColor = Color.DeepSkyBlue;
+            PasswordButton.BackColor = Color.LightSkyBlue;
             PasswordButton.Image = (Image)resources.GetObject("PasswordButton.Image");
             PasswordButton.ImageScaling = ToolStripItemImageScaling.None;
             PasswordButton.Name = "PasswordButton";
@@ -172,7 +192,7 @@
             // 
             // BackupButton
             // 
-            BackupButton.BackColor = Color.LightSkyBlue;
+            BackupButton.BackColor = Color.DeepSkyBlue;
             BackupButton.Image = (Image)resources.GetObject("BackupButton.Image");
             BackupButton.ImageScaling = ToolStripItemImageScaling.None;
             BackupButton.Name = "BackupButton";
@@ -182,59 +202,92 @@
             // 
             // AboutButton
             // 
-            AboutButton.BackColor = Color.DeepSkyBlue;
+            AboutButton.BackColor = Color.LightSkyBlue;
             AboutButton.Image = (Image)resources.GetObject("AboutButton.Image");
             AboutButton.ImageScaling = ToolStripItemImageScaling.None;
             AboutButton.Name = "AboutButton";
             AboutButton.Size = new Size(216, 54);
             AboutButton.Text = "About us";
+            AboutButton.Click += MenuButton_Click;
             // 
-            // ProductsButton
+            // RequestInMainFormButton
             // 
-            ProductsButton.AutoSize = false;
-            ProductsButton.BackColor = Color.Orange;
-            ProductsButton.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            ProductsButton.Image = (Image)resources.GetObject("ProductsButton.Image");
-            ProductsButton.ImageScaling = ToolStripItemImageScaling.None;
-            ProductsButton.ImageTransparentColor = Color.Magenta;
-            ProductsButton.Name = "ProductsButton";
-            ProductsButton.Size = new Size(100, 76);
-            ProductsButton.Text = "Product";
-            ProductsButton.TextImageRelation = TextImageRelation.ImageAboveText;
-            ProductsButton.Click += Button_Click;
+            RequestInMainFormButton.AutoSize = false;
+            RequestInMainFormButton.BackColor = Color.Orange;
+            RequestInMainFormButton.Image = (Image)resources.GetObject("RequestInMainFormButton.Image");
+            RequestInMainFormButton.ImageScaling = ToolStripItemImageScaling.None;
+            RequestInMainFormButton.ImageTransparentColor = Color.Magenta;
+            RequestInMainFormButton.Name = "RequestInMainFormButton";
+            RequestInMainFormButton.Size = new Size(170, 80);
+            RequestInMainFormButton.Text = "Request";
+            RequestInMainFormButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            RequestInMainFormButton.Click += Button_Click;
             // 
-            // ReportsButton
+            // InventoryTransferInMainFormButton
             // 
-            ReportsButton.AutoSize = false;
-            ReportsButton.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            ReportsButton.Image = (Image)resources.GetObject("ReportsButton.Image");
-            ReportsButton.ImageScaling = ToolStripItemImageScaling.None;
-            ReportsButton.ImageTransparentColor = Color.Magenta;
-            ReportsButton.Name = "ReportsButton";
-            ReportsButton.Size = new Size(100, 76);
-            ReportsButton.Text = "Report";
-            ReportsButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            InventoryTransferInMainFormButton.AutoSize = false;
+            InventoryTransferInMainFormButton.Image = (Image)resources.GetObject("InventoryTransferInMainFormButton.Image");
+            InventoryTransferInMainFormButton.ImageScaling = ToolStripItemImageScaling.None;
+            InventoryTransferInMainFormButton.ImageTransparentColor = Color.Magenta;
+            InventoryTransferInMainFormButton.Name = "InventoryTransferInMainFormButton";
+            InventoryTransferInMainFormButton.Size = new Size(100, 80);
+            InventoryTransferInMainFormButton.Text = "Transfers";
+            InventoryTransferInMainFormButton.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
-            // MessagesButton
+            // FactorInMainFormButton
             // 
-            MessagesButton.AutoSize = false;
-            MessagesButton.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            MessagesButton.Image = (Image)resources.GetObject("MessagesButton.Image");
-            MessagesButton.ImageScaling = ToolStripItemImageScaling.None;
-            MessagesButton.ImageTransparentColor = Color.Magenta;
-            MessagesButton.Name = "MessagesButton";
-            MessagesButton.Size = new Size(100, 76);
-            MessagesButton.Text = "Message";
-            MessagesButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            FactorInMainFormButton.AutoSize = false;
+            FactorInMainFormButton.Image = (Image)resources.GetObject("FactorInMainFormButton.Image");
+            FactorInMainFormButton.ImageScaling = ToolStripItemImageScaling.None;
+            FactorInMainFormButton.ImageTransparentColor = Color.Magenta;
+            FactorInMainFormButton.Name = "FactorInMainFormButton";
+            FactorInMainFormButton.Size = new Size(100, 80);
+            FactorInMainFormButton.Text = "Factor";
+            FactorInMainFormButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // ShopingInMainFormButton
+            // 
+            ShopingInMainFormButton.AutoSize = false;
+            ShopingInMainFormButton.Image = (Image)resources.GetObject("ShopingInMainFormButton.Image");
+            ShopingInMainFormButton.ImageScaling = ToolStripItemImageScaling.None;
+            ShopingInMainFormButton.ImageTransparentColor = Color.Magenta;
+            ShopingInMainFormButton.Name = "ShopingInMainFormButton";
+            ShopingInMainFormButton.Size = new Size(100, 80);
+            ShopingInMainFormButton.Text = "Shoping";
+            ShopingInMainFormButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // ReportsInMainFormButton
+            // 
+            ReportsInMainFormButton.AutoSize = false;
+            ReportsInMainFormButton.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ReportsInMainFormButton.Image = (Image)resources.GetObject("ReportsInMainFormButton.Image");
+            ReportsInMainFormButton.ImageScaling = ToolStripItemImageScaling.None;
+            ReportsInMainFormButton.ImageTransparentColor = Color.Magenta;
+            ReportsInMainFormButton.Name = "ReportsInMainFormButton";
+            ReportsInMainFormButton.Size = new Size(100, 76);
+            ReportsInMainFormButton.Text = "Reports";
+            ReportsInMainFormButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // MessagesInMainFormButton
+            // 
+            MessagesInMainFormButton.AutoSize = false;
+            MessagesInMainFormButton.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            MessagesInMainFormButton.Image = (Image)resources.GetObject("MessagesInMainFormButton.Image");
+            MessagesInMainFormButton.ImageScaling = ToolStripItemImageScaling.None;
+            MessagesInMainFormButton.ImageTransparentColor = Color.Magenta;
+            MessagesInMainFormButton.Name = "MessagesInMainFormButton";
+            MessagesInMainFormButton.Size = new Size(100, 76);
+            MessagesInMainFormButton.Text = "Messages";
+            MessagesInMainFormButton.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 79);
+            pictureBox1.Location = new Point(0, 83);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(429, 389);
+            pictureBox1.Size = new Size(788, 385);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -246,13 +299,12 @@
             Appearance.Options.UseFont = true;
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(429, 468);
+            ClientSize = new Size(788, 468);
             Controls.Add(pictureBox1);
             Controls.Add(toolStrip1);
             Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(7, 9, 7, 9);
             Name = "MainForm";
-            ShowInTaskbar = false;
             Text = "MainForm";
             Load += MainForm_Load;
             toolStrip1.ResumeLayout(false);
@@ -265,22 +317,26 @@
         #endregion
 
         private ToolStrip toolStrip1;
-        private ToolStripButton ProductsButton;
-        private ToolStripButton MessagesButton;
-        private ToolStripButton ReportsButton;
+        private ToolStripButton MessagesInMainFormButton;
+        private ToolStripButton ReportsInMainFormButton;
         private ToolStripDropDownButton MenuButton;
         private ToolStripMenuItem UsersButton;
         private ToolStripMenuItem AccessButton;
         private ToolStripMenuItem PasswordButton;
-        private ToolStripMenuItem CustomersButton;
         private ToolStripMenuItem BackupButton;
         private PictureBox pictureBox1;
         private ToolStripMenuItem AboutButton;
         private ToolStripMenuItem SupplersButton;
         private ToolStripMenuItem StoreroomsButton;
         private ToolStripMenuItem StorekeepersButton;
-        private ToolStripMenuItem UnitsButton;
+        private ToolStripMenuItem MaesureUnitsButton;
         private ToolStripMenuItem CountriesButton;
-        private ToolStripMenuItem LoginHistorButton;
+        private ToolStripMenuItem LoginsHistorButton;
+        private ToolStripButton RequestInMainFormButton;
+        private ToolStripMenuItem CustomersButton;
+        private ToolStripMenuItem ProductsButton;
+        private ToolStripButton InventoryTransferInMainFormButton;
+        private ToolStripButton FactorInMainFormButton;
+        private ToolStripButton ShopingInMainFormButton;
     }
 }

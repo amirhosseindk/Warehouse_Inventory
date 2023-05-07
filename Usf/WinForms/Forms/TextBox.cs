@@ -12,7 +12,6 @@ namespace Usf.WinForms.Forms
         {
             this.BackColor = Color.LemonChiffon;
             this.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.Multiline = true;
             this.Name = "TextBox";
             this.Size = new Size(200, 35);
             this.TextAlign = HorizontalAlignment.Center;

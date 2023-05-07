@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using MyApplication.Ui;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,26 +24,20 @@ namespace MyApplication
             ResourceManager resource = new ResourceManager
                 ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
-            ProductsButton.Text =
-                resource.GetString(name: nameof(ProductsButton));
-
-            ReportsButton.Text =
-                resource.GetString(name: nameof(ReportsButton));
-
-            MessagesButton.Text =
-                resource.GetString(name: nameof(MessagesButton));
-
             MenuButton.Text =
                 resource.GetString(name: nameof(MenuButton));
 
             UsersButton.Text =
-                resource.GetString(name: nameof(UsersButton));
-
-            SupplersButton.Text =
-                resource.GetString(name: nameof(SupplersButton));
+               resource.GetString(name: nameof(UsersButton));
 
             CustomersButton.Text =
                 resource.GetString(name: nameof(CustomersButton));
+
+            ProductsButton.Text =
+                resource.GetString(name: nameof(ProductsButton));
+
+            SupplersButton.Text =
+                resource.GetString(name: nameof(SupplersButton));
 
             StoreroomsButton.Text =
                 resource.GetString(name: nameof(StoreroomsButton));
@@ -50,11 +45,14 @@ namespace MyApplication
             StorekeepersButton.Text =
                 resource.GetString(name: nameof(StorekeepersButton));
 
-            UnitsButton.Text =
-                resource.GetString(name: nameof(UnitsButton));
+            MaesureUnitsButton.Text =
+                resource.GetString(name: nameof(MaesureUnitsButton));
 
             CountriesButton.Text =
                 resource.GetString(name: nameof(CountriesButton));
+
+            LoginsHistorButton.Text =
+                resource.GetString(name: nameof(LoginsHistorButton));
 
             AccessButton.Text =
                 resource.GetString(name: nameof(AccessButton));
@@ -68,10 +66,28 @@ namespace MyApplication
             AboutButton.Text =
                 resource.GetString(name: nameof(AboutButton));
 
+            RequestInMainFormButton.Text =
+               resource.GetString(name: nameof(RequestInMainFormButton));
+
+            InventoryTransferInMainFormButton.Text =
+                resource.GetString(name: nameof(InventoryTransferInMainFormButton));
+
+            FactorInMainFormButton.Text =
+                resource.GetString(name: nameof(FactorInMainFormButton));
+
+            ShopingInMainFormButton.Text =
+                resource.GetString(name: nameof(ShopingInMainFormButton));
+
+            ReportsInMainFormButton.Text =
+                resource.GetString(name: nameof(ReportsInMainFormButton));
+
+            MessagesInMainFormButton.Text =
+                resource.GetString(name: nameof(MessagesInMainFormButton));
+
             this.Text =
                 resource.GetString(name: nameof(MainForm));
 
-            #endregion / Language
+            #endregion /Language
 
         }
 
@@ -85,7 +101,7 @@ namespace MyApplication
             }
         }
 
-        // Click on Setting Button 
+        // Click on Menu Button 
         private void MenuButton_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolStripMenuItem? Itembutton =
@@ -100,6 +116,21 @@ namespace MyApplication
                             new UsersForm().ShowDialog();
                             break;
                         }
+                    case "CustomersButton":
+                        {
+                            new CustomersForm().ShowDialog();
+                            break;
+                        }
+                    case "ProductsButton":
+                        {
+                            new ProductsForm().ShowDialog();
+                            break;
+                        }
+                    case "SupplersButton":
+                        {
+                            new SupplersForm().ShowDialog();
+                            break;
+                        }
                     case "AccessButton":
                         {
                             new AccessForm().ShowDialog();
@@ -108,11 +139,6 @@ namespace MyApplication
                     case "PasswordButton":
                         {
                             new PasswordForm().ShowDialog();
-                            break;
-                        }
-                    case "CustomersButton":
-                        {
-                            new CustomerForm().ShowDialog();
                             break;
                         }
                     case "BackupButton":
@@ -134,9 +160,9 @@ namespace MyApplication
             {
                 switch (button.Name)
                 {
-                    case "ProductsButton":
+                    case "RequestInMainFormButton":
                         {
-                            new ProductsForm().ShowDialog();
+                            new RequestForm().ShowDialog();
                             break;
                         }
 
