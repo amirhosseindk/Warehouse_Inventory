@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class UnitMeasure
+    public class UnitMeasure : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the unit of measurement.

@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class Supplier
+    public class Supplier : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the supplier.

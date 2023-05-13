@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class Consumer
+    public class Consumer : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the Consumer.

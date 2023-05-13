@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class Commodity
+    public class Commodity : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the Commodity.

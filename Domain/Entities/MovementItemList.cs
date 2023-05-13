@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class MovementItemList
+    public class MovementItemList : BaseEntity
     {
         /// <summary>
         /// The foreign key to the commodity.

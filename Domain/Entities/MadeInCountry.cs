@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class MadeInCountry
+    public class MadeInCountry : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the made in country.

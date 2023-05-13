@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class Warehouse
+    public class Warehouse : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the warehouse.

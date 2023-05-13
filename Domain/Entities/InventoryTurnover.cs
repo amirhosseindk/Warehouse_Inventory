@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class InventoryTurnover
+    public class InventoryTurnover : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the inventory turnover.

@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class Category
+    public class Category : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the category.

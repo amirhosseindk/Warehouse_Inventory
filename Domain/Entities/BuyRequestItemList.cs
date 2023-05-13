@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class BuyRequestItemList
+    public class BuyRequestItemList : BaseEntity
     {
         /// <summary>
         /// The unique identifier for the Receipt item list.

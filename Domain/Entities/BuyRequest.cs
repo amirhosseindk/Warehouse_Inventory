@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class BuyRequest
+    public class BuyRequest : BaseEntity
     {
         [Key]
         public Guid BuyRequestId { get; set; }

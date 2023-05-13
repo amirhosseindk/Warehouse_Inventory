@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
         [Key]
         public Guid UserId { get; set; }
@@ -12,9 +12,6 @@ namespace Domain.Entities
 
         [Required]
         public string LastName { get; set; }
-
-        [Required]
-        public string Username { get; set; }
 
         [Required]
         [EmailAddress]
@@ -29,8 +26,5 @@ namespace Domain.Entities
 
         [Required]
         public string Role { get; set; }
-
-        [Required]
-        public bool IsActive { get; set; }
     }
 }
