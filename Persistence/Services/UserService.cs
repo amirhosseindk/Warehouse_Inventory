@@ -1,8 +1,6 @@
 ﻿using Application.IServices;
 using Domain.Dto;
-using Domain.Entities;
 using Mapster;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Authentication;
 
 namespace Persistence.Services
@@ -40,10 +38,8 @@ namespace Persistence.Services
 
         public async Task<UserDto> UpdateUserAsync(UserDto userDto, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetByIdAsync(userDto.UserId, cancellationToken);
-            user = userDto.Adapt<User>();
-            await _userRepository.UpdateAsync(user, cancellationToken);
-            return user.Adapt<UserDto>();
+            await _userCommandService.UpdateUserAsync(userDto, cancellationToken);
+            return userDto;
         }
 
         public async Task DeleteUserAsync(Guid userId, CancellationToken cancellationToken)

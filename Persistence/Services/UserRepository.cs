@@ -23,7 +23,7 @@ namespace Persistence.Repositories
             return await _context.Users.SingleOrDefaultAsync(u => u.Username == username, cancellationToken);
         }
 
-        public async Task AddAsync(User user, CancellationToken cancellationToken)
+        public async Task CreateAsync(User user, CancellationToken cancellationToken)
         {
             _context.Users.Add(user);
             await _context.SaveChangesAsync(cancellationToken);

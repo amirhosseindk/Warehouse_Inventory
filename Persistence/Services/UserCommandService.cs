@@ -4,7 +4,6 @@ using Domain.Entities;
 using FluentValidation;
 using Mapster;
 using Microsoft.Extensions.Logging;
-using Persistence.Migrations;
 
 namespace Persistence.Services
 {
@@ -37,12 +36,35 @@ namespace Persistence.Services
 
             try
             {
-                await _unitOfWork.Users.AddAsync(user, cancellationToken);
+                await _unitOfWork.Users.CreateAsync(user, cancellationToken);
                 await _unitOfWork.CompleteAsync(cancellationToken);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error creating user {User}", userDto);
+                throw;
+            }
+        }
+
+        public async Task UpdateUserAsync(UserDto userDto, CancellationToken cancellationToken)
+        {
+            var validationResult = await _validator.ValidateAsync(userDto, cancellationToken);
+            if (!validationResult.IsValid)
+            {
+                throw new FluentValidation.ValidationException(validationResult.Errors);
+            }
+
+            var user = userDto.Adapt<User>();
+            user.Password = _passwordHasher.HashPassword(userDto.Password);
+
+            try
+            {
+                await _unitOfWork.Users.UpdateAsync(user, cancellationToken);
+                await _unitOfWork.CompleteAsync(cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating user {User}", userDto);
                 throw;
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace Application.IServices
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         IUserRepository Users { get; }
         Task<int> CompleteAsync(CancellationToken cancellationToken);
