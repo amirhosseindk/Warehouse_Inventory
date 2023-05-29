@@ -1,47 +1,73 @@
 ﻿using Application.IServices;
+using Domain.Dto;
 using Domain.Entities;
+using Mapster;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Authentication;
 
 namespace Persistence.Services
 {
     public class UserService : IUserService
     {
-        private readonly DatabaseContext _context;
+        private readonly IUserRepository _userRepository;
+        private readonly IUserCommandService _userCommandService;
+        private readonly IPasswordHasher _passwordHasher;
 
-        public UserService(DatabaseContext context)
+        public UserService(IUserRepository userRepository, IUserCommandService userCommandService, IPasswordHasher passwordHasher)
         {
-            _context = context;
+            _userRepository = userRepository;
+            _userCommandService = userCommandService;
+            _passwordHasher = passwordHasher;
         }
 
-        public async Task<User> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken)
+        public async Task<UserDto> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken)
         {
-            return await _context.Users.SingleOrDefaultAsync(u => u.UserId == userId, cancellationToken);
+            var user = await _userRepository.GetByIdAsync(userId, cancellationToken);
+            return user.Adapt<UserDto>();
         }
 
-        public async Task<IEnumerable<User>> GetUsersAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<UserDto>> GetUsersAsync(CancellationToken cancellationToken)
         {
-            return await _context.Users.ToListAsync(cancellationToken);
+            var users = await _userRepository.GetAllAsync(cancellationToken);
+            return users.Adapt<IEnumerable<UserDto>>();
         }
 
-        public async Task<User> CreateUserAsync(User user, CancellationToken cancellationToken)
+        public async Task<UserDto> CreateUserAsync(UserDto userDto, CancellationToken cancellationToken)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync(cancellationToken);
-            return user;
+            await _userCommandService.CreateUserAsync(userDto, cancellationToken);
+            return userDto;
         }
 
-        public async Task<User> UpdateUserAsync(User user, CancellationToken cancellationToken)
+        public async Task<UserDto> UpdateUserAsync(UserDto userDto, CancellationToken cancellationToken)
         {
-            _context.Entry(user).State = EntityState.Modified;
-            await _context.SaveChangesAsync(cancellationToken);
-            return user;
+            var user = await _userRepository.GetByIdAsync(userDto.UserId, cancellationToken);
+            user = userDto.Adapt<User>();
+            await _userRepository.UpdateAsync(user, cancellationToken);
+            return user.Adapt<UserDto>();
         }
 
         public async Task DeleteUserAsync(Guid userId, CancellationToken cancellationToken)
         {
-            User user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == userId, cancellationToken);
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync(cancellationToken);
+            await _userRepository.DeleteAsync(userId, cancellationToken);
+        }
+
+        public async Task<UserDto> AuthenticateAsync(string username, string password, CancellationToken cancellationToken)
+        {
+            var user = await _userRepository.GetByUsernameAsync(username, cancellationToken);
+
+            if (user == null)
+            {
+                throw new AuthenticationException("Username or password is incorrect");
+            }
+
+            var verified = _passwordHasher.VerifyPassword(user.Password, password);
+
+            if (!verified)
+            {
+                throw new AuthenticationException("Username or password is incorrect");
+            }
+
+            return user.Adapt<UserDto>();
         }
     }
 

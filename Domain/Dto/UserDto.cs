@@ -1,31 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Domain.Entities
+﻿namespace Domain.Dto
 {
-    public class User : BaseEntity
+    public class UserDto
     {
-        [Key]
         public Guid UserId { get; set; }
-
-        [Required]
         public string FirstName { get; set; }
-
-        [Required]
         public string LastName { get; set; }
-
-        [EmailAddress]
         public string Email { get; set; }
-
-        [Required]
-        public string Username { get; set; }
-        [Required]
-        public string Password { get; set; }
-
-        public string Address { get; set; }
-
-        public string PhoneNumber { get; set; }
-
-        [Required]
         public string Role { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }
