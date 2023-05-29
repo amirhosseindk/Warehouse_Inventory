@@ -114,7 +114,7 @@ namespace MyApplication
 
             Properties.Settings.Default.Save();
 
-            Application.Restart();
+            System.Windows.Forms.Application.Restart();
         }
 
         // Exit

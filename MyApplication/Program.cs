@@ -1,5 +1,6 @@
 using DevExpress.LookAndFeel.Design;
 using DevExpress.XtraRichEdit.Model;
+using System.Windows.Forms;
 using System.Globalization;                  // ADD \\
 
 namespace MyApplication
@@ -40,7 +41,7 @@ namespace MyApplication
 
                         Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 
-                        Application.CurrentInputLanguage = InputLanguage
+                        System.Windows.Forms.Application.CurrentInputLanguage = InputLanguage
                             .FromCulture(CultureInfo.CreateSpecificCulture("en-US"));
 
                         break;
@@ -52,7 +53,7 @@ namespace MyApplication
 
                         Thread.CurrentThread.CurrentUICulture = new CultureInfo("fa-IR");
 
-                        Application.CurrentInputLanguage = InputLanguage
+                        System.Windows.Forms.Application.CurrentInputLanguage = InputLanguage
                             .FromCulture(CultureInfo.CreateSpecificCulture("fa-IR"));
 
                         break;
@@ -65,11 +66,11 @@ namespace MyApplication
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
+            System.Windows.Forms.Application.Run(new LoginForm());
 
             if (CheckLogin)
             {
-                Application.Run(new MainForm());
+                System.Windows.Forms.Application.Run(new MainForm());
             }
 
         }

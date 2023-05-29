@@ -29,5 +29,4 @@ namespace Domain.Entities
         /// </summary>
         public virtual ICollection<Commodity> Commodities { get; set; }
     }
-
 }

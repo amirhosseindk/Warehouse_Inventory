@@ -126,17 +126,35 @@
   <data name="AccessForm" xml:space="preserve">
     <value>فرم دسترسی کاربران</value>
   </data>
+  <data name="ActiveCheckBox" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="AddressLabel" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
   <data name="AddToRequestButton" xml:space="preserve">
     <value>افزودن به درخواست</value>
   </data>
   <data name="AddToShopingButton" xml:space="preserve">
     <value>افزودن به خرید</value>
   </data>
+  <data name="Age" xml:space="preserve">
+    <value>سن</value>
+  </data>
+  <data name="AgeLabel" xml:space="preserve">
+    <value>سن</value>
+  </data>
   <data name="BackupButton" xml:space="preserve">
     <value>پشتیبان گیری</value>
   </data>
   <data name="BackupForm" xml:space="preserve">
     <value>فرم پشتیبان گیری</value>
+  </data>
+  <data name="Birthdate" xml:space="preserve">
+    <value>تولد</value>
+  </data>
+  <data name="BirthdateLabel" xml:space="preserve">
+    <value>تاریخ تولد</value>
   </data>
   <data name="CountLabel" xml:space="preserve">
     <value>تعداد</value>
@@ -147,26 +165,17 @@
   <data name="CustomerCode" xml:space="preserve">
     <value>کد</value>
   </data>
-  <data name="CustomerFirstName" xml:space="preserve">
-    <value>نام</value>
-  </data>
   <data name="CustomerForm" xml:space="preserve">
     <value>فرم مشتریان</value>
   </data>
   <data name="CustomerLabel" xml:space="preserve">
     <value>مشتری</value>
   </data>
-  <data name="CustomerLastName" xml:space="preserve">
-    <value>نام خانوادگی</value>
-  </data>
   <data name="CustomersButton" xml:space="preserve">
     <value>مشتریان</value>
   </data>
   <data name="CustomersForm" xml:space="preserve">
     <value>فرم مشتریان</value>
-  </data>
-  <data name="CustomerTel" xml:space="preserve">
-    <value>تلفن</value>
   </data>
   <data name="CustomerType" xml:space="preserve">
     <value>نوع</value>
@@ -177,6 +186,21 @@
   <data name="DeleteButton" xml:space="preserve">
     <value>حذف</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="EditButton" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="End Date" xml:space="preserve">
+    <value>تاریخ پایان</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>تاریخ پایان</value>
+  </data>
   <data name="EnterButton" xml:space="preserve">
     <value>ورود</value>
   </data>
@@ -185,6 +209,18 @@
   </data>
   <data name="FactorInMainFormButton" xml:space="preserve">
     <value>فاکتور</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="FirstNameLabel" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>جنسیت</value>
+  </data>
+  <data name="GenderLabel" xml:space="preserve">
+    <value>جنسیت</value>
   </data>
   <data name="InventoryTransferButton" xml:space="preserve">
     <value>ثبت حواله</value>
@@ -201,6 +237,12 @@
   <data name="LanguageLabel" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="LastName" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="LastNameLabel" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
   <data name="LoginForm" xml:space="preserve">
     <value>ورود به سیستم</value>
   </data>
@@ -213,6 +255,9 @@
   <data name="MainForm" xml:space="preserve">
     <value>سیستم انبارداری</value>
   </data>
+  <data name="MenRadioButton" xml:space="preserve">
+    <value>آقا</value>
+  </data>
   <data name="MenuButton" xml:space="preserve">
     <value>تنظیمات</value>
   </data>
@@ -224,6 +269,9 @@
   </data>
   <data name="NumberLabel" xml:space="preserve">
     <value>شماره</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>کلمه عبور</value>
   </data>
   <data name="PasswordButton" xml:space="preserve">
     <value>رمز عبور</value>
@@ -360,6 +408,12 @@
   <data name="RialsLabel" xml:space="preserve">
     <value>ریال</value>
   </data>
+  <data name="RolLabel" xml:space="preserve">
+    <value>سمت</value>
+  </data>
+  <data name="SaveButton" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
   <data name="SearchCustomerLabel" xml:space="preserve">
     <value>جستجو</value>
   </data>
@@ -371,6 +425,18 @@
   </data>
   <data name="ShopingInMainFormButton" xml:space="preserve">
     <value>خرید</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاریخ شروع</value>
+  </data>
+  <data name="StartDateLabel" xml:space="preserve">
+    <value>تاریخ شروع</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="StatusButton" xml:space="preserve">
+    <value>فعال/غیرفعال</value>
   </data>
   <data name="StockManagmentToolStripMenuItem" xml:space="preserve">
     <value>مدیریت موجودی</value>
@@ -390,35 +456,14 @@
   <data name="SystemNameLabel" xml:space="preserve">
     <value>سیستم انبارداری</value>
   </data>
+  <data name="TelLabel" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
   <data name="TotalAmountLabel" xml:space="preserve">
     <value>مبلغ کل</value>
   </data>
-  <data name="UserActive" xml:space="preserve">
-    <value>وضعیت</value>
-  </data>
-  <data name="UserAge" xml:space="preserve">
-    <value>سن</value>
-  </data>
-  <data name="UserBirthdate" xml:space="preserve">
-    <value>تاریخ تولد</value>
-  </data>
-  <data name="UserDescription" xml:space="preserve">
-    <value>توضیحات</value>
-  </data>
-  <data name="UserEditButton" xml:space="preserve">
-    <value>ویرایش کاربر</value>
-  </data>
-  <data name="UserEndDate" xml:space="preserve">
-    <value>تاریخ پایان</value>
-  </data>
-  <data name="UserFirstName" xml:space="preserve">
-    <value>نام</value>
-  </data>
-  <data name="UserGender" xml:space="preserve">
-    <value>جنسیت</value>
-  </data>
-  <data name="UserLastName" xml:space="preserve">
-    <value>نام خانوادگی</value>
+  <data name="Username" xml:space="preserve">
+    <value>نام کاربری</value>
   </data>
   <data name="UsernameLabel" xml:space="preserve">
     <value>نام کاربری</value>
@@ -426,8 +471,8 @@
   <data name="UserNewButton" xml:space="preserve">
     <value>کاربر جدید</value>
   </data>
-  <data name="UserPassword" xml:space="preserve">
-    <value>رمز عبور</value>
+  <data name="UsersAddOrEditForm" xml:space="preserve">
+    <value>فرم افزودن کاربر جدید</value>
   </data>
   <data name="UsersButton" xml:space="preserve">
     <value>کاربران سیستم</value>
@@ -435,16 +480,10 @@
   <data name="UsersForm" xml:space="preserve">
     <value>فرم کاربران سیستم</value>
   </data>
-  <data name="UserStartDate" xml:space="preserve">
-    <value>تاریخ شروع</value>
-  </data>
-  <data name="UserStatusButton" xml:space="preserve">
-    <value>فعال/غیرفعال</value>
-  </data>
   <data name="UserTel" xml:space="preserve">
     <value>تلفن</value>
   </data>
-  <data name="UserUsername" xml:space="preserve">
-    <value>نام کاربری</value>
+  <data name="WomenRadioButton" xml:space="preserve">
+    <value>خانم</value>
   </data>
 </root>

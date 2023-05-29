@@ -88,6 +88,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active/InActive.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active/InActive.
+        /// </summary>
+        public static string Active_InActive {
+            get {
+                return ResourceManager.GetString("Active/InActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string ActiveCheckBox {
+            get {
+                return ResourceManager.GetString("ActiveCheckBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string AddressLabel {
+            get {
+                return ResourceManager.GetString("AddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add To Request.
         /// </summary>
         public static string AddToRequestButton {
@@ -106,6 +142,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Age.
+        /// </summary>
+        public static string Age {
+            get {
+                return ResourceManager.GetString("Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Age.
+        /// </summary>
+        public static string AgeLabel {
+            get {
+                return ResourceManager.GetString("AgeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup.
         /// </summary>
         public static string BackupButton {
@@ -120,6 +174,24 @@ namespace Resources {
         public static string BackupForm {
             get {
                 return ResourceManager.GetString("BackupForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birthdate.
+        /// </summary>
+        public static string Birthdate {
+            get {
+                return ResourceManager.GetString("Birthdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birthdate.
+        /// </summary>
+        public static string BirthdateLabel {
+            get {
+                return ResourceManager.GetString("BirthdateLabel", resourceCulture);
             }
         }
         
@@ -241,6 +313,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Edit.
+        /// </summary>
+        public static string EditButton {
+            get {
+                return ResourceManager.GetString("EditButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string EmailLabel {
+            get {
+                return ResourceManager.GetString("EmailLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End Date.
+        /// </summary>
+        public static string End_Date {
+            get {
+                return ResourceManager.GetString("End Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter.
         /// </summary>
         public static string EnterButton {
@@ -264,6 +372,42 @@ namespace Resources {
         public static string FactorInMainFormButton {
             get {
                 return ResourceManager.GetString("FactorInMainFormButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First Name.
+        /// </summary>
+        public static string FirstName {
+            get {
+                return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FirstName.
+        /// </summary>
+        public static string FirstNameLabel {
+            get {
+                return ResourceManager.GetString("FirstNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gender.
+        /// </summary>
+        public static string Gender {
+            get {
+                return ResourceManager.GetString("Gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gender.
+        /// </summary>
+        public static string GenderLabel {
+            get {
+                return ResourceManager.GetString("GenderLabel", resourceCulture);
             }
         }
         
@@ -313,6 +457,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Name.
+        /// </summary>
+        public static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LastName.
+        /// </summary>
+        public static string LastNameLabel {
+            get {
+                return ResourceManager.GetString("LastNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string LoginForm {
@@ -349,6 +511,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Men.
+        /// </summary>
+        public static string MenRadioButton {
+            get {
+                return ResourceManager.GetString("MenRadioButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menu.
         /// </summary>
         public static string MenuButton {
@@ -381,6 +552,15 @@ namespace Resources {
         public static string NumberLabel {
             get {
                 return ResourceManager.GetString("NumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
@@ -601,7 +781,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Active/DeActive.
+        ///   Looks up a localized string similar to Active/InActive.
         /// </summary>
         public static string ProductStatusButton {
             get {
@@ -781,6 +961,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rol.
+        /// </summary>
+        public static string RolLabel {
+            get {
+                return ResourceManager.GetString("RolLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string SaveButton {
+            get {
+                return ResourceManager.GetString("SaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string SearchCustomerLabel {
@@ -813,6 +1011,42 @@ namespace Resources {
         public static string ShopingInMainFormButton {
             get {
                 return ResourceManager.GetString("ShopingInMainFormButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Date.
+        /// </summary>
+        public static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Date.
+        /// </summary>
+        public static string StartDateLabel {
+            get {
+                return ResourceManager.GetString("StartDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active/InActive.
+        /// </summary>
+        public static string StatusButton {
+            get {
+                return ResourceManager.GetString("StatusButton", resourceCulture);
             }
         }
         
@@ -871,56 +1105,20 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tel.
+        /// </summary>
+        public static string TelLabel {
+            get {
+                return ResourceManager.GetString("TelLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Amount.
         /// </summary>
         public static string TotalAmountLabel {
             get {
                 return ResourceManager.GetString("TotalAmountLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Status.
-        /// </summary>
-        public static string UserActive {
-            get {
-                return ResourceManager.GetString("UserActive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Age.
-        /// </summary>
-        public static string UserAge {
-            get {
-                return ResourceManager.GetString("UserAge", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Birthdate.
-        /// </summary>
-        public static string UserBirthdate {
-            get {
-                return ResourceManager.GetString("UserBirthdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Description.
-        /// </summary>
-        public static string UserDescription {
-            get {
-                return ResourceManager.GetString("UserDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Edit.
-        /// </summary>
-        public static string UserEditButton {
-            get {
-                return ResourceManager.GetString("UserEditButton", resourceCulture);
             }
         }
         
@@ -934,29 +1132,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FirstName.
+        ///   Looks up a localized string similar to Username.
         /// </summary>
-        public static string UserFirstName {
+        public static string Username {
             get {
-                return ResourceManager.GetString("UserFirstName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gender.
-        /// </summary>
-        public static string UserGender {
-            get {
-                return ResourceManager.GetString("UserGender", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LastName.
-        /// </summary>
-        public static string UserLastName {
-            get {
-                return ResourceManager.GetString("UserLastName", resourceCulture);
+                return ResourceManager.GetString("Username", resourceCulture);
             }
         }
         
@@ -979,11 +1159,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
+        ///   Looks up a localized string similar to Add New User.
         /// </summary>
-        public static string UserPassword {
+        public static string UsersAddOrEditForm {
             get {
-                return ResourceManager.GetString("UserPassword", resourceCulture);
+                return ResourceManager.GetString("UsersAddOrEditForm", resourceCulture);
             }
         }
         
@@ -1006,25 +1186,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start Date.
-        /// </summary>
-        public static string UserStartDate {
-            get {
-                return ResourceManager.GetString("UserStartDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Active/DeActive.
-        /// </summary>
-        public static string UserStatusButton {
-            get {
-                return ResourceManager.GetString("UserStatusButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tel.
+        ///   Looks up a localized string similar to User Tel.
         /// </summary>
         public static string UserTel {
             get {
@@ -1033,11 +1195,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username.
+        ///   Looks up a localized string similar to Women.
         /// </summary>
-        public static string UserUsername {
+        public static string WomenRadioButton {
             get {
-                return ResourceManager.GetString("UserUsername", resourceCulture);
+                return ResourceManager.GetString("WomenRadioButton", resourceCulture);
             }
         }
     }
