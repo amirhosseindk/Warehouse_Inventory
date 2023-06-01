@@ -1,21 +1,17 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using Application.IServices;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MyApplication.Ui
 {
     public partial class UsersAddOrEditForm : Usf.WinForms.Forms.Form
     {
-        public UsersAddOrEditForm()
+        private readonly IUserService _userService;
+        private readonly IUserDtoValidator _userDtoValidator;
+
+        public UsersAddOrEditForm(IUserService userService, IUserDtoValidator userDtoValidator)
         {
+            _userService = userService;
+            _userDtoValidator = userDtoValidator;
             InitializeComponent();
 
             #region Language
@@ -72,6 +68,7 @@ namespace MyApplication.Ui
                 resource.GetString(name: nameof(SaveButton));
 
             this.Text = resource.GetString(name: nameof(UsersAddOrEditForm));
+            _userDtoValidator = userDtoValidator;
 
             #endregion / Language
         }
@@ -85,6 +82,36 @@ namespace MyApplication.Ui
                 this.RightToLeftLayout = true;
                 AddressTextBox.TextAlign = HorizontalAlignment.Left;
             }
+        }
+
+        private async void SaveButton_Click(object sender, EventArgs e)
+        {
+                var userDto = new Application.Dto.UserDto
+                {
+                    FirstName = FirstNameTextBox.Text,
+                    LastName = textBox1.Text,
+                    PhoneNumber = TelTextBox.Text,
+                    Email = EmailTextBox.Text,
+                    Username = UsernameTextBox.Text,
+                    Password = PasswordTextBox.Text,
+                    Role = "admin",
+                    Address = AddressTextBox.Text,
+                    UserId = Guid.NewGuid(),
+                };
+                var validationResult = _userDtoValidator.Validate(userDto);
+                if (validationResult.IsValid)
+                {
+                    await _userService.CreateUserAsync(userDto, CancellationToken.None);
+                }
+                else
+                {
+                    foreach (var error in validationResult.Errors)
+                    {
+                        MessageBox.Show($"Property: {error.PropertyName}, Error: {error.ErrorMessage}");
+                    }
+                }
+            
+
         }
     }
 }

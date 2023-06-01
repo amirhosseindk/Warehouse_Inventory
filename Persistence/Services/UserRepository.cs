@@ -47,7 +47,8 @@ namespace Persistence.Repositories
 
         public async Task<IEnumerable<User>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _context.Users.ToListAsync(cancellationToken);
+            var usersUR = await _context.Users.ToListAsync(cancellationToken);
+            return usersUR;
         }
     }
 }

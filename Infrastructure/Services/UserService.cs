@@ -1,9 +1,10 @@
-﻿using Application.IServices;
-using Domain.Dto;
+﻿using Application.Dto;
+using Application.IServices;
+using Infrastructure.IServices;
 using Mapster;
 using System.Security.Authentication;
 
-namespace Persistence.Services
+namespace Infrastructure.Services
 {
     public class UserService : IUserService
     {
@@ -26,8 +27,8 @@ namespace Persistence.Services
 
         public async Task<IEnumerable<UserDto>> GetUsersAsync(CancellationToken cancellationToken)
         {
-            var users = await _userRepository.GetAllAsync(cancellationToken);
-            return users.Adapt<IEnumerable<UserDto>>();
+            var usersUS = await _userRepository.GetAllAsync(cancellationToken);
+            return usersUS.Adapt<IEnumerable<UserDto>>();
         }
 
         public async Task<UserDto> CreateUserAsync(UserDto userDto, CancellationToken cancellationToken)

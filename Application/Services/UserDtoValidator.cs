@@ -1,9 +1,10 @@
-﻿using Domain.Dto;
+﻿using Application.Dto;
+using Application.IServices;
 using FluentValidation;
 
-namespace Persistence.Services
+namespace Application.Services
 {
-    public class UserDtoValidator : AbstractValidator<UserDto>
+    public class UserDtoValidator : AbstractValidator<UserDto>, IUserDtoValidator
     {
         public UserDtoValidator()
         {
@@ -13,7 +14,7 @@ namespace Persistence.Services
             RuleFor(x => x.Username).NotEmpty().MinimumLength(3);
             RuleFor(x => x.Password).NotEmpty().MinimumLength(8);
             RuleFor(x => x.Role).NotEmpty();
-            RuleFor(x => x.Email).EmailAddress();          
+            RuleFor(x => x.Email).EmailAddress();
         }
     }
 }

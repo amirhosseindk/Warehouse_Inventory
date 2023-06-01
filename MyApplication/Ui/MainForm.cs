@@ -1,15 +1,7 @@
-﻿using DevExpress.XtraEditors;
+﻿using Application.IServices;
+using Microsoft.Extensions.DependencyInjection;
 using MyApplication.Ui;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MyApplication
 {
@@ -113,7 +105,11 @@ namespace MyApplication
                 {
                     case "UsersButton":
                         {
-                            new UsersForm().ShowDialog();
+                            using (var scope = Program.ServiceProvider.CreateScope())
+                            {
+                                var form = scope.ServiceProvider.GetRequiredService<UsersForm>();
+                                form.ShowDialog();
+                            }
                             break;
                         }
                     case "CustomersButton":

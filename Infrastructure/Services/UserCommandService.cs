@@ -1,22 +1,23 @@
-﻿using Application.IServices;
-using Domain.Dto;
+﻿using Application.Dto;
+using Application.IServices;
 using Domain.Entities;
 using FluentValidation;
+using Infrastructure.IServices;
 using Mapster;
 using Microsoft.Extensions.Logging;
 
-namespace Persistence.Services
+namespace Infrastructure.Services
 {
     public class UserCommandService : IUserCommandService
     {
-        private readonly ILogger<UserCommandService> _logger;
+        //private readonly ILogger<UserCommandService> _logger;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IValidator<UserDto> _validator;
         private readonly IPasswordHasher _passwordHasher;
 
-        public UserCommandService(ILogger<UserCommandService> logger, IUnitOfWork unitOfWork, IValidator<UserDto> validator, IPasswordHasher passwordHasher)
+        public UserCommandService(/*ILogger<UserCommandService> logger,*/ IUnitOfWork unitOfWork, IValidator<UserDto> validator, IPasswordHasher passwordHasher)
         {
-            _logger = logger;
+            //_logger = logger;
             _unitOfWork = unitOfWork;
             _validator = validator;
             _passwordHasher = passwordHasher;
@@ -32,6 +33,7 @@ namespace Persistence.Services
 
             var user = userDto.Adapt<User>();
             user.Password = _passwordHasher.HashPassword(userDto.Password);
+            user.ByUsername = "eb";
 
 
             try
@@ -41,7 +43,7 @@ namespace Persistence.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error creating user {User}", userDto);
+                //_logger.LogError(ex, "Error creating user {User}", userDto);
                 throw;
             }
         }
@@ -64,7 +66,7 @@ namespace Persistence.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error updating user {User}", userDto);
+                //_logger.LogError(ex, "Error updating user {User}", userDto);
                 throw;
             }
         }

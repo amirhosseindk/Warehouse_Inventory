@@ -1,6 +1,6 @@
-﻿using Application.IServices;
+﻿using Infrastructure.IServices;
 
-namespace Persistence.Services
+namespace Infrastructure.Services
 {
     public class PasswordHasher : IPasswordHasher
     {

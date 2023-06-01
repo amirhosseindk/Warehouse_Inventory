@@ -1,7 +1,8 @@
 ﻿using Application.IServices;
+using Persistence;
 using Persistence.Repositories;
 
-namespace Persistence.Services
+namespace Infrastructure.Services
 {
     public class UnitOfWork : IUnitOfWork
     {

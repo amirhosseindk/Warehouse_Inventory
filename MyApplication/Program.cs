@@ -1,13 +1,21 @@
-using DevExpress.LookAndFeel.Design;
-using DevExpress.XtraRichEdit.Model;
-using System.Windows.Forms;
 using System.Globalization;                  // ADD \\
+using Microsoft.Extensions.DependencyInjection;
+using Application.IServices;
+using Infrastructure.Services;
+using Persistence.Repositories;
+using Persistence;
+using Infrastructure.IServices;
+using Application.Dto;
+using Application.Services;
+using FluentValidation;
+using MyApplication.Ui;
 
 namespace MyApplication
 {
     internal static class Program
     {
         public static bool CheckLogin = false;
+        public static ServiceProvider ServiceProvider { get; private set; }
 
         /// <summary>
         ///  The main entry point for the application.
@@ -63,8 +71,11 @@ namespace MyApplication
             #endregion / For Multi Language
 
 
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            // Set up DI container
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+            ServiceProvider = services.BuildServiceProvider();
+
             ApplicationConfiguration.Initialize();
             System.Windows.Forms.Application.Run(new LoginForm());
 
@@ -73,6 +84,25 @@ namespace MyApplication
                 System.Windows.Forms.Application.Run(new MainForm());
             }
 
+        }
+
+        private static void ConfigureServices(ServiceCollection services)
+        {
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddDbContext<DatabaseContext>();
+            services.AddScoped<IUserCommandService, UserCommandService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
+            services.AddTransient<IValidator<UserDto>, UserDtoValidator>();
+            services.AddTransient<IUserDtoValidator, UserDtoValidator>();
+
+            // Build service provider
+            ServiceProvider = services.BuildServiceProvider();
+
+            // adding forms
+            services.AddTransient<UsersForm>();
+            services.AddTransient<UsersAddOrEditForm>();
         }
     }
 }
