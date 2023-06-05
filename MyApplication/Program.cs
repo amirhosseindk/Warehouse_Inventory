@@ -5,7 +5,7 @@ using Infrastructure.Services;
 using Persistence.Repositories;
 using Persistence;
 using Infrastructure.IServices;
-using Application.Dto;
+using Application.ViewModels;
 using Application.Services;
 using FluentValidation;
 using MyApplication.Ui;
@@ -94,9 +94,8 @@ namespace MyApplication
             services.AddScoped<IUserCommandService, UserCommandService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
-            services.AddTransient<IValidator<UserDto>, UserDtoValidator>();
-            services.AddTransient<IUserDtoValidator, UserDtoValidator>();
-            //services.AddSingleton<ILoggerService, SerilogLoggerService>();
+            services.AddTransient<IValidator<UserViewModel>, UserVMValidator>();
+            services.AddTransient<IUserVMValidator, UserVMValidator>();
 
 
             // Build service provider

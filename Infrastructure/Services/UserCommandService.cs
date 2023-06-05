@@ -1,10 +1,9 @@
-﻿using Application.Dto;
+﻿using Application.ViewModels;
 using Application.IServices;
 using Domain.Entities;
 using FluentValidation;
 using Infrastructure.IServices;
 using Mapster;
-using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Services
 {
@@ -12,10 +11,10 @@ namespace Infrastructure.Services
     {
         //private readonly ILogger<UserCommandService> _logger;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IValidator<UserDto> _validator;
+        private readonly IValidator<UserViewModel> _validator;
         private readonly IPasswordHasher _passwordHasher;
 
-        public UserCommandService(/*ILogger<UserCommandService> logger,*/ IUnitOfWork unitOfWork, IValidator<UserDto> validator, IPasswordHasher passwordHasher)
+        public UserCommandService(/*ILogger<UserCommandService> logger,*/ IUnitOfWork unitOfWork, IValidator<UserViewModel> validator, IPasswordHasher passwordHasher)
         {
             //_logger = logger;
             _unitOfWork = unitOfWork;
@@ -23,17 +22,17 @@ namespace Infrastructure.Services
             _passwordHasher = passwordHasher;
         }
 
-        public async Task CreateUserAsync(UserDto userDto, CancellationToken cancellationToken)
+        public async Task CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
         {
-            var validationResult = await _validator.ValidateAsync(userDto, cancellationToken);
+            var validationResult = await _validator.ValidateAsync(userVM, cancellationToken);
             if (!validationResult.IsValid)
             {
                 throw new FluentValidation.ValidationException(validationResult.Errors);
             }
 
-            var user = userDto.Adapt<User>();
-            user.Password = _passwordHasher.HashPassword(userDto.Password);
-            user.ByUsername = "eb";
+            var user = userVM.Adapt<User>();
+            user.Password = _passwordHasher.HashPassword(userVM.Password);
+            user.UsernameId = "eb";
 
             try
             {
@@ -43,21 +42,21 @@ namespace Infrastructure.Services
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, "Error creating user {User}", userDto);
-                throw;
+                //_logger.LogError(ex, "Error creating user {User}", userVM);
+                throw ex;
             }
         }
 
-        public async Task UpdateUserAsync(UserDto userDto, CancellationToken cancellationToken)
+        public async Task UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
         {
-            var validationResult = await _validator.ValidateAsync(userDto, cancellationToken);
+            var validationResult = await _validator.ValidateAsync(userVM, cancellationToken);
             if (!validationResult.IsValid)
             {
                 throw new FluentValidation.ValidationException(validationResult.Errors);
             }
 
-            var user = userDto.Adapt<User>();
-            user.Password = _passwordHasher.HashPassword(userDto.Password);
+            var user = userVM.Adapt<User>();
+            user.Password = _passwordHasher.HashPassword(userVM.Password);
 
             try
             {
@@ -66,8 +65,8 @@ namespace Infrastructure.Services
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, "Error updating user {User}", userDto)
-                throw;
+                //_logger.LogError(ex, "Error updating user {User}", userVM);
+                throw ex;
             }
         }
     }

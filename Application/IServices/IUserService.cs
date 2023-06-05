@@ -1,14 +1,14 @@
-﻿using Application.Dto;
+﻿using Application.ViewModels;
 
 namespace Application.IServices
-{
+{   
     public interface IUserService
     {
-        Task<UserDto> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken);
-        Task<IEnumerable<UserDto>> GetUsersAsync(CancellationToken cancellationToken);
-        Task<UserDto> CreateUserAsync(UserDto userDto, CancellationToken cancellationToken);
-        Task<UserDto> UpdateUserAsync(UserDto userDto, CancellationToken cancellationToken);
+        Task<UserViewModel> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken);
+        Task<IEnumerable<UserViewModel>> GetUsersAsync(CancellationToken cancellationToken);
+        Task<UserViewModel> CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
+        Task<UserViewModel> UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
         Task DeleteUserAsync(Guid userId, CancellationToken cancellationToken);
-        Task<UserDto> AuthenticateAsync(string username, string password, CancellationToken cancellationToken);
+        Task<UserViewModel> AuthenticateAsync(string username, string password, CancellationToken cancellationToken);
     }
 }

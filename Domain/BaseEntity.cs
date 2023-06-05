@@ -6,12 +6,18 @@
         #region Constructors
         public BaseEntity() : base()
         {
-
+            InsertDateTime = DateTime.Now;
         }
 
         #endregion /Constructors
 
         #region Properties
+        public DateTime InsertDateTime { get; set; }
+
+        public DateTime? UpdateDateTime { get; set; }
+
+        public DateTime? DeleteDateTime { get; set; }
+
         /// <summary>
         /// حذف شده
         /// </summary>
@@ -22,8 +28,7 @@
         /// </summary>
         public bool IsActive { get; set; }
 
-        public string ByUsername { get; set; }
-
+        public string UsernameId { get; set; }
 
         #endregion /Properties
     }

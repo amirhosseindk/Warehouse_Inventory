@@ -11,5 +11,4 @@ namespace Application.IServices
         Task DeleteAsync(Guid userId, CancellationToken cancellationToken);
         Task<IEnumerable<User>> GetAllAsync(CancellationToken cancellationToken);
     }
-
 }

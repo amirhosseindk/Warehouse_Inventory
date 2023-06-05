@@ -1,10 +1,10 @@
-﻿using Application.Dto;
+﻿using Application.ViewModels;
 
 namespace Application.IServices
 {
     public interface IUserCommandService
     {
-        Task CreateUserAsync(UserDto userDto, CancellationToken cancellationToken);
-        Task UpdateUserAsync(UserDto userDto, CancellationToken cancellationToken);
+        Task CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
+        Task UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
     }
 }

@@ -1,12 +1,12 @@
-﻿using Application.Dto;
+﻿using Application.ViewModels;
 using Application.IServices;
 using FluentValidation;
 
 namespace Application.Services
 {
-    public class UserDtoValidator : AbstractValidator<UserDto>, IUserDtoValidator
+    public class UserVMValidator : AbstractValidator<UserViewModel>, IUserVMValidator
     {
-        public UserDtoValidator()
+        public UserVMValidator()
         {
             RuleFor(x => x.UserId).NotEmpty();
             RuleFor(x => x.FirstName).NotEmpty();

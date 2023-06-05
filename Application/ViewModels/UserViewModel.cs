@@ -1,6 +1,6 @@
-﻿namespace Application.Dto
+﻿namespace Application.ViewModels
 {
-    public class UserDto
+    public class UserViewModel
     {
         public Guid UserId { get; set; }
         public string FirstName { get; set; }

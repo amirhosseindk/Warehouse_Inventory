@@ -1,4 +1,4 @@
-﻿using Application.Dto;
+﻿using Application.ViewModels;
 using Domain.Entities;
 using Mapster;
 
@@ -11,8 +11,8 @@ namespace Infrastructure.Services
             TypeAdapterConfig.GlobalSettings
                 .Default.PreserveReference(true)
                 .ShallowCopyForSameType(true);
-            TypeAdapterConfig<User, UserDto>.NewConfig();
-            TypeAdapterConfig<UserDto, User>.NewConfig();
+            TypeAdapterConfig<User, UserViewModel>.NewConfig();
+            TypeAdapterConfig<UserViewModel, User>.NewConfig();
         }
     }
 }

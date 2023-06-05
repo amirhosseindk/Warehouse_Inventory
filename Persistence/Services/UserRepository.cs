@@ -15,7 +15,7 @@ namespace Persistence.Repositories
 
         public async Task<User> GetByIdAsync(Guid userId, CancellationToken cancellationToken)
         {
-            return await _context.Users.FindAsync(new object[] { userId }, cancellationToken);
+            return await _context.Users.FindAsync(userId , cancellationToken);
         }
 
         public async Task<User> GetByUsernameAsync(string username, CancellationToken cancellationToken)
@@ -37,17 +37,18 @@ namespace Persistence.Repositories
 
         public async Task DeleteAsync(Guid userId, CancellationToken cancellationToken)
         {
-            var user = await _context.Users.FindAsync(new object[] { userId }, cancellationToken);
+            var user = await _context.Users.FindAsync(userId , cancellationToken);
             if (user != null)
             {
-                _context.Users.Remove(user);
+                user.IsDeleted = true;
+                user.DeleteDateTime = DateTime.Now;
                 await _context.SaveChangesAsync(cancellationToken);
             }
         }
 
         public async Task<IEnumerable<User>> GetAllAsync(CancellationToken cancellationToken)
         {
-            var usersUR = await _context.Users.ToListAsync(cancellationToken);
+            var usersUR = await _context.Users.Where(u => !u.IsDeleted).ToListAsync(cancellationToken);
             return usersUR;
         }
     }

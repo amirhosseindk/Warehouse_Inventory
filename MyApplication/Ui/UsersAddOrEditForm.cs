@@ -6,12 +6,12 @@ namespace MyApplication.Ui
     public partial class UsersAddOrEditForm : Usf.WinForms.Forms.Form
     {
         private readonly IUserService _userService;
-        private readonly IUserDtoValidator _userDtoValidator;
+        private readonly IUserVMValidator _userVMValidator;
 
-        public UsersAddOrEditForm(IUserService userService, IUserDtoValidator userDtoValidator)
+        public UsersAddOrEditForm(IUserService userService, IUserVMValidator userVMValidator)
         {
             _userService = userService;
-            _userDtoValidator = userDtoValidator;
+            _userVMValidator = userVMValidator;
             InitializeComponent();
 
             #region Language
@@ -68,7 +68,7 @@ namespace MyApplication.Ui
                 resource.GetString(name: nameof(SaveButton));
 
             this.Text = resource.GetString(name: nameof(UsersAddOrEditForm));
-            _userDtoValidator = userDtoValidator;
+            _userVMValidator = userVMValidator;
 
             #endregion / Language
         }
@@ -86,7 +86,7 @@ namespace MyApplication.Ui
 
         private async void SaveButton_Click(object sender, EventArgs e)
         {
-                var userDto = new Application.Dto.UserDto
+                var userVM = new Application.ViewModels.UserViewModel
                 {
                     FirstName = FirstNameTextBox.Text,
                     LastName = textBox1.Text,
@@ -98,10 +98,10 @@ namespace MyApplication.Ui
                     Address = AddressTextBox.Text,
                     UserId = Guid.NewGuid(),
                 };
-                var validationResult = _userDtoValidator.Validate(userDto);
+                var validationResult = _userVMValidator.Validate(userVM);
                 if (validationResult.IsValid)
                 {
-                    await _userService.CreateUserAsync(userDto, CancellationToken.None);
+                    await _userService.CreateUserAsync(userVM, CancellationToken.None);
                 }
                 else
                 {

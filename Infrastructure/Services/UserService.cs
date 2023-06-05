@@ -1,4 +1,4 @@
-﻿using Application.Dto;
+﻿using Application.ViewModels;
 using Application.IServices;
 using Infrastructure.IServices;
 using Mapster;
@@ -19,28 +19,28 @@ namespace Infrastructure.Services
             _passwordHasher = passwordHasher;
         }
 
-        public async Task<UserDto> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken)
+        public async Task<UserViewModel> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetByIdAsync(userId, cancellationToken);
-            return user.Adapt<UserDto>();
+            return user.Adapt<UserViewModel>();
         }
 
-        public async Task<IEnumerable<UserDto>> GetUsersAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<UserViewModel>> GetUsersAsync(CancellationToken cancellationToken)
         {
             var usersUS = await _userRepository.GetAllAsync(cancellationToken);
-            return usersUS.Adapt<IEnumerable<UserDto>>();
+            return usersUS.Adapt<IEnumerable<UserViewModel>>();
         }
 
-        public async Task<UserDto> CreateUserAsync(UserDto userDto, CancellationToken cancellationToken)
+        public async Task<UserViewModel> CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
         {
-            await _userCommandService.CreateUserAsync(userDto, cancellationToken);
-            return userDto;
+            await _userCommandService.CreateUserAsync(userVM, cancellationToken);
+            return userVM;
         }
 
-        public async Task<UserDto> UpdateUserAsync(UserDto userDto, CancellationToken cancellationToken)
+        public async Task<UserViewModel> UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
         {
-            await _userCommandService.UpdateUserAsync(userDto, cancellationToken);
-            return userDto;
+            await _userCommandService.UpdateUserAsync(userVM, cancellationToken);
+            return userVM;
         }
 
         public async Task DeleteUserAsync(Guid userId, CancellationToken cancellationToken)
@@ -48,7 +48,7 @@ namespace Infrastructure.Services
             await _userRepository.DeleteAsync(userId, cancellationToken);
         }
 
-        public async Task<UserDto> AuthenticateAsync(string username, string password, CancellationToken cancellationToken)
+        public async Task<UserViewModel> AuthenticateAsync(string username, string password, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetByUsernameAsync(username, cancellationToken);
 
@@ -64,7 +64,7 @@ namespace Infrastructure.Services
                 throw new AuthenticationException("Username or password is incorrect");
             }
 
-            return user.Adapt<UserDto>();
+            return user.Adapt<UserViewModel>();
         }
     }
 
