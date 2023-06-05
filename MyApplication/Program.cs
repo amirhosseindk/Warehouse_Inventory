@@ -96,7 +96,7 @@ namespace MyApplication
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IValidator<UserDto>, UserDtoValidator>();
             services.AddTransient<IUserDtoValidator, UserDtoValidator>();
-            services.AddSingleton<ILoggerService, SerilogLoggerService>();
+            //services.AddSingleton<ILoggerService, SerilogLoggerService>();
 
 
             // Build service provider
