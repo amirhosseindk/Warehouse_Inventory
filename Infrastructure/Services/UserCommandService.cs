@@ -10,14 +10,14 @@ namespace Infrastructure.Services
 {
     public class UserCommandService : IUserCommandService
     {
-        //private readonly ILogger<UserCommandService> _logger;
+        private readonly ILogger<UserCommandService> _logger;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IValidator<UserDto> _validator;
         private readonly IPasswordHasher _passwordHasher;
 
-        public UserCommandService(/*ILogger<UserCommandService> logger,*/ IUnitOfWork unitOfWork, IValidator<UserDto> validator, IPasswordHasher passwordHasher)
+        public UserCommandService(ILogger<UserCommandService> logger, IUnitOfWork unitOfWork, IValidator<UserDto> validator, IPasswordHasher passwordHasher)
         {
-            //_logger = logger;
+            _logger = logger;
             _unitOfWork = unitOfWork;
             _validator = validator;
             _passwordHasher = passwordHasher;
@@ -35,15 +35,15 @@ namespace Infrastructure.Services
             user.Password = _passwordHasher.HashPassword(userDto.Password);
             user.ByUsername = "eb";
 
-
             try
             {
                 await _unitOfWork.Users.CreateAsync(user, cancellationToken);
                 await _unitOfWork.CompleteAsync(cancellationToken);
+                _logger.LogInformation("User created successfully");
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, "Error creating user {User}", userDto);
+                _logger.LogError(ex, "Error creating user {User}", userDto);
                 throw;
             }
         }
@@ -66,10 +66,9 @@ namespace Infrastructure.Services
             }
             catch (Exception ex)
             {
-                //_logger.LogError(ex, "Error updating user {User}", userDto);
+                _logger.LogError(ex, "Error updating user {User}", userDto);
                 throw;
             }
         }
     }
-
 }
