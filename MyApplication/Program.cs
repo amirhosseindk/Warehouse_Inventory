@@ -23,7 +23,6 @@ namespace MyApplication
         [STAThread]
         static void Main()
         {
-
             #region For One Language
 
             //CultureInfo.CurrentCulture = new CultureInfo("fa-IR", false);
@@ -77,11 +76,17 @@ namespace MyApplication
             ServiceProvider = services.BuildServiceProvider();
 
             ApplicationConfiguration.Initialize();
-            System.Windows.Forms.Application.Run(new LoginForm());
 
-            if (CheckLogin)
+            using (var scope = ServiceProvider.CreateScope())
             {
-                System.Windows.Forms.Application.Run(new MainForm());
+                var loginForm = scope.ServiceProvider.GetRequiredService<LoginForm>();
+                System.Windows.Forms.Application.Run(loginForm);
+
+                if (CheckLogin)
+                {
+                    var mainForm = scope.ServiceProvider.GetRequiredService<MainForm>();
+                    System.Windows.Forms.Application.Run(mainForm);
+                }
             }
 
         }
@@ -104,6 +109,8 @@ namespace MyApplication
             // adding forms
             services.AddTransient<UsersForm>();
             services.AddTransient<UsersAddOrEditForm>();
+            services.AddTransient<LoginForm>();
+            services.AddTransient<MainForm>();
         }
     }
 }

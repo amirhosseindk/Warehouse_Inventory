@@ -2,7 +2,6 @@
 using Application.IServices;
 using Infrastructure.IServices;
 using Mapster;
-using System.Security.Authentication;
 
 namespace Infrastructure.Services
 {
@@ -48,23 +47,19 @@ namespace Infrastructure.Services
             await _userRepository.DeleteAsync(userId, cancellationToken);
         }
 
-        public async Task<UserViewModel> AuthenticateAsync(string username, string password, CancellationToken cancellationToken)
+        public async Task<bool> AuthenticateAsync(string username, string password, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetByUsernameAsync(username, cancellationToken);
-
-            if (user == null)
-            {
-                throw new AuthenticationException("Username or password is incorrect");
-            }
-
             var verified = _passwordHasher.VerifyPassword(user.Password, password);
 
-            if (!verified)
+            if (verified)
             {
-                throw new AuthenticationException("Username or password is incorrect");
+                return true;
             }
-
-            return user.Adapt<UserViewModel>();
+            else
+            {
+                return false;
+            }
         }
     }
 
