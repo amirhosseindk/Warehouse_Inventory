@@ -68,7 +68,7 @@
             PasswordLabel.Name = "PasswordLabel";
             PasswordLabel.Size = new Size(110, 25);
             PasswordLabel.TabIndex = 6;
-            PasswordLabel.Text = "label2";
+            PasswordLabel.Text = "label22";
             // 
             // UsernameTextBox
             // 
