@@ -9,6 +9,6 @@ namespace Application.IServices
         Task<UserViewModel> CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
         Task<UserViewModel> UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
         Task DeleteUserAsync(Guid userId, CancellationToken cancellationToken);
-        Task<UserViewModel> AuthenticateAsync(string username, string password, CancellationToken cancellationToken);
+        Task<bool> AuthenticateAsync(string username, string password, CancellationToken cancellationToken);
     }
 }

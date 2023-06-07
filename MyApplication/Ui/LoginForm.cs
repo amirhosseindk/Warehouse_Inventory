@@ -10,13 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Resources;                  // ADD \\
 using Microsoft.Win32;
+using Application.IServices;
 
 namespace MyApplication
 {
     public partial class LoginForm : Usf.WinForms.Forms.Form
     {
-        public LoginForm()
+        private readonly IUserService _userService;
+        public LoginForm(IUserService userService)
         {
+            _userService = userService;
             InitializeComponent();
 
             #region Language
@@ -61,11 +64,11 @@ namespace MyApplication
         }
 
         // Enter
-        private void EnterButton_Click(object sender, EventArgs e)
+        private async void EnterButton_Click(object sender, EventArgs e)
         {
             RegistryKey UserNameInRegistry = Registry.CurrentUser.CreateSubKey(@"Software\Inventory");
 
-            if (UsernameTextBox.Text == "eb" && PasswordTextBox.Text == "1")
+            if (await _userService.AuthenticateAsync(UsernameTextBox.Text, PasswordTextBox.Text, CancellationToken.None)/*UsernameTextBox.Text == "1" && PasswordTextBox.Text == "1"*/)
             {
                 UserNameInRegistry.SetValue("UserNameKey", UsernameTextBox.Text.Trim());
 

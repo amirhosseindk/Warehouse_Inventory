@@ -1,4 +1,7 @@
 ﻿using Infrastructure.IServices;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System;
+using System.Security.Cryptography;
 
 namespace Infrastructure.Services
 {
@@ -6,26 +9,41 @@ namespace Infrastructure.Services
     {
         public string HashPassword(string password)
         {
-            using (var hmac = new System.Security.Cryptography.HMACSHA512())
+            byte[] salt = new byte[128 / 8]; // Generate a 128-bit salt
+            using (var rng = RandomNumberGenerator.Create())
             {
-                var salt = hmac.Key;
-                var hash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-                return Convert.ToBase64String(salt.Concat(hash).ToArray());
+                rng.GetBytes(salt);
             }
+
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: password,
+                salt: salt,
+                prf: KeyDerivationPrf.HMACSHA256,
+                iterationCount: 10000,
+                numBytesRequested: 256 / 8));
+
+            return $"{Convert.ToBase64String(salt)}:{hashed}";
         }
 
         public bool VerifyPassword(string hashedPassword, string providedPassword)
         {
-            var decodedHashedPassword = Convert.FromBase64String(hashedPassword);
-            var salt = decodedHashedPassword.Take(64).ToArray();
-            var passwordHash = decodedHashedPassword.Skip(64).ToArray();
-
-            using (var hmac = new System.Security.Cryptography.HMACSHA512(salt))
+            var parts = hashedPassword.Split(':', 2);
+            if (parts.Length != 2)
             {
-                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(providedPassword));
-                return computedHash.SequenceEqual(passwordHash);
+                throw new FormatException("Unexpected hash format. Should be formatted as `{salt}:{hash}`");
             }
+
+            var salt = Convert.FromBase64String(parts[0]);
+            var passwordHash = parts[1];
+
+            var providedPasswordHash = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: providedPassword,
+                salt: salt,
+                prf: KeyDerivationPrf.HMACSHA256,
+                iterationCount: 10000,
+                numBytesRequested: 256 / 8));
+
+            return passwordHash == providedPasswordHash;
         }
     }
-
 }
