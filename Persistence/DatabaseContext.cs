@@ -42,6 +42,7 @@ namespace Persistence
 
             // Any additional modelBuilder configurations
             //Add-Migration InitialCreate -Project Persistence -StartupProject Persistence 
+            //update-database -Project Persistence -StartupProject Persistence 
         }
     }
 }

@@ -14,63 +14,63 @@ namespace MyApplication.Ui
             _userVMValidator = userVMValidator;
             InitializeComponent();
 
-            #region Language
+            //#region Language
 
-            ResourceManager resource = new ResourceManager
-                ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
+            //ResourceManager resource = new ResourceManager
+            //    ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
-            StartDateLabel.Text =
-                resource.GetString(name: nameof(StartDateLabel));
+            //StartDateLabel.Text =
+            //    resource.GetString(name: nameof(StartDateLabel));
 
-            FirstNameLabel.Text =
-                resource.GetString(name: nameof(FirstNameLabel));
+            //FirstNameLabel.Text =
+            //    resource.GetString(name: nameof(FirstNameLabel));
 
-            LastNameLabel.Text =
-                resource.GetString(name: nameof(LastNameLabel));
+            //LastNameLabel.Text =
+            //    resource.GetString(name: nameof(LastNameLabel));
 
-            TelLabel.Text =
-                resource.GetString(name: nameof(TelLabel));
+            //TelLabel.Text =
+            //    resource.GetString(name: nameof(TelLabel));
 
-            UsernameLabel.Text =
-                resource.GetString(name: nameof(UsernameLabel));
+            //UsernameLabel.Text =
+            //    resource.GetString(name: nameof(UsernameLabel));
 
-            PasswordLabel.Text =
-                resource.GetString(name: nameof(PasswordLabel));
+            //PasswordLabel.Text =
+            //    resource.GetString(name: nameof(PasswordLabel));
 
-            RolLabel.Text =
-                resource.GetString(name: nameof(RolLabel));
+            //RolLabel.Text =
+            //    resource.GetString(name: nameof(RolLabel));
 
-            EmailLabel.Text =
-                resource.GetString(name: nameof(EmailLabel));
+            //EmailLabel.Text =
+            //    resource.GetString(name: nameof(EmailLabel));
 
-            AddressLabel.Text =
-                resource.GetString(name: nameof(AddressLabel));
+            //AddressLabel.Text =
+            //    resource.GetString(name: nameof(AddressLabel));
 
-            BirthdateLabel.Text =
-                resource.GetString(name: nameof(BirthdateLabel));
+            //BirthdateLabel.Text =
+            //    resource.GetString(name: nameof(BirthdateLabel));
 
-            AgeLabel.Text =
-                resource.GetString(name: nameof(AgeLabel));
+            //AgeLabel.Text =
+            //    resource.GetString(name: nameof(AgeLabel));
 
-            ActiveCheckBox.Text =
-                resource.GetString(name: nameof(ActiveCheckBox));
+            //ActiveCheckBox.Text =
+            //    resource.GetString(name: nameof(ActiveCheckBox));
 
-            GenderLabel.Text =
-                resource.GetString(name: nameof(GenderLabel));
+            //GenderLabel.Text =
+            //    resource.GetString(name: nameof(GenderLabel));
 
-            MenRadioButton.Text =
-                resource.GetString(name: nameof(MenRadioButton));
+            //MenRadioButton.Text =
+            //    resource.GetString(name: nameof(MenRadioButton));
 
-            WomenRadioButton.Text =
-                resource.GetString(name: nameof(WomenRadioButton));
+            //WomenRadioButton.Text =
+            //    resource.GetString(name: nameof(WomenRadioButton));
 
-            SaveButton.Text =
-                resource.GetString(name: nameof(SaveButton));
+            //SaveButton.Text =
+            //    resource.GetString(name: nameof(SaveButton));
 
-            this.Text = resource.GetString(name: nameof(UsersAddOrEditForm));
-            _userVMValidator = userVMValidator;
+            //this.Text = resource.GetString(name: nameof(UsersAddOrEditForm));
+            //_userVMValidator = userVMValidator;
 
-            #endregion / Language
+            //#endregion / Language
         }
 
         // Loaded
@@ -86,31 +86,31 @@ namespace MyApplication.Ui
 
         private async void SaveButton_Click(object sender, EventArgs e)
         {
-                var userVM = new Application.ViewModels.UserViewModel
+            var userVM = new Application.ViewModels.UserViewModel
+            {
+                FirstName = FirstNameTextBox.Text,
+                LastName = textBox1.Text,
+                PhoneNumber = TelTextBox.Text,
+                Email = EmailTextBox.Text,
+                Username = UsernameTextBox.Text,
+                Password = PasswordTextBox.Text,
+                Role = "admin",
+                Address = AddressTextBox.Text,
+                UserId = Guid.NewGuid(),
+            };
+            var validationResult = _userVMValidator.Validate(userVM);
+            if (validationResult.IsValid)
+            {
+                await _userService.CreateUserAsync(userVM, CancellationToken.None);
+            }
+            else
+            {
+                foreach (var error in validationResult.Errors)
                 {
-                    FirstName = FirstNameTextBox.Text,
-                    LastName = textBox1.Text,
-                    PhoneNumber = TelTextBox.Text,
-                    Email = EmailTextBox.Text,
-                    Username = UsernameTextBox.Text,
-                    Password = PasswordTextBox.Text,
-                    Role = "admin",
-                    Address = AddressTextBox.Text,
-                    UserId = Guid.NewGuid(),
-                };
-                var validationResult = _userVMValidator.Validate(userVM);
-                if (validationResult.IsValid)
-                {
-                    await _userService.CreateUserAsync(userVM, CancellationToken.None);
+                    MessageBox.Show($"Property: {error.PropertyName}, Error: {error.ErrorMessage}");
                 }
-                else
-                {
-                    foreach (var error in validationResult.Errors)
-                    {
-                        MessageBox.Show($"Property: {error.PropertyName}, Error: {error.ErrorMessage}");
-                    }
-                }
-            
+            }
+
 
         }
     }
