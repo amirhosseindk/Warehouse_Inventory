@@ -135,6 +135,9 @@
   <data name="ActiveCheckBox" xml:space="preserve">
     <value>Active</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
   <data name="AddressLabel" xml:space="preserve">
     <value>Address</value>
   </data>
@@ -204,13 +207,16 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="EditButton" xml:space="preserve">
-    <value>User Edit</value>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="EmailLabel" xml:space="preserve">
     <value>Email</value>
   </data>
-  <data name="End Date" xml:space="preserve">
+  <data name="EndDate" xml:space="preserve">
     <value>End Date</value>
   </data>
   <data name="EnterButton" xml:space="preserve">
@@ -417,6 +423,9 @@
   <data name="RialsLabel" xml:space="preserve">
     <value>Rials</value>
   </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
   <data name="RolLabel" xml:space="preserve">
     <value>Rol</value>
   </data>
@@ -465,11 +474,14 @@
   <data name="SystemNameLabel" xml:space="preserve">
     <value>Inventory System</value>
   </data>
-  <data name="TelLabel" xml:space="preserve">
+  <data name="Tel" xml:space="preserve">
     <value>Tel</value>
   </data>
   <data name="TotalAmountLabel" xml:space="preserve">
     <value>Total Amount</value>
+  </data>
+  <data name="UserEditButton" xml:space="preserve">
+    <value>User Edit</value>
   </data>
   <data name="UserEndDate" xml:space="preserve">
     <value>EndDate</value>

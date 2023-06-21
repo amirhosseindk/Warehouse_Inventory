@@ -1,6 +1,8 @@
 ﻿using Application.IServices;
+using Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using MyApplication.Ui;
+using System.Resources;
 
 namespace MyApplication
 {
@@ -14,63 +16,61 @@ namespace MyApplication
 
             InitializeComponent();
 
-            //#region Language
+            #region Language
 
-            //ResourceManager resource = new ResourceManager
-            //    ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
+            ResourceManager resource = new ResourceManager
+                ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
-            //SearchLabel.Text =
-            //    resource.GetString(name: nameof(SearchLabel));
+            SearchLabel.Text =
+                resource.GetString(name: nameof(SearchLabel));
 
-            //UserNewButton.Text =
-            //    resource.GetString(name: nameof(UserNewButton));
+            UserNewButton.Text =
+                resource.GetString(name: nameof(UserNewButton));
 
-            //UserEditButton.Text =
-            //    resource.GetString(name: nameof(UserEditButton));
+            UserEditButton.Text =
+                resource.GetString(name: nameof(UserEditButton));
 
-            //UserStatusButton.Text =
-            //    resource.GetString(name: nameof(UserStatusButton));
+            StatusButton.Text =
+                resource.GetString(name: nameof(StatusButton));
 
-            //UserDataGridView.Columns[0].HeaderText =
-            //    resource.GetString(name: nameof(UserStartDate));
+            UserDataGridView.Columns[1].HeaderText =
+                resource.GetString(name: nameof(FirstName));
 
-            //UserDataGridView.Columns[2].HeaderText =
-            //    resource.GetString(name: nameof(UserFirstName));
+            UserDataGridView.Columns[2].HeaderText =
+                resource.GetString(name: nameof(LastName));
 
-            //UserDataGridView.Columns[3].HeaderText =
-            //    resource.GetString(name: nameof(UserLastName));
+            UserDataGridView.Columns[3].HeaderText =
+                resource.GetString(name: nameof(UserTel));
 
-            //UserDataGridView.Columns[4].HeaderText =
-            //    resource.GetString(name: nameof(UserTel));
+            UserDataGridView.Columns[4].HeaderText =
+                resource.GetString(name: nameof(Username));
 
-            //UserDataGridView.Columns[5].HeaderText =
-            //    resource.GetString(name: nameof(UserUsername));
+            UserDataGridView.Columns[5].HeaderText =
+                resource.GetString(name: nameof(Password));
 
-            //UserDataGridView.Columns[6].HeaderText =
-            //    resource.GetString(name: nameof(UserPassword));
+            UserDataGridView.Columns[6].HeaderText =
+                resource.GetString(name: nameof(Role));
 
-            //UserDataGridView.Columns[7].HeaderText =
-            //    resource.GetString(name: nameof(UserAge));
+            UserDataGridView.Columns[7].HeaderText =
+                resource.GetString(name: nameof(Status));
 
-            //UserDataGridView.Columns[8].HeaderText =
-            //    resource.GetString(name: nameof(UserGender));
+            UserDataGridView.Columns[8].HeaderText =
+                resource.GetString(name: nameof(Birthdate));
 
-            //UserDataGridView.Columns[9].HeaderText =
-            //    resource.GetString(name: nameof(UserBirthdate));
+            UserDataGridView.Columns[9].HeaderText =
+                resource.GetString(name: nameof(Email));
 
-            //UserDataGridView.Columns[10].HeaderText =
-            //    resource.GetString(name: nameof(UserEndDate));
+            UserDataGridView.Columns[10].HeaderText =
+                resource.GetString(name: nameof(Address));
 
-            //UserDataGridView.Columns[11].HeaderText =
-            //    resource.GetString(name: nameof(UserActive));
+            UserDataGridView.Columns[11].HeaderText =
+                resource.GetString(name: nameof(Description));
 
-            //UserDataGridView.Columns[12].HeaderText =
-            //    resource.GetString(name: nameof(UserDescription));
+            this.Text =
+                resource.GetString(name: nameof(UsersForm));
 
-            //this.Text =
-            //    resource.GetString(name: nameof(UsersForm));
+            #endregion / Language
 
-            //#endregion / Language
         }
 
         // Loaded
@@ -79,20 +79,34 @@ namespace MyApplication
             if (ApplicationSettings.CurrentCulture == ApplicationSettings.Languages.Farsi)
             {
                 this.RightToLeft = RightToLeft.Yes;
+
                 this.RightToLeftLayout = true;
             }
 
-
             var usersUF = await _userService.GetUsersAsync(CancellationToken.None);
+
             UserDataGridView.DataSource = usersUF.ToList();
 
         }
 
+        // Add
         private void UserNewButton_Click(object sender, EventArgs e)
         {
             using (var scope = Program.ServiceProvider.CreateScope())
             {
                 var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
+
+                form.ShowDialog();
+            }
+        }
+
+        // Edit
+        private void UserEditButton_Click(object sender, EventArgs e)
+        {
+            using (var scope = Program.ServiceProvider.CreateScope())
+            {
+                var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
+
                 form.ShowDialog();
             }
         }

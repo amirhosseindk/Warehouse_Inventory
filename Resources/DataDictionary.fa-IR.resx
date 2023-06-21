@@ -129,6 +129,9 @@
   <data name="ActiveCheckBox" xml:space="preserve">
     <value>فعال</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
   <data name="AddressLabel" xml:space="preserve">
     <value>آدرس</value>
   </data>
@@ -189,14 +192,17 @@
   <data name="Description" xml:space="preserve">
     <value>توضیحات</value>
   </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
   <data name="EditButton" xml:space="preserve">
     <value>ویرایش</value>
   </data>
-  <data name="EmailLabel" xml:space="preserve">
+  <data name="Email" xml:space="preserve">
     <value>ایمیل</value>
   </data>
-  <data name="End Date" xml:space="preserve">
-    <value>تاریخ پایان</value>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>ایمیل</value>
   </data>
   <data name="EndDate" xml:space="preserve">
     <value>تاریخ پایان</value>
@@ -408,6 +414,9 @@
   <data name="RialsLabel" xml:space="preserve">
     <value>ریال</value>
   </data>
+  <data name="Role" xml:space="preserve">
+    <value>عنوان کاربر</value>
+  </data>
   <data name="RolLabel" xml:space="preserve">
     <value>سمت</value>
   </data>
@@ -456,11 +465,14 @@
   <data name="SystemNameLabel" xml:space="preserve">
     <value>سیستم انبارداری</value>
   </data>
-  <data name="TelLabel" xml:space="preserve">
+  <data name="Tel" xml:space="preserve">
     <value>تلفن</value>
   </data>
   <data name="TotalAmountLabel" xml:space="preserve">
     <value>مبلغ کل</value>
+  </data>
+  <data name="UserEditButton" xml:space="preserve">
+    <value>ویرایش کاربر</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>نام کاربری</value>

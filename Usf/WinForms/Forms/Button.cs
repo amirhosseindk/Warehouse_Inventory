@@ -10,11 +10,12 @@ namespace Usf.WinForms.Forms
     {
         public Button() : base()
         {
-            this.Font = new Font("IRANYekan", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            this.Font = new Font("IRANYekan Medium", 16F, FontStyle.Bold, GraphicsUnit.Point);
             this.Cursor = Cursors.Hand;
             this.Name = "Button";
             this.Size = new Size(120, 40);
-            this.BackColor = Color.Aquamarine;   
+            this.BackColor = Color.Aquamarine;
+            this.Appearance.ForeColor = Color.Maroon;
         }
     }
 }

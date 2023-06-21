@@ -217,7 +217,7 @@
             // 
             PrintInventoryReceiptButton.Anchor = AnchorStyles.Bottom;
             PrintInventoryReceiptButton.Appearance.BackColor = Color.Pink;
-            PrintInventoryReceiptButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            PrintInventoryReceiptButton.Appearance.Font = new Font("IRANYekan Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
             PrintInventoryReceiptButton.Appearance.Options.UseBackColor = true;
             PrintInventoryReceiptButton.Appearance.Options.UseFont = true;
             PrintInventoryReceiptButton.Location = new Point(1023, 585);
@@ -231,7 +231,7 @@
             // 
             ProductNewButton.Anchor = AnchorStyles.Bottom;
             ProductNewButton.Appearance.BackColor = Color.Pink;
-            ProductNewButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            ProductNewButton.Appearance.Font = new Font("IRANYekan Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
             ProductNewButton.Appearance.Options.UseBackColor = true;
             ProductNewButton.Appearance.Options.UseFont = true;
             ProductNewButton.Location = new Point(21, 585);
@@ -245,7 +245,7 @@
             // 
             ProductEditButton.Anchor = AnchorStyles.Bottom;
             ProductEditButton.Appearance.BackColor = Color.Pink;
-            ProductEditButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            ProductEditButton.Appearance.Font = new Font("IRANYekan Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
             ProductEditButton.Appearance.Options.UseBackColor = true;
             ProductEditButton.Appearance.Options.UseFont = true;
             ProductEditButton.Location = new Point(355, 585);
@@ -259,7 +259,7 @@
             // 
             ProductStatusButton.Anchor = AnchorStyles.Bottom;
             ProductStatusButton.Appearance.BackColor = Color.Pink;
-            ProductStatusButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            ProductStatusButton.Appearance.Font = new Font("IRANYekan Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
             ProductStatusButton.Appearance.Options.UseBackColor = true;
             ProductStatusButton.Appearance.Options.UseFont = true;
             ProductStatusButton.Location = new Point(689, 585);

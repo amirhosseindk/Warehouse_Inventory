@@ -1,11 +1,11 @@
 ﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;   
 
 namespace Persistence
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext()
+        public DatabaseContext() : base()
         {
 
         }
@@ -24,13 +24,16 @@ namespace Persistence
         public DbSet<InventoryTurnover> InventoryTurnovers { get; set; }
         public DbSet<InventoryItemList> InventoryItemLists { get; set; }
         public DbSet<BuyRequest> BuyRequests { get; set; }
-        public DbSet<BuyRequestItemList> buyRequestItemLists { get; set; }
+        public DbSet<BuyRequestItemList> BuyRequestItemLists { get; set; }
         public DbSet<ReceiptItemList> ReceiptItemList { get; set; }
         public DbSet<RequisitionItemList> RequisitionItemList { get; set; }
         public DbSet<User> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=Warehouse_Inventory;User Id=sa;Password=P@ssw0rd09198799866;TrustServerCertificate=true");
+            var connectionString =
+                "Server=.;Database=Warehouse_Inventory;User Id=sa;Password=8118;TrustServerCertificate=true";
+
+            optionsBuilder.UseSqlServer(connectionString: connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

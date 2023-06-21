@@ -11,6 +11,7 @@ namespace Usf.WinForms.Forms
     {
         public DataGridView() : base()
         {
+            this.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;
             this.BackgroundColor = Color.MistyRose;

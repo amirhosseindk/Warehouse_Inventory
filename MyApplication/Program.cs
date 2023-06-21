@@ -37,7 +37,7 @@ namespace MyApplication
 
             #region For Multi Language
 
-            int CurrentCulture = Properties.Settings.Default.CurrentCulture;
+            int CurrentCulture = MyApp.Properties.Settings.Default.CurrentCulture;
 
             switch ((ApplicationSettings.Languages)CurrentCulture)
             {

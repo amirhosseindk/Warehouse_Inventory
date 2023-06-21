@@ -7,10 +7,6 @@ namespace MyApplication
 {
     public partial class MainForm : Usf.WinForms.Forms.Form
     {
-        private readonly IPingService _pingService;
-        private readonly Timer _timer;
-        private readonly List<string> _serversToPing = ConfigurationManager.AppSettings["ServersToPing"].Split(';').ToList();
-
         public MainForm()
         {
             InitializeComponent();

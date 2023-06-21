@@ -117,6 +117,15 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
         public static string AddressLabel {
             get {
                 return ResourceManager.GetString("AddressLabel", resourceCulture);
@@ -322,11 +331,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Edit.
+        ///   Looks up a localized string similar to Description.
         /// </summary>
-        public static string EditButton {
+        public static string DescriptionLabel {
             get {
-                return ResourceManager.GetString("EditButton", resourceCulture);
+                return ResourceManager.GetString("DescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
@@ -342,9 +360,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to End Date.
         /// </summary>
-        public static string End_Date {
+        public static string EndDate {
             get {
-                return ResourceManager.GetString("End Date", resourceCulture);
+                return ResourceManager.GetString("EndDate", resourceCulture);
             }
         }
         
@@ -961,6 +979,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        public static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rol.
         /// </summary>
         public static string RolLabel {
@@ -1107,9 +1134,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Tel.
         /// </summary>
-        public static string TelLabel {
+        public static string Tel {
             get {
-                return ResourceManager.GetString("TelLabel", resourceCulture);
+                return ResourceManager.GetString("Tel", resourceCulture);
             }
         }
         
@@ -1119,6 +1146,15 @@ namespace Resources {
         public static string TotalAmountLabel {
             get {
                 return ResourceManager.GetString("TotalAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Edit.
+        /// </summary>
+        public static string UserEditButton {
+            get {
+                return ResourceManager.GetString("UserEditButton", resourceCulture);
             }
         }
         

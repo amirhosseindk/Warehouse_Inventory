@@ -44,10 +44,12 @@
             EmailTextBox = new Usf.WinForms.Forms.TextBox();
             AddressLabel = new Usf.WinForms.Forms.Label();
             AddressTextBox = new Usf.WinForms.Forms.TextBox();
-            BirthdateLabel = new Usf.WinForms.Forms.Label();
-            BirthdateTextBox = new Usf.WinForms.Forms.TextBox();
             ActiveCheckBox = new Usf.WinForms.Forms.CheckBox();
             SaveButton = new Usf.WinForms.Forms.Button();
+            BirthdateLabel = new Usf.WinForms.Forms.Label();
+            BirthdateTextBox = new Usf.WinForms.Forms.TextBox();
+            DescriptionLabel = new Usf.WinForms.Forms.Label();
+            DescriptionTextBox = new Usf.WinForms.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)comboBox1.Properties).BeginInit();
             SuspendLayout();
             // 
@@ -58,10 +60,9 @@
             FirstNameLabel.Appearance.Options.UseFont = true;
             FirstNameLabel.Appearance.Options.UseForeColor = true;
             FirstNameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            FirstNameLabel.Location = new Point(34, 101);
-            FirstNameLabel.Margin = new Padding(4);
+            FirstNameLabel.Location = new Point(15, 12);
             FirstNameLabel.Name = "FirstNameLabel";
-            FirstNameLabel.Size = new Size(156, 38);
+            FirstNameLabel.Size = new Size(103, 30);
             FirstNameLabel.TabIndex = 3;
             FirstNameLabel.Text = "First Name";
             // 
@@ -69,11 +70,10 @@
             // 
             FirstNameTextBox.BackColor = Color.LemonChiffon;
             FirstNameTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            FirstNameTextBox.Location = new Point(198, 101);
-            FirstNameTextBox.Margin = new Padding(4);
+            FirstNameTextBox.Location = new Point(121, 12);
             FirstNameTextBox.Name = "FirstNameTextBox";
-            FirstNameTextBox.Size = new Size(259, 38);
-            FirstNameTextBox.TabIndex = 2;
+            FirstNameTextBox.Size = new Size(225, 32);
+            FirstNameTextBox.TabIndex = 1;
             FirstNameTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // LastNameLabel
@@ -83,10 +83,9 @@
             LastNameLabel.Appearance.Options.UseFont = true;
             LastNameLabel.Appearance.Options.UseForeColor = true;
             LastNameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            LastNameLabel.Location = new Point(34, 155);
-            LastNameLabel.Margin = new Padding(4);
+            LastNameLabel.Location = new Point(15, 55);
             LastNameLabel.Name = "LastNameLabel";
-            LastNameLabel.Size = new Size(156, 38);
+            LastNameLabel.Size = new Size(103, 30);
             LastNameLabel.TabIndex = 5;
             LastNameLabel.Text = "Last Name";
             // 
@@ -94,11 +93,10 @@
             // 
             textBox1.BackColor = Color.LemonChiffon;
             textBox1.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(198, 155);
-            textBox1.Margin = new Padding(4);
+            textBox1.Location = new Point(121, 55);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(259, 38);
-            textBox1.TabIndex = 4;
+            textBox1.Size = new Size(225, 32);
+            textBox1.TabIndex = 2;
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // TelLabel
@@ -108,10 +106,9 @@
             TelLabel.Appearance.Options.UseFont = true;
             TelLabel.Appearance.Options.UseForeColor = true;
             TelLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            TelLabel.Location = new Point(34, 211);
-            TelLabel.Margin = new Padding(4);
+            TelLabel.Location = new Point(15, 103);
             TelLabel.Name = "TelLabel";
-            TelLabel.Size = new Size(156, 38);
+            TelLabel.Size = new Size(103, 30);
             TelLabel.TabIndex = 7;
             TelLabel.Text = "Tel";
             // 
@@ -119,12 +116,11 @@
             // 
             TelTextBox.BackColor = Color.LemonChiffon;
             TelTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            TelTextBox.Location = new Point(198, 210);
-            TelTextBox.Margin = new Padding(4);
+            TelTextBox.Location = new Point(121, 102);
             TelTextBox.MaxLength = 11;
             TelTextBox.Name = "TelTextBox";
-            TelTextBox.Size = new Size(259, 38);
-            TelTextBox.TabIndex = 6;
+            TelTextBox.Size = new Size(225, 32);
+            TelTextBox.TabIndex = 3;
             TelTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // UsernameLabel
@@ -134,10 +130,9 @@
             UsernameLabel.Appearance.Options.UseFont = true;
             UsernameLabel.Appearance.Options.UseForeColor = true;
             UsernameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            UsernameLabel.Location = new Point(34, 265);
-            UsernameLabel.Margin = new Padding(4);
+            UsernameLabel.Location = new Point(15, 150);
             UsernameLabel.Name = "UsernameLabel";
-            UsernameLabel.Size = new Size(156, 38);
+            UsernameLabel.Size = new Size(103, 30);
             UsernameLabel.TabIndex = 9;
             UsernameLabel.Text = "Username";
             // 
@@ -145,11 +140,10 @@
             // 
             UsernameTextBox.BackColor = Color.LemonChiffon;
             UsernameTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            UsernameTextBox.Location = new Point(198, 264);
-            UsernameTextBox.Margin = new Padding(4);
+            UsernameTextBox.Location = new Point(121, 148);
             UsernameTextBox.Name = "UsernameTextBox";
-            UsernameTextBox.Size = new Size(259, 38);
-            UsernameTextBox.TabIndex = 8;
+            UsernameTextBox.Size = new Size(225, 32);
+            UsernameTextBox.TabIndex = 4;
             UsernameTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // PasswordLabel
@@ -159,10 +153,9 @@
             PasswordLabel.Appearance.Options.UseFont = true;
             PasswordLabel.Appearance.Options.UseForeColor = true;
             PasswordLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            PasswordLabel.Location = new Point(34, 321);
-            PasswordLabel.Margin = new Padding(4);
+            PasswordLabel.Location = new Point(15, 193);
             PasswordLabel.Name = "PasswordLabel";
-            PasswordLabel.Size = new Size(156, 38);
+            PasswordLabel.Size = new Size(103, 30);
             PasswordLabel.TabIndex = 11;
             PasswordLabel.Text = "Password";
             // 
@@ -170,12 +163,11 @@
             // 
             PasswordTextBox.BackColor = Color.LemonChiffon;
             PasswordTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextBox.Location = new Point(198, 318);
-            PasswordTextBox.Margin = new Padding(4);
+            PasswordTextBox.Location = new Point(121, 192);
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.PasswordChar = '*';
-            PasswordTextBox.Size = new Size(259, 38);
-            PasswordTextBox.TabIndex = 10;
+            PasswordTextBox.Size = new Size(225, 32);
+            PasswordTextBox.TabIndex = 5;
             PasswordTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // RolLabel
@@ -185,17 +177,15 @@
             RolLabel.Appearance.Options.UseFont = true;
             RolLabel.Appearance.Options.UseForeColor = true;
             RolLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            RolLabel.Location = new Point(34, 375);
-            RolLabel.Margin = new Padding(4);
+            RolLabel.Location = new Point(15, 238);
             RolLabel.Name = "RolLabel";
-            RolLabel.Size = new Size(156, 38);
+            RolLabel.Size = new Size(103, 30);
             RolLabel.TabIndex = 13;
             RolLabel.Text = "Rol";
             // 
             // comboBox1
             // 
-            comboBox1.Location = new Point(198, 371);
-            comboBox1.Margin = new Padding(4);
+            comboBox1.Location = new Point(121, 236);
             comboBox1.Name = "comboBox1";
             comboBox1.Properties.Appearance.BackColor = Color.LemonChiffon;
             comboBox1.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -203,8 +193,8 @@
             comboBox1.Properties.Appearance.Options.UseFont = true;
             comboBox1.Properties.AutoHeight = false;
             comboBox1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            comboBox1.Size = new Size(260, 40);
-            comboBox1.TabIndex = 14;
+            comboBox1.Size = new Size(225, 32);
+            comboBox1.TabIndex = 6;
             // 
             // EmailLabel
             // 
@@ -213,10 +203,9 @@
             EmailLabel.Appearance.Options.UseFont = true;
             EmailLabel.Appearance.Options.UseForeColor = true;
             EmailLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            EmailLabel.Location = new Point(34, 427);
-            EmailLabel.Margin = new Padding(4);
+            EmailLabel.Location = new Point(15, 331);
             EmailLabel.Name = "EmailLabel";
-            EmailLabel.Size = new Size(156, 38);
+            EmailLabel.Size = new Size(103, 30);
             EmailLabel.TabIndex = 16;
             EmailLabel.Text = "Email";
             // 
@@ -224,13 +213,12 @@
             // 
             EmailTextBox.BackColor = Color.LemonChiffon;
             EmailTextBox.Font = new Font("B Yekan", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            EmailTextBox.Location = new Point(198, 423);
-            EmailTextBox.Margin = new Padding(4);
+            EmailTextBox.Location = new Point(121, 326);
             EmailTextBox.Multiline = true;
             EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(259, 43);
-            EmailTextBox.TabIndex = 15;
-            EmailTextBox.TextAlign = HorizontalAlignment.Right;
+            EmailTextBox.Size = new Size(225, 35);
+            EmailTextBox.TabIndex = 8;
+            EmailTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // AddressLabel
             // 
@@ -239,10 +227,9 @@
             AddressLabel.Appearance.Options.UseFont = true;
             AddressLabel.Appearance.Options.UseForeColor = true;
             AddressLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            AddressLabel.Location = new Point(34, 496);
-            AddressLabel.Margin = new Padding(4);
+            AddressLabel.Location = new Point(15, 385);
             AddressLabel.Name = "AddressLabel";
-            AddressLabel.Size = new Size(156, 38);
+            AddressLabel.Size = new Size(103, 30);
             AddressLabel.TabIndex = 18;
             AddressLabel.Text = "Address";
             // 
@@ -250,13 +237,38 @@
             // 
             AddressTextBox.BackColor = Color.LemonChiffon;
             AddressTextBox.Font = new Font("B Yekan", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            AddressTextBox.Location = new Point(198, 481);
-            AddressTextBox.Margin = new Padding(4);
+            AddressTextBox.Location = new Point(121, 373);
             AddressTextBox.Multiline = true;
             AddressTextBox.Name = "AddressTextBox";
-            AddressTextBox.Size = new Size(259, 63);
-            AddressTextBox.TabIndex = 17;
+            AddressTextBox.Size = new Size(225, 51);
+            AddressTextBox.TabIndex = 9;
             AddressTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // ActiveCheckBox
+            // 
+            ActiveCheckBox.AutoSize = true;
+            ActiveCheckBox.Checked = true;
+            ActiveCheckBox.CheckState = CheckState.Checked;
+            ActiveCheckBox.ForeColor = Color.Maroon;
+            ActiveCheckBox.Location = new Point(25, 533);
+            ActiveCheckBox.Name = "ActiveCheckBox";
+            ActiveCheckBox.Size = new Size(79, 23);
+            ActiveCheckBox.TabIndex = 27;
+            ActiveCheckBox.Text = "Active";
+            ActiveCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            SaveButton.Appearance.BackColor = Color.FromArgb(128, 255, 128);
+            SaveButton.Appearance.Font = new Font("IRANYekan Medium", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
+            SaveButton.Appearance.Options.UseBackColor = true;
+            SaveButton.Appearance.Options.UseFont = true;
+            SaveButton.Location = new Point(121, 512);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(225, 60);
+            SaveButton.TabIndex = 11;
+            SaveButton.Text = "Save";
+            SaveButton.Click += SaveButton_Click;
             // 
             // BirthdateLabel
             // 
@@ -265,64 +277,60 @@
             BirthdateLabel.Appearance.Options.UseFont = true;
             BirthdateLabel.Appearance.Options.UseForeColor = true;
             BirthdateLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            BirthdateLabel.Location = new Point(34, 567);
-            BirthdateLabel.Margin = new Padding(4);
+            BirthdateLabel.Location = new Point(15, 284);
             BirthdateLabel.Name = "BirthdateLabel";
-            BirthdateLabel.Size = new Size(156, 38);
-            BirthdateLabel.TabIndex = 20;
+            BirthdateLabel.Size = new Size(103, 30);
+            BirthdateLabel.TabIndex = 30;
             BirthdateLabel.Text = "Birthdate";
             // 
             // BirthdateTextBox
             // 
             BirthdateTextBox.BackColor = Color.LemonChiffon;
             BirthdateTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BirthdateTextBox.Location = new Point(198, 566);
-            BirthdateTextBox.Margin = new Padding(4);
+            BirthdateTextBox.Location = new Point(121, 282);
             BirthdateTextBox.Name = "BirthdateTextBox";
-            BirthdateTextBox.Size = new Size(259, 38);
-            BirthdateTextBox.TabIndex = 19;
+            BirthdateTextBox.Size = new Size(225, 32);
+            BirthdateTextBox.TabIndex = 7;
             BirthdateTextBox.TextAlign = HorizontalAlignment.Center;
             // 
-            // ActiveCheckBox
+            // DescriptionLabel
             // 
-            ActiveCheckBox.AutoSize = true;
-            ActiveCheckBox.Checked = true;
-            ActiveCheckBox.CheckState = CheckState.Checked;
-            ActiveCheckBox.ForeColor = Color.Maroon;
-            ActiveCheckBox.Location = new Point(377, 635);
-            ActiveCheckBox.Margin = new Padding(4);
-            ActiveCheckBox.Name = "ActiveCheckBox";
-            ActiveCheckBox.Size = new Size(95, 28);
-            ActiveCheckBox.TabIndex = 27;
-            ActiveCheckBox.Text = "Active";
-            ActiveCheckBox.UseVisualStyleBackColor = true;
+            DescriptionLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            DescriptionLabel.Appearance.ForeColor = Color.Maroon;
+            DescriptionLabel.Appearance.Options.UseFont = true;
+            DescriptionLabel.Appearance.Options.UseForeColor = true;
+            DescriptionLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            DescriptionLabel.Location = new Point(15, 452);
+            DescriptionLabel.Name = "DescriptionLabel";
+            DescriptionLabel.Size = new Size(103, 30);
+            DescriptionLabel.TabIndex = 32;
+            DescriptionLabel.Text = "Description";
             // 
-            // SaveButton
+            // DescriptionTextBox
             // 
-            SaveButton.Appearance.BackColor = Color.FromArgb(128, 255, 128);
-            SaveButton.Appearance.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
-            SaveButton.Appearance.Options.UseBackColor = true;
-            SaveButton.Appearance.Options.UseFont = true;
-            SaveButton.Location = new Point(48, 635);
-            SaveButton.Margin = new Padding(4);
-            SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(291, 76);
-            SaveButton.TabIndex = 28;
-            SaveButton.Text = "Save";
-            SaveButton.Click += SaveButton_Click;
+            DescriptionTextBox.BackColor = Color.LemonChiffon;
+            DescriptionTextBox.Font = new Font("B Yekan", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            DescriptionTextBox.Location = new Point(121, 442);
+            DescriptionTextBox.Multiline = true;
+            DescriptionTextBox.Name = "DescriptionTextBox";
+            DescriptionTextBox.Size = new Size(225, 51);
+            DescriptionTextBox.TabIndex = 10;
+            DescriptionTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // UsersAddOrEditForm
             // 
             Appearance.BackColor = Color.Aquamarine;
             Appearance.Options.UseBackColor = true;
             Appearance.Options.UseFont = true;
-            AutoScaleDimensions = new SizeF(13F, 24F);
+            AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(634, 844);
-            Controls.Add(SaveButton);
-            Controls.Add(ActiveCheckBox);
+            ClientSize = new Size(448, 588);
+            Controls.Add(DescriptionTextBox);
+            Controls.Add(DescriptionLabel);
             Controls.Add(BirthdateLabel);
             Controls.Add(BirthdateTextBox);
+            Controls.Add(SaveButton);
+            Controls.Add(ActiveCheckBox);
             Controls.Add(AddressLabel);
             Controls.Add(AddressTextBox);
             Controls.Add(EmailLabel);
@@ -339,7 +347,7 @@
             Controls.Add(textBox1);
             Controls.Add(FirstNameLabel);
             Controls.Add(FirstNameTextBox);
-            Margin = new Padding(9, 8, 9, 8);
+            Margin = new Padding(7, 6, 7, 6);
             MaximizeBox = false;
             Name = "UsersAddOrEditForm";
             Text = "UsersAddOrEdit";
@@ -366,9 +374,11 @@
         private Usf.WinForms.Forms.TextBox EmailTextBox;
         private Usf.WinForms.Forms.Label AddressLabel;
         private Usf.WinForms.Forms.TextBox AddressTextBox;
-        private Usf.WinForms.Forms.Label BirthdateLabel;
-        private Usf.WinForms.Forms.TextBox BirthdateTextBox;
         private Usf.WinForms.Forms.CheckBox ActiveCheckBox;
         private Usf.WinForms.Forms.Button SaveButton;
+        private Usf.WinForms.Forms.Label BirthdateLabel;
+        private Usf.WinForms.Forms.TextBox BirthdateTextBox;
+        private Usf.WinForms.Forms.Label DescriptionLabel;
+        private Usf.WinForms.Forms.TextBox DescriptionTextBox;
     }
 }

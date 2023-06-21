@@ -29,24 +29,27 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             SearchLabel = new Usf.WinForms.Forms.Label();
             SearchTextBox = new Usf.WinForms.Forms.TextBox();
             UserNewButton = new Usf.WinForms.Forms.Button();
             UserEditButton = new Usf.WinForms.Forms.Button();
-            UserStatusButton = new Usf.WinForms.Forms.Button();
+            StatusButton = new Usf.WinForms.Forms.Button();
             UserDataGridView = new Usf.WinForms.Forms.DataGridView();
-            userIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            usernameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            phoneNumberDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            roleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            isDeletedDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            isActiveDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            byUsernameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            UserId = new DataGridViewTextBoxColumn();
+            FirstName = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            UserTel = new DataGridViewTextBoxColumn();
+            Username = new DataGridViewTextBoxColumn();
+            Password = new DataGridViewTextBoxColumn();
+            Role = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            Birthdate = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
             userBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
@@ -54,72 +57,49 @@
             // 
             // SearchLabel
             // 
-            SearchLabel.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchLabel.Appearance.ForeColor = Color.Blue;
+            SearchLabel.Appearance.Font = (Font)resources.GetObject("SearchLabel.Appearance.Font");
+            SearchLabel.Appearance.ForeColor = (Color)resources.GetObject("SearchLabel.Appearance.ForeColor");
             SearchLabel.Appearance.Options.UseFont = true;
             SearchLabel.Appearance.Options.UseForeColor = true;
-            SearchLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            SearchLabel.Location = new Point(383, 11);
+            resources.ApplyResources(SearchLabel, "SearchLabel");
             SearchLabel.Name = "SearchLabel";
-            SearchLabel.Size = new Size(64, 30);
-            SearchLabel.TabIndex = 5;
-            SearchLabel.Text = "label1";
             // 
             // SearchTextBox
             // 
-            SearchTextBox.Anchor = AnchorStyles.Top;
+            resources.ApplyResources(SearchTextBox, "SearchTextBox");
             SearchTextBox.BackColor = Color.LemonChiffon;
-            SearchTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchTextBox.Location = new Point(633, 4);
-            SearchTextBox.Margin = new Padding(4);
-            SearchTextBox.Multiline = true;
             SearchTextBox.Name = "SearchTextBox";
-            SearchTextBox.Size = new Size(481, 42);
-            SearchTextBox.TabIndex = 4;
-            SearchTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // UserNewButton
             // 
-            UserNewButton.Anchor = AnchorStyles.Bottom;
-            UserNewButton.Appearance.BackColor = Color.Pink;
-            UserNewButton.Appearance.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(UserNewButton, "UserNewButton");
+            UserNewButton.Appearance.BackColor = (Color)resources.GetObject("UserNewButton.Appearance.BackColor");
+            UserNewButton.Appearance.Font = (Font)resources.GetObject("UserNewButton.Appearance.Font");
+            UserNewButton.Appearance.ForeColor = (Color)resources.GetObject("UserNewButton.Appearance.ForeColor");
             UserNewButton.Appearance.Options.UseBackColor = true;
             UserNewButton.Appearance.Options.UseFont = true;
-            UserNewButton.Location = new Point(221, 585);
-            UserNewButton.Margin = new Padding(4);
+            UserNewButton.Appearance.Options.UseForeColor = true;
             UserNewButton.Name = "UserNewButton";
-            UserNewButton.Size = new Size(274, 64);
-            UserNewButton.TabIndex = 9;
-            UserNewButton.Text = "Add";
             UserNewButton.Click += UserNewButton_Click;
             // 
             // UserEditButton
             // 
-            UserEditButton.Anchor = AnchorStyles.Bottom;
-            UserEditButton.Appearance.BackColor = Color.Pink;
-            UserEditButton.Appearance.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(UserEditButton, "UserEditButton");
+            UserEditButton.Appearance.BackColor = (Color)resources.GetObject("UserEditButton.Appearance.BackColor");
+            UserEditButton.Appearance.Font = (Font)resources.GetObject("UserEditButton.Appearance.Font");
             UserEditButton.Appearance.Options.UseBackColor = true;
             UserEditButton.Appearance.Options.UseFont = true;
-            UserEditButton.Location = new Point(715, 585);
-            UserEditButton.Margin = new Padding(4);
             UserEditButton.Name = "UserEditButton";
-            UserEditButton.Size = new Size(274, 64);
-            UserEditButton.TabIndex = 10;
-            UserEditButton.Text = "Edit";
+            UserEditButton.Click += UserEditButton_Click;
             // 
-            // UserStatusButton
+            // StatusButton
             // 
-            UserStatusButton.Anchor = AnchorStyles.Bottom;
-            UserStatusButton.Appearance.BackColor = Color.Pink;
-            UserStatusButton.Appearance.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            UserStatusButton.Appearance.Options.UseBackColor = true;
-            UserStatusButton.Appearance.Options.UseFont = true;
-            UserStatusButton.Location = new Point(1195, 585);
-            UserStatusButton.Margin = new Padding(4);
-            UserStatusButton.Name = "UserStatusButton";
-            UserStatusButton.Size = new Size(274, 64);
-            UserStatusButton.TabIndex = 11;
-            UserStatusButton.Text = "Active/DeActive";
+            resources.ApplyResources(StatusButton, "StatusButton");
+            StatusButton.Appearance.BackColor = (Color)resources.GetObject("StatusButton.Appearance.BackColor");
+            StatusButton.Appearance.Font = (Font)resources.GetObject("StatusButton.Appearance.Font");
+            StatusButton.Appearance.Options.UseBackColor = true;
+            StatusButton.Appearance.Options.UseFont = true;
+            StatusButton.Name = "StatusButton";
             // 
             // UserDataGridView
             // 
@@ -127,124 +107,113 @@
             UserDataGridView.AllowUserToDeleteRows = false;
             UserDataGridView.AutoGenerateColumns = false;
             UserDataGridView.BackgroundColor = Color.MistyRose;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            UserDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             UserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { userIdDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, usernameDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, phoneNumberDataGridViewTextBoxColumn, roleDataGridViewTextBoxColumn, isDeletedDataGridViewCheckBoxColumn, isActiveDataGridViewCheckBoxColumn, byUsernameDataGridViewTextBoxColumn });
+            UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { UserId, FirstName, LastName, UserTel, Username, Password, Role, Status, Birthdate, Email, Address, Description });
             UserDataGridView.DataSource = userBindingSource;
-            UserDataGridView.Location = new Point(25, 101);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            UserDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(UserDataGridView, "UserDataGridView");
             UserDataGridView.Name = "UserDataGridView";
             UserDataGridView.ReadOnly = true;
-            UserDataGridView.RowHeadersWidth = 51;
             UserDataGridView.RowTemplate.Height = 29;
-            UserDataGridView.Size = new Size(1591, 405);
-            UserDataGridView.TabIndex = 12;
             // 
-            // userIdDataGridViewTextBoxColumn
+            // UserId
             // 
-            userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            userIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            userIdDataGridViewTextBoxColumn.ReadOnly = true;
-            userIdDataGridViewTextBoxColumn.Width = 125;
+            UserId.DataPropertyName = "UserId";
+            resources.ApplyResources(UserId, "UserId");
+            UserId.Name = "UserId";
+            UserId.ReadOnly = true;
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // FirstName
             // 
-            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            firstNameDataGridViewTextBoxColumn.Width = 125;
+            FirstName.DataPropertyName = "FirstName";
+            resources.ApplyResources(FirstName, "FirstName");
+            FirstName.Name = "FirstName";
+            FirstName.ReadOnly = true;
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // LastName
             // 
-            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            lastNameDataGridViewTextBoxColumn.Width = 125;
+            LastName.DataPropertyName = "LastName";
+            resources.ApplyResources(LastName, "LastName");
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
             // 
-            // emailDataGridViewTextBoxColumn
+            // UserTel
             // 
-            emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            emailDataGridViewTextBoxColumn.ReadOnly = true;
-            emailDataGridViewTextBoxColumn.Width = 125;
+            UserTel.DataPropertyName = "PhoneNumber";
+            resources.ApplyResources(UserTel, "UserTel");
+            UserTel.Name = "UserTel";
+            UserTel.ReadOnly = true;
             // 
-            // usernameDataGridViewTextBoxColumn
+            // Username
             // 
-            usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            usernameDataGridViewTextBoxColumn.Width = 125;
+            Username.DataPropertyName = "Username";
+            resources.ApplyResources(Username, "Username");
+            Username.Name = "Username";
+            Username.ReadOnly = true;
             // 
-            // passwordDataGridViewTextBoxColumn
+            // Password
             // 
-            passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            passwordDataGridViewTextBoxColumn.Width = 125;
+            Password.DataPropertyName = "Password";
+            resources.ApplyResources(Password, "Password");
+            Password.Name = "Password";
+            Password.ReadOnly = true;
             // 
-            // addressDataGridViewTextBoxColumn
+            // Role
             // 
-            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            addressDataGridViewTextBoxColumn.ReadOnly = true;
-            addressDataGridViewTextBoxColumn.Width = 125;
+            Role.DataPropertyName = "Role";
+            resources.ApplyResources(Role, "Role");
+            Role.Name = "Role";
+            Role.ReadOnly = true;
             // 
-            // phoneNumberDataGridViewTextBoxColumn
+            // Status
             // 
-            phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            phoneNumberDataGridViewTextBoxColumn.Width = 125;
+            Status.DataPropertyName = "UserId";
+            resources.ApplyResources(Status, "Status");
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
-            // roleDataGridViewTextBoxColumn
+            // Birthdate
             // 
-            roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            roleDataGridViewTextBoxColumn.HeaderText = "Role";
-            roleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
-            roleDataGridViewTextBoxColumn.ReadOnly = true;
-            roleDataGridViewTextBoxColumn.Width = 125;
+            Birthdate.DataPropertyName = "UserId";
+            resources.ApplyResources(Birthdate, "Birthdate");
+            Birthdate.Name = "Birthdate";
+            Birthdate.ReadOnly = true;
             // 
-            // isDeletedDataGridViewCheckBoxColumn
+            // Email
             // 
-            isDeletedDataGridViewCheckBoxColumn.DataPropertyName = "IsDeleted";
-            isDeletedDataGridViewCheckBoxColumn.HeaderText = "IsDeleted";
-            isDeletedDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            isDeletedDataGridViewCheckBoxColumn.Name = "isDeletedDataGridViewCheckBoxColumn";
-            isDeletedDataGridViewCheckBoxColumn.ReadOnly = true;
-            isDeletedDataGridViewCheckBoxColumn.Width = 125;
+            Email.DataPropertyName = "Email";
+            resources.ApplyResources(Email, "Email");
+            Email.Name = "Email";
+            Email.ReadOnly = true;
             // 
-            // isActiveDataGridViewCheckBoxColumn
+            // Address
             // 
-            isActiveDataGridViewCheckBoxColumn.DataPropertyName = "IsActive";
-            isActiveDataGridViewCheckBoxColumn.HeaderText = "IsActive";
-            isActiveDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            isActiveDataGridViewCheckBoxColumn.Name = "isActiveDataGridViewCheckBoxColumn";
-            isActiveDataGridViewCheckBoxColumn.ReadOnly = true;
-            isActiveDataGridViewCheckBoxColumn.Width = 125;
+            Address.DataPropertyName = "Address";
+            resources.ApplyResources(Address, "Address");
+            Address.Name = "Address";
+            Address.ReadOnly = true;
             // 
-            // byUsernameDataGridViewTextBoxColumn
+            // Description
             // 
-            byUsernameDataGridViewTextBoxColumn.DataPropertyName = "ByUsername";
-            byUsernameDataGridViewTextBoxColumn.HeaderText = "ByUsername";
-            byUsernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            byUsernameDataGridViewTextBoxColumn.Name = "byUsernameDataGridViewTextBoxColumn";
-            byUsernameDataGridViewTextBoxColumn.ReadOnly = true;
-            byUsernameDataGridViewTextBoxColumn.Width = 125;
+            Description.DataPropertyName = "UserId";
+            resources.ApplyResources(Description, "Description");
+            Description.Name = "Description";
+            Description.ReadOnly = true;
             // 
             // userBindingSource
             // 
@@ -252,22 +221,18 @@
             // 
             // UsersForm
             // 
-            Appearance.BackColor = Color.Aquamarine;
+            Appearance.BackColor = (Color)resources.GetObject("UsersForm.Appearance.BackColor");
             Appearance.Options.UseBackColor = true;
             Appearance.Options.UseFont = true;
-            AutoScaleDimensions = new SizeF(13F, 30F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1684, 654);
             Controls.Add(UserDataGridView);
             Controls.Add(UserNewButton);
             Controls.Add(UserEditButton);
-            Controls.Add(UserStatusButton);
+            Controls.Add(StatusButton);
             Controls.Add(SearchLabel);
             Controls.Add(SearchTextBox);
-            Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(8);
             Name = "UsersForm";
-            Text = "UsersForm";
             Load += UsersForm_Load;
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
@@ -280,20 +245,21 @@
         private Usf.WinForms.Forms.TextBox SearchTextBox;
         private Usf.WinForms.Forms.Button UserNewButton;
         private Usf.WinForms.Forms.Button UserEditButton;
-        private Usf.WinForms.Forms.Button UserStatusButton;
+        private Usf.WinForms.Forms.Button StatusButton;
         private Usf.WinForms.Forms.DataGridView UserDataGridView;
-        private DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn isDeletedDataGridViewCheckBoxColumn;
-        private DataGridViewCheckBoxColumn isActiveDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn byUsernameDataGridViewTextBoxColumn;
         private BindingSource userBindingSource;
+        private DataGridViewTextBoxColumn UserId;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn UserTel;
+        private DataGridViewTextBoxColumn Username;
+        private DataGridViewTextBoxColumn Password;
+        private DataGridViewTextBoxColumn Role;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn Birthdate;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn Description;
     }
 }

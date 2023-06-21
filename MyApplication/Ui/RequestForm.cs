@@ -34,13 +34,13 @@ namespace MyApplication.Ui
                 resource.GetString(name: nameof(CustomerCode));
 
             CustomerInRequestFormDataGridView.Columns[1].HeaderText =
-                resource.GetString(name: nameof(CustomerFirstName));
+                resource.GetString(name: nameof(FirstName));
 
             CustomerInRequestFormDataGridView.Columns[2].HeaderText =
-                resource.GetString(name: nameof(CustomerLastName));
+                resource.GetString(name: nameof(LastName));
 
             CustomerInRequestFormDataGridView.Columns[3].HeaderText =
-                resource.GetString(name: nameof(CustomerTel));
+                resource.GetString(name: nameof(Tel));
 
             CustomerInRequestFormDataGridView.Columns[4].HeaderText =
                 resource.GetString(name: nameof(CustomerType));

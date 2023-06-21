@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             UsernameLabel = new Usf.WinForms.Forms.Label();
             PasswordLabel = new Usf.WinForms.Forms.Label();
             UsernameTextBox = new Usf.WinForms.Forms.TextBox();
@@ -46,147 +47,102 @@
             // 
             // UsernameLabel
             // 
-            UsernameLabel.Appearance.Font = new Font("IRANYekan Medium", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            UsernameLabel.Appearance.ForeColor = Color.Teal;
+            UsernameLabel.Appearance.Font = (Font)resources.GetObject("UsernameLabel.Appearance.Font");
+            UsernameLabel.Appearance.ForeColor = (Color)resources.GetObject("UsernameLabel.Appearance.ForeColor");
             UsernameLabel.Appearance.Options.UseFont = true;
             UsernameLabel.Appearance.Options.UseForeColor = true;
-            UsernameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            UsernameLabel.Location = new Point(26, 41);
+            resources.ApplyResources(UsernameLabel, "UsernameLabel");
             UsernameLabel.Name = "UsernameLabel";
-            UsernameLabel.Size = new Size(110, 25);
-            UsernameLabel.TabIndex = 5;
-            UsernameLabel.Text = "label1";
             // 
             // PasswordLabel
             // 
-            PasswordLabel.Appearance.Font = new Font("IRANYekan Medium", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordLabel.Appearance.ForeColor = Color.Teal;
+            PasswordLabel.Appearance.Font = (Font)resources.GetObject("PasswordLabel.Appearance.Font");
+            PasswordLabel.Appearance.ForeColor = (Color)resources.GetObject("PasswordLabel.Appearance.ForeColor");
             PasswordLabel.Appearance.Options.UseFont = true;
             PasswordLabel.Appearance.Options.UseForeColor = true;
-            PasswordLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            PasswordLabel.Location = new Point(26, 109);
+            resources.ApplyResources(PasswordLabel, "PasswordLabel");
             PasswordLabel.Name = "PasswordLabel";
-            PasswordLabel.Size = new Size(110, 25);
-            PasswordLabel.TabIndex = 6;
-            PasswordLabel.Text = "label22";
             // 
             // UsernameTextBox
             // 
             UsernameTextBox.BackColor = Color.LemonChiffon;
-            UsernameTextBox.Font = new Font("B Yekan", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(UsernameTextBox, "UsernameTextBox");
             UsernameTextBox.ForeColor = Color.Maroon;
-            UsernameTextBox.Location = new Point(22, 69);
-            UsernameTextBox.Multiline = true;
             UsernameTextBox.Name = "UsernameTextBox";
-            UsernameTextBox.Size = new Size(232, 40);
-            UsernameTextBox.TabIndex = 4;
-            UsernameTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // PasswordTextBox
             // 
             PasswordTextBox.BackColor = Color.LemonChiffon;
-            PasswordTextBox.Font = new Font("B Yekan", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(PasswordTextBox, "PasswordTextBox");
             PasswordTextBox.ForeColor = Color.Maroon;
-            PasswordTextBox.Location = new Point(22, 137);
-            PasswordTextBox.Multiline = true;
             PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.PasswordChar = '*';
-            PasswordTextBox.Size = new Size(232, 40);
-            PasswordTextBox.TabIndex = 0;
-            PasswordTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // EnterButton
             // 
-            EnterButton.Appearance.BackColor = Color.Aquamarine;
-            EnterButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            EnterButton.Appearance.ForeColor = Color.Green;
+            EnterButton.Appearance.BackColor = (Color)resources.GetObject("EnterButton.Appearance.BackColor");
+            EnterButton.Appearance.Font = (Font)resources.GetObject("EnterButton.Appearance.Font");
+            EnterButton.Appearance.ForeColor = (Color)resources.GetObject("EnterButton.Appearance.ForeColor");
             EnterButton.Appearance.Options.UseBackColor = true;
             EnterButton.Appearance.Options.UseFont = true;
             EnterButton.Appearance.Options.UseForeColor = true;
-            EnterButton.Location = new Point(22, 191);
+            resources.ApplyResources(EnterButton, "EnterButton");
             EnterButton.Name = "EnterButton";
-            EnterButton.Size = new Size(110, 51);
-            EnterButton.TabIndex = 1;
-            EnterButton.Text = "button1";
             EnterButton.Click += EnterButton_Click;
             // 
             // ExitButton
             // 
-            ExitButton.Appearance.BackColor = Color.LightSalmon;
-            ExitButton.Appearance.Font = new Font("IRANYekan Medium", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            ExitButton.Appearance.ForeColor = Color.Red;
+            ExitButton.Appearance.BackColor = (Color)resources.GetObject("ExitButton.Appearance.BackColor");
+            ExitButton.Appearance.Font = (Font)resources.GetObject("ExitButton.Appearance.Font");
+            ExitButton.Appearance.ForeColor = (Color)resources.GetObject("ExitButton.Appearance.ForeColor");
             ExitButton.Appearance.Options.UseBackColor = true;
             ExitButton.Appearance.Options.UseFont = true;
             ExitButton.Appearance.Options.UseForeColor = true;
-            ExitButton.Location = new Point(144, 191);
+            resources.ApplyResources(ExitButton, "ExitButton");
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(110, 51);
-            ExitButton.TabIndex = 2;
-            ExitButton.Text = "button2";
             ExitButton.Click += ExitButton_Click;
             // 
             // LanguageLabel
             // 
-            LanguageLabel.Appearance.Font = new Font("Tahoma", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            LanguageLabel.Appearance.ForeColor = Color.DeepSkyBlue;
+            LanguageLabel.Appearance.Font = (Font)resources.GetObject("LanguageLabel.Appearance.Font");
+            LanguageLabel.Appearance.ForeColor = (Color)resources.GetObject("LanguageLabel.Appearance.ForeColor");
             LanguageLabel.Appearance.Options.UseFont = true;
             LanguageLabel.Appearance.Options.UseForeColor = true;
-            LanguageLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            resources.ApplyResources(LanguageLabel, "LanguageLabel");
             LanguageLabel.Cursor = Cursors.Hand;
-            LanguageLabel.Location = new Point(1, -2);
             LanguageLabel.Name = "LanguageLabel";
-            LanguageLabel.Size = new Size(48, 21);
-            LanguageLabel.TabIndex = 3;
-            LanguageLabel.Text = "label3";
             LanguageLabel.Click += LanguageLabel_Click;
             // 
             // radioButton1
             // 
-            radioButton1.AutoSize = true;
+            resources.ApplyResources(radioButton1, "radioButton1");
             radioButton1.Checked = true;
-            radioButton1.Font = new Font("B Yekan", 8F, FontStyle.Bold, GraphicsUnit.Point);
             radioButton1.ForeColor = Color.DeepSkyBlue;
-            radioButton1.Location = new Point(208, -2);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(60, 21);
-            radioButton1.TabIndex = 8;
             radioButton1.TabStop = true;
-            radioButton1.Text = "Admin";
             radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("B Yekan", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(radioButton2, "radioButton2");
             radioButton2.ForeColor = Color.DeepSkyBlue;
-            radioButton2.Location = new Point(150, -2);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(52, 21);
-            radioButton2.TabIndex = 9;
-            radioButton2.Text = "User";
             radioButton2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Orange;
             panel1.Controls.Add(SystemNameLabel);
-            panel1.Location = new Point(0, 1);
+            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
-            panel1.Size = new Size(276, 33);
-            panel1.TabIndex = 11;
             // 
             // SystemNameLabel
             // 
-            SystemNameLabel.Appearance.Font = new Font("IRANYekan Medium", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            SystemNameLabel.Appearance.ForeColor = Color.Maroon;
+            SystemNameLabel.Appearance.Font = (Font)resources.GetObject("SystemNameLabel.Appearance.Font");
+            SystemNameLabel.Appearance.ForeColor = (Color)resources.GetObject("SystemNameLabel.Appearance.ForeColor");
             SystemNameLabel.Appearance.Options.UseFont = true;
             SystemNameLabel.Appearance.Options.UseForeColor = true;
-            SystemNameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            SystemNameLabel.Location = new Point(55, 0);
+            resources.ApplyResources(SystemNameLabel, "SystemNameLabel");
             SystemNameLabel.Name = "SystemNameLabel";
-            SystemNameLabel.Size = new Size(168, 30);
-            SystemNameLabel.TabIndex = 8;
-            SystemNameLabel.Text = "label3";
             // 
             // panel2
             // 
@@ -194,21 +150,18 @@
             panel2.Controls.Add(radioButton1);
             panel2.Controls.Add(radioButton2);
             panel2.Controls.Add(LanguageLabel);
-            panel2.Location = new Point(0, 252);
+            resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
-            panel2.Size = new Size(276, 18);
-            panel2.TabIndex = 12;
             // 
             // LoginForm
             // 
             AcceptButton = EnterButton;
-            Appearance.BackColor = Color.Gold;
+            Appearance.BackColor = (Color)resources.GetObject("LoginForm.Appearance.BackColor");
             Appearance.Options.UseBackColor = true;
             Appearance.Options.UseFont = true;
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ExitButton;
-            ClientSize = new Size(276, 270);
             ControlBox = false;
             Controls.Add(ExitButton);
             Controls.Add(EnterButton);
@@ -218,11 +171,8 @@
             Controls.Add(UsernameTextBox);
             Controls.Add(PasswordLabel);
             Controls.Add(UsernameLabel);
-            Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(6);
             Name = "LoginForm";
-            Text = "LoginForm";
             Load += LoginForm_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

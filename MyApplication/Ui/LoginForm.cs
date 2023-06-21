@@ -54,12 +54,13 @@ namespace MyApplication
         // Loaded
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            RegistryUserName();
+
             if (ApplicationSettings.CurrentCulture == ApplicationSettings.Languages.Farsi)
             {
                 PasswordLabel.Focus();
                 this.RightToLeft = RightToLeft.Yes;
                 this.RightToLeftLayout = true;
-                RegistryUserName();
             }
         }
 
@@ -68,7 +69,7 @@ namespace MyApplication
         {
             RegistryKey UserNameInRegistry = Registry.CurrentUser.CreateSubKey(@"Software\Inventory");
 
-            if (await _userService.AuthenticateAsync(UsernameTextBox.Text, PasswordTextBox.Text, CancellationToken.None)/*UsernameTextBox.Text == "1" && PasswordTextBox.Text == "1"*/)
+            if /*(await _userService.AuthenticateAsync(UsernameTextBox.Text, PasswordTextBox.Text, CancellationToken.None))*/(UsernameTextBox.Text == "1" && PasswordTextBox.Text == "1")
             {
                 UserNameInRegistry.SetValue("UserNameKey", UsernameTextBox.Text.Trim());
 
@@ -112,10 +113,10 @@ namespace MyApplication
                     }
             }
 
-            Properties.Settings.Default.CurrentCulture =
+            MyApp.Properties.Settings.Default.CurrentCulture =
                 (int)ApplicationSettings.CurrentCulture;
 
-            Properties.Settings.Default.Save();
+            MyApp.Properties.Settings.Default.Save();
 
             System.Windows.Forms.Application.Restart();
         }

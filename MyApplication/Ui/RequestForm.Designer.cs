@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestForm));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             InventoryTransferButton = new Usf.WinForms.Forms.Button();
             AddToRequestButton = new Usf.WinForms.Forms.Button();
             PrintInventoryTransferButton = new Usf.WinForms.Forms.Button();
@@ -53,11 +54,6 @@
             CustomerFullNameLabel = new Usf.WinForms.Forms.Label();
             AmountLabel = new Usf.WinForms.Forms.Label();
             CustomerInRequestFormDataGridView = new Usf.WinForms.Forms.DataGridView();
-            CustomerCode = new DataGridViewTextBoxColumn();
-            CustomerFirstName = new DataGridViewTextBoxColumn();
-            CustomerLastName = new DataGridViewTextBoxColumn();
-            CustomerTel = new DataGridViewTextBoxColumn();
-            CustomerType = new DataGridViewTextBoxColumn();
             SearchCustomerLabel = new Usf.WinForms.Forms.Label();
             SearchProductLabel = new Usf.WinForms.Forms.Label();
             ProductInRequestFormDataGridView = new Usf.WinForms.Forms.DataGridView();
@@ -77,6 +73,11 @@
             SearchProductTextBox = new Usf.WinForms.Forms.TextBox();
             Row = new DataGridViewTextBoxColumn();
             CountTextBox = new Usf.WinForms.Forms.TextBox();
+            CustomerCode = new DataGridViewTextBoxColumn();
+            FirstName = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            Tel = new DataGridViewTextBoxColumn();
+            CustomerType = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)CustomerInRequestFormDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ProductInRequestFormDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RequestFormDataGridView).BeginInit();
@@ -84,538 +85,406 @@
             // 
             // InventoryTransferButton
             // 
-            InventoryTransferButton.Anchor = AnchorStyles.Left;
-            InventoryTransferButton.Appearance.BackColor = Color.LightGreen;
-            InventoryTransferButton.Appearance.Font = new Font("IRANYekan Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(InventoryTransferButton, "InventoryTransferButton");
+            InventoryTransferButton.Appearance.BackColor = (Color)resources.GetObject("InventoryTransferButton.Appearance.BackColor");
+            InventoryTransferButton.Appearance.Font = (Font)resources.GetObject("InventoryTransferButton.Appearance.Font");
             InventoryTransferButton.Appearance.Options.UseBackColor = true;
             InventoryTransferButton.Appearance.Options.UseFont = true;
-            InventoryTransferButton.Location = new Point(30, 199);
             InventoryTransferButton.Name = "InventoryTransferButton";
-            InventoryTransferButton.Size = new Size(273, 40);
-            InventoryTransferButton.TabIndex = 1;
-            InventoryTransferButton.Text = "Inventory Transfer New";
             // 
             // AddToRequestButton
             // 
-            AddToRequestButton.Anchor = AnchorStyles.Right;
-            AddToRequestButton.Appearance.BackColor = Color.LightGreen;
-            AddToRequestButton.Appearance.Font = new Font("IRANYekan Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(AddToRequestButton, "AddToRequestButton");
+            AddToRequestButton.Appearance.BackColor = (Color)resources.GetObject("AddToRequestButton.Appearance.BackColor");
+            AddToRequestButton.Appearance.Font = (Font)resources.GetObject("AddToRequestButton.Appearance.Font");
             AddToRequestButton.Appearance.Options.UseBackColor = true;
             AddToRequestButton.Appearance.Options.UseFont = true;
-            AddToRequestButton.Location = new Point(773, 199);
             AddToRequestButton.Name = "AddToRequestButton";
-            AddToRequestButton.Size = new Size(218, 40);
-            AddToRequestButton.TabIndex = 5;
-            AddToRequestButton.Text = "Add to Request";
             // 
             // PrintInventoryTransferButton
             // 
-            PrintInventoryTransferButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            PrintInventoryTransferButton.Appearance.BackColor = Color.LightGreen;
-            PrintInventoryTransferButton.Appearance.Font = new Font("IRANYekan Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(PrintInventoryTransferButton, "PrintInventoryTransferButton");
+            PrintInventoryTransferButton.Appearance.BackColor = (Color)resources.GetObject("PrintInventoryTransferButton.Appearance.BackColor");
+            PrintInventoryTransferButton.Appearance.Font = (Font)resources.GetObject("PrintInventoryTransferButton.Appearance.Font");
             PrintInventoryTransferButton.Appearance.Options.UseBackColor = true;
             PrintInventoryTransferButton.Appearance.Options.UseFont = true;
-            PrintInventoryTransferButton.Location = new Point(626, 473);
             PrintInventoryTransferButton.Name = "PrintInventoryTransferButton";
-            PrintInventoryTransferButton.Size = new Size(256, 40);
-            PrintInventoryTransferButton.TabIndex = 7;
-            PrintInventoryTransferButton.Text = "Print Inventory Transter";
             // 
             // PrintInvoiceButton
             // 
-            PrintInvoiceButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            PrintInvoiceButton.Appearance.BackColor = Color.LightGreen;
-            PrintInvoiceButton.Appearance.Font = new Font("IRANYekan Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(PrintInvoiceButton, "PrintInvoiceButton");
+            PrintInvoiceButton.Appearance.BackColor = (Color)resources.GetObject("PrintInvoiceButton.Appearance.BackColor");
+            PrintInvoiceButton.Appearance.Font = (Font)resources.GetObject("PrintInvoiceButton.Appearance.Font");
             PrintInvoiceButton.Appearance.Options.UseBackColor = true;
             PrintInvoiceButton.Appearance.Options.UseFont = true;
-            PrintInvoiceButton.Location = new Point(905, 473);
             PrintInvoiceButton.Name = "PrintInvoiceButton";
-            PrintInvoiceButton.Size = new Size(163, 40);
-            PrintInvoiceButton.TabIndex = 8;
-            PrintInvoiceButton.Text = "Print Invoice";
             // 
             // DeleteButton
             // 
-            DeleteButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            DeleteButton.Appearance.BackColor = Color.FromArgb(255, 128, 128);
-            DeleteButton.Appearance.Font = new Font("IRANYekan Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            DeleteButton.Appearance.ForeColor = Color.Black;
+            resources.ApplyResources(DeleteButton, "DeleteButton");
+            DeleteButton.Appearance.BackColor = (Color)resources.GetObject("DeleteButton.Appearance.BackColor");
+            DeleteButton.Appearance.Font = (Font)resources.GetObject("DeleteButton.Appearance.Font");
+            DeleteButton.Appearance.ForeColor = (Color)resources.GetObject("DeleteButton.Appearance.ForeColor");
             DeleteButton.Appearance.Options.UseBackColor = true;
             DeleteButton.Appearance.Options.UseFont = true;
             DeleteButton.Appearance.Options.UseForeColor = true;
-            DeleteButton.Location = new Point(1089, 473);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(126, 40);
-            DeleteButton.TabIndex = 9;
-            DeleteButton.Text = "Delete";
             // 
             // InvoiceButton
             // 
-            InvoiceButton.Anchor = AnchorStyles.Left;
-            InvoiceButton.Appearance.BackColor = Color.LightGreen;
-            InvoiceButton.Appearance.Font = new Font("IRANYekan Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(InvoiceButton, "InvoiceButton");
+            InvoiceButton.Appearance.BackColor = (Color)resources.GetObject("InvoiceButton.Appearance.BackColor");
+            InvoiceButton.Appearance.Font = (Font)resources.GetObject("InvoiceButton.Appearance.Font");
             InvoiceButton.Appearance.Options.UseBackColor = true;
             InvoiceButton.Appearance.Options.UseFont = true;
-            InvoiceButton.Location = new Point(324, 199);
             InvoiceButton.Name = "InvoiceButton";
-            InvoiceButton.Size = new Size(184, 40);
-            InvoiceButton.TabIndex = 2;
-            InvoiceButton.Text = "Invoice New";
             // 
             // AddToShopingButton
             // 
-            AddToShopingButton.Anchor = AnchorStyles.Right;
-            AddToShopingButton.Appearance.BackColor = Color.LightGreen;
-            AddToShopingButton.Appearance.Font = new Font("IRANYekan Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(AddToShopingButton, "AddToShopingButton");
+            AddToShopingButton.Appearance.BackColor = (Color)resources.GetObject("AddToShopingButton.Appearance.BackColor");
+            AddToShopingButton.Appearance.Font = (Font)resources.GetObject("AddToShopingButton.Appearance.Font");
             AddToShopingButton.Appearance.Options.UseBackColor = true;
             AddToShopingButton.Appearance.Options.UseFont = true;
-            AddToShopingButton.Location = new Point(1013, 199);
             AddToShopingButton.Name = "AddToShopingButton";
-            AddToShopingButton.Size = new Size(202, 40);
-            AddToShopingButton.TabIndex = 6;
-            AddToShopingButton.Text = "Add to Shoping";
             // 
             // CountLabel
             // 
-            CountLabel.Anchor = AnchorStyles.Right;
-            CountLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CountLabel.Appearance.ForeColor = Color.Teal;
+            resources.ApplyResources(CountLabel, "CountLabel");
+            CountLabel.Appearance.Font = (Font)resources.GetObject("CountLabel.Appearance.Font");
+            CountLabel.Appearance.ForeColor = (Color)resources.GetObject("CountLabel.Appearance.ForeColor");
             CountLabel.Appearance.Options.UseFont = true;
             CountLabel.Appearance.Options.UseForeColor = true;
-            CountLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            CountLabel.Location = new Point(616, 202);
             CountLabel.Name = "CountLabel";
-            CountLabel.Size = new Size(56, 30);
-            CountLabel.TabIndex = 5;
-            CountLabel.Text = "Count";
             // 
             // NumberLabel
             // 
-            NumberLabel.Anchor = AnchorStyles.Left;
-            NumberLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            NumberLabel.Appearance.ForeColor = Color.Teal;
+            resources.ApplyResources(NumberLabel, "NumberLabel");
+            NumberLabel.Appearance.Font = (Font)resources.GetObject("NumberLabel.Appearance.Font");
+            NumberLabel.Appearance.ForeColor = (Color)resources.GetObject("NumberLabel.Appearance.ForeColor");
             NumberLabel.Appearance.Options.UseFont = true;
             NumberLabel.Appearance.Options.UseForeColor = true;
-            NumberLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            NumberLabel.Location = new Point(82, 283);
             NumberLabel.Name = "NumberLabel";
-            NumberLabel.Size = new Size(120, 30);
-            NumberLabel.TabIndex = 6;
-            NumberLabel.Text = "Number :";
             // 
             // DateLabel
             // 
-            DateLabel.Anchor = AnchorStyles.Left;
-            DateLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            DateLabel.Appearance.ForeColor = Color.Teal;
+            resources.ApplyResources(DateLabel, "DateLabel");
+            DateLabel.Appearance.Font = (Font)resources.GetObject("DateLabel.Appearance.Font");
+            DateLabel.Appearance.ForeColor = (Color)resources.GetObject("DateLabel.Appearance.ForeColor");
             DateLabel.Appearance.Options.UseFont = true;
             DateLabel.Appearance.Options.UseForeColor = true;
-            DateLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            DateLabel.Location = new Point(82, 323);
             DateLabel.Name = "DateLabel";
-            DateLabel.Size = new Size(120, 30);
-            DateLabel.TabIndex = 7;
-            DateLabel.Text = "Date :";
             // 
             // RegistrarLabel
             // 
-            RegistrarLabel.Anchor = AnchorStyles.Left;
-            RegistrarLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            RegistrarLabel.Appearance.ForeColor = Color.Teal;
+            resources.ApplyResources(RegistrarLabel, "RegistrarLabel");
+            RegistrarLabel.Appearance.Font = (Font)resources.GetObject("RegistrarLabel.Appearance.Font");
+            RegistrarLabel.Appearance.ForeColor = (Color)resources.GetObject("RegistrarLabel.Appearance.ForeColor");
             RegistrarLabel.Appearance.Options.UseFont = true;
             RegistrarLabel.Appearance.Options.UseForeColor = true;
-            RegistrarLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            RegistrarLabel.Location = new Point(82, 359);
             RegistrarLabel.Name = "RegistrarLabel";
-            RegistrarLabel.Size = new Size(120, 30);
-            RegistrarLabel.TabIndex = 8;
-            RegistrarLabel.Text = "User :";
             // 
             // CustomerLabel
             // 
-            CustomerLabel.Anchor = AnchorStyles.Left;
-            CustomerLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CustomerLabel.Appearance.ForeColor = Color.Teal;
+            resources.ApplyResources(CustomerLabel, "CustomerLabel");
+            CustomerLabel.Appearance.Font = (Font)resources.GetObject("CustomerLabel.Appearance.Font");
+            CustomerLabel.Appearance.ForeColor = (Color)resources.GetObject("CustomerLabel.Appearance.ForeColor");
             CustomerLabel.Appearance.Options.UseFont = true;
             CustomerLabel.Appearance.Options.UseForeColor = true;
-            CustomerLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            CustomerLabel.Location = new Point(82, 395);
             CustomerLabel.Name = "CustomerLabel";
-            CustomerLabel.Size = new Size(120, 30);
-            CustomerLabel.TabIndex = 9;
-            CustomerLabel.Text = "Customer :";
             // 
             // TotalAmountLabel
             // 
-            TotalAmountLabel.Anchor = AnchorStyles.Left;
-            TotalAmountLabel.Appearance.BackColor = Color.Transparent;
-            TotalAmountLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            TotalAmountLabel.Appearance.ForeColor = Color.Teal;
+            resources.ApplyResources(TotalAmountLabel, "TotalAmountLabel");
+            TotalAmountLabel.Appearance.BackColor = (Color)resources.GetObject("TotalAmountLabel.Appearance.BackColor");
+            TotalAmountLabel.Appearance.Font = (Font)resources.GetObject("TotalAmountLabel.Appearance.Font");
+            TotalAmountLabel.Appearance.ForeColor = (Color)resources.GetObject("TotalAmountLabel.Appearance.ForeColor");
             TotalAmountLabel.Appearance.Options.UseBackColor = true;
             TotalAmountLabel.Appearance.Options.UseFont = true;
             TotalAmountLabel.Appearance.Options.UseForeColor = true;
-            TotalAmountLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            TotalAmountLabel.Location = new Point(82, 437);
             TotalAmountLabel.Name = "TotalAmountLabel";
-            TotalAmountLabel.Size = new Size(120, 30);
-            TotalAmountLabel.TabIndex = 10;
-            TotalAmountLabel.Text = "Amount :";
             // 
             // NumberRequestLabel
             // 
-            NumberRequestLabel.Anchor = AnchorStyles.Left;
-            NumberRequestLabel.Appearance.Font = new Font("Tahoma", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            NumberRequestLabel.Appearance.ForeColor = Color.Red;
+            resources.ApplyResources(NumberRequestLabel, "NumberRequestLabel");
+            NumberRequestLabel.Appearance.Font = (Font)resources.GetObject("NumberRequestLabel.Appearance.Font");
+            NumberRequestLabel.Appearance.ForeColor = (Color)resources.GetObject("NumberRequestLabel.Appearance.ForeColor");
             NumberRequestLabel.Appearance.Options.UseFont = true;
             NumberRequestLabel.Appearance.Options.UseForeColor = true;
-            NumberRequestLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            NumberRequestLabel.Location = new Point(195, 283);
             NumberRequestLabel.Name = "NumberRequestLabel";
-            NumberRequestLabel.Size = new Size(194, 30);
-            NumberRequestLabel.TabIndex = 11;
-            NumberRequestLabel.Text = "609";
             // 
             // DateRequestLabel
             // 
-            DateRequestLabel.Anchor = AnchorStyles.Left;
-            DateRequestLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            DateRequestLabel.Appearance.ForeColor = Color.Black;
+            resources.ApplyResources(DateRequestLabel, "DateRequestLabel");
+            DateRequestLabel.Appearance.Font = (Font)resources.GetObject("DateRequestLabel.Appearance.Font");
+            DateRequestLabel.Appearance.ForeColor = (Color)resources.GetObject("DateRequestLabel.Appearance.ForeColor");
             DateRequestLabel.Appearance.Options.UseFont = true;
             DateRequestLabel.Appearance.Options.UseForeColor = true;
-            DateRequestLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            DateRequestLabel.Location = new Point(195, 323);
             DateRequestLabel.Name = "DateRequestLabel";
-            DateRequestLabel.Size = new Size(195, 30);
-            DateRequestLabel.TabIndex = 12;
-            DateRequestLabel.Text = "1402/02/13";
             // 
             // UserFullNameLabel
             // 
-            UserFullNameLabel.Anchor = AnchorStyles.Left;
-            UserFullNameLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            UserFullNameLabel.Appearance.ForeColor = Color.Black;
+            resources.ApplyResources(UserFullNameLabel, "UserFullNameLabel");
+            UserFullNameLabel.Appearance.Font = (Font)resources.GetObject("UserFullNameLabel.Appearance.Font");
+            UserFullNameLabel.Appearance.ForeColor = (Color)resources.GetObject("UserFullNameLabel.Appearance.ForeColor");
             UserFullNameLabel.Appearance.Options.UseFont = true;
             UserFullNameLabel.Appearance.Options.UseForeColor = true;
-            UserFullNameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            UserFullNameLabel.Location = new Point(195, 359);
             UserFullNameLabel.Name = "UserFullNameLabel";
-            UserFullNameLabel.Size = new Size(195, 30);
-            UserFullNameLabel.TabIndex = 12;
-            UserFullNameLabel.Text = "Ebrahim Bakhtiari";
             // 
             // CustomerFullNameLabel
             // 
-            CustomerFullNameLabel.Anchor = AnchorStyles.Left;
-            CustomerFullNameLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CustomerFullNameLabel.Appearance.ForeColor = Color.Black;
+            resources.ApplyResources(CustomerFullNameLabel, "CustomerFullNameLabel");
+            CustomerFullNameLabel.Appearance.Font = (Font)resources.GetObject("CustomerFullNameLabel.Appearance.Font");
+            CustomerFullNameLabel.Appearance.ForeColor = (Color)resources.GetObject("CustomerFullNameLabel.Appearance.ForeColor");
             CustomerFullNameLabel.Appearance.Options.UseFont = true;
             CustomerFullNameLabel.Appearance.Options.UseForeColor = true;
-            CustomerFullNameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            CustomerFullNameLabel.Location = new Point(195, 395);
             CustomerFullNameLabel.Name = "CustomerFullNameLabel";
-            CustomerFullNameLabel.Size = new Size(194, 30);
-            CustomerFullNameLabel.TabIndex = 12;
-            CustomerFullNameLabel.Text = "Iran Rayaneh Company";
             // 
             // AmountLabel
             // 
-            AmountLabel.Anchor = AnchorStyles.Left;
-            AmountLabel.Appearance.BackColor = Color.Transparent;
-            AmountLabel.Appearance.Font = new Font("Tahoma", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            AmountLabel.Appearance.ForeColor = Color.Blue;
+            resources.ApplyResources(AmountLabel, "AmountLabel");
+            AmountLabel.Appearance.BackColor = (Color)resources.GetObject("AmountLabel.Appearance.BackColor");
+            AmountLabel.Appearance.Font = (Font)resources.GetObject("AmountLabel.Appearance.Font");
+            AmountLabel.Appearance.ForeColor = (Color)resources.GetObject("AmountLabel.Appearance.ForeColor");
             AmountLabel.Appearance.Options.UseBackColor = true;
             AmountLabel.Appearance.Options.UseFont = true;
             AmountLabel.Appearance.Options.UseForeColor = true;
-            AmountLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            AmountLabel.Location = new Point(195, 437);
             AmountLabel.Name = "AmountLabel";
-            AmountLabel.Size = new Size(207, 30);
-            AmountLabel.TabIndex = 12;
-            AmountLabel.Text = "150/000/000";
             // 
             // CustomerInRequestFormDataGridView
             // 
             CustomerInRequestFormDataGridView.AllowUserToAddRows = false;
             CustomerInRequestFormDataGridView.AllowUserToDeleteRows = false;
-            CustomerInRequestFormDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            resources.ApplyResources(CustomerInRequestFormDataGridView, "CustomerInRequestFormDataGridView");
             CustomerInRequestFormDataGridView.BackgroundColor = Color.MistyRose;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            CustomerInRequestFormDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            CustomerInRequestFormDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             CustomerInRequestFormDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CustomerInRequestFormDataGridView.Columns.AddRange(new DataGridViewColumn[] { CustomerCode, CustomerFirstName, CustomerLastName, CustomerTel, CustomerType });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            CustomerInRequestFormDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
-            CustomerInRequestFormDataGridView.Location = new Point(4, 43);
+            CustomerInRequestFormDataGridView.Columns.AddRange(new DataGridViewColumn[] { CustomerCode, FirstName, LastName, Tel, CustomerType });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            CustomerInRequestFormDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             CustomerInRequestFormDataGridView.Name = "CustomerInRequestFormDataGridView";
             CustomerInRequestFormDataGridView.ReadOnly = true;
             CustomerInRequestFormDataGridView.RowTemplate.Height = 25;
-            CustomerInRequestFormDataGridView.Size = new Size(528, 150);
-            CustomerInRequestFormDataGridView.TabIndex = 13;
-            // 
-            // CustomerCode
-            // 
-            CustomerCode.HeaderText = "Code";
-            CustomerCode.Name = "CustomerCode";
-            CustomerCode.ReadOnly = true;
-            CustomerCode.Width = 50;
-            // 
-            // CustomerFirstName
-            // 
-            CustomerFirstName.HeaderText = "FirstName";
-            CustomerFirstName.Name = "CustomerFirstName";
-            CustomerFirstName.ReadOnly = true;
-            // 
-            // CustomerLastName
-            // 
-            CustomerLastName.HeaderText = "LastName";
-            CustomerLastName.Name = "CustomerLastName";
-            CustomerLastName.ReadOnly = true;
-            CustomerLastName.Width = 145;
-            // 
-            // CustomerTel
-            // 
-            CustomerTel.HeaderText = "Tel";
-            CustomerTel.Name = "CustomerTel";
-            CustomerTel.ReadOnly = true;
-            CustomerTel.Width = 110;
-            // 
-            // CustomerType
-            // 
-            CustomerType.HeaderText = "Type";
-            CustomerType.Name = "CustomerType";
-            CustomerType.ReadOnly = true;
-            CustomerType.Width = 80;
             // 
             // SearchCustomerLabel
             // 
-            SearchCustomerLabel.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchCustomerLabel.Appearance.ForeColor = Color.Teal;
+            SearchCustomerLabel.Appearance.Font = (Font)resources.GetObject("SearchCustomerLabel.Appearance.Font");
+            SearchCustomerLabel.Appearance.ForeColor = (Color)resources.GetObject("SearchCustomerLabel.Appearance.ForeColor");
             SearchCustomerLabel.Appearance.Options.UseFont = true;
             SearchCustomerLabel.Appearance.Options.UseForeColor = true;
-            SearchCustomerLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            SearchCustomerLabel.Location = new Point(93, 9);
+            resources.ApplyResources(SearchCustomerLabel, "SearchCustomerLabel");
             SearchCustomerLabel.Name = "SearchCustomerLabel";
-            SearchCustomerLabel.Size = new Size(64, 30);
-            SearchCustomerLabel.TabIndex = 14;
-            SearchCustomerLabel.Text = "label1";
             // 
             // SearchProductLabel
             // 
-            SearchProductLabel.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchProductLabel.Appearance.ForeColor = Color.Teal;
+            SearchProductLabel.Appearance.Font = (Font)resources.GetObject("SearchProductLabel.Appearance.Font");
+            SearchProductLabel.Appearance.ForeColor = (Color)resources.GetObject("SearchProductLabel.Appearance.ForeColor");
             SearchProductLabel.Appearance.Options.UseFont = true;
             SearchProductLabel.Appearance.Options.UseForeColor = true;
-            SearchProductLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            SearchProductLabel.Location = new Point(768, 9);
+            resources.ApplyResources(SearchProductLabel, "SearchProductLabel");
             SearchProductLabel.Name = "SearchProductLabel";
-            SearchProductLabel.Size = new Size(64, 30);
-            SearchProductLabel.TabIndex = 15;
-            SearchProductLabel.Text = "label1";
             // 
             // ProductInRequestFormDataGridView
             // 
             ProductInRequestFormDataGridView.AllowUserToAddRows = false;
             ProductInRequestFormDataGridView.AllowUserToDeleteRows = false;
-            ProductInRequestFormDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            resources.ApplyResources(ProductInRequestFormDataGridView, "ProductInRequestFormDataGridView");
             ProductInRequestFormDataGridView.BackgroundColor = Color.MistyRose;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = SystemColors.Control;
-            dataGridViewCellStyle9.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            ProductInRequestFormDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            ProductInRequestFormDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             ProductInRequestFormDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ProductInRequestFormDataGridView.Columns.AddRange(new DataGridViewColumn[] { ProductCode, ProductName, ProductLastPrice, ProductLastStock, ProductUnit });
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = SystemColors.Window;
-            dataGridViewCellStyle10.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            ProductInRequestFormDataGridView.DefaultCellStyle = dataGridViewCellStyle10;
-            ProductInRequestFormDataGridView.Location = new Point(538, 43);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            ProductInRequestFormDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             ProductInRequestFormDataGridView.Name = "ProductInRequestFormDataGridView";
             ProductInRequestFormDataGridView.ReadOnly = true;
             ProductInRequestFormDataGridView.RowTemplate.Height = 25;
-            ProductInRequestFormDataGridView.Size = new Size(758, 150);
-            ProductInRequestFormDataGridView.TabIndex = 16;
             // 
             // ProductCode
             // 
-            ProductCode.HeaderText = "Code";
+            resources.ApplyResources(ProductCode, "ProductCode");
             ProductCode.Name = "ProductCode";
             ProductCode.ReadOnly = true;
-            ProductCode.Width = 50;
             // 
             // ProductName
             // 
-            ProductName.HeaderText = "Product Name";
+            resources.ApplyResources(ProductName, "ProductName");
             ProductName.Name = "ProductName";
             ProductName.ReadOnly = true;
-            ProductName.Width = 240;
             // 
             // ProductLastPrice
             // 
-            ProductLastPrice.HeaderText = "Last Price";
+            resources.ApplyResources(ProductLastPrice, "ProductLastPrice");
             ProductLastPrice.Name = "ProductLastPrice";
             ProductLastPrice.ReadOnly = true;
-            ProductLastPrice.Width = 175;
             // 
             // ProductLastStock
             // 
-            ProductLastStock.HeaderText = "Last Stock";
+            resources.ApplyResources(ProductLastStock, "ProductLastStock");
             ProductLastStock.Name = "ProductLastStock";
             ProductLastStock.ReadOnly = true;
-            ProductLastStock.Width = 150;
             // 
             // ProductUnit
             // 
-            ProductUnit.HeaderText = "Unit";
+            resources.ApplyResources(ProductUnit, "ProductUnit");
             ProductUnit.Name = "ProductUnit";
             ProductUnit.ReadOnly = true;
             // 
             // RialsLabel
             // 
-            RialsLabel.Anchor = AnchorStyles.Left;
-            RialsLabel.Appearance.BackColor = Color.Transparent;
-            RialsLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            RialsLabel.Appearance.ForeColor = Color.Teal;
+            resources.ApplyResources(RialsLabel, "RialsLabel");
+            RialsLabel.Appearance.BackColor = (Color)resources.GetObject("RialsLabel.Appearance.BackColor");
+            RialsLabel.Appearance.Font = (Font)resources.GetObject("RialsLabel.Appearance.Font");
+            RialsLabel.Appearance.ForeColor = (Color)resources.GetObject("RialsLabel.Appearance.ForeColor");
             RialsLabel.Appearance.Options.UseBackColor = true;
             RialsLabel.Appearance.Options.UseFont = true;
             RialsLabel.Appearance.Options.UseForeColor = true;
-            RialsLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            RialsLabel.Location = new Point(407, 438);
             RialsLabel.Name = "RialsLabel";
-            RialsLabel.Size = new Size(88, 30);
-            RialsLabel.TabIndex = 17;
-            RialsLabel.Text = "Rials";
             // 
             // RequestFormDataGridView
             // 
             RequestFormDataGridView.AllowUserToAddRows = false;
             RequestFormDataGridView.AllowUserToDeleteRows = false;
-            RequestFormDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            resources.ApplyResources(RequestFormDataGridView, "RequestFormDataGridView");
             RequestFormDataGridView.BackgroundColor = Color.MistyRose;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Control;
-            dataGridViewCellStyle11.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            RequestFormDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            RequestFormDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             RequestFormDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             RequestFormDataGridView.Columns.AddRange(new DataGridViewColumn[] { RequestRow, RequestProductName, RequestProductCount, RequestProductUnit, RequestProductPrice });
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = SystemColors.Window;
-            dataGridViewCellStyle12.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
-            RequestFormDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
-            RequestFormDataGridView.Location = new Point(538, 254);
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            RequestFormDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             RequestFormDataGridView.Name = "RequestFormDataGridView";
             RequestFormDataGridView.ReadOnly = true;
             RequestFormDataGridView.RowTemplate.Height = 25;
-            RequestFormDataGridView.Size = new Size(758, 213);
-            RequestFormDataGridView.TabIndex = 18;
             // 
             // RequestRow
             // 
-            RequestRow.HeaderText = "Row";
+            resources.ApplyResources(RequestRow, "RequestRow");
             RequestRow.Name = "RequestRow";
             RequestRow.ReadOnly = true;
-            RequestRow.Width = 50;
             // 
             // RequestProductName
             // 
-            RequestProductName.HeaderText = "Product Name";
+            resources.ApplyResources(RequestProductName, "RequestProductName");
             RequestProductName.Name = "RequestProductName";
             RequestProductName.ReadOnly = true;
-            RequestProductName.Width = 250;
             // 
             // RequestProductCount
             // 
-            RequestProductCount.HeaderText = "Count";
+            resources.ApplyResources(RequestProductCount, "RequestProductCount");
             RequestProductCount.Name = "RequestProductCount";
             RequestProductCount.ReadOnly = true;
-            RequestProductCount.Width = 80;
             // 
             // RequestProductUnit
             // 
-            RequestProductUnit.HeaderText = "Unit";
+            resources.ApplyResources(RequestProductUnit, "RequestProductUnit");
             RequestProductUnit.Name = "RequestProductUnit";
             RequestProductUnit.ReadOnly = true;
-            RequestProductUnit.Width = 115;
             // 
             // RequestProductPrice
             // 
-            RequestProductPrice.HeaderText = "Product Price";
+            resources.ApplyResources(RequestProductPrice, "RequestProductPrice");
             RequestProductPrice.Name = "RequestProductPrice";
             RequestProductPrice.ReadOnly = true;
-            RequestProductPrice.Width = 220;
             // 
             // SearchCustomerTextBox
             // 
             SearchCustomerTextBox.BackColor = Color.PowderBlue;
-            SearchCustomerTextBox.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchCustomerTextBox.Location = new Point(152, 9);
+            resources.ApplyResources(SearchCustomerTextBox, "SearchCustomerTextBox");
             SearchCustomerTextBox.Name = "SearchCustomerTextBox";
-            SearchCustomerTextBox.Size = new Size(250, 27);
-            SearchCustomerTextBox.TabIndex = 0;
-            SearchCustomerTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // SearchProductTextBox
             // 
             SearchProductTextBox.BackColor = Color.PowderBlue;
-            SearchProductTextBox.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchProductTextBox.Location = new Point(827, 9);
+            resources.ApplyResources(SearchProductTextBox, "SearchProductTextBox");
             SearchProductTextBox.Name = "SearchProductTextBox";
-            SearchProductTextBox.Size = new Size(250, 27);
-            SearchProductTextBox.TabIndex = 3;
-            SearchProductTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // Row
             // 
-            Row.HeaderText = "Row";
+            resources.ApplyResources(Row, "Row");
             Row.Name = "Row";
             Row.ReadOnly = true;
-            Row.Width = 50;
             // 
             // CountTextBox
             // 
             CountTextBox.BackColor = Color.PowderBlue;
-            CountTextBox.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CountTextBox.Location = new Point(669, 204);
+            resources.ApplyResources(CountTextBox, "CountTextBox");
             CountTextBox.Name = "CountTextBox";
-            CountTextBox.Size = new Size(65, 27);
-            CountTextBox.TabIndex = 4;
-            CountTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // CustomerCode
+            // 
+            resources.ApplyResources(CustomerCode, "CustomerCode");
+            CustomerCode.Name = "CustomerCode";
+            CustomerCode.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            resources.ApplyResources(FirstName, "FirstName");
+            FirstName.Name = "FirstName";
+            FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            resources.ApplyResources(LastName, "LastName");
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
+            // 
+            // Tel
+            // 
+            resources.ApplyResources(Tel, "Tel");
+            Tel.Name = "Tel";
+            Tel.ReadOnly = true;
+            // 
+            // CustomerType
+            // 
+            resources.ApplyResources(CustomerType, "CustomerType");
+            CustomerType.Name = "CustomerType";
+            CustomerType.ReadOnly = true;
             // 
             // RequestForm
             // 
-            Appearance.BackColor = Color.LightGoldenrodYellow;
+            Appearance.BackColor = (Color)resources.GetObject("RequestForm.Appearance.BackColor");
             Appearance.Options.UseBackColor = true;
             Appearance.Options.UseFont = true;
-            AutoScaleDimensions = new SizeF(10F, 19F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1298, 518);
             Controls.Add(CountTextBox);
             Controls.Add(SearchProductTextBox);
             Controls.Add(SearchCustomerTextBox);
@@ -643,10 +512,8 @@
             Controls.Add(DeleteButton);
             Controls.Add(PrintInvoiceButton);
             Controls.Add(InventoryTransferButton);
-            Margin = new Padding(7, 6, 7, 6);
             MaximizeBox = false;
             Name = "RequestForm";
-            Text = "InventoryTransferForm";
             Load += InventoryTransferForm_Load;
             ((System.ComponentModel.ISupportInitialize)CustomerInRequestFormDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)ProductInRequestFormDataGridView).EndInit();
@@ -686,11 +553,6 @@
         private Usf.WinForms.Forms.Label RialsLabel;
         private Usf.WinForms.Forms.DataGridView RequestFormDataGridView;
         private Usf.WinForms.Forms.TextBox SearchProductTextBox;
-        private DataGridViewTextBoxColumn CustomerCode;
-        private DataGridViewTextBoxColumn CustomerFirstName;
-        private DataGridViewTextBoxColumn CustomerLastName;
-        private DataGridViewTextBoxColumn CustomerTel;
-        private DataGridViewTextBoxColumn CustomerType;
         private DataGridViewTextBoxColumn Row;
         private Usf.WinForms.Forms.TextBox CountTextBox;
         private DataGridViewTextBoxColumn RequestRow;
@@ -703,5 +565,10 @@
         private DataGridViewTextBoxColumn ProductLastPrice;
         private DataGridViewTextBoxColumn ProductLastStock;
         private DataGridViewTextBoxColumn ProductUnit;
+        private DataGridViewTextBoxColumn CustomerCode;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn Tel;
+        private DataGridViewTextBoxColumn CustomerType;
     }
 }
