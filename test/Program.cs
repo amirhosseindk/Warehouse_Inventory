@@ -1,11 +1,41 @@
-﻿using Infrastructure.Services;
+﻿// Get local DNS
+using System.Net;
 
-var passwordHasher = new PasswordHasher();
-string password = "testPassword123";
+string localDns = Dns.GetHostName();
+Console.WriteLine("Local DNS: " + localDns);
 
-string hashedPassword = passwordHasher.HashPassword(password);
-bool isPasswordVerified = passwordHasher.VerifyPassword(hashedPassword, password);
+// Get local IP address
+string localIpAddress = GetLocalIPAddress();
+Console.WriteLine("Local IP Address: " + localIpAddress);
 
-Console.WriteLine($"Hashed password: {hashedPassword}");
-Console.WriteLine($"Is password verified: {isPasswordVerified}");
+// Get public IP address
+string publicIpAddress = GetPublicIPAddress();
+Console.WriteLine("Public IP Address: " + publicIpAddress);
+
+// Get public DNS
+string publicDns = Dns.GetHostEntry(publicIpAddress).HostName;
+Console.WriteLine("Public DNS: " + publicDns);
+
+static string GetLocalIPAddress()
+{
+    var host = Dns.GetHostEntry(Dns.GetHostName());
+    foreach (var ip in host.AddressList)
+    {
+        if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+        {
+            return ip.ToString();
+        }
+    }
+    throw new Exception("Local IP Address not found.");
+}
+
+static string GetPublicIPAddress()
+{
+    using (var webClient = new WebClient())
+    {
+        string publicIpAddress = webClient.DownloadString("https://api.ipify.org");
+        return publicIpAddress;
+    }
+}
+
 Console.ReadKey();
