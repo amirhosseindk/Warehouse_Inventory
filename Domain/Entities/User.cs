@@ -31,5 +31,6 @@ namespace Domain.Entities
         public string Role { get; set; }
 
         public DateTime Birthday { get; set; }
+        public string Description { get; set; }
     }
 }
