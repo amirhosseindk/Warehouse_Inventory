@@ -1,16 +1,7 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Resources;                  // ADD \\
+﻿using System.Resources;                  // ADD \\
 using Microsoft.Win32;
 using Application.IServices;
+using Application.ViewModels.UserViewModels;
 
 namespace MyApplication
 {
@@ -69,7 +60,9 @@ namespace MyApplication
         {
             RegistryKey UserNameInRegistry = Registry.CurrentUser.CreateSubKey(@"Software\Inventory");
 
-            if /*(await _userService.AuthenticateAsync(UsernameTextBox.Text, PasswordTextBox.Text, CancellationToken.None))*/(UsernameTextBox.Text == "1" && PasswordTextBox.Text == "1")
+            var authuser = new UserVMAuth { UserName=UsernameTextBox.Text , Password=PasswordTextBox.Text };
+
+            if (await _userService.AuthenticateAsync(authuser, CancellationToken.None))/*(UsernameTextBox.Text == "1" && PasswordTextBox.Text == "1"*/
             {
                 UserNameInRegistry.SetValue("UserNameKey", UsernameTextBox.Text.Trim());
 

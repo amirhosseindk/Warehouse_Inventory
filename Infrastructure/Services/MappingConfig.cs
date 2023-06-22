@@ -1,4 +1,4 @@
-﻿using Application.ViewModels;
+﻿using Application.ViewModels.UserViewModels;
 using Domain.Entities;
 using Mapster;
 
@@ -11,8 +11,8 @@ namespace Infrastructure.Services
             TypeAdapterConfig.GlobalSettings
                 .Default.PreserveReference(true)
                 .ShallowCopyForSameType(true);
-            TypeAdapterConfig<User, UserViewModel>.NewConfig();
-            TypeAdapterConfig<UserViewModel, User>.NewConfig();
+            TypeAdapterConfig<User, UserVMCU>.NewConfig();
+            TypeAdapterConfig<UserVMCU, User>.NewConfig();
         }
     }
 }

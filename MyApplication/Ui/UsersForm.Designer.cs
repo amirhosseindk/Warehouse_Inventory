@@ -30,29 +30,29 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             SearchLabel = new Usf.WinForms.Forms.Label();
             SearchTextBox = new Usf.WinForms.Forms.TextBox();
             UserNewButton = new Usf.WinForms.Forms.Button();
             UserEditButton = new Usf.WinForms.Forms.Button();
-            StatusButton = new Usf.WinForms.Forms.Button();
-            UserDataGridView = new Usf.WinForms.Forms.DataGridView();
-            UserId = new DataGridViewTextBoxColumn();
-            FirstName = new DataGridViewTextBoxColumn();
-            LastName = new DataGridViewTextBoxColumn();
-            UserTel = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            Password = new DataGridViewTextBoxColumn();
-            Role = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            Birthdate = new DataGridViewTextBoxColumn();
-            Email = new DataGridViewTextBoxColumn();
-            Address = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
+            DeleteButton = new Usf.WinForms.Forms.Button();
             userBindingSource = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
+            Description = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            Birthdate = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            Role = new DataGridViewTextBoxColumn();
+            Password = new DataGridViewTextBoxColumn();
+            Username = new DataGridViewTextBoxColumn();
+            UserTel = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            FirstName = new DataGridViewTextBoxColumn();
+            UserId = new DataGridViewTextBoxColumn();
+            UserDataGridView = new Usf.WinForms.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             SuspendLayout();
             // 
             // SearchLabel
@@ -92,114 +92,26 @@
             UserEditButton.Name = "UserEditButton";
             UserEditButton.Click += UserEditButton_Click;
             // 
-            // StatusButton
+            // DeleteButton
             // 
-            resources.ApplyResources(StatusButton, "StatusButton");
-            StatusButton.Appearance.BackColor = (Color)resources.GetObject("StatusButton.Appearance.BackColor");
-            StatusButton.Appearance.Font = (Font)resources.GetObject("StatusButton.Appearance.Font");
-            StatusButton.Appearance.Options.UseBackColor = true;
-            StatusButton.Appearance.Options.UseFont = true;
-            StatusButton.Name = "StatusButton";
+            resources.ApplyResources(DeleteButton, "DeleteButton");
+            DeleteButton.Appearance.BackColor = (Color)resources.GetObject("StatusButton.Appearance.BackColor");
+            DeleteButton.Appearance.Font = (Font)resources.GetObject("StatusButton.Appearance.Font");
+            DeleteButton.Appearance.Options.UseBackColor = true;
+            DeleteButton.Appearance.Options.UseFont = true;
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Click += DeleteButton_Click;
             // 
-            // UserDataGridView
+            // userBindingSource
             // 
-            UserDataGridView.AllowUserToAddRows = false;
-            UserDataGridView.AllowUserToDeleteRows = false;
-            UserDataGridView.AutoGenerateColumns = false;
-            UserDataGridView.BackgroundColor = Color.MistyRose;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            UserDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            UserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { UserId, FirstName, LastName, UserTel, Username, Password, Role, Status, Birthdate, Email, Address, Description });
-            UserDataGridView.DataSource = userBindingSource;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            UserDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(UserDataGridView, "UserDataGridView");
-            UserDataGridView.Name = "UserDataGridView";
-            UserDataGridView.ReadOnly = true;
-            UserDataGridView.RowTemplate.Height = 29;
+            userBindingSource.DataSource = typeof(Domain.Entities.User);
             // 
-            // UserId
+            // Description
             // 
-            UserId.DataPropertyName = "UserId";
-            resources.ApplyResources(UserId, "UserId");
-            UserId.Name = "UserId";
-            UserId.ReadOnly = true;
-            // 
-            // FirstName
-            // 
-            FirstName.DataPropertyName = "FirstName";
-            resources.ApplyResources(FirstName, "FirstName");
-            FirstName.Name = "FirstName";
-            FirstName.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            LastName.DataPropertyName = "LastName";
-            resources.ApplyResources(LastName, "LastName");
-            LastName.Name = "LastName";
-            LastName.ReadOnly = true;
-            // 
-            // UserTel
-            // 
-            UserTel.DataPropertyName = "PhoneNumber";
-            resources.ApplyResources(UserTel, "UserTel");
-            UserTel.Name = "UserTel";
-            UserTel.ReadOnly = true;
-            // 
-            // Username
-            // 
-            Username.DataPropertyName = "Username";
-            resources.ApplyResources(Username, "Username");
-            Username.Name = "Username";
-            Username.ReadOnly = true;
-            // 
-            // Password
-            // 
-            Password.DataPropertyName = "Password";
-            resources.ApplyResources(Password, "Password");
-            Password.Name = "Password";
-            Password.ReadOnly = true;
-            // 
-            // Role
-            // 
-            Role.DataPropertyName = "Role";
-            resources.ApplyResources(Role, "Role");
-            Role.Name = "Role";
-            Role.ReadOnly = true;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "UserId";
-            resources.ApplyResources(Status, "Status");
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            // 
-            // Birthdate
-            // 
-            Birthdate.DataPropertyName = "UserId";
-            resources.ApplyResources(Birthdate, "Birthdate");
-            Birthdate.Name = "Birthdate";
-            Birthdate.ReadOnly = true;
-            // 
-            // Email
-            // 
-            Email.DataPropertyName = "Email";
-            resources.ApplyResources(Email, "Email");
-            Email.Name = "Email";
-            Email.ReadOnly = true;
+            Description.DataPropertyName = "UserIdForm";
+            resources.ApplyResources(Description, "Description");
+            Description.Name = "Description";
+            Description.ReadOnly = true;
             // 
             // Address
             // 
@@ -208,16 +120,105 @@
             Address.Name = "Address";
             Address.ReadOnly = true;
             // 
-            // Description
+            // Email
             // 
-            Description.DataPropertyName = "UserId";
-            resources.ApplyResources(Description, "Description");
-            Description.Name = "Description";
-            Description.ReadOnly = true;
+            Email.DataPropertyName = "Email";
+            resources.ApplyResources(Email, "Email");
+            Email.Name = "Email";
+            Email.ReadOnly = true;
             // 
-            // userBindingSource
+            // Birthdate
             // 
-            userBindingSource.DataSource = typeof(Domain.Entities.User);
+            Birthdate.DataPropertyName = "UserIdForm";
+            resources.ApplyResources(Birthdate, "Birthdate");
+            Birthdate.Name = "Birthdate";
+            Birthdate.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "UserIdForm";
+            resources.ApplyResources(Status, "Status");
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            // 
+            // Role
+            // 
+            Role.DataPropertyName = "Role";
+            resources.ApplyResources(Role, "Role");
+            Role.Name = "Role";
+            Role.ReadOnly = true;
+            // 
+            // Password
+            // 
+            Password.DataPropertyName = "Password";
+            resources.ApplyResources(Password, "Password");
+            Password.Name = "Password";
+            Password.ReadOnly = true;
+            // 
+            // Username
+            // 
+            Username.DataPropertyName = "Username";
+            resources.ApplyResources(Username, "Username");
+            Username.Name = "Username";
+            Username.ReadOnly = true;
+            // 
+            // UserTel
+            // 
+            UserTel.DataPropertyName = "PhoneNumber";
+            resources.ApplyResources(UserTel, "UserTel");
+            UserTel.Name = "UserTel";
+            UserTel.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            LastName.DataPropertyName = "LastName";
+            resources.ApplyResources(LastName, "LastName");
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            FirstName.DataPropertyName = "FirstName";
+            resources.ApplyResources(FirstName, "FirstName");
+            FirstName.Name = "FirstName";
+            FirstName.ReadOnly = true;
+            // 
+            // UserIdForm
+            // 
+            UserId.DataPropertyName = "UserIdForm";
+            resources.ApplyResources(UserId, "UserIdForm");
+            UserId.Name = "UserIdForm";
+            UserId.ReadOnly = true;
+            // 
+            // UserDataGridView
+            // 
+            UserDataGridView.AllowUserToAddRows = false;
+            UserDataGridView.AllowUserToDeleteRows = false;
+            UserDataGridView.AutoGenerateColumns = false;
+            UserDataGridView.BackgroundColor = Color.MistyRose;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            UserDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            UserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { UserId, FirstName, LastName, UserTel, Username, Password, Role, Status, Birthdate, Email, Address, Description });
+            UserDataGridView.DataSource = userBindingSource;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            UserDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            resources.ApplyResources(UserDataGridView, "UserDataGridView");
+            UserDataGridView.Name = "UserDataGridView";
+            UserDataGridView.ReadOnly = true;
+            UserDataGridView.RowTemplate.Height = 29;
             // 
             // UsersForm
             // 
@@ -229,13 +230,13 @@
             Controls.Add(UserDataGridView);
             Controls.Add(UserNewButton);
             Controls.Add(UserEditButton);
-            Controls.Add(StatusButton);
+            Controls.Add(DeleteButton);
             Controls.Add(SearchLabel);
             Controls.Add(SearchTextBox);
             Name = "UsersForm";
             Load += UsersForm_Load;
-            ((System.ComponentModel.ISupportInitialize)UserDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UserDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,21 +246,21 @@
         private Usf.WinForms.Forms.TextBox SearchTextBox;
         private Usf.WinForms.Forms.Button UserNewButton;
         private Usf.WinForms.Forms.Button UserEditButton;
-        private Usf.WinForms.Forms.Button StatusButton;
-        private Usf.WinForms.Forms.DataGridView UserDataGridView;
+        private Usf.WinForms.Forms.Button DeleteButton;
         private DataGridViewTextBoxColumn byUsernameDataGridViewTextBoxColumn;
         private BindingSource userBindingSource;
-        private DataGridViewTextBoxColumn UserId;
-        private DataGridViewTextBoxColumn FirstName;
-        private DataGridViewTextBoxColumn LastName;
-        private DataGridViewTextBoxColumn UserTel;
-        private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn Password;
-        private DataGridViewTextBoxColumn Role;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn Birthdate;
-        private DataGridViewTextBoxColumn Email;
-        private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Birthdate;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn Role;
+        private DataGridViewTextBoxColumn Password;
+        private DataGridViewTextBoxColumn Username;
+        private DataGridViewTextBoxColumn UserTel;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn UserId;
+        private Usf.WinForms.Forms.DataGridView UserDataGridView;
     }
 }

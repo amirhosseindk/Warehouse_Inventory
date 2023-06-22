@@ -1,5 +1,5 @@
 ﻿using Application.IServices;
-using Domain.Entities;
+using Application.ViewModels.UserViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using MyApplication.Ui;
 using System.Resources;
@@ -30,8 +30,8 @@ namespace MyApplication
             UserEditButton.Text =
                 resource.GetString(name: nameof(UserEditButton));
 
-            StatusButton.Text =
-                resource.GetString(name: nameof(StatusButton));
+            DeleteButton.Text =
+                resource.GetString(name: nameof(DeleteButton));
 
             UserDataGridView.Columns[1].HeaderText =
                 resource.GetString(name: nameof(FirstName));
@@ -103,11 +103,55 @@ namespace MyApplication
         // Edit
         private void UserEditButton_Click(object sender, EventArgs e)
         {
-            using (var scope = Program.ServiceProvider.CreateScope())
+            if (UserDataGridView.SelectedRows.Count == 1)
             {
-                var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
+                var selectedRow = UserDataGridView.SelectedRows[0];
+                var user = new UserVMId
+                {
+                    UserId = (Guid)selectedRow.Cells["UserIdForm"].Value
+                };
+                if (user.UserId != Guid.Empty)
+                {
+                    using (var scope = Program.ServiceProvider.CreateScope())
+                    {
+                        var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
+                        form.UserIdForm = user.UserId;
+                        form.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("no user selected");
+                }
+            }
+            else
+            {
+                MessageBox.Show("just select 1 user to use this button");
+            }
+        }
 
-                form.ShowDialog();
+        private async void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if(UserDataGridView.SelectedRows.Count == 1)
+            {
+                var selectedRow = UserDataGridView.SelectedRows[0];
+                var user = new UserVMId
+                {
+                    UserId = (Guid)selectedRow.Cells["UserIdForm"].Value
+                };
+                if (user.UserId != Guid.Empty)
+                {
+                    await _userService.DeleteUserAsync(user, CancellationToken.None);
+                    UserDataGridView.Update();
+                }
+                else 
+                {
+                    MessageBox.Show("no user selected");
+                }   
+            }
+            else
+            {
+                MessageBox.Show("just select 1 user to use this button");
             }
         }
     }

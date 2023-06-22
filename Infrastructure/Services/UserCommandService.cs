@@ -1,9 +1,9 @@
-﻿using Application.ViewModels;
-using Application.IServices;
+﻿using Application.IServices;
 using Domain.Entities;
 using FluentValidation;
 using Infrastructure.IServices;
 using Mapster;
+using Application.ViewModels.UserViewModels;
 
 namespace Infrastructure.Services
 {
@@ -11,10 +11,10 @@ namespace Infrastructure.Services
     {
         //private readonly ILogger<UserCommandService> _logger;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IValidator<UserViewModel> _validator;
+        private readonly IValidator<UserVMCU> _validator;
         private readonly IPasswordHasher _passwordHasher;
 
-        public UserCommandService(/*ILogger<UserCommandService> logger,*/ IUnitOfWork unitOfWork, IValidator<UserViewModel> validator, IPasswordHasher passwordHasher)
+        public UserCommandService(/*ILogger<UserCommandService> logger,*/ IUnitOfWork unitOfWork, IValidator<UserVMCU> validator, IPasswordHasher passwordHasher)
         {
             //_logger = logger;
             _unitOfWork = unitOfWork;
@@ -22,7 +22,7 @@ namespace Infrastructure.Services
             _passwordHasher = passwordHasher;
         }
 
-        public async Task CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
+        public async Task CreateUserAsync(UserVMCU userVM, CancellationToken cancellationToken)
         {
             var validationResult = await _validator.ValidateAsync(userVM, cancellationToken);
             if (!validationResult.IsValid)
@@ -47,7 +47,7 @@ namespace Infrastructure.Services
             }
         }
 
-        public async Task UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
+        public async Task UpdateUserAsync(UserVMCU userVM, CancellationToken cancellationToken)
         {
             var validationResult = await _validator.ValidateAsync(userVM, cancellationToken);
             if (!validationResult.IsValid)

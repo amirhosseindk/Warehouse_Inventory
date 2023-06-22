@@ -5,10 +5,10 @@ using Infrastructure.Services;
 using Persistence.Repositories;
 using Persistence;
 using Infrastructure.IServices;
-using Application.ViewModels;
 using Application.Services;
 using FluentValidation;
 using MyApplication.Ui;
+using Application.ViewModels.UserViewModels;
 
 namespace MyApplication
 {
@@ -99,7 +99,7 @@ namespace MyApplication
             services.AddScoped<IUserCommandService, UserCommandService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
-            services.AddTransient<IValidator<UserViewModel>, UserVMValidator>();
+            services.AddTransient<IValidator<UserVMCU>, UserVMValidator>();
             services.AddTransient<IUserVMValidator, UserVMValidator>();
 
 

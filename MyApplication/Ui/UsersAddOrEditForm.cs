@@ -1,11 +1,11 @@
 ﻿using Application.IServices;
-using Microsoft.VisualBasic.ApplicationServices;
 using System.Resources;
 
 namespace MyApplication.Ui
 {
     public partial class UsersAddOrEditForm : Usf.WinForms.Forms.Form
     {
+        public Guid UserIdForm { get; set; }
         private readonly IUserService _userService;
         private readonly IUserVMValidator _userVMValidator;
 
@@ -64,7 +64,7 @@ namespace MyApplication.Ui
         }
 
         // Loaded
-        private void UsersAddOrEdit_Load(object sender, EventArgs e)
+        private async void UsersAddOrEdit_Load(object sender, EventArgs e)
         {
             FirstNameTextBox.Focus();
 
@@ -74,14 +74,27 @@ namespace MyApplication.Ui
                 this.RightToLeftLayout = true;
                 AddressTextBox.TextAlign = HorizontalAlignment.Left;
             }
+
+            if (UserIdForm != Guid.Empty)
+            {
+                var userVM = await _userService.GetUserByIdAsync(UserIdForm, CancellationToken.None);
+                FirstNameTextBox.Text = userVM.FirstName;
+                textBox1.Text = userVM.LastName;
+                TelTextBox.Text = userVM.PhoneNumber;
+                UsernameTextBox.Text = userVM.Username;
+                EmailTextBox.Text = userVM.Email;
+                BirthdateTextBox.Text = userVM.Birthdate.ToString();
+                AddressTextBox.Text = userVM.Address;
+                DescriptionTextBox.Text = userVM.Description;
+            }
         }
 
         // Save
         private async void SaveButton_Click(object sender, EventArgs e)
         {
-            var userVM = new Application.ViewModels.UserViewModel
+            var userVM = new Application.ViewModels.UserViewModels.UserVMCU
             {
-                UserId = Guid.NewGuid(),
+                UserId = UserIdForm != Guid.Empty ? UserIdForm : Guid.NewGuid(),
                 FirstName = FirstNameTextBox.Text,
                 LastName = textBox1.Text,
                 PhoneNumber = TelTextBox.Text,
@@ -92,13 +105,21 @@ namespace MyApplication.Ui
                 Email = EmailTextBox.Text,
                 Address = AddressTextBox.Text,
                 Description = DescriptionTextBox.Text,
+                IsActive = ActiveCheckBox.Checked
             };
 
             var validationResult = _userVMValidator.Validate(userVM);
 
             if (validationResult.IsValid)
             {
-                await _userService.CreateUserAsync(userVM, CancellationToken.None);
+                if (UserIdForm != Guid.Empty)
+                {
+                    await _userService.UpdateUserAsync(userVM, CancellationToken.None);
+                }
+                else
+                {
+                    await _userService.CreateUserAsync(userVM, CancellationToken.None);
+                }
             }
             else
             {
@@ -107,7 +128,6 @@ namespace MyApplication.Ui
                     MessageBox.Show($"Property: {error.PropertyName}, Error: {error.ErrorMessage}");
                 }
             }
-
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using Application.ViewModels;
-using Application.IServices;
+﻿using Application.IServices;
 using Infrastructure.IServices;
 using Mapster;
+using Application.ViewModels.UserViewModels;
 
 namespace Infrastructure.Services
 {
@@ -18,39 +18,47 @@ namespace Infrastructure.Services
             _passwordHasher = passwordHasher;
         }
 
-        public async Task<UserViewModel> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken)
+        public async Task<UserVMCU> GetUserByIdAsync(UserVMId userVMId, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetByIdAsync(userId, cancellationToken);
-            return user.Adapt<UserViewModel>();
+            var user = await _userRepository.GetByIdAsync(userVMId.UserId, cancellationToken);
+            return user.Adapt<UserVMCU>();
         }
 
-        public async Task<IEnumerable<UserViewModel>> GetUsersAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<UserVMCU>> GetUsersAsync(CancellationToken cancellationToken)
         {
             var usersUS = await _userRepository.GetAllAsync(cancellationToken);
-            return usersUS.Adapt<IEnumerable<UserViewModel>>();
+            return usersUS.Adapt<IEnumerable<UserVMCU>>();
         }
 
-        public async Task<UserViewModel> CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
+        public async Task<UserVMCU> CreateUserAsync(UserVMCU userVM, CancellationToken cancellationToken)
         {
             await _userCommandService.CreateUserAsync(userVM, cancellationToken);
             return userVM;
         }
 
-        public async Task<UserViewModel> UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken)
+        public async Task<UserVMCU> UpdateUserAsync(UserVMCU userVM, CancellationToken cancellationToken)
         {
             await _userCommandService.UpdateUserAsync(userVM, cancellationToken);
             return userVM;
         }
 
-        public async Task DeleteUserAsync(Guid userId, CancellationToken cancellationToken)
+        public async Task DeleteUserAsync(UserVMId userVMId, CancellationToken cancellationToken)
         {
-            await _userRepository.DeleteAsync(userId, cancellationToken);
+            await _userRepository.DeleteAsync(userVMId.UserId, cancellationToken);
         }
 
-        public async Task<bool> AuthenticateAsync(string username, string password, CancellationToken cancellationToken)
+        public async Task<bool> AuthenticateAsync(UserVMAuth userVMAuth, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetByUsernameAsync(username, cancellationToken);
-            var verified = _passwordHasher.VerifyPassword(user.Password, password);
+            bool verified = false;
+            var user = await _userRepository.GetByUsernameAsync(userVMAuth.UserName, cancellationToken);
+            if (user != null) 
+            {
+                if (user.IsActive)
+                {
+                    verified = _passwordHasher.VerifyPassword(user.Password, userVMAuth.Password);
+                }
+            }
+          
 
             if (verified)
             {

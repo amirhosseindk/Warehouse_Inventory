@@ -20,7 +20,7 @@ namespace Persistence.Repositories
 
         public async Task<User> GetByUsernameAsync(string username, CancellationToken cancellationToken)
         {
-            return await _context.Users.SingleOrDefaultAsync(u => u.Username == username, cancellationToken);
+            return await _context.Users.Where(u=> !u.IsDeleted).SingleOrDefaultAsync(u => u.Username == username, cancellationToken);
         }
 
         public async Task CreateAsync(User user, CancellationToken cancellationToken)

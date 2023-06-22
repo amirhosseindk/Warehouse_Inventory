@@ -1,10 +1,10 @@
-﻿using Application.ViewModels;
-using Application.IServices;
+﻿using Application.IServices;
 using FluentValidation;
+using Application.ViewModels.UserViewModels;
 
 namespace Application.Services
 {
-    public class UserVMValidator : AbstractValidator<UserViewModel>, IUserVMValidator
+    public class UserVMValidator : AbstractValidator<UserVMCU>, IUserVMValidator
     {
         public UserVMValidator()
         {

@@ -1,14 +1,14 @@
-﻿using Application.ViewModels;
+﻿using Application.ViewModels.UserViewModels;
 
 namespace Application.IServices
-{   
+{
     public interface IUserService
     {
-        Task<UserViewModel> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken);
-        Task<IEnumerable<UserViewModel>> GetUsersAsync(CancellationToken cancellationToken);
-        Task<UserViewModel> CreateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
-        Task<UserViewModel> UpdateUserAsync(UserViewModel userVM, CancellationToken cancellationToken);
-        Task DeleteUserAsync(Guid userId, CancellationToken cancellationToken);
-        Task<bool> AuthenticateAsync(string username, string password, CancellationToken cancellationToken);
+        Task<UserVMCU> GetUserByIdAsync(UserVMId userVMId, CancellationToken cancellationToken);
+        Task<IEnumerable<UserVMCU>> GetUsersAsync(CancellationToken cancellationToken);
+        Task<UserVMCU> CreateUserAsync(UserVMCU userVM, CancellationToken cancellationToken);
+        Task<UserVMCU> UpdateUserAsync(UserVMCU userVM, CancellationToken cancellationToken);
+        Task DeleteUserAsync(UserVMId userVMId, CancellationToken cancellationToken);
+        Task<bool> AuthenticateAsync(UserVMAuth userVMAuth, CancellationToken cancellationToken);
     }
 }
