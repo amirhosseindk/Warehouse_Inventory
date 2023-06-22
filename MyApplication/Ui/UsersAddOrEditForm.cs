@@ -1,4 +1,5 @@
 ﻿using Application.IServices;
+using Application.ViewModels.UserViewModels;
 using System.Resources;
 
 namespace MyApplication.Ui
@@ -77,7 +78,11 @@ namespace MyApplication.Ui
 
             if (UserIdForm != Guid.Empty)
             {
-                var userVM = await _userService.GetUserByIdAsync(UserIdForm, CancellationToken.None);
+                var user = new UserVMId
+                {
+                    UserId = UserIdForm
+                };
+                var userVM = await _userService.GetUserByIdAsync(user, CancellationToken.None);
                 FirstNameTextBox.Text = userVM.FirstName;
                 textBox1.Text = userVM.LastName;
                 TelTextBox.Text = userVM.PhoneNumber;
