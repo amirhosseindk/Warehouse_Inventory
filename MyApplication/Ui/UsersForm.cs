@@ -3,6 +3,7 @@ using Application.ViewModels.UserViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using MyApp.Ui;
 using MyApplication.Ui;
+using System.ComponentModel.DataAnnotations;
 using System.Resources;
 
 namespace MyApplication
