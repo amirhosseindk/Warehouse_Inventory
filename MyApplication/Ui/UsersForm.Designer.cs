@@ -36,7 +36,7 @@
             colUserId = new DevExpress.XtraGrid.Columns.GridColumn();
             colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
-            colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            Phone = new DevExpress.XtraGrid.Columns.GridColumn();
             colUsername = new DevExpress.XtraGrid.Columns.GridColumn();
             colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,7 +94,9 @@
             UserGridView.Appearance.Row.Options.UseTextOptions = true;
             UserGridView.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             UserGridView.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            UserGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colUserId, colFirstName, colLastName, colPhone, colUsername, colPassword, colEmail, colAddress, colRole, colBirthdate, colDescription, colInsertDateTime, colUpdateDateTime, colDeleteDateTime, colIsDeleted, colIsActive, colUsernameId });
+            UserGridView.Appearance.SelectedRow.BackColor = (Color)resources.GetObject("UserGridView.Appearance.SelectedRow.BackColor");
+            UserGridView.Appearance.SelectedRow.Options.UseBackColor = true;
+            UserGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colUserId, colFirstName, colLastName, Phone, colUsername, colPassword, colEmail, colAddress, colRole, colBirthdate, colDescription, colInsertDateTime, colUpdateDateTime, colDeleteDateTime, colIsDeleted, colIsActive, colUsernameId });
             UserGridView.DetailHeight = 408;
             UserGridView.GridControl = UserGridControl;
             UserGridView.Name = "UserGridView";
@@ -126,11 +128,11 @@
             colLastName.Name = "colLastName";
             resources.ApplyResources(colLastName, "colLastName");
             // 
-            // colPhone
+            // Phone
             // 
-            colPhone.FieldName = "PhoneNumber";
-            colPhone.Name = "colPhone";
-            resources.ApplyResources(colPhone, "colPhone");
+            Phone.FieldName = "PhoneNumber";
+            Phone.Name = "Phone";
+            resources.ApplyResources(Phone, "Phone");
             // 
             // colUsername
             // 
@@ -354,5 +356,6 @@
         private Usf.WinForms.Forms.ButtonSimlpe UserEditButton;
         private Usf.WinForms.Forms.ButtonSimlpe UserDeleteButton;
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn Phone;
     }
 }

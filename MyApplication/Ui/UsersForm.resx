@@ -150,6 +150,9 @@
   <data name="UserGridView.Appearance.Row.Font" type="System.Drawing.Font, System.Drawing">
     <value>B Yekan, 12pt, style=Bold</value>
   </data>
+  <data name="UserGridView.Appearance.SelectedRow.BackColor" type="System.Drawing.Color, System.Drawing">
+    <value>PaleGreen</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="colUserId.Width" type="System.Int32, mscorlib">
     <value>68</value>
@@ -172,13 +175,13 @@
   <data name="colLastName.Width" type="System.Int32, mscorlib">
     <value>136</value>
   </data>
-  <data name="colPhone.Visible" type="System.Boolean, mscorlib">
+  <data name="Phone.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="colPhone.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="Phone.VisibleIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="colPhone.Width" type="System.Int32, mscorlib">
+  <data name="Phone.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
   <data name="colUsername.Visible" type="System.Boolean, mscorlib">
@@ -504,7 +507,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>40</value>
+    <value>46</value>
   </metadata>
   <data name="UsersForm.Appearance.BackColor" type="System.Drawing.Color, System.Drawing">
     <value>Cyan</value>
@@ -554,10 +557,10 @@
   <data name="&gt;&gt;colLastName.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;colPhone.Name" xml:space="preserve">
-    <value>colPhone</value>
+  <data name="&gt;&gt;Phone.Name" xml:space="preserve">
+    <value>Phone</value>
   </data>
-  <data name="&gt;&gt;colPhone.Type" xml:space="preserve">
+  <data name="&gt;&gt;Phone.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colUsername.Name" xml:space="preserve">

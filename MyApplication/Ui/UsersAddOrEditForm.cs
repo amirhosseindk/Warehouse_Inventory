@@ -104,6 +104,7 @@ namespace MyApp.Ui
                 LastNameTextEdit.Text = userVM.LastName;
                 PhoneTextEdit.Text = userVM.PhoneNumber;
                 UsernameTextEdit.Text = userVM.Username;
+                PasswordTextEdit.Text = userVM.Password;
                 if (RoleComboBoxEdit.SelectedIndex == 0)
                 {
                     RoleComboBoxEdit.Text = "Admin";

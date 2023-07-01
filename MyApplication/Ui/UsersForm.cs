@@ -4,7 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 using MyApp.Ui;
 using MyApplication.Ui;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Resources;
+using System.Windows.Forms;
 
 namespace MyApplication
 {
@@ -42,7 +44,7 @@ namespace MyApplication
                 resource.GetString(name: nameof(LastName));
 
             UserGridView.Columns[3].Caption =
-                resource.GetString(name: nameof(colPhone));
+                resource.GetString(name: nameof(Phone));
 
             UserGridView.Columns[4].Caption =
                 resource.GetString(name: nameof(Username));
