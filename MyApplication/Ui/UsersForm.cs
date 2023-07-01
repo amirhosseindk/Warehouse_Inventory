@@ -41,7 +41,7 @@ namespace MyApplication
                 resource.GetString(name: nameof(LastName));
 
             UserGridView.Columns[3].Caption =
-                resource.GetString(name: nameof(UserTel));
+                resource.GetString(name: nameof(colPhone));
 
             UserGridView.Columns[4].Caption =
                 resource.GetString(name: nameof(Username));
