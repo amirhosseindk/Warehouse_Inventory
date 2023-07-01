@@ -29,77 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            UsernameLabel = new Usf.WinForms.Forms.Label();
-            PasswordLabel = new Usf.WinForms.Forms.Label();
-            UsernameTextBox = new Usf.WinForms.Forms.TextBox();
-            PasswordTextBox = new Usf.WinForms.Forms.TextBox();
-            EnterButton = new Usf.WinForms.Forms.Button();
-            ExitButton = new Usf.WinForms.Forms.Button();
             LanguageLabel = new Usf.WinForms.Forms.Label();
-            radioButton1 = new Usf.WinForms.Forms.RadioButton();
-            radioButton2 = new Usf.WinForms.Forms.RadioButton();
             panel1 = new Panel();
-            SystemNameLabel = new Usf.WinForms.Forms.Label();
+            SystemNameLabel = new Usf.WinForms.Forms.LabelControl();
             panel2 = new Panel();
+            formAssistant1 = new DevExpress.XtraBars.FormAssistant();
+            UsernameLabelControl = new Usf.WinForms.Forms.LabelControl();
+            UsernameTextBox = new Usf.WinForms.Forms.TextEdit();
+            PasswordTextBox = new Usf.WinForms.Forms.TextEdit();
+            EnterButton = new Usf.WinForms.Forms.ButtonSimlpe();
+            ExitButton = new Usf.WinForms.Forms.ButtonSimlpe();
+            PasswordLabelControl = new Usf.WinForms.Forms.LabelControl();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)UsernameTextBox.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordTextBox.Properties).BeginInit();
             SuspendLayout();
-            // 
-            // UsernameLabel
-            // 
-            UsernameLabel.Appearance.Font = (Font)resources.GetObject("UsernameLabel.Appearance.Font");
-            UsernameLabel.Appearance.ForeColor = (Color)resources.GetObject("UsernameLabel.Appearance.ForeColor");
-            UsernameLabel.Appearance.Options.UseFont = true;
-            UsernameLabel.Appearance.Options.UseForeColor = true;
-            resources.ApplyResources(UsernameLabel, "UsernameLabel");
-            UsernameLabel.Name = "UsernameLabel";
-            // 
-            // PasswordLabel
-            // 
-            PasswordLabel.Appearance.Font = (Font)resources.GetObject("PasswordLabel.Appearance.Font");
-            PasswordLabel.Appearance.ForeColor = (Color)resources.GetObject("PasswordLabel.Appearance.ForeColor");
-            PasswordLabel.Appearance.Options.UseFont = true;
-            PasswordLabel.Appearance.Options.UseForeColor = true;
-            resources.ApplyResources(PasswordLabel, "PasswordLabel");
-            PasswordLabel.Name = "PasswordLabel";
-            // 
-            // UsernameTextBox
-            // 
-            UsernameTextBox.BackColor = Color.LemonChiffon;
-            resources.ApplyResources(UsernameTextBox, "UsernameTextBox");
-            UsernameTextBox.ForeColor = Color.Maroon;
-            UsernameTextBox.Name = "UsernameTextBox";
-            // 
-            // PasswordTextBox
-            // 
-            PasswordTextBox.BackColor = Color.LemonChiffon;
-            resources.ApplyResources(PasswordTextBox, "PasswordTextBox");
-            PasswordTextBox.ForeColor = Color.Maroon;
-            PasswordTextBox.Name = "PasswordTextBox";
-            // 
-            // EnterButton
-            // 
-            EnterButton.Appearance.BackColor = (Color)resources.GetObject("EnterButton.Appearance.BackColor");
-            EnterButton.Appearance.Font = (Font)resources.GetObject("EnterButton.Appearance.Font");
-            EnterButton.Appearance.ForeColor = (Color)resources.GetObject("EnterButton.Appearance.ForeColor");
-            EnterButton.Appearance.Options.UseBackColor = true;
-            EnterButton.Appearance.Options.UseFont = true;
-            EnterButton.Appearance.Options.UseForeColor = true;
-            resources.ApplyResources(EnterButton, "EnterButton");
-            EnterButton.Name = "EnterButton";
-            EnterButton.Click += EnterButton_Click;
-            // 
-            // ExitButton
-            // 
-            ExitButton.Appearance.BackColor = (Color)resources.GetObject("ExitButton.Appearance.BackColor");
-            ExitButton.Appearance.Font = (Font)resources.GetObject("ExitButton.Appearance.Font");
-            ExitButton.Appearance.ForeColor = (Color)resources.GetObject("ExitButton.Appearance.ForeColor");
-            ExitButton.Appearance.Options.UseBackColor = true;
-            ExitButton.Appearance.Options.UseFont = true;
-            ExitButton.Appearance.Options.UseForeColor = true;
-            resources.ApplyResources(ExitButton, "ExitButton");
-            ExitButton.Name = "ExitButton";
-            ExitButton.Click += ExitButton_Click;
             // 
             // LanguageLabel
             // 
@@ -111,22 +56,6 @@
             LanguageLabel.Cursor = Cursors.Hand;
             LanguageLabel.Name = "LanguageLabel";
             LanguageLabel.Click += LanguageLabel_Click;
-            // 
-            // radioButton1
-            // 
-            resources.ApplyResources(radioButton1, "radioButton1");
-            radioButton1.Checked = true;
-            radioButton1.ForeColor = Color.DeepSkyBlue;
-            radioButton1.Name = "radioButton1";
-            radioButton1.TabStop = true;
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            resources.ApplyResources(radioButton2, "radioButton2");
-            radioButton2.ForeColor = Color.DeepSkyBlue;
-            radioButton2.Name = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -141,17 +70,92 @@
             SystemNameLabel.Appearance.ForeColor = (Color)resources.GetObject("SystemNameLabel.Appearance.ForeColor");
             SystemNameLabel.Appearance.Options.UseFont = true;
             SystemNameLabel.Appearance.Options.UseForeColor = true;
+            SystemNameLabel.Appearance.Options.UseTextOptions = true;
+            SystemNameLabel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            SystemNameLabel.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             resources.ApplyResources(SystemNameLabel, "SystemNameLabel");
             SystemNameLabel.Name = "SystemNameLabel";
             // 
             // panel2
             // 
             panel2.BackColor = Color.Orange;
-            panel2.Controls.Add(radioButton1);
-            panel2.Controls.Add(radioButton2);
             panel2.Controls.Add(LanguageLabel);
             resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
+            // 
+            // UsernameLabelControl
+            // 
+            UsernameLabelControl.Appearance.Font = (Font)resources.GetObject("UsernameLabel.Appearance.Font");
+            UsernameLabelControl.Appearance.ForeColor = (Color)resources.GetObject("UsernameLabel.Appearance.ForeColor");
+            UsernameLabelControl.Appearance.Options.UseFont = true;
+            UsernameLabelControl.Appearance.Options.UseForeColor = true;
+            resources.ApplyResources(UsernameLabelControl, "UsernameLabelControl");
+            UsernameLabelControl.Name = "UsernameLabelControl";
+            // 
+            // UsernameTextBox
+            // 
+            resources.ApplyResources(UsernameTextBox, "UsernameTextBox");
+            UsernameTextBox.Name = "UsernameTextBox";
+            UsernameTextBox.Properties.Appearance.BackColor = (Color)resources.GetObject("UsernameTextBox.Properties.Appearance.BackColor");
+            UsernameTextBox.Properties.Appearance.Font = (Font)resources.GetObject("UsernameTextBox.Properties.Appearance.Font");
+            UsernameTextBox.Properties.Appearance.Options.UseBackColor = true;
+            UsernameTextBox.Properties.Appearance.Options.UseFont = true;
+            UsernameTextBox.Properties.Appearance.Options.UseTextOptions = true;
+            UsernameTextBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            UsernameTextBox.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            UsernameTextBox.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            UsernameTextBox.Properties.AutoHeight = (bool)resources.GetObject("UsernameTextBox.Properties.AutoHeight");
+            // 
+            // PasswordTextBox
+            // 
+            resources.ApplyResources(PasswordTextBox, "PasswordTextBox");
+            PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.Properties.Appearance.BackColor = (Color)resources.GetObject("PasswordTextBox.Properties.Appearance.BackColor");
+            PasswordTextBox.Properties.Appearance.Font = (Font)resources.GetObject("PasswordTextBox.Properties.Appearance.Font");
+            PasswordTextBox.Properties.Appearance.Options.UseBackColor = true;
+            PasswordTextBox.Properties.Appearance.Options.UseFont = true;
+            PasswordTextBox.Properties.Appearance.Options.UseTextOptions = true;
+            PasswordTextBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            PasswordTextBox.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            PasswordTextBox.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            PasswordTextBox.Properties.AutoHeight = (bool)resources.GetObject("PasswordTextBox.Properties.AutoHeight");
+            // 
+            // EnterButton
+            // 
+            EnterButton.Appearance.BackColor = (Color)resources.GetObject("EnterButton.Appearance.BackColor");
+            EnterButton.Appearance.BorderColor = (Color)resources.GetObject("EnterButton.Appearance.BorderColor");
+            EnterButton.Appearance.Font = (Font)resources.GetObject("EnterButton.Appearance.Font");
+            EnterButton.Appearance.ForeColor = (Color)resources.GetObject("EnterButton.Appearance.ForeColor");
+            EnterButton.Appearance.Options.UseBackColor = true;
+            EnterButton.Appearance.Options.UseBorderColor = true;
+            EnterButton.Appearance.Options.UseFont = true;
+            EnterButton.Appearance.Options.UseForeColor = true;
+            resources.ApplyResources(EnterButton, "EnterButton");
+            EnterButton.Name = "EnterButton";
+            EnterButton.Click += EnterButton_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.Appearance.BackColor = (Color)resources.GetObject("ExitButton.Appearance.BackColor");
+            ExitButton.Appearance.BorderColor = (Color)resources.GetObject("ExitButton.Appearance.BorderColor");
+            ExitButton.Appearance.Font = (Font)resources.GetObject("ExitButton.Appearance.Font");
+            ExitButton.Appearance.ForeColor = (Color)resources.GetObject("ExitButton.Appearance.ForeColor");
+            ExitButton.Appearance.Options.UseBackColor = true;
+            ExitButton.Appearance.Options.UseBorderColor = true;
+            ExitButton.Appearance.Options.UseFont = true;
+            ExitButton.Appearance.Options.UseForeColor = true;
+            resources.ApplyResources(ExitButton, "ExitButton");
+            ExitButton.Name = "ExitButton";
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // PasswordLabelControl
+            // 
+            PasswordLabelControl.Appearance.Font = (Font)resources.GetObject("PasswordLabel.Appearance.Font");
+            PasswordLabelControl.Appearance.ForeColor = (Color)resources.GetObject("PasswordLabel.Appearance.ForeColor");
+            PasswordLabelControl.Appearance.Options.UseFont = true;
+            PasswordLabelControl.Appearance.Options.UseForeColor = true;
+            resources.ApplyResources(PasswordLabelControl, "PasswordLabelControl");
+            PasswordLabelControl.Name = "PasswordLabelControl";
             // 
             // LoginForm
             // 
@@ -165,35 +169,34 @@
             ControlBox = false;
             Controls.Add(ExitButton);
             Controls.Add(EnterButton);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             Controls.Add(PasswordTextBox);
             Controls.Add(UsernameTextBox);
-            Controls.Add(PasswordLabel);
-            Controls.Add(UsernameLabel);
+            Controls.Add(PasswordLabelControl);
+            Controls.Add(UsernameLabelControl);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            IsActiveSlowlyFade = true;
             Name = "LoginForm";
             Load += LoginForm_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)UsernameTextBox.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordTextBox.Properties).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Usf.WinForms.Forms.Label UsernameLabel;
-        private Usf.WinForms.Forms.Label PasswordLabel;
-        private Usf.WinForms.Forms.TextBox UsernameTextBox;
-        private Usf.WinForms.Forms.TextBox PasswordTextBox;
-        private Usf.WinForms.Forms.Button EnterButton;
-        private Usf.WinForms.Forms.Button ExitButton;
         private Usf.WinForms.Forms.Label LanguageLabel;
-        private Usf.WinForms.Forms.RadioButton radioButton1;
-        private Usf.WinForms.Forms.RadioButton radioButton2;
         private Panel panel1;
-        private Usf.WinForms.Forms.Label SystemNameLabel;
         private Panel panel2;
+        private DevExpress.XtraBars.FormAssistant formAssistant1;
+        private Usf.WinForms.Forms.LabelControl SystemNameLabel;
+        private Usf.WinForms.Forms.LabelControl UsernameLabelControl;
+        private Usf.WinForms.Forms.TextEdit UsernameTextBox;
+        private Usf.WinForms.Forms.TextEdit PasswordTextBox;
+        private Usf.WinForms.Forms.ButtonSimlpe EnterButton;
+        private Usf.WinForms.Forms.ButtonSimlpe ExitButton;
+        private Usf.WinForms.Forms.LabelControl PasswordLabelControl;
     }
 }

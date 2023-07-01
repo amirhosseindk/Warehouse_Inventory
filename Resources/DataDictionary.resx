@@ -132,13 +132,13 @@
   <data name="Active/InActive" xml:space="preserve">
     <value>Active/InActive</value>
   </data>
-  <data name="ActiveCheckBox" xml:space="preserve">
+  <data name="ActiveCheckEdit" xml:space="preserve">
     <value>Active</value>
   </data>
   <data name="Address" xml:space="preserve">
     <value>Address</value>
   </data>
-  <data name="AddressLabel" xml:space="preserve">
+  <data name="AddressLabelControl" xml:space="preserve">
     <value>Address</value>
   </data>
   <data name="AddToRequestButton" xml:space="preserve">
@@ -160,10 +160,10 @@
     <value>Backup Form</value>
   </data>
   <data name="Birthdate" xml:space="preserve">
-    <value>Birthdate</value>
+    <value>Birth date</value>
   </data>
-  <data name="BirthdateLabel" xml:space="preserve">
-    <value>Birthdate</value>
+  <data name="BirthdateLabelControl" xml:space="preserve">
+    <value>Birth date</value>
   </data>
   <data name="CountLabel" xml:space="preserve">
     <value>Count</value>
@@ -201,19 +201,16 @@
   <data name="DateLabel" xml:space="preserve">
     <value>Date</value>
   </data>
-  <data name="DeleteButton" xml:space="preserve">
-    <value>Delete</value>
-  </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="DescriptionLabel" xml:space="preserve">
+  <data name="DescriptionLabelControl" xml:space="preserve">
     <value>Description</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
-  <data name="EmailLabel" xml:space="preserve">
+  <data name="EmailLabelControl" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="EndDate" xml:space="preserve">
@@ -231,8 +228,8 @@
   <data name="FirstName" xml:space="preserve">
     <value>First Name</value>
   </data>
-  <data name="FirstNameLabel" xml:space="preserve">
-    <value>FirstName</value>
+  <data name="FirstNameLabelControl" xml:space="preserve">
+    <value>First Name</value>
   </data>
   <data name="Gender" xml:space="preserve">
     <value>Gender</value>
@@ -258,8 +255,8 @@
   <data name="LastName" xml:space="preserve">
     <value>Last Name</value>
   </data>
-  <data name="LastNameLabel" xml:space="preserve">
-    <value>LastName</value>
+  <data name="LastNameLabelControl" xml:space="preserve">
+    <value>Last Name</value>
   </data>
   <data name="LoginForm" xml:space="preserve">
     <value>Login</value>
@@ -297,8 +294,14 @@
   <data name="PasswordForm" xml:space="preserve">
     <value>Password Setting Form</value>
   </data>
-  <data name="PasswordLabel" xml:space="preserve">
+  <data name="PasswordLabelControl" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PhoneLabelControl" xml:space="preserve">
+    <value>Phone</value>
   </data>
   <data name="PriceManagmentToolStripMenuItem" xml:space="preserve">
     <value>Price Managment</value>
@@ -426,8 +429,8 @@
   <data name="Role" xml:space="preserve">
     <value>Role</value>
   </data>
-  <data name="RolLabel" xml:space="preserve">
-    <value>Rol</value>
+  <data name="RoleLabelControl" xml:space="preserve">
+    <value>Role</value>
   </data>
   <data name="SaveButton" xml:space="preserve">
     <value>Save</value>
@@ -474,11 +477,14 @@
   <data name="SystemNameLabel" xml:space="preserve">
     <value>Inventory System</value>
   </data>
-  <data name="Tel" xml:space="preserve">
-    <value>Tel</value>
-  </data>
   <data name="TotalAmountLabel" xml:space="preserve">
     <value>Total Amount</value>
+  </data>
+  <data name="User Phone" xml:space="preserve">
+    <value>User Phone</value>
+  </data>
+  <data name="UserDeleteButton" xml:space="preserve">
+    <value>User Delete</value>
   </data>
   <data name="UserEditButton" xml:space="preserve">
     <value>User Edit</value>
@@ -489,7 +495,7 @@
   <data name="Username" xml:space="preserve">
     <value>Username</value>
   </data>
-  <data name="UsernameLabel" xml:space="preserve">
+  <data name="UsernameLabelControl" xml:space="preserve">
     <value>Username</value>
   </data>
   <data name="UserNewButton" xml:space="preserve">
@@ -503,9 +509,6 @@
   </data>
   <data name="UsersForm" xml:space="preserve">
     <value>System Users Form</value>
-  </data>
-  <data name="UserTel" xml:space="preserve">
-    <value>User Tel</value>
   </data>
   <data name="WomenRadioButton" xml:space="preserve">
     <value>Women</value>

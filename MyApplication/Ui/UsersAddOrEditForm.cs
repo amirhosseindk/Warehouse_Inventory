@@ -1,58 +1,76 @@
 ﻿using Application.IServices;
 using Application.ViewModels.UserViewModels;
+using DevExpress.Utils.Frames;
+using DevExpress.XtraRichEdit.API.Native.Implementation;
+using MyApplication;
+using Persistence;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Resources;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace MyApplication.Ui
+namespace MyApp.Ui
 {
     public partial class UsersAddOrEditForm : Usf.WinForms.Forms.Form
     {
-        public Guid UserIdForm { get; set; }
         private readonly IUserService _userService;
+
         private readonly IUserVMValidator _userVMValidator;
 
+        public Guid UserIdForm { get; set; } = Guid.Empty;
+
+        // Constractor
         public UsersAddOrEditForm(IUserService userService, IUserVMValidator userVMValidator)
         {
-            _userService = userService;
-            _userVMValidator = userVMValidator;
             InitializeComponent();
+
+            _userService = userService;
+
+            _userVMValidator = userVMValidator;
 
             #region Language
 
             ResourceManager resource = new ResourceManager
                 ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
-            FirstNameLabel.Text =
-                resource.GetString(name: nameof(FirstNameLabel));
+            FirstNameLabelControl.Text =
+                resource.GetString(name: nameof(FirstNameLabelControl));
 
-            LastNameLabel.Text =
-                resource.GetString(name: nameof(LastNameLabel));
+            LastNameLabelControl.Text =
+                resource.GetString(name: nameof(LastNameLabelControl));
 
-            TelLabel.Text =
-                resource.GetString(name: nameof(TelLabel));
+            PhoneLabelControl.Text =
+                resource.GetString(name: nameof(PhoneLabelControl));
 
-            UsernameLabel.Text =
-                resource.GetString(name: nameof(UsernameLabel));
+            UsernameLabelControl.Text =
+                resource.GetString(name: nameof(UsernameLabelControl));
 
-            PasswordLabel.Text =
-                resource.GetString(name: nameof(PasswordLabel));
+            PasswordLabelControl.Text =
+                resource.GetString(name: nameof(PasswordLabelControl));
 
-            RolLabel.Text =
-                resource.GetString(name: nameof(RolLabel));
+            RoleLabelControl.Text =
+                resource.GetString(name: nameof(RoleLabelControl));
 
-            EmailLabel.Text =
-                resource.GetString(name: nameof(EmailLabel));
+            EmailLabelControl.Text =
+                resource.GetString(name: nameof(EmailLabelControl));
 
-            BirthdateLabel.Text =
-                resource.GetString(name: nameof(BirthdateLabel));
+            BirthdateLabelControl.Text =
+                resource.GetString(name: nameof(BirthdateLabelControl));
 
-            AddressLabel.Text =
-                resource.GetString(name: nameof(AddressLabel));
+            AddressLabelControl.Text =
+                resource.GetString(name: nameof(AddressLabelControl));
 
-            DescriptionLabel.Text =
-                resource.GetString(name: nameof(DescriptionLabel));
+            DescriptionLabelControl.Text =
+                resource.GetString(name: nameof(DescriptionLabelControl));
 
-            ActiveCheckBox.Text =
-                resource.GetString(name: nameof(ActiveCheckBox));
+            ActiveCheckEdit.Text =
+                resource.GetString(name: nameof(ActiveCheckEdit));
 
             SaveButton.Text =
                 resource.GetString(name: nameof(SaveButton));
@@ -61,69 +79,78 @@ namespace MyApplication.Ui
             _userVMValidator = userVMValidator;
 
             #endregion / Language
-
         }
 
         // Loaded
-        private async void UsersAddOrEdit_Load(object sender, EventArgs e)
+        private async void UsersAddOrEditForm_Load(object sender, EventArgs e)
         {
-            FirstNameTextBox.Focus();
+            FirstNameTextEdit.Focus();
 
             if (ApplicationSettings.CurrentCulture == ApplicationSettings.Languages.Farsi)
             {
                 this.RightToLeft = RightToLeft.Yes;
+
                 this.RightToLeftLayout = true;
-                AddressTextBox.TextAlign = HorizontalAlignment.Left;
             }
 
             if (UserIdForm != Guid.Empty)
             {
-                var user = new UserVMId
+                UserVMId userVMCU = new()
                 {
-                    UserId = UserIdForm
+                    UserId = UserIdForm,
                 };
-                var userVM = await _userService.GetUserByIdAsync(user, CancellationToken.None);
-                FirstNameTextBox.Text = userVM.FirstName;
-                textBox1.Text = userVM.LastName;
-                TelTextBox.Text = userVM.PhoneNumber;
-                UsernameTextBox.Text = userVM.Username;
-                EmailTextBox.Text = userVM.Email;
-                BirthdateTextBox.Text = userVM.Birthdate.ToString();
-                AddressTextBox.Text = userVM.Address;
-                DescriptionTextBox.Text = userVM.Description;
+                var userVM = await _userService.GetUserByIdAsync(userVMCU, CancellationToken.None);
+                FirstNameTextEdit.Text = userVM.FirstName;
+                LastNameTextEdit.Text = userVM.LastName;
+                PhoneTextEdit.Text = userVM.PhoneNumber;
+                UsernameTextEdit.Text = userVM.Username;
+                if (RoleComboBoxEdit.SelectedIndex == 0)
+                {
+                    RoleComboBoxEdit.Text = "Admin";
+                }
+                else 
+                {
+                    RoleComboBoxEdit.Text = "User";
+                }
+                EmailTextEdit.Text = userVM.Email;
+                BirthdateTextEdit.Text = userVM.Birthdate.ToString();
+                AddressTextEdit.Text = userVM.Address;
+                DescriptionTextEdit.Text = userVM.Description;
             }
         }
 
         // Save
         private async void SaveButton_Click(object sender, EventArgs e)
         {
-            var userVM = new Application.ViewModels.UserViewModels.UserVMCU
+            UserVMCU userVMCU = new()
             {
-                UserId = UserIdForm != Guid.Empty ? UserIdForm : Guid.NewGuid(),
-                FirstName = FirstNameTextBox.Text,
-                LastName = textBox1.Text,
-                PhoneNumber = TelTextBox.Text,
-                Username = UsernameTextBox.Text,
-                Password = PasswordTextBox.Text,
-                Role = "admin",
-                Birthdate = Convert.ToDateTime(BirthdateTextBox.Text),
-                Email = EmailTextBox.Text,
-                Address = AddressTextBox.Text,
-                Description = DescriptionTextBox.Text,
-                IsActive = ActiveCheckBox.Checked
+                UserId = Guid.NewGuid(),
+                FirstName = FirstNameTextEdit.Text,
+                LastName = LastNameTextEdit.Text,
+                PhoneNumber = PhoneTextEdit.Text,
+                Username = UsernameTextEdit.Text,
+                Password = PasswordTextEdit.Text,
+                Role = RoleComboBoxEdit.SelectedIndex == 0 ? "Admin" : "User",
+                Birthdate = Convert.ToDateTime(BirthdateTextEdit.Text),
+                Email = EmailTextEdit.Text,
+                Address = AddressTextEdit.Text,
+                Description = DescriptionTextEdit.Text,
+                IsActive = ActiveCheckEdit.Checked,
             };
 
-            var validationResult = _userVMValidator.Validate(userVM);
+            var validationResult = _userVMValidator.Validate(userVMCU);
 
             if (validationResult.IsValid)
             {
                 if (UserIdForm != Guid.Empty)
                 {
-                    await _userService.UpdateUserAsync(userVM, CancellationToken.None);
+                    await _userService.UpdateUserAsync(userVMCU, CancellationToken.None);
                 }
                 else
                 {
-                    await _userService.CreateUserAsync(userVM, CancellationToken.None);
+                    await _userService.CreateUserAsync(userVMCU, CancellationToken.None);
+
+                    DialogResult = DialogResult.OK;
                 }
             }
             else

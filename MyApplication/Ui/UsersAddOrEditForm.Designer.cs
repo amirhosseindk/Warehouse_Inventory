@@ -1,4 +1,4 @@
-﻿namespace MyApplication.Ui
+﻿namespace MyApp.Ui
 {
     partial class UsersAddOrEditForm
     {
@@ -28,357 +28,461 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FirstNameLabel = new Usf.WinForms.Forms.Label();
-            FirstNameTextBox = new Usf.WinForms.Forms.TextBox();
-            LastNameLabel = new Usf.WinForms.Forms.Label();
-            textBox1 = new Usf.WinForms.Forms.TextBox();
-            TelLabel = new Usf.WinForms.Forms.Label();
-            TelTextBox = new Usf.WinForms.Forms.TextBox();
-            UsernameLabel = new Usf.WinForms.Forms.Label();
-            UsernameTextBox = new Usf.WinForms.Forms.TextBox();
-            PasswordLabel = new Usf.WinForms.Forms.Label();
-            PasswordTextBox = new Usf.WinForms.Forms.TextBox();
-            RolLabel = new Usf.WinForms.Forms.Label();
-            comboBox1 = new Usf.WinForms.Forms.ComboBox();
-            EmailLabel = new Usf.WinForms.Forms.Label();
-            EmailTextBox = new Usf.WinForms.Forms.TextBox();
-            AddressLabel = new Usf.WinForms.Forms.Label();
-            AddressTextBox = new Usf.WinForms.Forms.TextBox();
-            ActiveCheckBox = new Usf.WinForms.Forms.CheckBox();
-            SaveButton = new Usf.WinForms.Forms.Button();
-            BirthdateLabel = new Usf.WinForms.Forms.Label();
-            BirthdateTextBox = new Usf.WinForms.Forms.TextBox();
-            DescriptionLabel = new Usf.WinForms.Forms.Label();
-            DescriptionTextBox = new Usf.WinForms.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)comboBox1.Properties).BeginInit();
+            FirstNameLabelControl = new Usf.WinForms.Forms.LabelControl();
+            FirstNameTextEdit = new Usf.WinForms.Forms.TextEdit();
+            LastNameLabelControl = new Usf.WinForms.Forms.LabelControl();
+            LastNameTextEdit = new Usf.WinForms.Forms.TextEdit();
+            PhoneLabelControl = new Usf.WinForms.Forms.LabelControl();
+            PhoneTextEdit = new Usf.WinForms.Forms.TextEdit();
+            UsernameLabelControl = new Usf.WinForms.Forms.LabelControl();
+            UsernameTextEdit = new Usf.WinForms.Forms.TextEdit();
+            PasswordLabelControl = new Usf.WinForms.Forms.LabelControl();
+            PasswordTextEdit = new Usf.WinForms.Forms.TextEdit();
+            EmailLabelControl = new Usf.WinForms.Forms.LabelControl();
+            EmailTextEdit = new Usf.WinForms.Forms.TextEdit();
+            AddressLabelControl = new Usf.WinForms.Forms.LabelControl();
+            AddressTextEdit = new Usf.WinForms.Forms.TextEdit();
+            BirthdateLabelControl = new Usf.WinForms.Forms.LabelControl();
+            BirthdateTextEdit = new Usf.WinForms.Forms.TextEdit();
+            RoleLabelControl = new Usf.WinForms.Forms.LabelControl();
+            DescriptionLabelControl = new Usf.WinForms.Forms.LabelControl();
+            DescriptionTextEdit = new Usf.WinForms.Forms.TextEdit();
+            SaveButton = new Usf.WinForms.Forms.ButtonSimlpe();
+            ActiveCheckEdit = new Usf.WinForms.Forms.CheckEdit();
+            RoleComboBoxEdit = new Usf.WinForms.Forms.ComboBoxEdit();
+            ((System.ComponentModel.ISupportInitialize)FirstNameTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LastNameTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PhoneTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UsernameTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)EmailTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AddressTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BirthdateTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DescriptionTextEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ActiveCheckEdit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)RoleComboBoxEdit.Properties).BeginInit();
             SuspendLayout();
             // 
-            // FirstNameLabel
+            // FirstNameLabelControl
             // 
-            FirstNameLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            FirstNameLabel.Appearance.ForeColor = Color.Maroon;
-            FirstNameLabel.Appearance.Options.UseFont = true;
-            FirstNameLabel.Appearance.Options.UseForeColor = true;
-            FirstNameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            FirstNameLabel.Location = new Point(15, 12);
-            FirstNameLabel.Name = "FirstNameLabel";
-            FirstNameLabel.Size = new Size(103, 30);
-            FirstNameLabel.TabIndex = 3;
-            FirstNameLabel.Text = "First Name";
+            FirstNameLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FirstNameLabelControl.Appearance.ForeColor = Color.Maroon;
+            FirstNameLabelControl.Appearance.Options.UseFont = true;
+            FirstNameLabelControl.Appearance.Options.UseForeColor = true;
+            FirstNameLabelControl.Appearance.Options.UseTextOptions = true;
+            FirstNameLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            FirstNameLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            FirstNameLabelControl.Location = new Point(3, 12);
+            FirstNameLabelControl.Name = "FirstNameLabelControl";
+            FirstNameLabelControl.Size = new Size(100, 30);
+            FirstNameLabelControl.TabIndex = 0;
+            FirstNameLabelControl.Text = "First Name";
             // 
-            // FirstNameTextBox
+            // FirstNameTextEdit
             // 
-            FirstNameTextBox.BackColor = Color.LemonChiffon;
-            FirstNameTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            FirstNameTextBox.Location = new Point(121, 12);
-            FirstNameTextBox.Name = "FirstNameTextBox";
-            FirstNameTextBox.Size = new Size(225, 32);
-            FirstNameTextBox.TabIndex = 1;
-            FirstNameTextBox.TextAlign = HorizontalAlignment.Center;
+            FirstNameTextEdit.IsActiveVHText = true;
+            FirstNameTextEdit.Location = new Point(109, 12);
+            FirstNameTextEdit.Name = "FirstNameTextEdit";
+            FirstNameTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            FirstNameTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FirstNameTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            FirstNameTextEdit.Properties.Appearance.Options.UseFont = true;
+            FirstNameTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            FirstNameTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            FirstNameTextEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            FirstNameTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            FirstNameTextEdit.Properties.AutoHeight = false;
+            FirstNameTextEdit.Size = new Size(192, 32);
+            FirstNameTextEdit.TabIndex = 1;
             // 
-            // LastNameLabel
+            // LastNameLabelControl
             // 
-            LastNameLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LastNameLabel.Appearance.ForeColor = Color.Maroon;
-            LastNameLabel.Appearance.Options.UseFont = true;
-            LastNameLabel.Appearance.Options.UseForeColor = true;
-            LastNameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            LastNameLabel.Location = new Point(15, 55);
-            LastNameLabel.Name = "LastNameLabel";
-            LastNameLabel.Size = new Size(103, 30);
-            LastNameLabel.TabIndex = 5;
-            LastNameLabel.Text = "Last Name";
+            LastNameLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LastNameLabelControl.Appearance.ForeColor = Color.Maroon;
+            LastNameLabelControl.Appearance.Options.UseFont = true;
+            LastNameLabelControl.Appearance.Options.UseForeColor = true;
+            LastNameLabelControl.Appearance.Options.UseTextOptions = true;
+            LastNameLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            LastNameLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            LastNameLabelControl.Location = new Point(3, 55);
+            LastNameLabelControl.Name = "LastNameLabelControl";
+            LastNameLabelControl.Size = new Size(100, 30);
+            LastNameLabelControl.TabIndex = 0;
+            LastNameLabelControl.Text = "Last Name";
             // 
-            // textBox1
+            // LastNameTextEdit
             // 
-            textBox1.BackColor = Color.LemonChiffon;
-            textBox1.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(121, 55);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(225, 32);
-            textBox1.TabIndex = 2;
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            LastNameTextEdit.IsActiveVHText = true;
+            LastNameTextEdit.Location = new Point(109, 55);
+            LastNameTextEdit.Name = "LastNameTextEdit";
+            LastNameTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            LastNameTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LastNameTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            LastNameTextEdit.Properties.Appearance.Options.UseFont = true;
+            LastNameTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            LastNameTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            LastNameTextEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            LastNameTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            LastNameTextEdit.Properties.AutoHeight = false;
+            LastNameTextEdit.Size = new Size(192, 32);
+            LastNameTextEdit.TabIndex = 2;
             // 
-            // TelLabel
+            // PhoneLabelControl
             // 
-            TelLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            TelLabel.Appearance.ForeColor = Color.Maroon;
-            TelLabel.Appearance.Options.UseFont = true;
-            TelLabel.Appearance.Options.UseForeColor = true;
-            TelLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            TelLabel.Location = new Point(15, 103);
-            TelLabel.Name = "TelLabel";
-            TelLabel.Size = new Size(103, 30);
-            TelLabel.TabIndex = 7;
-            TelLabel.Text = "Tel";
+            PhoneLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            PhoneLabelControl.Appearance.ForeColor = Color.Maroon;
+            PhoneLabelControl.Appearance.Options.UseFont = true;
+            PhoneLabelControl.Appearance.Options.UseForeColor = true;
+            PhoneLabelControl.Appearance.Options.UseTextOptions = true;
+            PhoneLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            PhoneLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            PhoneLabelControl.Location = new Point(3, 96);
+            PhoneLabelControl.Name = "PhoneLabelControl";
+            PhoneLabelControl.Size = new Size(100, 30);
+            PhoneLabelControl.TabIndex = 0;
+            PhoneLabelControl.Text = "Phone";
             // 
-            // TelTextBox
+            // PhoneTextEdit
             // 
-            TelTextBox.BackColor = Color.LemonChiffon;
-            TelTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            TelTextBox.Location = new Point(121, 102);
-            TelTextBox.MaxLength = 11;
-            TelTextBox.Name = "TelTextBox";
-            TelTextBox.Size = new Size(225, 32);
-            TelTextBox.TabIndex = 3;
-            TelTextBox.TextAlign = HorizontalAlignment.Center;
+            PhoneTextEdit.IsActiveVHText = true;
+            PhoneTextEdit.Location = new Point(109, 96);
+            PhoneTextEdit.Name = "PhoneTextEdit";
+            PhoneTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            PhoneTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            PhoneTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            PhoneTextEdit.Properties.Appearance.Options.UseFont = true;
+            PhoneTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            PhoneTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            PhoneTextEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            PhoneTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            PhoneTextEdit.Properties.AutoHeight = false;
+            PhoneTextEdit.Properties.MaxLength = 11;
+            PhoneTextEdit.Size = new Size(192, 32);
+            PhoneTextEdit.TabIndex = 3;
             // 
-            // UsernameLabel
+            // UsernameLabelControl
             // 
-            UsernameLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            UsernameLabel.Appearance.ForeColor = Color.Maroon;
-            UsernameLabel.Appearance.Options.UseFont = true;
-            UsernameLabel.Appearance.Options.UseForeColor = true;
-            UsernameLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            UsernameLabel.Location = new Point(15, 150);
-            UsernameLabel.Name = "UsernameLabel";
-            UsernameLabel.Size = new Size(103, 30);
-            UsernameLabel.TabIndex = 9;
-            UsernameLabel.Text = "Username";
+            UsernameLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            UsernameLabelControl.Appearance.ForeColor = Color.Maroon;
+            UsernameLabelControl.Appearance.Options.UseFont = true;
+            UsernameLabelControl.Appearance.Options.UseForeColor = true;
+            UsernameLabelControl.Appearance.Options.UseTextOptions = true;
+            UsernameLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            UsernameLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            UsernameLabelControl.Location = new Point(3, 137);
+            UsernameLabelControl.Name = "UsernameLabelControl";
+            UsernameLabelControl.Size = new Size(100, 30);
+            UsernameLabelControl.TabIndex = 0;
+            UsernameLabelControl.Text = "Username";
             // 
-            // UsernameTextBox
+            // UsernameTextEdit
             // 
-            UsernameTextBox.BackColor = Color.LemonChiffon;
-            UsernameTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            UsernameTextBox.Location = new Point(121, 148);
-            UsernameTextBox.Name = "UsernameTextBox";
-            UsernameTextBox.Size = new Size(225, 32);
-            UsernameTextBox.TabIndex = 4;
-            UsernameTextBox.TextAlign = HorizontalAlignment.Center;
+            UsernameTextEdit.IsActiveVHText = true;
+            UsernameTextEdit.Location = new Point(109, 137);
+            UsernameTextEdit.Name = "UsernameTextEdit";
+            UsernameTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            UsernameTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            UsernameTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            UsernameTextEdit.Properties.Appearance.Options.UseFont = true;
+            UsernameTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            UsernameTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            UsernameTextEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            UsernameTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            UsernameTextEdit.Properties.AutoHeight = false;
+            UsernameTextEdit.Size = new Size(192, 32);
+            UsernameTextEdit.TabIndex = 4;
             // 
-            // PasswordLabel
+            // PasswordLabelControl
             // 
-            PasswordLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordLabel.Appearance.ForeColor = Color.Maroon;
-            PasswordLabel.Appearance.Options.UseFont = true;
-            PasswordLabel.Appearance.Options.UseForeColor = true;
-            PasswordLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            PasswordLabel.Location = new Point(15, 193);
-            PasswordLabel.Name = "PasswordLabel";
-            PasswordLabel.Size = new Size(103, 30);
-            PasswordLabel.TabIndex = 11;
-            PasswordLabel.Text = "Password";
+            PasswordLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            PasswordLabelControl.Appearance.ForeColor = Color.Maroon;
+            PasswordLabelControl.Appearance.Options.UseFont = true;
+            PasswordLabelControl.Appearance.Options.UseForeColor = true;
+            PasswordLabelControl.Appearance.Options.UseTextOptions = true;
+            PasswordLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            PasswordLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            PasswordLabelControl.Location = new Point(3, 179);
+            PasswordLabelControl.Name = "PasswordLabelControl";
+            PasswordLabelControl.Size = new Size(100, 30);
+            PasswordLabelControl.TabIndex = 0;
+            PasswordLabelControl.Text = "Password";
             // 
-            // PasswordTextBox
+            // PasswordTextEdit
             // 
-            PasswordTextBox.BackColor = Color.LemonChiffon;
-            PasswordTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextBox.Location = new Point(121, 192);
-            PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.PasswordChar = '*';
-            PasswordTextBox.Size = new Size(225, 32);
-            PasswordTextBox.TabIndex = 5;
-            PasswordTextBox.TextAlign = HorizontalAlignment.Center;
+            PasswordTextEdit.IsActiveVHText = true;
+            PasswordTextEdit.Location = new Point(109, 178);
+            PasswordTextEdit.Name = "PasswordTextEdit";
+            PasswordTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            PasswordTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            PasswordTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            PasswordTextEdit.Properties.Appearance.Options.UseFont = true;
+            PasswordTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            PasswordTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            PasswordTextEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            PasswordTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            PasswordTextEdit.Properties.AutoHeight = false;
+            PasswordTextEdit.Properties.PasswordChar = '*';
+            PasswordTextEdit.Size = new Size(192, 32);
+            PasswordTextEdit.TabIndex = 5;
             // 
-            // RolLabel
+            // EmailLabelControl
             // 
-            RolLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            RolLabel.Appearance.ForeColor = Color.Maroon;
-            RolLabel.Appearance.Options.UseFont = true;
-            RolLabel.Appearance.Options.UseForeColor = true;
-            RolLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            RolLabel.Location = new Point(15, 238);
-            RolLabel.Name = "RolLabel";
-            RolLabel.Size = new Size(103, 30);
-            RolLabel.TabIndex = 13;
-            RolLabel.Text = "Rol";
+            EmailLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            EmailLabelControl.Appearance.ForeColor = Color.Maroon;
+            EmailLabelControl.Appearance.Options.UseFont = true;
+            EmailLabelControl.Appearance.Options.UseForeColor = true;
+            EmailLabelControl.Appearance.Options.UseTextOptions = true;
+            EmailLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            EmailLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            EmailLabelControl.Location = new Point(3, 307);
+            EmailLabelControl.Name = "EmailLabelControl";
+            EmailLabelControl.Size = new Size(100, 30);
+            EmailLabelControl.TabIndex = 0;
+            EmailLabelControl.Text = "Email";
             // 
-            // comboBox1
+            // EmailTextEdit
             // 
-            comboBox1.Location = new Point(121, 236);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Properties.Appearance.BackColor = Color.LemonChiffon;
-            comboBox1.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.Properties.Appearance.Options.UseBackColor = true;
-            comboBox1.Properties.Appearance.Options.UseFont = true;
-            comboBox1.Properties.AutoHeight = false;
-            comboBox1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            comboBox1.Size = new Size(225, 32);
-            comboBox1.TabIndex = 6;
+            EmailTextEdit.IsActiveVHText = true;
+            EmailTextEdit.Location = new Point(109, 306);
+            EmailTextEdit.Name = "EmailTextEdit";
+            EmailTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            EmailTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            EmailTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            EmailTextEdit.Properties.Appearance.Options.UseFont = true;
+            EmailTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            EmailTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            EmailTextEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            EmailTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            EmailTextEdit.Properties.AutoHeight = false;
+            EmailTextEdit.Size = new Size(192, 32);
+            EmailTextEdit.TabIndex = 8;
             // 
-            // EmailLabel
+            // AddressLabelControl
             // 
-            EmailLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            EmailLabel.Appearance.ForeColor = Color.Maroon;
-            EmailLabel.Appearance.Options.UseFont = true;
-            EmailLabel.Appearance.Options.UseForeColor = true;
-            EmailLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            EmailLabel.Location = new Point(15, 331);
-            EmailLabel.Name = "EmailLabel";
-            EmailLabel.Size = new Size(103, 30);
-            EmailLabel.TabIndex = 16;
-            EmailLabel.Text = "Email";
+            AddressLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            AddressLabelControl.Appearance.ForeColor = Color.Maroon;
+            AddressLabelControl.Appearance.Options.UseFont = true;
+            AddressLabelControl.Appearance.Options.UseForeColor = true;
+            AddressLabelControl.Appearance.Options.UseTextOptions = true;
+            AddressLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            AddressLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            AddressLabelControl.Location = new Point(3, 368);
+            AddressLabelControl.Name = "AddressLabelControl";
+            AddressLabelControl.Size = new Size(100, 28);
+            AddressLabelControl.TabIndex = 0;
+            AddressLabelControl.Text = "Address";
             // 
-            // EmailTextBox
+            // AddressTextEdit
             // 
-            EmailTextBox.BackColor = Color.LemonChiffon;
-            EmailTextBox.Font = new Font("B Yekan", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            EmailTextBox.Location = new Point(121, 326);
-            EmailTextBox.Multiline = true;
-            EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(225, 35);
-            EmailTextBox.TabIndex = 8;
-            EmailTextBox.TextAlign = HorizontalAlignment.Center;
+            AddressTextEdit.IsActiveVHText = false;
+            AddressTextEdit.Location = new Point(109, 350);
+            AddressTextEdit.Name = "AddressTextEdit";
+            AddressTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            AddressTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            AddressTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            AddressTextEdit.Properties.Appearance.Options.UseFont = true;
+            AddressTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            AddressTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            AddressTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            AddressTextEdit.Properties.AutoHeight = false;
+            AddressTextEdit.Size = new Size(192, 66);
+            AddressTextEdit.TabIndex = 9;
             // 
-            // AddressLabel
+            // BirthdateLabelControl
             // 
-            AddressLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            AddressLabel.Appearance.ForeColor = Color.Maroon;
-            AddressLabel.Appearance.Options.UseFont = true;
-            AddressLabel.Appearance.Options.UseForeColor = true;
-            AddressLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            AddressLabel.Location = new Point(15, 385);
-            AddressLabel.Name = "AddressLabel";
-            AddressLabel.Size = new Size(103, 30);
-            AddressLabel.TabIndex = 18;
-            AddressLabel.Text = "Address";
+            BirthdateLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BirthdateLabelControl.Appearance.ForeColor = Color.Maroon;
+            BirthdateLabelControl.Appearance.Options.UseFont = true;
+            BirthdateLabelControl.Appearance.Options.UseForeColor = true;
+            BirthdateLabelControl.Appearance.Options.UseTextOptions = true;
+            BirthdateLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            BirthdateLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            BirthdateLabelControl.Location = new Point(3, 221);
+            BirthdateLabelControl.Name = "BirthdateLabelControl";
+            BirthdateLabelControl.Size = new Size(100, 30);
+            BirthdateLabelControl.TabIndex = 0;
+            BirthdateLabelControl.Text = "Birth date";
             // 
-            // AddressTextBox
+            // BirthdateTextEdit
             // 
-            AddressTextBox.BackColor = Color.LemonChiffon;
-            AddressTextBox.Font = new Font("B Yekan", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            AddressTextBox.Location = new Point(121, 373);
-            AddressTextBox.Multiline = true;
-            AddressTextBox.Name = "AddressTextBox";
-            AddressTextBox.Size = new Size(225, 51);
-            AddressTextBox.TabIndex = 9;
-            AddressTextBox.TextAlign = HorizontalAlignment.Center;
+            BirthdateTextEdit.IsActiveVHText = true;
+            BirthdateTextEdit.Location = new Point(109, 221);
+            BirthdateTextEdit.Name = "BirthdateTextEdit";
+            BirthdateTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            BirthdateTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BirthdateTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            BirthdateTextEdit.Properties.Appearance.Options.UseFont = true;
+            BirthdateTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            BirthdateTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            BirthdateTextEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            BirthdateTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            BirthdateTextEdit.Properties.AutoHeight = false;
+            BirthdateTextEdit.Size = new Size(192, 32);
+            BirthdateTextEdit.TabIndex = 6;
             // 
-            // ActiveCheckBox
+            // RoleLabelControl
             // 
-            ActiveCheckBox.AutoSize = true;
-            ActiveCheckBox.Checked = true;
-            ActiveCheckBox.CheckState = CheckState.Checked;
-            ActiveCheckBox.ForeColor = Color.Maroon;
-            ActiveCheckBox.Location = new Point(25, 533);
-            ActiveCheckBox.Name = "ActiveCheckBox";
-            ActiveCheckBox.Size = new Size(79, 23);
-            ActiveCheckBox.TabIndex = 27;
-            ActiveCheckBox.Text = "Active";
-            ActiveCheckBox.UseVisualStyleBackColor = true;
+            RoleLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            RoleLabelControl.Appearance.ForeColor = Color.Maroon;
+            RoleLabelControl.Appearance.Options.UseFont = true;
+            RoleLabelControl.Appearance.Options.UseForeColor = true;
+            RoleLabelControl.Appearance.Options.UseTextOptions = true;
+            RoleLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            RoleLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            RoleLabelControl.Location = new Point(3, 266);
+            RoleLabelControl.Name = "RoleLabelControl";
+            RoleLabelControl.Size = new Size(100, 30);
+            RoleLabelControl.TabIndex = 0;
+            RoleLabelControl.Text = "Role";
+            // 
+            // DescriptionLabelControl
+            // 
+            DescriptionLabelControl.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            DescriptionLabelControl.Appearance.ForeColor = Color.Maroon;
+            DescriptionLabelControl.Appearance.Options.UseFont = true;
+            DescriptionLabelControl.Appearance.Options.UseForeColor = true;
+            DescriptionLabelControl.Appearance.Options.UseTextOptions = true;
+            DescriptionLabelControl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            DescriptionLabelControl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            DescriptionLabelControl.Location = new Point(3, 447);
+            DescriptionLabelControl.Name = "DescriptionLabelControl";
+            DescriptionLabelControl.Size = new Size(100, 27);
+            DescriptionLabelControl.TabIndex = 0;
+            DescriptionLabelControl.Text = "Description";
+            // 
+            // DescriptionTextEdit
+            // 
+            DescriptionTextEdit.IsActiveVHText = false;
+            DescriptionTextEdit.Location = new Point(109, 428);
+            DescriptionTextEdit.Name = "DescriptionTextEdit";
+            DescriptionTextEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            DescriptionTextEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            DescriptionTextEdit.Properties.Appearance.Options.UseBackColor = true;
+            DescriptionTextEdit.Properties.Appearance.Options.UseFont = true;
+            DescriptionTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            DescriptionTextEdit.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            DescriptionTextEdit.Properties.AutoHeight = false;
+            DescriptionTextEdit.Size = new Size(192, 66);
+            DescriptionTextEdit.TabIndex = 10;
             // 
             // SaveButton
             // 
-            SaveButton.Appearance.BackColor = Color.FromArgb(128, 255, 128);
-            SaveButton.Appearance.Font = new Font("IRANYekan Medium", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
+            SaveButton.Appearance.BackColor = Color.PowderBlue;
+            SaveButton.Appearance.BorderColor = Color.PaleGreen;
+            SaveButton.Appearance.Font = new Font("IRANYekan Medium", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            SaveButton.Appearance.ForeColor = Color.Maroon;
             SaveButton.Appearance.Options.UseBackColor = true;
+            SaveButton.Appearance.Options.UseBorderColor = true;
             SaveButton.Appearance.Options.UseFont = true;
-            SaveButton.Location = new Point(121, 512);
+            SaveButton.Appearance.Options.UseForeColor = true;
+            SaveButton.Location = new Point(109, 507);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(225, 60);
+            SaveButton.Size = new Size(192, 49);
             SaveButton.TabIndex = 11;
             SaveButton.Text = "Save";
             SaveButton.Click += SaveButton_Click;
             // 
-            // BirthdateLabel
+            // ActiveCheckEdit
             // 
-            BirthdateLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BirthdateLabel.Appearance.ForeColor = Color.Maroon;
-            BirthdateLabel.Appearance.Options.UseFont = true;
-            BirthdateLabel.Appearance.Options.UseForeColor = true;
-            BirthdateLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            BirthdateLabel.Location = new Point(15, 284);
-            BirthdateLabel.Name = "BirthdateLabel";
-            BirthdateLabel.Size = new Size(103, 30);
-            BirthdateLabel.TabIndex = 30;
-            BirthdateLabel.Text = "Birthdate";
+            ActiveCheckEdit.EditValue = true;
+            ActiveCheckEdit.Location = new Point(22, 515);
+            ActiveCheckEdit.Name = "ActiveCheckEdit";
+            ActiveCheckEdit.Properties.Appearance.Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ActiveCheckEdit.Properties.Appearance.ForeColor = Color.Maroon;
+            ActiveCheckEdit.Properties.Appearance.Options.UseFont = true;
+            ActiveCheckEdit.Properties.Appearance.Options.UseForeColor = true;
+            ActiveCheckEdit.Properties.Caption = "Active";
+            ActiveCheckEdit.Size = new Size(77, 32);
+            ActiveCheckEdit.TabIndex = 1;
             // 
-            // BirthdateTextBox
+            // RoleComboBoxEdit
             // 
-            BirthdateTextBox.BackColor = Color.LemonChiffon;
-            BirthdateTextBox.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BirthdateTextBox.Location = new Point(121, 282);
-            BirthdateTextBox.Name = "BirthdateTextBox";
-            BirthdateTextBox.Size = new Size(225, 32);
-            BirthdateTextBox.TabIndex = 7;
-            BirthdateTextBox.TextAlign = HorizontalAlignment.Center;
-            // 
-            // DescriptionLabel
-            // 
-            DescriptionLabel.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            DescriptionLabel.Appearance.ForeColor = Color.Maroon;
-            DescriptionLabel.Appearance.Options.UseFont = true;
-            DescriptionLabel.Appearance.Options.UseForeColor = true;
-            DescriptionLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            DescriptionLabel.Location = new Point(15, 452);
-            DescriptionLabel.Name = "DescriptionLabel";
-            DescriptionLabel.Size = new Size(103, 30);
-            DescriptionLabel.TabIndex = 32;
-            DescriptionLabel.Text = "Description";
-            // 
-            // DescriptionTextBox
-            // 
-            DescriptionTextBox.BackColor = Color.LemonChiffon;
-            DescriptionTextBox.Font = new Font("B Yekan", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            DescriptionTextBox.Location = new Point(121, 442);
-            DescriptionTextBox.Multiline = true;
-            DescriptionTextBox.Name = "DescriptionTextBox";
-            DescriptionTextBox.Size = new Size(225, 51);
-            DescriptionTextBox.TabIndex = 10;
-            DescriptionTextBox.TextAlign = HorizontalAlignment.Center;
+            RoleComboBoxEdit.Location = new Point(109, 264);
+            RoleComboBoxEdit.Name = "RoleComboBoxEdit";
+            RoleComboBoxEdit.Properties.Appearance.BackColor = Color.LemonChiffon;
+            RoleComboBoxEdit.Properties.Appearance.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            RoleComboBoxEdit.Properties.Appearance.Options.UseBackColor = true;
+            RoleComboBoxEdit.Properties.Appearance.Options.UseFont = true;
+            RoleComboBoxEdit.Properties.Appearance.Options.UseTextOptions = true;
+            RoleComboBoxEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            RoleComboBoxEdit.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            RoleComboBoxEdit.Properties.AutoHeight = false;
+            RoleComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            RoleComboBoxEdit.Properties.Items.AddRange(new object[] { "Admin", "User" });
+            RoleComboBoxEdit.Size = new Size(192, 32);
+            RoleComboBoxEdit.TabIndex = 7;
             // 
             // UsersAddOrEditForm
             // 
-            Appearance.BackColor = Color.Aquamarine;
+            Appearance.BackColor = Color.Cyan;
             Appearance.Options.UseBackColor = true;
             Appearance.Options.UseFont = true;
             AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(448, 588);
-            Controls.Add(DescriptionTextBox);
-            Controls.Add(DescriptionLabel);
-            Controls.Add(BirthdateLabel);
-            Controls.Add(BirthdateTextBox);
+            ClientSize = new Size(398, 568);
+            Controls.Add(RoleComboBoxEdit);
+            Controls.Add(ActiveCheckEdit);
             Controls.Add(SaveButton);
-            Controls.Add(ActiveCheckBox);
-            Controls.Add(AddressLabel);
-            Controls.Add(AddressTextBox);
-            Controls.Add(EmailLabel);
-            Controls.Add(EmailTextBox);
-            Controls.Add(comboBox1);
-            Controls.Add(RolLabel);
-            Controls.Add(PasswordLabel);
-            Controls.Add(PasswordTextBox);
-            Controls.Add(UsernameLabel);
-            Controls.Add(UsernameTextBox);
-            Controls.Add(TelLabel);
-            Controls.Add(TelTextBox);
-            Controls.Add(LastNameLabel);
-            Controls.Add(textBox1);
-            Controls.Add(FirstNameLabel);
-            Controls.Add(FirstNameTextBox);
-            Margin = new Padding(7, 6, 7, 6);
+            Controls.Add(DescriptionTextEdit);
+            Controls.Add(BirthdateTextEdit);
+            Controls.Add(AddressTextEdit);
+            Controls.Add(EmailTextEdit);
+            Controls.Add(PasswordTextEdit);
+            Controls.Add(UsernameTextEdit);
+            Controls.Add(PhoneTextEdit);
+            Controls.Add(LastNameTextEdit);
+            Controls.Add(FirstNameTextEdit);
+            Controls.Add(DescriptionLabelControl);
+            Controls.Add(RoleLabelControl);
+            Controls.Add(BirthdateLabelControl);
+            Controls.Add(AddressLabelControl);
+            Controls.Add(EmailLabelControl);
+            Controls.Add(PasswordLabelControl);
+            Controls.Add(UsernameLabelControl);
+            Controls.Add(PhoneLabelControl);
+            Controls.Add(LastNameLabelControl);
+            Controls.Add(FirstNameLabelControl);
             MaximizeBox = false;
             Name = "UsersAddOrEditForm";
-            Text = "UsersAddOrEdit";
-            Load += UsersAddOrEdit_Load;
-            ((System.ComponentModel.ISupportInitialize)comboBox1.Properties).EndInit();
+            Text = "UsersAddOrEditForm";
+            Load += UsersAddOrEditForm_Load;
+            ((System.ComponentModel.ISupportInitialize)FirstNameTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LastNameTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PhoneTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UsernameTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)EmailTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AddressTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BirthdateTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DescriptionTextEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ActiveCheckEdit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RoleComboBoxEdit.Properties).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Usf.WinForms.Forms.Label FirstNameLabel;
-        private Usf.WinForms.Forms.TextBox FirstNameTextBox;
-        private Usf.WinForms.Forms.Label LastNameLabel;
-        private Usf.WinForms.Forms.TextBox textBox1;
-        private Usf.WinForms.Forms.Label TelLabel;
-        private Usf.WinForms.Forms.TextBox TelTextBox;
-        private Usf.WinForms.Forms.Label UsernameLabel;
-        private Usf.WinForms.Forms.TextBox UsernameTextBox;
-        private Usf.WinForms.Forms.Label PasswordLabel;
-        private Usf.WinForms.Forms.TextBox PasswordTextBox;
-        private Usf.WinForms.Forms.Label RolLabel;
-        private Usf.WinForms.Forms.ComboBox comboBox1;
-        private Usf.WinForms.Forms.Label EmailLabel;
-        private Usf.WinForms.Forms.TextBox EmailTextBox;
-        private Usf.WinForms.Forms.Label AddressLabel;
-        private Usf.WinForms.Forms.TextBox AddressTextBox;
-        private Usf.WinForms.Forms.CheckBox ActiveCheckBox;
-        private Usf.WinForms.Forms.Button SaveButton;
-        private Usf.WinForms.Forms.Label BirthdateLabel;
-        private Usf.WinForms.Forms.TextBox BirthdateTextBox;
-        private Usf.WinForms.Forms.Label DescriptionLabel;
-        private Usf.WinForms.Forms.TextBox DescriptionTextBox;
+
+        private Usf.WinForms.Forms.LabelControl FirstNameLabelControl;
+        private Usf.WinForms.Forms.TextEdit FirstNameTextEdit;
+        private Usf.WinForms.Forms.LabelControl LastNameLabelControl;
+        private Usf.WinForms.Forms.TextEdit LastNameTextEdit;
+        private Usf.WinForms.Forms.LabelControl PhoneLabelControl;
+        private Usf.WinForms.Forms.TextEdit PhoneTextEdit;
+        private Usf.WinForms.Forms.LabelControl UsernameLabelControl;
+        private Usf.WinForms.Forms.TextEdit UsernameTextEdit;
+        private Usf.WinForms.Forms.LabelControl PasswordLabelControl;
+        private Usf.WinForms.Forms.TextEdit PasswordTextEdit;
+        private Usf.WinForms.Forms.LabelControl EmailLabelControl;
+        private Usf.WinForms.Forms.TextEdit EmailTextEdit;
+        private Usf.WinForms.Forms.LabelControl AddressLabelControl;
+        private Usf.WinForms.Forms.TextEdit AddressTextEdit;
+        private Usf.WinForms.Forms.LabelControl BirthdateLabelControl;
+        private Usf.WinForms.Forms.TextEdit BirthdateTextEdit;
+        private Usf.WinForms.Forms.LabelControl RoleLabelControl;
+        private Usf.WinForms.Forms.LabelControl DescriptionLabelControl;
+        private Usf.WinForms.Forms.TextEdit DescriptionTextEdit;
+        private Usf.WinForms.Forms.ButtonSimlpe SaveButton;
+        private Usf.WinForms.Forms.CheckEdit ActiveCheckEdit;
+        private Usf.WinForms.Forms.ComboBoxEdit RoleComboBoxEdit;
     }
 }

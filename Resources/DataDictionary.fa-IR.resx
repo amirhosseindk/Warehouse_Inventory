@@ -126,13 +126,13 @@
   <data name="AccessForm" xml:space="preserve">
     <value>فرم دسترسی کاربران</value>
   </data>
-  <data name="ActiveCheckBox" xml:space="preserve">
+  <data name="ActiveCheckEdit" xml:space="preserve">
     <value>فعال</value>
   </data>
   <data name="Address" xml:space="preserve">
     <value>آدرس</value>
   </data>
-  <data name="AddressLabel" xml:space="preserve">
+  <data name="AddressLabelControl" xml:space="preserve">
     <value>آدرس</value>
   </data>
   <data name="AddToRequestButton" xml:space="preserve">
@@ -156,7 +156,7 @@
   <data name="Birthdate" xml:space="preserve">
     <value>تولد</value>
   </data>
-  <data name="BirthdateLabel" xml:space="preserve">
+  <data name="BirthdateLabelControl" xml:space="preserve">
     <value>تاریخ تولد</value>
   </data>
   <data name="CountLabel" xml:space="preserve">
@@ -186,13 +186,10 @@
   <data name="DateLabel" xml:space="preserve">
     <value>تاریخ</value>
   </data>
-  <data name="DeleteButton" xml:space="preserve">
-    <value>حذف</value>
-  </data>
   <data name="Description" xml:space="preserve">
     <value>توضیحات</value>
   </data>
-  <data name="DescriptionLabel" xml:space="preserve">
+  <data name="DescriptionLabelControl" xml:space="preserve">
     <value>توضیحات</value>
   </data>
   <data name="EditButton" xml:space="preserve">
@@ -201,7 +198,7 @@
   <data name="Email" xml:space="preserve">
     <value>ایمیل</value>
   </data>
-  <data name="EmailLabel" xml:space="preserve">
+  <data name="EmailLabelControl" xml:space="preserve">
     <value>ایمیل</value>
   </data>
   <data name="EndDate" xml:space="preserve">
@@ -219,7 +216,7 @@
   <data name="FirstName" xml:space="preserve">
     <value>نام</value>
   </data>
-  <data name="FirstNameLabel" xml:space="preserve">
+  <data name="FirstNameLabelControl" xml:space="preserve">
     <value>نام</value>
   </data>
   <data name="Gender" xml:space="preserve">
@@ -246,7 +243,7 @@
   <data name="LastName" xml:space="preserve">
     <value>نام خانوادگی</value>
   </data>
-  <data name="LastNameLabel" xml:space="preserve">
+  <data name="LastNameLabelControl" xml:space="preserve">
     <value>نام خانوادگی</value>
   </data>
   <data name="LoginForm" xml:space="preserve">
@@ -285,8 +282,14 @@
   <data name="PasswordForm" xml:space="preserve">
     <value>فرم تنظیمات رمز عبور</value>
   </data>
-  <data name="PasswordLabel" xml:space="preserve">
+  <data name="PasswordLabelControl" xml:space="preserve">
     <value>کلمه عبور</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="PhoneLabelControl" xml:space="preserve">
+    <value>تلفن</value>
   </data>
   <data name="PriceManagmentToolStripMenuItem" xml:space="preserve">
     <value>مدیریت قیمت</value>
@@ -417,7 +420,7 @@
   <data name="Role" xml:space="preserve">
     <value>عنوان کاربر</value>
   </data>
-  <data name="RolLabel" xml:space="preserve">
+  <data name="RoleLabelControl" xml:space="preserve">
     <value>سمت</value>
   </data>
   <data name="SaveButton" xml:space="preserve">
@@ -465,11 +468,14 @@
   <data name="SystemNameLabel" xml:space="preserve">
     <value>سیستم انبارداری</value>
   </data>
-  <data name="Tel" xml:space="preserve">
-    <value>تلفن</value>
-  </data>
   <data name="TotalAmountLabel" xml:space="preserve">
     <value>مبلغ کل</value>
+  </data>
+  <data name="User Phone" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="UserDeleteButton" xml:space="preserve">
+    <value>حذف کاربر</value>
   </data>
   <data name="UserEditButton" xml:space="preserve">
     <value>ویرایش کاربر</value>
@@ -477,7 +483,7 @@
   <data name="Username" xml:space="preserve">
     <value>نام کاربری</value>
   </data>
-  <data name="UsernameLabel" xml:space="preserve">
+  <data name="UsernameLabelControl" xml:space="preserve">
     <value>نام کاربری</value>
   </data>
   <data name="UserNewButton" xml:space="preserve">
@@ -491,9 +497,6 @@
   </data>
   <data name="UsersForm" xml:space="preserve">
     <value>فرم کاربران سیستم</value>
-  </data>
-  <data name="UserTel" xml:space="preserve">
-    <value>تلفن</value>
   </data>
   <data name="WomenRadioButton" xml:space="preserve">
     <value>خانم</value>

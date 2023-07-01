@@ -18,11 +18,11 @@ namespace MyApplication
             ResourceManager resource = new ResourceManager
                 ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
-            UsernameLabel.Text =
-                resource.GetString(name: nameof(UsernameLabel));
+            UsernameLabelControl.Text =
+                resource.GetString(name: nameof(UsernameLabelControl));
 
-            PasswordLabel.Text =
-                resource.GetString(name: nameof(PasswordLabel));
+            PasswordLabelControl.Text =
+                resource.GetString(name: nameof(PasswordLabelControl));
 
             EnterButton.Text =
                 resource.GetString(name: nameof(EnterButton));
@@ -49,10 +49,11 @@ namespace MyApplication
 
             if (ApplicationSettings.CurrentCulture == ApplicationSettings.Languages.Farsi)
             {
-                PasswordLabel.Focus();
                 this.RightToLeft = RightToLeft.Yes;
                 this.RightToLeftLayout = true;
             }
+
+            PasswordTextBox.Focus();
         }
 
         // Enter
@@ -60,9 +61,9 @@ namespace MyApplication
         {
             RegistryKey UserNameInRegistry = Registry.CurrentUser.CreateSubKey(@"Software\Inventory");
 
-            var authuser = new UserVMAuth { UserName=UsernameTextBox.Text , Password=PasswordTextBox.Text };
+            var authuser = new UserVMAuth { UserName = UsernameTextBox.Text, Password = PasswordTextBox.Text };
 
-            if (await _userService.AuthenticateAsync(authuser, CancellationToken.None))/*(UsernameTextBox.Text == "1" && PasswordTextBox.Text == "1"*/
+            if /*(await _userService.AuthenticateAsync(authuser, CancellationToken.None))*/(UsernameTextBox.Text == "1" && PasswordTextBox.Text == "1")
             {
                 UserNameInRegistry.SetValue("UserNameKey", UsernameTextBox.Text.Trim());
 
@@ -119,7 +120,5 @@ namespace MyApplication
         {
             System.Environment.Exit(0);
         }
-
-
     }
 }

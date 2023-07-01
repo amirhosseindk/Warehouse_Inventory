@@ -9,6 +9,7 @@ using Application.Services;
 using FluentValidation;
 using MyApplication.Ui;
 using Application.ViewModels.UserViewModels;
+using MyApp.Ui;
 
 namespace MyApplication
 {

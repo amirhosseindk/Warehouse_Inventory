@@ -30,30 +30,198 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            SearchLabel = new Usf.WinForms.Forms.Label();
-            SearchTextBox = new Usf.WinForms.Forms.TextBox();
-            UserNewButton = new Usf.WinForms.Forms.Button();
-            UserEditButton = new Usf.WinForms.Forms.Button();
-            DeleteButton = new Usf.WinForms.Forms.Button();
             userBindingSource = new BindingSource(components);
-            Description = new DataGridViewTextBoxColumn();
-            Address = new DataGridViewTextBoxColumn();
-            Email = new DataGridViewTextBoxColumn();
-            Birthdate = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            Role = new DataGridViewTextBoxColumn();
-            Password = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            UserTel = new DataGridViewTextBoxColumn();
-            LastName = new DataGridViewTextBoxColumn();
-            FirstName = new DataGridViewTextBoxColumn();
-            UserId = new DataGridViewTextBoxColumn();
-            UserDataGridView = new Usf.WinForms.Forms.DataGridView();
+            UserGridControl = new DevExpress.XtraGrid.GridControl();
+            UserGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colUserId = new DevExpress.XtraGrid.Columns.GridColumn();
+            colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUsername = new DevExpress.XtraGrid.Columns.GridColumn();
+            colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
+            colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            colRole = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBirthdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            colInsertDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUpdateDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDeleteDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            colIsDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
+            colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUsernameId = new DevExpress.XtraGrid.Columns.GridColumn();
+            SearchLabel = new Usf.WinForms.Forms.LabelControl();
+            SearchTextBox = new Usf.WinForms.Forms.TextEdit();
+            UserNewButton = new Usf.WinForms.Forms.ButtonSimlpe();
+            UserEditButton = new Usf.WinForms.Forms.ButtonSimlpe();
+            UserDeleteButton = new Usf.WinForms.Forms.ButtonSimlpe();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UserGridControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UserGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SearchTextBox.Properties).BeginInit();
             SuspendLayout();
+            // 
+            // userBindingSource
+            // 
+            userBindingSource.DataSource = typeof(Domain.Entities.User);
+            // 
+            // UserGridControl
+            // 
+            resources.ApplyResources(UserGridControl, "UserGridControl");
+            UserGridControl.DataSource = userBindingSource;
+            UserGridControl.EmbeddedNavigator.Margin = (Padding)resources.GetObject("UserGridControl.EmbeddedNavigator.Margin");
+            UserGridControl.MainView = UserGridView;
+            UserGridControl.Name = "UserGridControl";
+            UserGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { UserGridView });
+            // 
+            // UserGridView
+            // 
+            UserGridView.Appearance.EvenRow.BackColor = (Color)resources.GetObject("UserGridView.Appearance.EvenRow.BackColor");
+            UserGridView.Appearance.EvenRow.Options.UseBackColor = true;
+            UserGridView.Appearance.HeaderPanel.BackColor = (Color)resources.GetObject("UserGridView.Appearance.HeaderPanel.BackColor");
+            UserGridView.Appearance.HeaderPanel.Font = (Font)resources.GetObject("UserGridView.Appearance.HeaderPanel.Font");
+            UserGridView.Appearance.HeaderPanel.ForeColor = (Color)resources.GetObject("UserGridView.Appearance.HeaderPanel.ForeColor");
+            UserGridView.Appearance.HeaderPanel.Options.UseBackColor = true;
+            UserGridView.Appearance.HeaderPanel.Options.UseFont = true;
+            UserGridView.Appearance.HeaderPanel.Options.UseForeColor = true;
+            UserGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            UserGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            UserGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            UserGridView.Appearance.Row.BackColor = (Color)resources.GetObject("UserGridView.Appearance.Row.BackColor");
+            UserGridView.Appearance.Row.Font = (Font)resources.GetObject("UserGridView.Appearance.Row.Font");
+            UserGridView.Appearance.Row.Options.UseBackColor = true;
+            UserGridView.Appearance.Row.Options.UseFont = true;
+            UserGridView.Appearance.Row.Options.UseTextOptions = true;
+            UserGridView.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            UserGridView.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            UserGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colUserId, colFirstName, colLastName, colPhone, colUsername, colPassword, colEmail, colAddress, colRole, colBirthdate, colDescription, colInsertDateTime, colUpdateDateTime, colDeleteDateTime, colIsDeleted, colIsActive, colUsernameId });
+            UserGridView.DetailHeight = 408;
+            UserGridView.GridControl = UserGridControl;
+            UserGridView.Name = "UserGridView";
+            UserGridView.OptionsBehavior.Editable = false;
+            UserGridView.OptionsView.ColumnAutoWidth = false;
+            UserGridView.OptionsView.EnableAppearanceEvenRow = true;
+            UserGridView.OptionsView.ShowGroupPanel = false;
+            UserGridView.OptionsView.ShowIndicator = false;
+            UserGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] { new DevExpress.XtraGrid.Columns.GridColumnSortInfo(colRole, DevExpress.Data.ColumnSortOrder.Ascending) });
+            // 
+            // colUserId
+            // 
+            colUserId.FieldName = "UserId";
+            colUserId.MinWidth = 18;
+            colUserId.Name = "colUserId";
+            resources.ApplyResources(colUserId, "colUserId");
+            // 
+            // colFirstName
+            // 
+            colFirstName.FieldName = "FirstName";
+            colFirstName.MinWidth = 18;
+            colFirstName.Name = "colFirstName";
+            resources.ApplyResources(colFirstName, "colFirstName");
+            // 
+            // colLastName
+            // 
+            colLastName.FieldName = "LastName";
+            colLastName.MinWidth = 18;
+            colLastName.Name = "colLastName";
+            resources.ApplyResources(colLastName, "colLastName");
+            // 
+            // colPhone
+            // 
+            colPhone.FieldName = "PhoneNumber";
+            colPhone.Name = "colPhone";
+            resources.ApplyResources(colPhone, "colPhone");
+            // 
+            // colUsername
+            // 
+            colUsername.FieldName = "Username";
+            colUsername.MinWidth = 18;
+            colUsername.Name = "colUsername";
+            resources.ApplyResources(colUsername, "colUsername");
+            // 
+            // colPassword
+            // 
+            colPassword.FieldName = "Password";
+            colPassword.MinWidth = 18;
+            colPassword.Name = "colPassword";
+            resources.ApplyResources(colPassword, "colPassword");
+            // 
+            // colEmail
+            // 
+            colEmail.FieldName = "Email";
+            colEmail.MinWidth = 18;
+            colEmail.Name = "colEmail";
+            resources.ApplyResources(colEmail, "colEmail");
+            // 
+            // colAddress
+            // 
+            colAddress.FieldName = "Address";
+            colAddress.MinWidth = 18;
+            colAddress.Name = "colAddress";
+            resources.ApplyResources(colAddress, "colAddress");
+            // 
+            // colRole
+            // 
+            colRole.FieldName = "Role";
+            colRole.MinWidth = 18;
+            colRole.Name = "colRole";
+            resources.ApplyResources(colRole, "colRole");
+            // 
+            // colBirthdate
+            // 
+            colBirthdate.FieldName = "Birthdate";
+            colBirthdate.MinWidth = 18;
+            colBirthdate.Name = "colBirthdate";
+            resources.ApplyResources(colBirthdate, "colBirthdate");
+            // 
+            // colDescription
+            // 
+            colDescription.FieldName = "Description";
+            colDescription.MinWidth = 18;
+            colDescription.Name = "colDescription";
+            resources.ApplyResources(colDescription, "colDescription");
+            // 
+            // colInsertDateTime
+            // 
+            colInsertDateTime.FieldName = "InsertDateTime";
+            colInsertDateTime.MinWidth = 18;
+            colInsertDateTime.Name = "colInsertDateTime";
+            resources.ApplyResources(colInsertDateTime, "colInsertDateTime");
+            // 
+            // colUpdateDateTime
+            // 
+            colUpdateDateTime.FieldName = "UpdateDateTime";
+            colUpdateDateTime.MinWidth = 18;
+            colUpdateDateTime.Name = "colUpdateDateTime";
+            resources.ApplyResources(colUpdateDateTime, "colUpdateDateTime");
+            // 
+            // colDeleteDateTime
+            // 
+            colDeleteDateTime.FieldName = "DeleteDateTime";
+            colDeleteDateTime.MinWidth = 18;
+            colDeleteDateTime.Name = "colDeleteDateTime";
+            resources.ApplyResources(colDeleteDateTime, "colDeleteDateTime");
+            // 
+            // colIsDeleted
+            // 
+            colIsDeleted.FieldName = "IsDeleted";
+            colIsDeleted.MinWidth = 18;
+            colIsDeleted.Name = "colIsDeleted";
+            resources.ApplyResources(colIsDeleted, "colIsDeleted");
+            // 
+            // colIsActive
+            // 
+            colIsActive.FieldName = "IsActive";
+            colIsActive.MinWidth = 18;
+            colIsActive.Name = "colIsActive";
+            resources.ApplyResources(colIsActive, "colIsActive");
+            // 
+            // colUsernameId
+            // 
+            colUsernameId.FieldName = "UsernameId";
+            colUsernameId.MinWidth = 18;
+            colUsernameId.Name = "colUsernameId";
+            resources.ApplyResources(colUsernameId, "colUsernameId");
             // 
             // SearchLabel
             // 
@@ -61,22 +229,35 @@
             SearchLabel.Appearance.ForeColor = (Color)resources.GetObject("SearchLabel.Appearance.ForeColor");
             SearchLabel.Appearance.Options.UseFont = true;
             SearchLabel.Appearance.Options.UseForeColor = true;
+            SearchLabel.Appearance.Options.UseTextOptions = true;
+            SearchLabel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             resources.ApplyResources(SearchLabel, "SearchLabel");
             SearchLabel.Name = "SearchLabel";
             // 
             // SearchTextBox
             // 
+            SearchTextBox.IsActiveVHText = true;
             resources.ApplyResources(SearchTextBox, "SearchTextBox");
-            SearchTextBox.BackColor = Color.LemonChiffon;
             SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Properties.Appearance.BackColor = (Color)resources.GetObject("SearchTextBox.Properties.Appearance.BackColor");
+            SearchTextBox.Properties.Appearance.Font = (Font)resources.GetObject("SearchTextBox.Properties.Appearance.Font");
+            SearchTextBox.Properties.Appearance.Options.UseBackColor = true;
+            SearchTextBox.Properties.Appearance.Options.UseFont = true;
+            SearchTextBox.Properties.Appearance.Options.UseTextOptions = true;
+            SearchTextBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            SearchTextBox.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            SearchTextBox.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            SearchTextBox.Properties.AutoHeight = (bool)resources.GetObject("SearchTextBox.Properties.AutoHeight");
             // 
             // UserNewButton
             // 
             resources.ApplyResources(UserNewButton, "UserNewButton");
             UserNewButton.Appearance.BackColor = (Color)resources.GetObject("UserNewButton.Appearance.BackColor");
+            UserNewButton.Appearance.BorderColor = (Color)resources.GetObject("UserNewButton.Appearance.BorderColor");
             UserNewButton.Appearance.Font = (Font)resources.GetObject("UserNewButton.Appearance.Font");
             UserNewButton.Appearance.ForeColor = (Color)resources.GetObject("UserNewButton.Appearance.ForeColor");
             UserNewButton.Appearance.Options.UseBackColor = true;
+            UserNewButton.Appearance.Options.UseBorderColor = true;
             UserNewButton.Appearance.Options.UseFont = true;
             UserNewButton.Appearance.Options.UseForeColor = true;
             UserNewButton.Name = "UserNewButton";
@@ -86,139 +267,29 @@
             // 
             resources.ApplyResources(UserEditButton, "UserEditButton");
             UserEditButton.Appearance.BackColor = (Color)resources.GetObject("UserEditButton.Appearance.BackColor");
+            UserEditButton.Appearance.BorderColor = (Color)resources.GetObject("UserEditButton.Appearance.BorderColor");
             UserEditButton.Appearance.Font = (Font)resources.GetObject("UserEditButton.Appearance.Font");
+            UserEditButton.Appearance.ForeColor = (Color)resources.GetObject("UserEditButton.Appearance.ForeColor");
             UserEditButton.Appearance.Options.UseBackColor = true;
+            UserEditButton.Appearance.Options.UseBorderColor = true;
             UserEditButton.Appearance.Options.UseFont = true;
+            UserEditButton.Appearance.Options.UseForeColor = true;
             UserEditButton.Name = "UserEditButton";
             UserEditButton.Click += UserEditButton_Click;
             // 
-            // DeleteButton
+            // UserDeleteButton
             // 
-            resources.ApplyResources(DeleteButton, "DeleteButton");
-            DeleteButton.Appearance.BackColor = (Color)resources.GetObject("StatusButton.Appearance.BackColor");
-            DeleteButton.Appearance.Font = (Font)resources.GetObject("StatusButton.Appearance.Font");
-            DeleteButton.Appearance.Options.UseBackColor = true;
-            DeleteButton.Appearance.Options.UseFont = true;
-            DeleteButton.Name = "DeleteButton";
-            DeleteButton.Click += DeleteButton_Click;
-            // 
-            // userBindingSource
-            // 
-            userBindingSource.DataSource = typeof(Domain.Entities.User);
-            // 
-            // Description
-            // 
-            Description.DataPropertyName = "UserIdForm";
-            resources.ApplyResources(Description, "Description");
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
-            // Address
-            // 
-            Address.DataPropertyName = "Address";
-            resources.ApplyResources(Address, "Address");
-            Address.Name = "Address";
-            Address.ReadOnly = true;
-            // 
-            // Email
-            // 
-            Email.DataPropertyName = "Email";
-            resources.ApplyResources(Email, "Email");
-            Email.Name = "Email";
-            Email.ReadOnly = true;
-            // 
-            // Birthdate
-            // 
-            Birthdate.DataPropertyName = "UserIdForm";
-            resources.ApplyResources(Birthdate, "Birthdate");
-            Birthdate.Name = "Birthdate";
-            Birthdate.ReadOnly = true;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "UserIdForm";
-            resources.ApplyResources(Status, "Status");
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            // 
-            // Role
-            // 
-            Role.DataPropertyName = "Role";
-            resources.ApplyResources(Role, "Role");
-            Role.Name = "Role";
-            Role.ReadOnly = true;
-            // 
-            // Password
-            // 
-            Password.DataPropertyName = "Password";
-            resources.ApplyResources(Password, "Password");
-            Password.Name = "Password";
-            Password.ReadOnly = true;
-            // 
-            // Username
-            // 
-            Username.DataPropertyName = "Username";
-            resources.ApplyResources(Username, "Username");
-            Username.Name = "Username";
-            Username.ReadOnly = true;
-            // 
-            // UserTel
-            // 
-            UserTel.DataPropertyName = "PhoneNumber";
-            resources.ApplyResources(UserTel, "UserTel");
-            UserTel.Name = "UserTel";
-            UserTel.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            LastName.DataPropertyName = "LastName";
-            resources.ApplyResources(LastName, "LastName");
-            LastName.Name = "LastName";
-            LastName.ReadOnly = true;
-            // 
-            // FirstName
-            // 
-            FirstName.DataPropertyName = "FirstName";
-            resources.ApplyResources(FirstName, "FirstName");
-            FirstName.Name = "FirstName";
-            FirstName.ReadOnly = true;
-            // 
-            // UserIdForm
-            // 
-            UserId.DataPropertyName = "UserIdForm";
-            resources.ApplyResources(UserId, "UserIdForm");
-            UserId.Name = "UserIdForm";
-            UserId.ReadOnly = true;
-            // 
-            // UserDataGridView
-            // 
-            UserDataGridView.AllowUserToAddRows = false;
-            UserDataGridView.AllowUserToDeleteRows = false;
-            UserDataGridView.AutoGenerateColumns = false;
-            UserDataGridView.BackgroundColor = Color.MistyRose;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            UserDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            UserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { UserId, FirstName, LastName, UserTel, Username, Password, Role, Status, Birthdate, Email, Address, Description });
-            UserDataGridView.DataSource = userBindingSource;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("B Yekan", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            UserDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
-            resources.ApplyResources(UserDataGridView, "UserDataGridView");
-            UserDataGridView.Name = "UserDataGridView";
-            UserDataGridView.ReadOnly = true;
-            UserDataGridView.RowTemplate.Height = 29;
+            resources.ApplyResources(UserDeleteButton, "UserDeleteButton");
+            UserDeleteButton.Appearance.BackColor = (Color)resources.GetObject("UserDeleteButton.Appearance.BackColor");
+            UserDeleteButton.Appearance.BorderColor = (Color)resources.GetObject("UserDeleteButton.Appearance.BorderColor");
+            UserDeleteButton.Appearance.Font = (Font)resources.GetObject("UserDeleteButton.Appearance.Font");
+            UserDeleteButton.Appearance.ForeColor = (Color)resources.GetObject("UserDeleteButton.Appearance.ForeColor");
+            UserDeleteButton.Appearance.Options.UseBackColor = true;
+            UserDeleteButton.Appearance.Options.UseBorderColor = true;
+            UserDeleteButton.Appearance.Options.UseFont = true;
+            UserDeleteButton.Appearance.Options.UseForeColor = true;
+            UserDeleteButton.Name = "UserDeleteButton";
+            UserDeleteButton.Click += DeleteButton_Click;
             // 
             // UsersForm
             // 
@@ -227,25 +298,22 @@
             Appearance.Options.UseFont = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(UserDataGridView);
-            Controls.Add(UserNewButton);
+            Controls.Add(UserDeleteButton);
             Controls.Add(UserEditButton);
-            Controls.Add(DeleteButton);
-            Controls.Add(SearchLabel);
+            Controls.Add(UserNewButton);
             Controls.Add(SearchTextBox);
+            Controls.Add(SearchLabel);
+            Controls.Add(UserGridControl);
             Name = "UsersForm";
             Load += UsersForm_Load;
             ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)UserDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UserGridControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UserGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SearchTextBox.Properties).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Usf.WinForms.Forms.Label SearchLabel;
-        private Usf.WinForms.Forms.TextBox SearchTextBox;
-        private Usf.WinForms.Forms.Button UserNewButton;
-        private Usf.WinForms.Forms.Button UserEditButton;
         private Usf.WinForms.Forms.Button DeleteButton;
         private DataGridViewTextBoxColumn byUsernameDataGridViewTextBoxColumn;
         private BindingSource userBindingSource;
@@ -262,5 +330,29 @@
         private DataGridViewTextBoxColumn FirstName;
         private DataGridViewTextBoxColumn UserId;
         private Usf.WinForms.Forms.DataGridView UserDataGridView;
+        private DevExpress.XtraGrid.GridControl UserGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView UserGridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserId;
+        private DevExpress.XtraGrid.Columns.GridColumn colFirstName;
+        private DevExpress.XtraGrid.Columns.GridColumn colLastName;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colUsername;
+        private DevExpress.XtraGrid.Columns.GridColumn colPassword;
+        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colRole;
+        private DevExpress.XtraGrid.Columns.GridColumn colBirthdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn colInsertDateTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colUpdateDateTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colDeleteDateTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsDeleted;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
+        private DevExpress.XtraGrid.Columns.GridColumn colUsernameId;
+        private Usf.WinForms.Forms.LabelControl SearchLabel;
+        private Usf.WinForms.Forms.TextEdit SearchTextBox;
+        private Usf.WinForms.Forms.ButtonSimlpe UserNewButton;
+        private Usf.WinForms.Forms.ButtonSimlpe UserEditButton;
+        private Usf.WinForms.Forms.ButtonSimlpe UserDeleteButton;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhone;
     }
 }

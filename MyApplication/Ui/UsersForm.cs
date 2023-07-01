@@ -1,6 +1,7 @@
 ﻿using Application.IServices;
 using Application.ViewModels.UserViewModels;
 using Microsoft.Extensions.DependencyInjection;
+using MyApp.Ui;
 using MyApplication.Ui;
 using System.Resources;
 
@@ -30,41 +31,41 @@ namespace MyApplication
             UserEditButton.Text =
                 resource.GetString(name: nameof(UserEditButton));
 
-            DeleteButton.Text =
-                resource.GetString(name: nameof(DeleteButton));
+            UserDeleteButton.Text =
+                resource.GetString(name: nameof(UserDeleteButton));
 
-            UserDataGridView.Columns[1].HeaderText =
+            UserGridView.Columns[1].Caption =
                 resource.GetString(name: nameof(FirstName));
 
-            UserDataGridView.Columns[2].HeaderText =
+            UserGridView.Columns[2].Caption =
                 resource.GetString(name: nameof(LastName));
 
-            UserDataGridView.Columns[3].HeaderText =
+            UserGridView.Columns[3].Caption =
                 resource.GetString(name: nameof(UserTel));
 
-            UserDataGridView.Columns[4].HeaderText =
+            UserGridView.Columns[4].Caption =
                 resource.GetString(name: nameof(Username));
 
-            UserDataGridView.Columns[5].HeaderText =
+            UserGridView.Columns[5].Caption =
                 resource.GetString(name: nameof(Password));
 
-            UserDataGridView.Columns[6].HeaderText =
-                resource.GetString(name: nameof(Role));
-
-            UserDataGridView.Columns[7].HeaderText =
-                resource.GetString(name: nameof(Status));
-
-            UserDataGridView.Columns[8].HeaderText =
-                resource.GetString(name: nameof(Birthdate));
-
-            UserDataGridView.Columns[9].HeaderText =
+            UserGridView.Columns[6].Caption =
                 resource.GetString(name: nameof(Email));
 
-            UserDataGridView.Columns[10].HeaderText =
+            UserGridView.Columns[7].Caption =
                 resource.GetString(name: nameof(Address));
 
-            UserDataGridView.Columns[11].HeaderText =
+            UserGridView.Columns[8].Caption =
+                resource.GetString(name: nameof(Role));
+
+            UserGridView.Columns[9].Caption =
+                resource.GetString(name: nameof(Birthdate));
+
+            UserGridView.Columns[10].Caption =
                 resource.GetString(name: nameof(Description));
+
+            UserGridView.Columns[15].Caption =
+                resource.GetString(name: nameof(Status));
 
             this.Text =
                 resource.GetString(name: nameof(UsersForm));
@@ -83,10 +84,15 @@ namespace MyApplication
                 this.RightToLeftLayout = true;
             }
 
+            RefreshFormAsync();
+        }
+
+        // Refresh
+        private async void RefreshFormAsync()
+        {
             var usersUF = await _userService.GetUsersAsync(CancellationToken.None);
 
-            UserDataGridView.DataSource = usersUF.ToList();
-
+            UserGridControl.DataSource = usersUF.ToList();
         }
 
         // Add
@@ -96,62 +102,52 @@ namespace MyApplication
             {
                 var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
 
-                form.ShowDialog();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshFormAsync();
+                }
             }
         }
 
         // Edit
         private void UserEditButton_Click(object sender, EventArgs e)
         {
-            if (UserDataGridView.SelectedRows.Count == 1)
+            using (var scope = Program.ServiceProvider.CreateScope())
             {
-                var selectedRow = UserDataGridView.SelectedRows[0];
-                var user = new UserVMId
+                var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
+
+                var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colUserId);
+
+                form.UserIdForm = CurrentID;
+
+                if (form.ShowDialog() == DialogResult.OK)
                 {
-                    UserId = (Guid)selectedRow.Cells["UserIdForm"].Value
-                };
-                if (user.UserId != Guid.Empty)
-                {
-                    using (var scope = Program.ServiceProvider.CreateScope())
-                    {
-                        var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
-                        form.UserIdForm = user.UserId;
-                        form.ShowDialog();
-                    }
+                    RefreshFormAsync();
                 }
-                else
-                {
-                    MessageBox.Show("no user selected");
-                }
-            }
-            else
-            {
-                MessageBox.Show("just select 1 user to use this button");
             }
         }
 
+        // Delete
         private async void DeleteButton_Click(object sender, EventArgs e)
         {
-            if(UserDataGridView.SelectedRows.Count == 1)
+            using (var scope = Program.ServiceProvider.CreateScope())
             {
-                var selectedRow = UserDataGridView.SelectedRows[0];
-                var user = new UserVMId
+                var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colUserId);
+                var FirstName = UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colFirstName);
+                var LastName = UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colLastName);
+                var FullName = FirstName + " " + LastName;
+
+                UserVMId userVMCU = new()
                 {
-                    UserId = (Guid)selectedRow.Cells["UserIdForm"].Value
+                    UserId = CurrentID,
                 };
-                if (user.UserId != Guid.Empty)
+
+                if (MessageBox.Show($"آیا {FullName} حذف شود؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
-                    await _userService.DeleteUserAsync(user, CancellationToken.None);
-                    UserDataGridView.Update();
+                    await _userService.DeleteUserAsync(userVMCU, CancellationToken.None);
+
+                    RefreshFormAsync();
                 }
-                else 
-                {
-                    MessageBox.Show("no user selected");
-                }   
-            }
-            else
-            {
-                MessageBox.Show("just select 1 user to use this button");
             }
         }
     }
