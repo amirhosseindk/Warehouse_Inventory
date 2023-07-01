@@ -40,6 +40,7 @@
             EnterButton = new Usf.WinForms.Forms.ButtonSimlpe();
             ExitButton = new Usf.WinForms.Forms.ButtonSimlpe();
             PasswordLabelControl = new Usf.WinForms.Forms.LabelControl();
+            label1 = new Usf.WinForms.Forms.Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UsernameTextBox.Properties).BeginInit();
@@ -79,14 +80,15 @@
             // panel2
             // 
             panel2.BackColor = Color.Orange;
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(LanguageLabel);
             resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
             // 
             // UsernameLabelControl
             // 
-            UsernameLabelControl.Appearance.Font = (Font)resources.GetObject("UsernameLabel.Appearance.Font");
-            UsernameLabelControl.Appearance.ForeColor = (Color)resources.GetObject("UsernameLabel.Appearance.ForeColor");
+            UsernameLabelControl.Appearance.Font = (Font)resources.GetObject("UsernameLabelControl.Appearance.Font");
+            UsernameLabelControl.Appearance.ForeColor = (Color)resources.GetObject("UsernameLabelControl.Appearance.ForeColor");
             UsernameLabelControl.Appearance.Options.UseFont = true;
             UsernameLabelControl.Appearance.Options.UseForeColor = true;
             resources.ApplyResources(UsernameLabelControl, "UsernameLabelControl");
@@ -94,6 +96,7 @@
             // 
             // UsernameTextBox
             // 
+            UsernameTextBox.IsActiveVHText = true;
             resources.ApplyResources(UsernameTextBox, "UsernameTextBox");
             UsernameTextBox.Name = "UsernameTextBox";
             UsernameTextBox.Properties.Appearance.BackColor = (Color)resources.GetObject("UsernameTextBox.Properties.Appearance.BackColor");
@@ -108,6 +111,7 @@
             // 
             // PasswordTextBox
             // 
+            PasswordTextBox.IsActiveVHText = true;
             resources.ApplyResources(PasswordTextBox, "PasswordTextBox");
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Properties.Appearance.BackColor = (Color)resources.GetObject("PasswordTextBox.Properties.Appearance.BackColor");
@@ -150,12 +154,22 @@
             // 
             // PasswordLabelControl
             // 
-            PasswordLabelControl.Appearance.Font = (Font)resources.GetObject("PasswordLabel.Appearance.Font");
-            PasswordLabelControl.Appearance.ForeColor = (Color)resources.GetObject("PasswordLabel.Appearance.ForeColor");
+            PasswordLabelControl.Appearance.Font = (Font)resources.GetObject("PasswordLabelControl.Appearance.Font");
+            PasswordLabelControl.Appearance.ForeColor = (Color)resources.GetObject("PasswordLabelControl.Appearance.ForeColor");
             PasswordLabelControl.Appearance.Options.UseFont = true;
             PasswordLabelControl.Appearance.Options.UseForeColor = true;
             resources.ApplyResources(PasswordLabelControl, "PasswordLabelControl");
             PasswordLabelControl.Name = "PasswordLabelControl";
+            // 
+            // label1
+            // 
+            label1.Appearance.Font = (Font)resources.GetObject("label1.Appearance.Font");
+            label1.Appearance.ForeColor = (Color)resources.GetObject("label1.Appearance.ForeColor");
+            label1.Appearance.Options.UseFont = true;
+            label1.Appearance.Options.UseForeColor = true;
+            resources.ApplyResources(label1, "label1");
+            label1.Cursor = Cursors.Hand;
+            label1.Name = "label1";
             // 
             // LoginForm
             // 
@@ -198,5 +212,6 @@
         private Usf.WinForms.Forms.ButtonSimlpe EnterButton;
         private Usf.WinForms.Forms.ButtonSimlpe ExitButton;
         private Usf.WinForms.Forms.LabelControl PasswordLabelControl;
+        private Usf.WinForms.Forms.Label label1;
     }
 }
