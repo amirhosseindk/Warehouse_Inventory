@@ -46,24 +46,21 @@ namespace MyApplication
                 resource.GetString(name: nameof(Username));
 
             UserGridView.Columns[5].Caption =
-                resource.GetString(name: nameof(Password));
-
-            UserGridView.Columns[6].Caption =
                 resource.GetString(name: nameof(Email));
 
-            UserGridView.Columns[7].Caption =
+            UserGridView.Columns[6].Caption =
                 resource.GetString(name: nameof(Address));
 
-            UserGridView.Columns[8].Caption =
+            UserGridView.Columns[7].Caption =
                 resource.GetString(name: nameof(Role));
 
-            UserGridView.Columns[9].Caption =
+            UserGridView.Columns[8].Caption =
                 resource.GetString(name: nameof(Birthdate));
 
-            UserGridView.Columns[10].Caption =
+            UserGridView.Columns[9].Caption =
                 resource.GetString(name: nameof(Description));
 
-            UserGridView.Columns[15].Caption =
+            UserGridView.Columns[10].Caption =
                 resource.GetString(name: nameof(Status));
 
             this.Text =
@@ -148,6 +145,33 @@ namespace MyApplication
                     RefreshFormAsync();
                 }
             }
+        }
+
+        private async void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            await SearchUserAsync();
+        }
+
+        private async Task SearchUserAsync()
+        {
+            var usersUF = await _userService.GetUsersAsync(CancellationToken.None);
+
+            if (!string.IsNullOrEmpty(SearchTextBox.Text))
+            {
+                var searchText = SearchTextBox.Text.ToLower();
+                usersUF = usersUF.Where(user =>
+                    user.FirstName.ToLower().Contains(searchText) ||
+                    user.LastName.ToLower().Contains(searchText) ||
+                    user.PhoneNumber.ToLower().Contains(searchText) ||
+                    user.Username.ToLower().Contains(searchText) ||
+                    user.Email.ToLower().Contains(searchText) ||
+                    user.Address.ToLower().Contains(searchText) ||
+                    user.Role.ToLower().Contains(searchText) ||
+                    user.Birthdate.ToString().Contains(searchText) ||
+                    user.Description.ToLower().Contains(searchText));
+            }
+
+            UserGridControl.DataSource = usersUF.ToList();
         }
     }
 }

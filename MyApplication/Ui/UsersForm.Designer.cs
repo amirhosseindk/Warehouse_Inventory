@@ -38,16 +38,12 @@
             colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
             Phone = new DevExpress.XtraGrid.Columns.GridColumn();
             colUsername = new DevExpress.XtraGrid.Columns.GridColumn();
-            colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             colRole = new DevExpress.XtraGrid.Columns.GridColumn();
             colBirthdate = new DevExpress.XtraGrid.Columns.GridColumn();
             colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             colInsertDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            colUpdateDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            colDeleteDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            colIsDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
             colUsernameId = new DevExpress.XtraGrid.Columns.GridColumn();
             SearchLabel = new Usf.WinForms.Forms.LabelControl();
@@ -96,7 +92,7 @@
             UserGridView.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             UserGridView.Appearance.SelectedRow.BackColor = (Color)resources.GetObject("UserGridView.Appearance.SelectedRow.BackColor");
             UserGridView.Appearance.SelectedRow.Options.UseBackColor = true;
-            UserGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colUserId, colFirstName, colLastName, Phone, colUsername, colPassword, colEmail, colAddress, colRole, colBirthdate, colDescription, colInsertDateTime, colUpdateDateTime, colDeleteDateTime, colIsDeleted, colIsActive, colUsernameId });
+            UserGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colUserId, colFirstName, colLastName, Phone, colUsername, colEmail, colAddress, colRole, colBirthdate, colDescription, colInsertDateTime, colIsActive, colUsernameId });
             UserGridView.DetailHeight = 408;
             UserGridView.GridControl = UserGridControl;
             UserGridView.Name = "UserGridView";
@@ -141,13 +137,6 @@
             colUsername.Name = "colUsername";
             resources.ApplyResources(colUsername, "colUsername");
             // 
-            // colPassword
-            // 
-            colPassword.FieldName = "Password";
-            colPassword.MinWidth = 18;
-            colPassword.Name = "colPassword";
-            resources.ApplyResources(colPassword, "colPassword");
-            // 
             // colEmail
             // 
             colEmail.FieldName = "Email";
@@ -185,31 +174,10 @@
             // 
             // colInsertDateTime
             // 
-            colInsertDateTime.FieldName = "InsertDateTime";
+            colInsertDateTime.FieldName = "CreatedAt";
             colInsertDateTime.MinWidth = 18;
             colInsertDateTime.Name = "colInsertDateTime";
             resources.ApplyResources(colInsertDateTime, "colInsertDateTime");
-            // 
-            // colUpdateDateTime
-            // 
-            colUpdateDateTime.FieldName = "UpdateDateTime";
-            colUpdateDateTime.MinWidth = 18;
-            colUpdateDateTime.Name = "colUpdateDateTime";
-            resources.ApplyResources(colUpdateDateTime, "colUpdateDateTime");
-            // 
-            // colDeleteDateTime
-            // 
-            colDeleteDateTime.FieldName = "DeleteDateTime";
-            colDeleteDateTime.MinWidth = 18;
-            colDeleteDateTime.Name = "colDeleteDateTime";
-            resources.ApplyResources(colDeleteDateTime, "colDeleteDateTime");
-            // 
-            // colIsDeleted
-            // 
-            colIsDeleted.FieldName = "IsDeleted";
-            colIsDeleted.MinWidth = 18;
-            colIsDeleted.Name = "colIsDeleted";
-            resources.ApplyResources(colIsDeleted, "colIsDeleted");
             // 
             // colIsActive
             // 
@@ -250,6 +218,7 @@
             SearchTextBox.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             SearchTextBox.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             SearchTextBox.Properties.AutoHeight = (bool)resources.GetObject("SearchTextBox.Properties.AutoHeight");
+            SearchTextBox.TextChanged += SearchTextBox_TextChanged;
             // 
             // UserNewButton
             // 
@@ -339,15 +308,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLastName;
         private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraGrid.Columns.GridColumn colUsername;
-        private DevExpress.XtraGrid.Columns.GridColumn colPassword;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
         private DevExpress.XtraGrid.Columns.GridColumn colRole;
         private DevExpress.XtraGrid.Columns.GridColumn colBirthdate;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
         private DevExpress.XtraGrid.Columns.GridColumn colInsertDateTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colUpdateDateTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colDeleteDateTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colIsDeleted;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
         private DevExpress.XtraGrid.Columns.GridColumn colUsernameId;
         private Usf.WinForms.Forms.LabelControl SearchLabel;
