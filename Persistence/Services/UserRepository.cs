@@ -54,8 +54,7 @@ namespace Persistence.Repositories
 
         public async Task<bool> IsUsernameExistsAsync(string Username, CancellationToken cancellationToken)
         {
-            var b = await _context.Users.AnyAsync(u => u.Username == Username, cancellationToken);
-            return b;
+            return await _context.Users.AnyAsync(u => u.Username == Username && !u.IsDeleted, cancellationToken);
         }
     }
 }

@@ -9,8 +9,6 @@ namespace Persistence
         {
 
         }
-
-        // Your DbSet properties for each entity
         public DbSet<Commodity> Commodities { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
