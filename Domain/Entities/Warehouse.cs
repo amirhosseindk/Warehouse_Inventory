@@ -5,12 +5,6 @@ namespace Domain.Entities
     public class Warehouse : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the warehouse.
-        /// </summary>
-        [Key]
-        public Guid WarehouseId { get; set; }
-
-        /// <summary>
         /// The name of the warehouse.
         /// </summary>
         [Required]

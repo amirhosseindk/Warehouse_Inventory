@@ -603,18 +603,18 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Phone.
         /// </summary>
-        public static string Phone {
+        public static string PhoneLabelControl {
             get {
-                return ResourceManager.GetString("Phone", resourceCulture);
+                return ResourceManager.GetString("PhoneLabelControl", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Phone.
         /// </summary>
-        public static string PhoneLabelControl {
+        public static string PhoneNumber {
             get {
-                return ResourceManager.GetString("PhoneLabelControl", resourceCulture);
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
             }
         }
         

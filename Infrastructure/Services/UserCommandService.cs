@@ -4,6 +4,7 @@ using FluentValidation;
 using Infrastructure.IServices;
 using Mapster;
 using Application.ViewModels.UserViewModels;
+using Persistence.IServices;
 
 namespace Infrastructure.Services
 {

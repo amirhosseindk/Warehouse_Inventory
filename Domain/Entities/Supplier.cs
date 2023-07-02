@@ -5,11 +5,6 @@ namespace Domain.Entities
     public class Supplier : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the supplier.
-        /// </summary>
-        [Key]
-        public Guid SupplierId { get; set; }
-        /// <summary>
         /// The name of the supplier.
         /// </summary>
         [Required]

@@ -6,7 +6,7 @@ namespace Application.IServices
     {
         Task<bool> IsUsernameExistsAsync(string Username, CancellationToken cancellationToken);
         Task<UserVMCU> GetUserByIdAsync(UserVMId userVMId, CancellationToken cancellationToken);
-        Task<IEnumerable<UserVMCU>> GetUsersAsync(CancellationToken cancellationToken);
+        Task<IEnumerable<UserVMR>> GetUsersAsync(CancellationToken cancellationToken);
         Task<UserVMCU> CreateUserAsync(UserVMCU userVM, CancellationToken cancellationToken);
         Task<UserVMCU> UpdateUserAsync(UserVMCU userVM, CancellationToken cancellationToken);
         Task DeleteUserAsync(UserVMId userVMId, CancellationToken cancellationToken);

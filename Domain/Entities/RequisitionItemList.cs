@@ -4,13 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Domain.Entities
 {
     public class RequisitionItemList : MovementItemList
-    {
-        /// <summary>
-        /// The unique identifier for the Requisition item list.
-        /// </summary>
-        [Key]
-        public Guid RequisitionItemListId { get; set; }
-
+    {  
         /// <summary>
         /// The foreign key to the InventoryRequisition.
         /// </summary>

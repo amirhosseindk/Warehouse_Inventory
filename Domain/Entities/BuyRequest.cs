@@ -5,9 +5,6 @@ namespace Domain.Entities
 {
     public class BuyRequest : BaseEntity
     {
-        [Key]
-        public Guid BuyRequestId { get; set; }
-
         /// <summary>
         /// The list of requested items.
         /// </summary>

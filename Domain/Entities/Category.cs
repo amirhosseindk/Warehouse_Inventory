@@ -5,12 +5,6 @@ namespace Domain.Entities
     public class Category : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the category.
-        /// </summary>
-        [Key]
-        public Guid CategoryId { get; set; }
-
-        /// <summary>
         /// The name of the category.
         /// </summary>
         [Required]

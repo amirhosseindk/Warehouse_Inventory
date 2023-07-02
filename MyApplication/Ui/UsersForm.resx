@@ -57,242 +57,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="userBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="UserGridControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="UserGridControl.EmbeddedNavigator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="UserGridControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 51</value>
-  </data>
-  <data name="UserGridView.Appearance.EvenRow.BackColor" type="System.Drawing.Color, System.Drawing">
-    <value>192, 255, 255</value>
-  </data>
-  <data name="UserGridView.Appearance.HeaderPanel.BackColor" type="System.Drawing.Color, System.Drawing">
-    <value>255, 255, 192</value>
-  </data>
-  <data name="UserGridView.Appearance.HeaderPanel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.999999pt, style=Bold</value>
-  </data>
-  <data name="UserGridView.Appearance.HeaderPanel.ForeColor" type="System.Drawing.Color, System.Drawing">
-    <value>Maroon</value>
-  </data>
-  <data name="UserGridView.Appearance.Row.BackColor" type="System.Drawing.Color, System.Drawing">
-    <value>255, 255, 192</value>
-  </data>
-  <data name="UserGridView.Appearance.Row.Font" type="System.Drawing.Font, System.Drawing">
-    <value>B Yekan, 12pt, style=Bold</value>
-  </data>
-  <data name="UserGridView.Appearance.SelectedRow.BackColor" type="System.Drawing.Color, System.Drawing">
-    <value>PaleGreen</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="colUserId.Width" type="System.Int32, mscorlib">
-    <value>68</value>
-  </data>
-  <data name="colFirstName.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colFirstName.VisibleIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="colFirstName.Width" type="System.Int32, mscorlib">
-    <value>109</value>
-  </data>
-  <data name="colLastName.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colLastName.VisibleIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="colLastName.Width" type="System.Int32, mscorlib">
-    <value>136</value>
-  </data>
-  <data name="Phone.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Phone.VisibleIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Phone.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="colUsername.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colUsername.VisibleIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="colUsername.Width" type="System.Int32, mscorlib">
-    <value>109</value>
-  </data>
-  <data name="colEmail.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colEmail.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="colEmail.Width" type="System.Int32, mscorlib">
-    <value>273</value>
-  </data>
-  <data name="colAddress.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colAddress.VisibleIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="colAddress.Width" type="System.Int32, mscorlib">
-    <value>455</value>
-  </data>
-  <data name="colRole.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colRole.VisibleIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="colRole.Width" type="System.Int32, mscorlib">
-    <value>120</value>
-  </data>
-  <data name="colBirthdate.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colBirthdate.VisibleIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="colBirthdate.Width" type="System.Int32, mscorlib">
-    <value>153</value>
-  </data>
-  <data name="colDescription.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colDescription.VisibleIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="colDescription.Width" type="System.Int32, mscorlib">
-    <value>268</value>
-  </data>
-  <data name="colInsertDateTime.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colInsertDateTime.VisibleIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="colInsertDateTime.Width" type="System.Int32, mscorlib">
-    <value>182</value>
-  </data>
-  <data name="colIsActive.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colIsActive.VisibleIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="colIsActive.Width" type="System.Int32, mscorlib">
-    <value>136</value>
-  </data>
-  <data name="colUsernameId.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colUsernameId.VisibleIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="colUsernameId.Width" type="System.Int32, mscorlib">
-    <value>127</value>
-  </data>
-  <data name="UserGridControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="UserGridControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1235, 607</value>
-  </data>
-  <data name="UserGridControl.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;UserGridControl.Name" xml:space="preserve">
-    <value>UserGridControl</value>
-  </data>
-  <data name="&gt;&gt;UserGridControl.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;UserGridControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;UserGridControl.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="SearchLabel.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="SearchLabel.Appearance.ForeColor" type="System.Drawing.Color, System.Drawing">
-    <value>Blue</value>
-  </data>
-  <assembly alias="DevExpress.XtraEditors.v22.2" name="DevExpress.XtraEditors.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="SearchLabel.AutoSizeMode" type="DevExpress.XtraEditors.LabelAutoSizeMode, DevExpress.XtraEditors.v22.2">
-    <value>None</value>
-  </data>
-  <data name="SearchLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 12</value>
-  </data>
-  <data name="SearchLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 30</value>
-  </data>
-  <data name="SearchLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SearchLabel.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.Name" xml:space="preserve">
-    <value>SearchLabel</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.Type" xml:space="preserve">
-    <value>Usf.WinForms.Forms.LabelControl, Usf, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SearchTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 5</value>
-  </data>
-  <data name="SearchTextBox.Properties.Appearance.BackColor" type="System.Drawing.Color, System.Drawing">
-    <value>LemonChiffon</value>
-  </data>
-  <data name="SearchTextBox.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="SearchTextBox.Properties.AutoHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="SearchTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 43</value>
-  </data>
-  <data name="SearchTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Name" xml:space="preserve">
-    <value>SearchTextBox</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Type" xml:space="preserve">
-    <value>Usf.WinForms.Forms.TextEdit, Usf, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="UserNewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="UserNewButton.Appearance.BackColor" type="System.Drawing.Color, System.Drawing">
     <value>LightPink</value>
   </data>
@@ -311,6 +80,7 @@
   <data name="UserNewButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 78</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="UserNewButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -327,7 +97,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserNewButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="UserEditButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -366,7 +136,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserEditButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="UserDeleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -405,6 +175,171 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserDeleteButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="userVMRBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="UserGridControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="UserGridControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="colId.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colFirstName.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colFirstName.VisibleIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="colFirstName.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colLastName.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colLastName.VisibleIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="colLastName.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colRole.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colRole.VisibleIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="colRole.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colUsername.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colUsername.VisibleIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="colUsername.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colBirthdate.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colBirthdate.VisibleIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="colBirthdate.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colEmail.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colEmail.VisibleIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="colEmail.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colAddress.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colAddress.VisibleIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colAddress.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colPhoneNumber.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colPhoneNumber.VisibleIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="colPhoneNumber.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colDescription.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colDescription.VisibleIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="colDescription.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="colIsActive.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colIsActive.VisibleIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="colIsActive.Width" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="UserGridControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 649</value>
+  </data>
+  <data name="UserGridControl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;UserGridControl.Name" xml:space="preserve">
+    <value>UserGridControl</value>
+  </data>
+  <data name="&gt;&gt;UserGridControl.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;UserGridControl.Parent" xml:space="preserve">
+    <value>gridSplitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;UserGridControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gridSplitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel1.Name" xml:space="preserve">
+    <value>gridSplitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SplitGroupPanel, DevExpress.Utils.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>gridSplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel2.Name" xml:space="preserve">
+    <value>gridSplitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SplitGroupPanel, DevExpress.Utils.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>gridSplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gridSplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1234, 649</value>
+  </data>
+  <data name="gridSplitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Name" xml:space="preserve">
+    <value>gridSplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.GridSplitContainer, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gridSplitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -425,16 +360,17 @@
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.999999pt, style=Bold</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>7, 9, 7, 9</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>UsersForm</value>
   </data>
-  <data name="&gt;&gt;userBindingSource.Name" xml:space="preserve">
-    <value>userBindingSource</value>
+  <data name="&gt;&gt;userVMRBindingSource.Name" xml:space="preserve">
+    <value>userVMRBindingSource</value>
   </data>
-  <data name="&gt;&gt;userBindingSource.Type" xml:space="preserve">
+  <data name="&gt;&gt;userVMRBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;UserGridView.Name" xml:space="preserve">
@@ -443,10 +379,10 @@
   <data name="&gt;&gt;UserGridView.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;colUserId.Name" xml:space="preserve">
-    <value>colUserId</value>
+  <data name="&gt;&gt;colId.Name" xml:space="preserve">
+    <value>colId</value>
   </data>
-  <data name="&gt;&gt;colUserId.Type" xml:space="preserve">
+  <data name="&gt;&gt;colId.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colFirstName.Name" xml:space="preserve">
@@ -461,16 +397,22 @@
   <data name="&gt;&gt;colLastName.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;Phone.Name" xml:space="preserve">
-    <value>Phone</value>
+  <data name="&gt;&gt;colRole.Name" xml:space="preserve">
+    <value>colRole</value>
   </data>
-  <data name="&gt;&gt;Phone.Type" xml:space="preserve">
+  <data name="&gt;&gt;colRole.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colUsername.Name" xml:space="preserve">
     <value>colUsername</value>
   </data>
   <data name="&gt;&gt;colUsername.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;colBirthdate.Name" xml:space="preserve">
+    <value>colBirthdate</value>
+  </data>
+  <data name="&gt;&gt;colBirthdate.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colEmail.Name" xml:space="preserve">
@@ -485,16 +427,10 @@
   <data name="&gt;&gt;colAddress.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;colRole.Name" xml:space="preserve">
-    <value>colRole</value>
+  <data name="&gt;&gt;colPhoneNumber.Name" xml:space="preserve">
+    <value>colPhoneNumber</value>
   </data>
-  <data name="&gt;&gt;colRole.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colBirthdate.Name" xml:space="preserve">
-    <value>colBirthdate</value>
-  </data>
-  <data name="&gt;&gt;colBirthdate.Type" xml:space="preserve">
+  <data name="&gt;&gt;colPhoneNumber.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colDescription.Name" xml:space="preserve">
@@ -503,22 +439,10 @@
   <data name="&gt;&gt;colDescription.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;colInsertDateTime.Name" xml:space="preserve">
-    <value>colInsertDateTime</value>
-  </data>
-  <data name="&gt;&gt;colInsertDateTime.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;colIsActive.Name" xml:space="preserve">
     <value>colIsActive</value>
   </data>
   <data name="&gt;&gt;colIsActive.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colUsernameId.Name" xml:space="preserve">
-    <value>colUsernameId</value>
-  </data>
-  <data name="&gt;&gt;colUsernameId.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v22.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

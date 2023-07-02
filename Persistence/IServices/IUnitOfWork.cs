@@ -1,8 +1,11 @@
-﻿namespace Application.IServices
+﻿using Domain.Entities;
+
+namespace Persistence.IServices
 {
     public interface IUnitOfWork : IDisposable
     {
-        IUserRepository Users { get; }
+        IRepository<User> Users { get; }
         Task<int> CompleteAsync(CancellationToken cancellationToken);
     }
+
 }

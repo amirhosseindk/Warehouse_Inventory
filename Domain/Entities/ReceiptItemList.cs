@@ -6,12 +6,6 @@ namespace Domain.Entities
     public class ReceiptItemList : MovementItemList
     {
         /// <summary>
-        /// The unique identifier for the Receipt item list.
-        /// </summary>
-        [Key]
-        public Guid ReceiptItemListId { get; set; }
-
-        /// <summary>
         /// The foreign key to the InventoryReceipt.
         /// </summary>
         [Required]

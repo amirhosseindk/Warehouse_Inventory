@@ -6,12 +6,6 @@ namespace Domain.Entities
     public class InventoryRequisition : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the inventory requisition.
-        /// </summary>
-        [Key]
-        public Guid InventoryRequisitionId { get; set; }
-
-        /// <summary>
         /// The list of items in the Requisition.
         /// </summary>
         public virtual ICollection<RequisitionItemList> RequisitionItems { get; set; }

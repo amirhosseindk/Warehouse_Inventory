@@ -85,7 +85,7 @@ namespace MyApp.Ui
             {
                 var user = new UserVMId
                 {
-                    UserId = UserIdForm
+                    Id = UserIdForm
                 };
                 var userVM = await _userService.GetUserByIdAsync(user, CancellationToken.None);
                 FirstNameTextEdit.Text = userVM.FirstName;
@@ -105,7 +105,7 @@ namespace MyApp.Ui
         {
             var userVM = new Application.ViewModels.UserViewModels.UserVMCU
             {
-                UserId = UserIdForm != Guid.Empty ? UserIdForm : Guid.NewGuid(),
+                Id = UserIdForm != Guid.Empty ? UserIdForm : Guid.NewGuid(),
                 FirstName = FirstNameTextEdit.Text,
                 LastName = LastNameTextEdit.Text,
                 PhoneNumber = PhoneTextEdit.Text,

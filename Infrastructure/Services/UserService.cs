@@ -2,6 +2,7 @@
 using Infrastructure.IServices;
 using Mapster;
 using Application.ViewModels.UserViewModels;
+using Persistence.IServices;
 
 namespace Infrastructure.Services
 {
@@ -20,14 +21,14 @@ namespace Infrastructure.Services
 
         public async Task<UserVMCU> GetUserByIdAsync(UserVMId userVMId, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetByIdAsync(userVMId.UserId, cancellationToken);
+            var user = await _userRepository.GetByIdAsync(userVMId.Id, cancellationToken);
             return user.Adapt<UserVMCU>();
         }
 
-        public async Task<IEnumerable<UserVMCU>> GetUsersAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<UserVMR>> GetUsersAsync(CancellationToken cancellationToken)
         {
             var usersUS = await _userRepository.GetAllAsync(cancellationToken);
-            return usersUS.Adapt<IEnumerable<UserVMCU>>();
+            return usersUS.Adapt<IEnumerable<UserVMR>>();
         }
 
         public async Task<UserVMCU> CreateUserAsync(UserVMCU userVM, CancellationToken cancellationToken)
@@ -44,7 +45,7 @@ namespace Infrastructure.Services
 
         public async Task DeleteUserAsync(UserVMId userVMId, CancellationToken cancellationToken)
         {
-            await _userRepository.DeleteAsync(userVMId.UserId, cancellationToken);
+            await _userRepository.DeleteAsync(userVMId.Id, cancellationToken);
         }
 
         public async Task<bool> AuthenticateAsync(UserVMAuth userVMAuth, CancellationToken cancellationToken)

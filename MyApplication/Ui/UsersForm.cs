@@ -21,9 +21,6 @@ namespace MyApplication
             ResourceManager resource = new ResourceManager
                 ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
-            SearchLabel.Text =
-                resource.GetString(name: nameof(SearchLabel));
-
             UserNewButton.Text =
                 resource.GetString(name: nameof(UserNewButton));
 
@@ -40,22 +37,22 @@ namespace MyApplication
                 resource.GetString(name: nameof(LastName));
 
             UserGridView.Columns[3].Caption =
-                resource.GetString(name: nameof(Phone));
+                resource.GetString(name: nameof(Role));
 
             UserGridView.Columns[4].Caption =
                 resource.GetString(name: nameof(Username));
 
             UserGridView.Columns[5].Caption =
-                resource.GetString(name: nameof(Email));
+                resource.GetString(name: nameof(Birthdate));
 
             UserGridView.Columns[6].Caption =
-                resource.GetString(name: nameof(Address));
+                resource.GetString(name: nameof(Email));
 
             UserGridView.Columns[7].Caption =
-                resource.GetString(name: nameof(Role));
+                resource.GetString(name: nameof(Address));
 
             UserGridView.Columns[8].Caption =
-                resource.GetString(name: nameof(Birthdate));
+                resource.GetString(name: nameof(colPhoneNumber));
 
             UserGridView.Columns[9].Caption =
                 resource.GetString(name: nameof(Description));
@@ -112,7 +109,7 @@ namespace MyApplication
             {
                 var form = scope.ServiceProvider.GetRequiredService<UsersAddOrEditForm>();
 
-                var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colUserId);
+                var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colId);
 
                 form.UserIdForm = CurrentID;
 
@@ -128,14 +125,12 @@ namespace MyApplication
         {
             using (var scope = Program.ServiceProvider.CreateScope())
             {
-                var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colUserId);
-                var FirstName = UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colFirstName);
-                var LastName = UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colLastName);
-                var FullName = FirstName + " " + LastName;
+                var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colId);
+                var FullName = UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colFirstName + " " + colLastName);
 
                 UserVMId userVMCU = new()
                 {
-                    UserId = CurrentID,
+                    Id = CurrentID,
                 };
 
                 if (MessageBox.Show($"آیا {FullName} حذف شود؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
@@ -145,34 +140,6 @@ namespace MyApplication
                     RefreshFormAsync();
                 }
             }
-        }
-
-        private async void SearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            await SearchUserAsync();
-        }
-
-        private async Task SearchUserAsync()
-        {
-            var usersUF = await _userService.GetUsersAsync(CancellationToken.None);
-
-            if (!string.IsNullOrEmpty(SearchTextBox.Text))
-            {
-                var searchText = SearchTextBox.Text.ToLower();
-                usersUF = usersUF.Where(user =>
-                    user.FirstName.ToLower().Contains(searchText) ||
-                    user.LastName.ToLower().Contains(searchText) ||
-                    user.PhoneNumber.ToLower().Contains(searchText) ||
-                    user.Username.ToLower().Contains(searchText) ||
-                    user.Email.ToLower().Contains(searchText) ||
-                    user.Address.ToLower().Contains(searchText) ||
-                    user.Role.ToLower().Contains(searchText) ||
-                    user.Birthdate.ToString().Contains(searchText) ||
-                    user.Description.ToLower().Contains(searchText) ||
-                    user.UsernameId.ToLower().Contains(searchText));
-            }
-
-            UserGridControl.DataSource = usersUF.ToList();
         }
     }
 }

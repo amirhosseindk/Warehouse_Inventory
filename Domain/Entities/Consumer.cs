@@ -5,11 +5,6 @@ namespace Domain.Entities
     public class Consumer : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the Consumer.
-        /// </summary>
-        [Key]
-        public Guid ConsumerId { get; set; }
-        /// <summary>
         /// The name of the Consumer.
         /// </summary>
         [Required]

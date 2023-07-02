@@ -6,12 +6,6 @@ namespace Domain.Entities
     public class InventoryItemList : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the inventory item list.
-        /// </summary>
-        [Key]
-        public Guid InventoryItemListId { get; set; }
-
-        /// <summary>
         /// The foreign key to the inventory.
         /// </summary>
         [Required]

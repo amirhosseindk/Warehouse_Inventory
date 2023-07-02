@@ -5,12 +5,6 @@ namespace Domain.Entities
     public class UnitMeasure : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the unit of measurement.
-        /// </summary>
-        [Key]
-        public Guid UnitMeasureId { get; set; }
-
-        /// <summary>
         /// The name of the unit of measurement.
         /// </summary>
         [Required]

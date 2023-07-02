@@ -1,18 +1,18 @@
-﻿using Application.IServices;
-using Persistence;
-using Persistence.Repositories;
+﻿using Domain.Entities;
+using Persistence.IServices;
 
-namespace Infrastructure.Services
+namespace Persistence.Services
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly DatabaseContext _context;
-        public IUserRepository Users { get; private set; }
+
+        public IRepository<User> Users { get; private set; }
 
         public UnitOfWork(DatabaseContext context)
         {
             _context = context;
-            Users = new UserRepository(_context);
+            Users = new Repository<User>(_context);
         }
 
         public async Task<int> CompleteAsync(CancellationToken cancellationToken)

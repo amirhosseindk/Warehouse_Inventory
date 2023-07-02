@@ -297,10 +297,10 @@
   <data name="PasswordLabelControl" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="Phone" xml:space="preserve">
+  <data name="PhoneLabelControl" xml:space="preserve">
     <value>Phone</value>
   </data>
-  <data name="PhoneLabelControl" xml:space="preserve">
+  <data name="PhoneNumber" xml:space="preserve">
     <value>Phone</value>
   </data>
   <data name="PriceManagmentToolStripMenuItem" xml:space="preserve">

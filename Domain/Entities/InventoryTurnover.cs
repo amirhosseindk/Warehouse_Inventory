@@ -6,12 +6,6 @@ namespace Domain.Entities
     public class InventoryTurnover : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the inventory turnover.
-        /// </summary>
-        [Key]
-        public Guid InventoryTurnoverId { get; set; }
-
-        /// <summary>
         /// The foreign key to the inventory turnover's inventory.
         /// </summary>
         [Required]

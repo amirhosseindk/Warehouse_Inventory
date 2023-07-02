@@ -285,10 +285,10 @@
   <data name="PasswordLabelControl" xml:space="preserve">
     <value>کلمه عبور</value>
   </data>
-  <data name="Phone" xml:space="preserve">
+  <data name="PhoneLabelControl" xml:space="preserve">
     <value>تلفن</value>
   </data>
-  <data name="PhoneLabelControl" xml:space="preserve">
+  <data name="PhoneNumber" xml:space="preserve">
     <value>تلفن</value>
   </data>
   <data name="PriceManagmentToolStripMenuItem" xml:space="preserve">

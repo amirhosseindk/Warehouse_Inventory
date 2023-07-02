@@ -1,11 +1,15 @@
-﻿namespace Domain
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Domain
 {
     public class BaseEntity : Object
     {
-
+        [Key]
+        public Guid Id { get; set; }
         #region Constructors
         public BaseEntity() : base()
         {
+            Id = Guid.NewGuid();
             InsertDateTime = DateTime.Now;
         }
 

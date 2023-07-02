@@ -4,9 +4,6 @@ namespace Domain.Entities
 {
     public class User : BaseEntity
     {
-        [Key]
-        public Guid UserId { get; set; }
-
         [Required]
         public string FirstName { get; set; }
 

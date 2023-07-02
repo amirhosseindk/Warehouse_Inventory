@@ -6,12 +6,6 @@ namespace Domain.Entities
     public class BuyRequestItemList : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the Receipt item list.
-        /// </summary>
-        [Key]
-        public Guid BuyRequestItemListId { get; set; }
-
-        /// <summary>
         /// The foreign key to the BuyRequest.
         /// </summary>
         [Required]

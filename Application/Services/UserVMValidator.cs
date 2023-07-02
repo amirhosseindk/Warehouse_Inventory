@@ -8,7 +8,7 @@ namespace Application.Services
     {
         public UserVMValidator()
         {
-            RuleFor(x => x.UserId).NotEmpty();
+            RuleFor(x => x.Id).NotEmpty();
             RuleFor(x => x.FirstName).NotEmpty();
             RuleFor(x => x.LastName).NotEmpty();
             RuleFor(x => x.Username).NotEmpty().MinimumLength(3);

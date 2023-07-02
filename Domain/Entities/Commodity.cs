@@ -6,12 +6,6 @@ namespace Domain.Entities
     public class Commodity : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the Commodity.
-        /// </summary>
-        [Key]
-        public Guid CommodityId { get; set; }
-
-        /// <summary>
         /// The name of the Commodity.
         /// </summary>
         [Required]

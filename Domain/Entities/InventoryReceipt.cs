@@ -6,12 +6,6 @@ namespace Domain.Entities
     public class InventoryReceipt : BaseEntity
     {
         /// <summary>
-        /// The unique identifier for the inventory receipt.
-        /// </summary>
-        [Key]
-        public Guid InventoryReceiptId { get; set; }
-
-        /// <summary>
         /// The list of items in the Receipt.
         /// </summary>
         public virtual ICollection<ReceiptItemList> ReceiptItems { get; set; }

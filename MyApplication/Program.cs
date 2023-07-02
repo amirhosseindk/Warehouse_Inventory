@@ -1,4 +1,4 @@
-using System.Globalization;                  // ADD \\
+using System.Globalization;                  
 using Microsoft.Extensions.DependencyInjection;
 using Application.IServices;
 using Infrastructure.Services;
@@ -7,9 +7,10 @@ using Persistence;
 using Infrastructure.IServices;
 using Application.Services;
 using FluentValidation;
-using MyApplication.Ui;
 using Application.ViewModels.UserViewModels;
 using MyApp.Ui;
+using Persistence.IServices;
+using Persistence.Services;
 
 namespace MyApplication
 {
