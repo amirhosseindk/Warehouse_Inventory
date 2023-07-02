@@ -87,7 +87,7 @@ namespace MyApp.Ui
                 {
                     UserId = UserIdForm
                 };
-                var userVM = await _userService.GetUserAsync(user, CancellationToken.None);
+                var userVM = await _userService.GetUserByIdAsync(user, CancellationToken.None);
                 FirstNameTextEdit.Text = userVM.FirstName;
                 LastNameTextEdit.Text = userVM.LastName;
                 PhoneTextEdit.Text = userVM.PhoneNumber;
@@ -116,7 +116,8 @@ namespace MyApp.Ui
                 Email = EmailTextEdit.Text,
                 Address = AddressTextEdit.Text,
                 Description = DescriptionTextEdit.Text,
-                IsActive = ActiveCheckEdit.Checked
+                IsActive = ActiveCheckEdit.Checked,
+                UsernameId = Program.usernameid
             };
 
             var validationResult = _userVMValidator.Validate(userVM);
@@ -130,8 +131,15 @@ namespace MyApp.Ui
                 }
                 else
                 {
-                    await _userService.CreateUserAsync(userVM, CancellationToken.None);
-                    DialogResult = DialogResult.OK;
+                    if (!await _userService.IsUsernameExistsAsync(userVM.Username, CancellationToken.None))
+                    {
+                        await _userService.CreateUserAsync(userVM, CancellationToken.None);
+                        DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username is already exists");
+                    }
                 }
             }
             else

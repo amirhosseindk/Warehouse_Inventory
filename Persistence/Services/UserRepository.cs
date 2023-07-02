@@ -13,17 +13,9 @@ namespace Persistence.Repositories
             _context = context;
         }
 
-        public async Task<User> GetUserAsync(Guid userId, CancellationToken cancellationToken)
-        {
-            return await _context.Users
-                        .AsNoTracking()
-                        .Where(u => u.UserId.Equals(userId) && !u.IsDeleted)
-                        .FirstOrDefaultAsync(cancellationToken);
-        }
-
         public async Task<User> GetByIdAsync(Guid userId, CancellationToken cancellationToken)
         {
-            return await _context.Users.FindAsync(userId , cancellationToken);
+            return await _context.Users.AsNoTracking().SingleOrDefaultAsync(u => u.UserId == userId && !u.IsDeleted, cancellationToken);
         }
 
         public async Task<User> GetByUsernameAsync(string username, CancellationToken cancellationToken)
@@ -58,6 +50,12 @@ namespace Persistence.Repositories
         {
             var usersUR = await _context.Users.Where(u => !u.IsDeleted).ToListAsync(cancellationToken);
             return usersUR;
+        }
+
+        public async Task<bool> IsUsernameExistsAsync(string Username, CancellationToken cancellationToken)
+        {
+            var b = await _context.Users.AnyAsync(u => u.Username == Username, cancellationToken);
+            return b;
         }
     }
 }

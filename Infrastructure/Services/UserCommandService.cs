@@ -32,7 +32,6 @@ namespace Infrastructure.Services
 
             var user = userVM.Adapt<User>();
             user.Password = _passwordHasher.HashPassword(userVM.Password);
-            user.UsernameId = "eb";
 
             try
             {
@@ -57,7 +56,6 @@ namespace Infrastructure.Services
 
             var user = userVM.Adapt<User>();
             user.Password = _passwordHasher.HashPassword(userVM.Password);
-            user.UsernameId = "eb";
 
             try
             {

@@ -4,7 +4,7 @@ namespace Application.IServices
 {
     public interface IUserService
     {
-        Task<UserVMCU> GetUserAsync(UserVMId userVMId, CancellationToken cancellationToken);
+        Task<bool> IsUsernameExistsAsync(string Username, CancellationToken cancellationToken);
         Task<UserVMCU> GetUserByIdAsync(UserVMId userVMId, CancellationToken cancellationToken);
         Task<IEnumerable<UserVMCU>> GetUsersAsync(CancellationToken cancellationToken);
         Task<UserVMCU> CreateUserAsync(UserVMCU userVM, CancellationToken cancellationToken);

@@ -69,6 +69,8 @@ namespace MyApplication
 
                 Program.CheckLogin = true;
 
+                Program.usernameid = UsernameTextBox.Text;
+
                 this.Close();
             }
             else

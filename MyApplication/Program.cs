@@ -16,6 +16,9 @@ namespace MyApplication
     internal static class Program
     {
         public static bool CheckLogin = false;
+
+        public static string usernameid { get; set; } = string.Empty;
+
         public static ServiceProvider ServiceProvider { get; private set; }
 
         /// <summary>

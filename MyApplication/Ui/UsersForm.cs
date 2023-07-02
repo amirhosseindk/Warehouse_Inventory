@@ -168,7 +168,8 @@ namespace MyApplication
                     user.Address.ToLower().Contains(searchText) ||
                     user.Role.ToLower().Contains(searchText) ||
                     user.Birthdate.ToString().Contains(searchText) ||
-                    user.Description.ToLower().Contains(searchText));
+                    user.Description.ToLower().Contains(searchText) ||
+                    user.UsernameId.ToLower().Contains(searchText));
             }
 
             UserGridControl.DataSource = usersUF.ToList();
