@@ -18,6 +18,12 @@ namespace Infrastructure.Services
             _passwordHasher = passwordHasher;
         }
 
+        public async Task<UserVMCU> GetUserAsync(UserVMId userVMId, CancellationToken cancellationToken)
+        {
+            var user = await _userRepository.GetUserAsync(userVMId.UserId, cancellationToken);
+            return user.Adapt<UserVMCU>();
+        }
+
         public async Task<UserVMCU> GetUserByIdAsync(UserVMId userVMId, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetByIdAsync(userVMId.UserId, cancellationToken);

@@ -13,6 +13,14 @@ namespace Persistence.Repositories
             _context = context;
         }
 
+        public async Task<User> GetUserAsync(Guid userId, CancellationToken cancellationToken)
+        {
+            return await _context.Users
+                        .AsNoTracking()
+                        .Where(u => u.UserId.Equals(userId) && !u.IsDeleted)
+                        .FirstOrDefaultAsync(cancellationToken);
+        }
+
         public async Task<User> GetByIdAsync(Guid userId, CancellationToken cancellationToken)
         {
             return await _context.Users.FindAsync(userId , cancellationToken);

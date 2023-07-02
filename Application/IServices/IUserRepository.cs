@@ -4,6 +4,7 @@ namespace Application.IServices
 {
     public interface IUserRepository
     {
+        Task<User> GetUserAsync(Guid userId, CancellationToken cancellationToken);
         Task<User> GetByIdAsync(Guid userId, CancellationToken cancellationToken);
         Task<User> GetByUsernameAsync(string username, CancellationToken cancellationToken);
         Task CreateAsync(User user, CancellationToken cancellationToken);

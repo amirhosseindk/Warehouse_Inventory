@@ -31,7 +31,7 @@ namespace Persistence
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString =
-                "Server=.;Database=Warehouse_Inventory;User Id=sa;Password=8118;TrustServerCertificate=true";
+                "Server=.;Database=Warehouse_Inventory;User Id=sa;Password=P@ssw0rd09198799866;TrustServerCertificate=true";
 
             optionsBuilder.UseSqlServer(connectionString: connectionString);
         }

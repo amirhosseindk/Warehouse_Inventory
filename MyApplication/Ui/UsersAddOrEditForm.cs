@@ -1,19 +1,7 @@
 ﻿using Application.IServices;
 using Application.ViewModels.UserViewModels;
-using DevExpress.Utils.Frames;
-using DevExpress.XtraRichEdit.API.Native.Implementation;
 using MyApplication;
-using Persistence;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MyApp.Ui
 {
@@ -95,24 +83,16 @@ namespace MyApp.Ui
 
             if (UserIdForm != Guid.Empty)
             {
-                UserVMId userVMCU = new()
+                var user = new UserVMId
                 {
-                    UserId = UserIdForm,
+                    UserId = UserIdForm
                 };
-                var userVM = await _userService.GetUserByIdAsync(userVMCU, CancellationToken.None);
+                var userVM = await _userService.GetUserAsync(user, CancellationToken.None);
                 FirstNameTextEdit.Text = userVM.FirstName;
                 LastNameTextEdit.Text = userVM.LastName;
                 PhoneTextEdit.Text = userVM.PhoneNumber;
                 UsernameTextEdit.Text = userVM.Username;
-                PasswordTextEdit.Text = userVM.Password;
-                if (RoleComboBoxEdit.SelectedIndex == 0)
-                {
-                    RoleComboBoxEdit.Text = "Admin";
-                }
-                else 
-                {
-                    RoleComboBoxEdit.Text = "User";
-                }
+                RoleComboBoxEdit.Text = userVM.Role;
                 EmailTextEdit.Text = userVM.Email;
                 BirthdateTextEdit.Text = userVM.Birthdate.ToString();
                 AddressTextEdit.Text = userVM.Address;
@@ -123,34 +103,34 @@ namespace MyApp.Ui
         // Save
         private async void SaveButton_Click(object sender, EventArgs e)
         {
-            UserVMCU userVMCU = new()
+            var userVM = new Application.ViewModels.UserViewModels.UserVMCU
             {
-                UserId = Guid.NewGuid(),
+                UserId = UserIdForm != Guid.Empty ? UserIdForm : Guid.NewGuid(),
                 FirstName = FirstNameTextEdit.Text,
                 LastName = LastNameTextEdit.Text,
                 PhoneNumber = PhoneTextEdit.Text,
                 Username = UsernameTextEdit.Text,
                 Password = PasswordTextEdit.Text,
-                Role = RoleComboBoxEdit.SelectedIndex == 0 ? "Admin" : "User",
+                Role = RoleComboBoxEdit.Text,
                 Birthdate = Convert.ToDateTime(BirthdateTextEdit.Text),
                 Email = EmailTextEdit.Text,
                 Address = AddressTextEdit.Text,
                 Description = DescriptionTextEdit.Text,
-                IsActive = ActiveCheckEdit.Checked,
+                IsActive = ActiveCheckEdit.Checked
             };
 
-            var validationResult = _userVMValidator.Validate(userVMCU);
+            var validationResult = _userVMValidator.Validate(userVM);
 
             if (validationResult.IsValid)
             {
                 if (UserIdForm != Guid.Empty)
                 {
-                    await _userService.UpdateUserAsync(userVMCU, CancellationToken.None);
+                    await _userService.UpdateUserAsync(userVM, CancellationToken.None);
+                    DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    await _userService.CreateUserAsync(userVMCU, CancellationToken.None);
-
+                    await _userService.CreateUserAsync(userVM, CancellationToken.None);
                     DialogResult = DialogResult.OK;
                 }
             }
