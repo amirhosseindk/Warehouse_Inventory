@@ -117,7 +117,7 @@ namespace MyApp.Ui
                 Address = AddressTextEdit.Text,
                 Description = DescriptionTextEdit.Text,
                 IsActive = ActiveCheckEdit.Checked,
-                UsernameId = Program.usernameid
+                UsernameId = Program.usernameid,
             };
 
             var validationResult = _userVMValidator.Validate(userVM);
@@ -126,21 +126,23 @@ namespace MyApp.Ui
             {
                 if (UserIdForm != Guid.Empty)
                 {
+                    // Update
                     await _userService.UpdateUserAsync(userVM, CancellationToken.None);
-                    DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    if (!await _userService.IsUsernameExistsAsync(userVM.Username, CancellationToken.None))
-                    {
-                        await _userService.CreateUserAsync(userVM, CancellationToken.None);
-                        DialogResult = DialogResult.OK;
-                    }
-                    else
+                    if (await _userService.IsUsernameExistsAsync(userVM.Username, CancellationToken.None) && UserIdForm == Guid.Empty)
                     {
                         MessageBox.Show("Username is already exists");
                     }
+                    // Insert
+                    await _userService.CreateUserAsync(userVM, CancellationToken.None);
                 }
+
+                DialogResult = DialogResult.OK;
+
+                MessageBox.Show("عملیات با موفقیت انجام شد");
+
             }
             else
             {

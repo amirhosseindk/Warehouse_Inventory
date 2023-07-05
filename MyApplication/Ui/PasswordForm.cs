@@ -18,11 +18,28 @@ namespace MyApplication
         {
             InitializeComponent();
 
-            #region Language
+            #region Language // 
 
             ResourceManager resource = new ResourceManager
                ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
+            SabtButtonSimlpe.Text =
+                resource.GetString(name: nameof(SabtButtonSimlpe));
+
+            CaneclButtonSimlpe.Text =
+                resource.GetString(name: nameof(CaneclButtonSimlpe));
+
+            CaneclButtonSimlpe.Text =
+                resource.GetString(name: nameof(CaneclButtonSimlpe));
+
+            CurrentPasswordLabelControl.Text =
+                            resource.GetString(name: nameof(CurrentPasswordLabelControl));
+
+            NewPasswordLabelControl.Text =
+                            resource.GetString(name: nameof(NewPasswordLabelControl));
+
+            RepeatNewPasswordLabelControl.Text =
+                            resource.GetString(name: nameof(RepeatNewPasswordLabelControl));
             this.Text =
                 resource.GetString(name: nameof(PasswordForm));
 

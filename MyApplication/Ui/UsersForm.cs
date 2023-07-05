@@ -37,28 +37,28 @@ namespace MyApplication
                 resource.GetString(name: nameof(LastName));
 
             UserGridView.Columns[3].Caption =
-                resource.GetString(name: nameof(Role));
+                resource.GetString(name: nameof(colPhoneNumber));
 
             UserGridView.Columns[4].Caption =
                 resource.GetString(name: nameof(Username));
 
             UserGridView.Columns[5].Caption =
-                resource.GetString(name: nameof(Birthdate));
+                resource.GetString(name: nameof(Role));
 
             UserGridView.Columns[6].Caption =
-                resource.GetString(name: nameof(Email));
+               resource.GetString(name: nameof(Status));
 
             UserGridView.Columns[7].Caption =
-                resource.GetString(name: nameof(Address));
+                resource.GetString(name: nameof(Birthdate));
 
             UserGridView.Columns[8].Caption =
-                resource.GetString(name: nameof(colPhoneNumber));
+                resource.GetString(name: nameof(Email));
 
             UserGridView.Columns[9].Caption =
-                resource.GetString(name: nameof(Description));
+                resource.GetString(name: nameof(Address));
 
             UserGridView.Columns[10].Caption =
-                resource.GetString(name: nameof(Status));
+                resource.GetString(name: nameof(Description));
 
             this.Text =
                 resource.GetString(name: nameof(UsersForm));
@@ -86,6 +86,7 @@ namespace MyApplication
             var usersUF = await _userService.GetUsersAsync(CancellationToken.None);
 
             UserGridControl.DataSource = usersUF.ToList();
+
         }
 
         // Add
@@ -126,7 +127,9 @@ namespace MyApplication
             using (var scope = Program.ServiceProvider.CreateScope())
             {
                 var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colId);
-                var FullName = UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colFirstName + " " + colLastName);
+                string FName = (string)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colFirstName);
+                string LName = (string)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colLastName);
+                var FullName = FName + " " + LName;
 
                 UserVMId userVMCU = new()
                 {

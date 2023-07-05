@@ -22,11 +22,11 @@ namespace MyApplication
             UsersButton.Text =
                resource.GetString(name: nameof(UsersButton));
 
-            CustomersButton.Text =
-                resource.GetString(name: nameof(CustomersButton));
+            ConsomersButton.Text =
+                resource.GetString(name: nameof(ConsomersButton));
 
-            ProductsButton.Text =
-                resource.GetString(name: nameof(ProductsButton));
+            CommoditiesButton.Text =
+                resource.GetString(name: nameof(CommoditiesButton));
 
             SupplersButton.Text =
                 resource.GetString(name: nameof(SupplersButton));
@@ -112,14 +112,14 @@ namespace MyApplication
                             }
                             break;
                         }
-                    case "CustomersButton":
+                    case "ConsomersButton":
                         {
-                            new CustomersForm().ShowDialog();
+                            new ConsomersForm().ShowDialog();
                             break;
                         }
-                    case "ProductsButton":
+                    case "CommoditiesButton":
                         {
-                            new ProductsForm().ShowDialog();
+                            new CommoditiesForm().ShowDialog();
                             break;
                         }
                     case "SupplersButton":
@@ -161,7 +161,6 @@ namespace MyApplication
                             new RequestForm().ShowDialog();
                             break;
                         }
-
                 }
             }
         }

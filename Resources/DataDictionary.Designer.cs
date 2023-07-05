@@ -205,6 +205,78 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Canecl.
+        /// </summary>
+        public static string CaneclButtonSimlpe {
+            get {
+                return ResourceManager.GetString("CaneclButtonSimlpe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone Number.
+        /// </summary>
+        public static string colPhoneNumber {
+            get {
+                return ResourceManager.GetString("colPhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commodity.
+        /// </summary>
+        public static string CommoditiesButton {
+            get {
+                return ResourceManager.GetString("CommoditiesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commodities display Form.
+        /// </summary>
+        public static string CommoditiesForm {
+            get {
+                return ResourceManager.GetString("CommoditiesForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commodity Prices Form.
+        /// </summary>
+        public static string CommodityPricesForm {
+            get {
+                return ResourceManager.GetString("CommodityPricesForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commodity Stock Form.
+        /// </summary>
+        public static string CommodityStockForm {
+            get {
+                return ResourceManager.GetString("CommodityStockForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consomers.
+        /// </summary>
+        public static string ConsomersButton {
+            get {
+                return ResourceManager.GetString("ConsomersButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consomers display Form.
+        /// </summary>
+        public static string ConsomersForm {
+            get {
+                return ResourceManager.GetString("ConsomersForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Count.
         /// </summary>
         public static string CountLabel {
@@ -219,6 +291,15 @@ namespace Resources {
         public static string CountriesButton {
             get {
                 return ResourceManager.GetString("CountriesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Password.
+        /// </summary>
+        public static string CurrentPasswordLabelControl {
+            get {
+                return ResourceManager.GetString("CurrentPasswordLabelControl", resourceCulture);
             }
         }
         
@@ -556,6 +637,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Password.
+        /// </summary>
+        public static string NewPasswordLabelControl {
+            get {
+                return ResourceManager.GetString("NewPasswordLabelControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number.
         /// </summary>
         public static string NumberLabel {
@@ -889,6 +979,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Repeat New Password.
+        /// </summary>
+        public static string RepeatNewPasswordLabelControl {
+            get {
+                return ResourceManager.GetString("RepeatNewPasswordLabelControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reports.
         /// </summary>
         public static string ReportsButton {
@@ -1002,6 +1101,15 @@ namespace Resources {
         public static string RoleLabelControl {
             get {
                 return ResourceManager.GetString("RoleLabelControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sabt .
+        /// </summary>
+        public static string SabtButtonSimlpe {
+            get {
+                return ResourceManager.GetString("SabtButtonSimlpe", resourceCulture);
             }
         }
         
@@ -1231,7 +1339,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System Users Form.
+        ///   Looks up a localized string similar to System Users display Form.
         /// </summary>
         public static string UsersForm {
             get {

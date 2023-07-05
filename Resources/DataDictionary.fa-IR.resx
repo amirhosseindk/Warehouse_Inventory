@@ -159,11 +159,38 @@
   <data name="BirthdateLabelControl" xml:space="preserve">
     <value>تاریخ تولد</value>
   </data>
+  <data name="CaneclButtonSimlpe" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="colPhoneNumber" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="CommoditiesButton" xml:space="preserve">
+    <value>کالاها</value>
+  </data>
+  <data name="CommoditiesForm" xml:space="preserve">
+    <value>فرم نمایش کالاها</value>
+  </data>
+  <data name="CommodityPricesForm" xml:space="preserve">
+    <value>فرم  نمایش قیمت های کالا</value>
+  </data>
+  <data name="CommodityStockForm" xml:space="preserve">
+    <value>فرم  نمایش تعداد کالا</value>
+  </data>
+  <data name="ConsomersButton" xml:space="preserve">
+    <value>مصرف کنندگان</value>
+  </data>
+  <data name="ConsomersForm" xml:space="preserve">
+    <value>فرم نمایش مصرف کنندگان</value>
+  </data>
   <data name="CountLabel" xml:space="preserve">
     <value>تعداد</value>
   </data>
   <data name="CountriesButton" xml:space="preserve">
     <value>کشورها</value>
+  </data>
+  <data name="CurrentPasswordLabelControl" xml:space="preserve">
+    <value>کلمه عبور جاری</value>
   </data>
   <data name="CustomerCode" xml:space="preserve">
     <value>کد</value>
@@ -269,6 +296,9 @@
   </data>
   <data name="MessagesInMainFormButton" xml:space="preserve">
     <value>پیامک</value>
+  </data>
+  <data name="NewPasswordLabelControl" xml:space="preserve">
+    <value>کلمه عبور جدید</value>
   </data>
   <data name="NumberLabel" xml:space="preserve">
     <value>شماره</value>
@@ -384,6 +414,9 @@
   <data name="RegistrarLabel" xml:space="preserve">
     <value>ثبت کننده</value>
   </data>
+  <data name="RepeatNewPasswordLabelControl" xml:space="preserve">
+    <value>تکرار کلمه عبور جدید</value>
+  </data>
   <data name="ReportsButton" xml:space="preserve">
     <value>گزارشات</value>
   </data>
@@ -422,6 +455,9 @@
   </data>
   <data name="RoleLabelControl" xml:space="preserve">
     <value>سمت</value>
+  </data>
+  <data name="SabtButtonSimlpe" xml:space="preserve">
+    <value>ثبت</value>
   </data>
   <data name="SaveButton" xml:space="preserve">
     <value>ثبت</value>
@@ -496,7 +532,7 @@
     <value>کاربران سیستم</value>
   </data>
   <data name="UsersForm" xml:space="preserve">
-    <value>فرم کاربران سیستم</value>
+    <value>فرم نمایش کاربران سیستم</value>
   </data>
   <data name="WomenRadioButton" xml:space="preserve">
     <value>خانم</value>

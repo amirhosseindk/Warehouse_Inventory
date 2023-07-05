@@ -33,29 +33,23 @@
             UserNewButton = new Usf.WinForms.Forms.ButtonSimlpe();
             UserEditButton = new Usf.WinForms.Forms.ButtonSimlpe();
             UserDeleteButton = new Usf.WinForms.Forms.ButtonSimlpe();
-            UserGridControl = new DevExpress.XtraGrid.GridControl();
             userVMRBindingSource = new BindingSource(components);
+            UserGridControl = new DevExpress.XtraGrid.GridControl();
             UserGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colId = new DevExpress.XtraGrid.Columns.GridColumn();
             colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
-            colRole = new DevExpress.XtraGrid.Columns.GridColumn();
+            colPhoneNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             colUsername = new DevExpress.XtraGrid.Columns.GridColumn();
+            colRole = new DevExpress.XtraGrid.Columns.GridColumn();
+            colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
             colBirthdate = new DevExpress.XtraGrid.Columns.GridColumn();
             colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            colPhoneNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
-            ((System.ComponentModel.ISupportInitialize)UserGridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userVMRBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UserGridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UserGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridSplitContainer1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridSplitContainer1.Panel1).BeginInit();
-            gridSplitContainer1.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridSplitContainer1.Panel2).BeginInit();
-            gridSplitContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // UserNewButton
@@ -100,23 +94,51 @@
             UserDeleteButton.Name = "UserDeleteButton";
             UserDeleteButton.Click += DeleteButton_Click;
             // 
-            // UserGridControl
-            // 
-            UserGridControl.DataSource = userVMRBindingSource;
-            resources.ApplyResources(UserGridControl, "UserGridControl");
-            UserGridControl.MainView = UserGridView;
-            UserGridControl.Name = "UserGridControl";
-            UserGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { UserGridView });
-            // 
             // userVMRBindingSource
             // 
             userVMRBindingSource.DataSource = typeof(Application.ViewModels.UserViewModels.UserVMR);
             // 
+            // UserGridControl
+            // 
+            resources.ApplyResources(UserGridControl, "UserGridControl");
+            UserGridControl.DataSource = userVMRBindingSource;
+            UserGridControl.EmbeddedNavigator.Margin = (Padding)resources.GetObject("UserGridControl.EmbeddedNavigator.Margin");
+            UserGridControl.MainView = UserGridView;
+            UserGridControl.Name = "UserGridControl";
+            UserGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { UserGridView });
+            // 
             // UserGridView
             // 
-            UserGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colFirstName, colLastName, colRole, colUsername, colBirthdate, colEmail, colAddress, colPhoneNumber, colDescription, colIsActive });
+            UserGridView.Appearance.EvenRow.BackColor = (Color)resources.GetObject("UserGridView.Appearance.EvenRow.BackColor");
+            UserGridView.Appearance.EvenRow.Options.UseBackColor = true;
+            UserGridView.Appearance.HeaderPanel.BackColor = (Color)resources.GetObject("UserGridView.Appearance.HeaderPanel.BackColor");
+            UserGridView.Appearance.HeaderPanel.Font = (Font)resources.GetObject("UserGridView.Appearance.HeaderPanel.Font");
+            UserGridView.Appearance.HeaderPanel.ForeColor = (Color)resources.GetObject("UserGridView.Appearance.HeaderPanel.ForeColor");
+            UserGridView.Appearance.HeaderPanel.Options.UseBackColor = true;
+            UserGridView.Appearance.HeaderPanel.Options.UseFont = true;
+            UserGridView.Appearance.HeaderPanel.Options.UseForeColor = true;
+            UserGridView.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            UserGridView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            UserGridView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            UserGridView.Appearance.Row.BackColor = (Color)resources.GetObject("UserGridView.Appearance.Row.BackColor");
+            UserGridView.Appearance.Row.Font = (Font)resources.GetObject("UserGridView.Appearance.Row.Font");
+            UserGridView.Appearance.Row.Options.UseBackColor = true;
+            UserGridView.Appearance.Row.Options.UseFont = true;
+            UserGridView.Appearance.Row.Options.UseTextOptions = true;
+            UserGridView.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            UserGridView.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            UserGridView.Appearance.SelectedRow.BackColor = (Color)resources.GetObject("UserGridView.Appearance.SelectedRow.BackColor");
+            UserGridView.Appearance.SelectedRow.Options.UseBackColor = true;
+            UserGridView.AppearancePrint.HeaderPanel.BackColor = (Color)resources.GetObject("UserGridView.AppearancePrint.HeaderPanel.BackColor");
+            UserGridView.AppearancePrint.HeaderPanel.Options.UseBackColor = true;
+            UserGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colFirstName, colLastName, colPhoneNumber, colUsername, colRole, colIsActive, colBirthdate, colEmail, colAddress, colDescription });
+            UserGridView.DetailHeight = 489;
             UserGridView.GridControl = UserGridControl;
             UserGridView.Name = "UserGridView";
+            UserGridView.OptionsBehavior.AutoPopulateColumns = false;
+            UserGridView.OptionsView.ColumnAutoWidth = false;
+            UserGridView.OptionsView.EnableAppearanceEvenRow = true;
+            UserGridView.OptionsView.ShowIndicator = false;
             // 
             // colId
             // 
@@ -142,13 +164,15 @@
             colLastName.OptionsColumn.AllowEdit = false;
             resources.ApplyResources(colLastName, "colLastName");
             // 
-            // colRole
+            // colPhoneNumber
             // 
-            colRole.FieldName = "Role";
-            colRole.MinWidth = 25;
-            colRole.Name = "colRole";
-            colRole.OptionsColumn.AllowEdit = false;
-            resources.ApplyResources(colRole, "colRole");
+            colPhoneNumber.AppearanceCell.Font = (Font)resources.GetObject("colPhoneNumber.AppearanceCell.Font");
+            colPhoneNumber.AppearanceCell.Options.UseFont = true;
+            colPhoneNumber.FieldName = "PhoneNumber";
+            colPhoneNumber.MinWidth = 25;
+            colPhoneNumber.Name = "colPhoneNumber";
+            colPhoneNumber.OptionsColumn.AllowEdit = false;
+            resources.ApplyResources(colPhoneNumber, "colPhoneNumber");
             // 
             // colUsername
             // 
@@ -158,8 +182,26 @@
             colUsername.OptionsColumn.AllowEdit = false;
             resources.ApplyResources(colUsername, "colUsername");
             // 
+            // colRole
+            // 
+            colRole.FieldName = "Role";
+            colRole.MinWidth = 25;
+            colRole.Name = "colRole";
+            colRole.OptionsColumn.AllowEdit = false;
+            resources.ApplyResources(colRole, "colRole");
+            // 
+            // colIsActive
+            // 
+            colIsActive.FieldName = "IsActive";
+            colIsActive.MinWidth = 25;
+            colIsActive.Name = "colIsActive";
+            colIsActive.OptionsColumn.AllowEdit = false;
+            resources.ApplyResources(colIsActive, "colIsActive");
+            // 
             // colBirthdate
             // 
+            colBirthdate.AppearanceCell.Font = (Font)resources.GetObject("colBirthdate.AppearanceCell.Font");
+            colBirthdate.AppearanceCell.Options.UseFont = true;
             colBirthdate.FieldName = "Birthdate";
             colBirthdate.MinWidth = 25;
             colBirthdate.Name = "colBirthdate";
@@ -182,14 +224,6 @@
             colAddress.OptionsColumn.AllowEdit = false;
             resources.ApplyResources(colAddress, "colAddress");
             // 
-            // colPhoneNumber
-            // 
-            colPhoneNumber.FieldName = "PhoneNumber";
-            colPhoneNumber.MinWidth = 25;
-            colPhoneNumber.Name = "colPhoneNumber";
-            colPhoneNumber.OptionsColumn.AllowEdit = false;
-            resources.ApplyResources(colPhoneNumber, "colPhoneNumber");
-            // 
             // colDescription
             // 
             colDescription.FieldName = "Description";
@@ -198,24 +232,6 @@
             colDescription.OptionsColumn.AllowEdit = false;
             resources.ApplyResources(colDescription, "colDescription");
             // 
-            // colIsActive
-            // 
-            colIsActive.FieldName = "IsActive";
-            colIsActive.MinWidth = 25;
-            colIsActive.Name = "colIsActive";
-            colIsActive.OptionsColumn.AllowEdit = false;
-            resources.ApplyResources(colIsActive, "colIsActive");
-            // 
-            // gridSplitContainer1
-            // 
-            gridSplitContainer1.Grid = UserGridControl;
-            resources.ApplyResources(gridSplitContainer1, "gridSplitContainer1");
-            gridSplitContainer1.Name = "gridSplitContainer1";
-            // 
-            // gridSplitContainer1.Panel1
-            // 
-            gridSplitContainer1.Panel1.Controls.Add(UserGridControl);
-            // 
             // UsersForm
             // 
             Appearance.BackColor = (Color)resources.GetObject("UsersForm.Appearance.BackColor");
@@ -223,20 +239,15 @@
             Appearance.Options.UseFont = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(gridSplitContainer1);
             Controls.Add(UserDeleteButton);
             Controls.Add(UserEditButton);
             Controls.Add(UserNewButton);
+            Controls.Add(UserGridControl);
             Name = "UsersForm";
             Load += UsersForm_Load;
-            ((System.ComponentModel.ISupportInitialize)UserGridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)userVMRBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UserGridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)UserGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridSplitContainer1.Panel1).EndInit();
-            gridSplitContainer1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gridSplitContainer1.Panel2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridSplitContainer1).EndInit();
-            gridSplitContainer1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -260,9 +271,9 @@
         private Usf.WinForms.Forms.ButtonSimlpe UserEditButton;
         private Usf.WinForms.Forms.ButtonSimlpe UserDeleteButton;
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;
+        private BindingSource userVMRBindingSource;
         private DevExpress.XtraGrid.GridControl UserGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView UserGridView;
-        private BindingSource userVMRBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colFirstName;
         private DevExpress.XtraGrid.Columns.GridColumn colLastName;
@@ -274,6 +285,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPhoneNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
-        private DevExpress.XtraGrid.GridSplitContainer gridSplitContainer1;
     }
 }

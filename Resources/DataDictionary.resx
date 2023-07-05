@@ -165,11 +165,38 @@
   <data name="BirthdateLabelControl" xml:space="preserve">
     <value>Birth date</value>
   </data>
+  <data name="CaneclButtonSimlpe" xml:space="preserve">
+    <value>Canecl</value>
+  </data>
+  <data name="colPhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="CommoditiesButton" xml:space="preserve">
+    <value>Commodity</value>
+  </data>
+  <data name="CommoditiesForm" xml:space="preserve">
+    <value>Commodities display Form</value>
+  </data>
+  <data name="CommodityPricesForm" xml:space="preserve">
+    <value>Commodity Prices Form</value>
+  </data>
+  <data name="CommodityStockForm" xml:space="preserve">
+    <value>Commodity Stock Form</value>
+  </data>
+  <data name="ConsomersButton" xml:space="preserve">
+    <value>Consomers</value>
+  </data>
+  <data name="ConsomersForm" xml:space="preserve">
+    <value>Consomers display Form</value>
+  </data>
   <data name="CountLabel" xml:space="preserve">
     <value>Count</value>
   </data>
   <data name="CountriesButton" xml:space="preserve">
     <value>Countries</value>
+  </data>
+  <data name="CurrentPasswordLabelControl" xml:space="preserve">
+    <value>Current Password</value>
   </data>
   <data name="CustomerCode" xml:space="preserve">
     <value>Code</value>
@@ -282,6 +309,9 @@
   <data name="MessagesInMainFormButton" xml:space="preserve">
     <value>Messages</value>
   </data>
+  <data name="NewPasswordLabelControl" xml:space="preserve">
+    <value>New Password</value>
+  </data>
   <data name="NumberLabel" xml:space="preserve">
     <value>Number</value>
   </data>
@@ -393,6 +423,9 @@
   <data name="RegistrarLabel" xml:space="preserve">
     <value>Registrar</value>
   </data>
+  <data name="RepeatNewPasswordLabelControl" xml:space="preserve">
+    <value>Repeat New Password</value>
+  </data>
   <data name="ReportsButton" xml:space="preserve">
     <value>Reports</value>
   </data>
@@ -431,6 +464,9 @@
   </data>
   <data name="RoleLabelControl" xml:space="preserve">
     <value>Role</value>
+  </data>
+  <data name="SabtButtonSimlpe" xml:space="preserve">
+    <value>Sabt </value>
   </data>
   <data name="SaveButton" xml:space="preserve">
     <value>Save</value>
@@ -508,7 +544,7 @@
     <value>Users</value>
   </data>
   <data name="UsersForm" xml:space="preserve">
-    <value>System Users Form</value>
+    <value>System Users display Form</value>
   </data>
   <data name="WomenRadioButton" xml:space="preserve">
     <value>Women</value>
