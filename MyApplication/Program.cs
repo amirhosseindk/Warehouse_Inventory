@@ -11,6 +11,8 @@ using Application.ViewModels.UserViewModels;
 using MyApp.Ui;
 using Persistence.IServices;
 using Persistence.Services;
+using Application.ViewModels.ConsumerViewModels;
+using Application.ViewModels.SupplierViewModels;
 
 namespace MyApplication
 {
@@ -98,13 +100,23 @@ namespace MyApplication
 
         private static void ConfigureServices(ServiceCollection services)
         {
+            services.AddDbContext<DatabaseContext>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddDbContext<DatabaseContext>();
             services.AddScoped<IUserCommandService, UserCommandService>();
+            services.AddScoped<IConsumerRepository, ConsumerRepository>();
+            services.AddScoped<IConsumerService, ConsumerService>();
+            services.AddScoped<IConsumerCommandService, ConsumerCommandService>();
+            services.AddScoped<ISupplierService, SupplierService>();
+            services.AddScoped<ISupplierRepository, SupplierRepository>();
+            services.AddScoped<ISupplierCommandService, SupplierCommandService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IValidator<UserVMCU>, UserVMValidator>();
+            services.AddTransient<IValidator<ConVMCU>, ConsumerVMValidator>();
+            services.AddTransient<IValidator<SupVMCU>, SupplierVMValidator>();
+            services.AddTransient<ISupplierVMValidator, SupplierVMValidator>();
+            services.AddTransient<IConsumerVMValidator, ConsumerVMValidator>();
             services.AddTransient<IUserVMValidator, UserVMValidator>();
 
 
