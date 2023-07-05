@@ -8,17 +8,31 @@ namespace Domain.Entities
         /// The name of the Consumer.
         /// </summary>
         [Required]
-        public string ConsumerName { get; set; }
+        public string Name { get; set; }
+        /// <summary>
+        /// The lastname of the Consumer.
+        /// </summary>
+        [Required]
+        public string LastName { get; set; }
         /// <summary>
         /// The email of the Consumer.
         /// </summary>
         [Required]
-        public string ConsumerEmail { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }
         /// <summary>
         /// The number of the Consumer.
         /// </summary>
         [Required]
-        public string ConsumerPhone { get; set; }
+        public string Phone { get; set; }
+        /// <summary>
+        /// The Address of the Consumer.
+        /// </summary>
+        public string? Address { get; set; }
+        /// <summary>
+        /// The Description of the Consumer.
+        /// </summary>
+        public string? Description { get; set; }
         /// <summary>
         /// The Commodities consumed by this Consumer.
         /// </summary>

@@ -8,17 +8,31 @@ namespace Domain.Entities
         /// The name of the supplier.
         /// </summary>
         [Required]
-        public string SupplierName { get; set; }
+        public string Name { get; set; }
+        /// <summary>
+        /// The lastname of the supplier.
+        /// </summary>
+        [Required]
+        public string LastName { get; set; }
         /// <summary>
         /// The email of the supplier.
         /// </summary>
         [Required]
-        public string SupplierEmail { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }
         /// <summary>
         /// The number of the supplier.
         /// </summary>
         [Required]
-        public string SupplierPhone { get; set; }
+        public string Phone { get; set; }
+        /// <summary>
+        /// The Address of the supplier.
+        /// </summary>
+        public string? Address { get; set; }
+        /// <summary>
+        /// The Description of the supplier.
+        /// </summary>
+        public string? Description { get; set; }
         /// <summary>
         /// The Commodities supplied by this supplier.
         /// </summary>
