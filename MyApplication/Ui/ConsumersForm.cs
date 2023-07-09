@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MyApplication
 {
-    public partial class CustomersForm : Usf.WinForms.Forms.Form
+    public partial class ConsumersForm : Usf.WinForms.Forms.Form
     {
-        public CustomersForm()
+        public ConsumersForm()
         {
             InitializeComponent();
 
@@ -24,7 +24,7 @@ namespace MyApplication
                ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
 
             this.Text =
-                resource.GetString(name: nameof(CustomersForm));
+                resource.GetString(name: nameof(ConsumersForm));
 
             #endregion / Language
         }

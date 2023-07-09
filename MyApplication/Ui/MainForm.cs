@@ -114,7 +114,7 @@ namespace MyApplication
                         }
                     case "ConsomersButton":
                         {
-                            new ConsomersForm().ShowDialog();
+                            new ConsumersForm().ShowDialog();
                             break;
                         }
                     case "CommoditiesButton":
@@ -140,6 +140,11 @@ namespace MyApplication
                     case "BackupButton":
                         {
                             new BackupForm().ShowDialog();
+                            break;
+                        }
+                    case "CountriesButton":
+                        {
+                            new MadeinCountriesForm().ShowDialog();
                             break;
                         }
                 }

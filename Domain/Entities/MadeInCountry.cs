@@ -8,7 +8,7 @@ namespace Domain.Entities
         /// The name of the country where the product is made.
         /// </summary>
         [Required]
-        public string MadeInCountryName { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The products made in this country.

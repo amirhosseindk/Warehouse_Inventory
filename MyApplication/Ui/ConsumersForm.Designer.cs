@@ -1,6 +1,6 @@
 ﻿namespace MyApplication
 {
-    partial class CustomersForm
+    partial class ConsumersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,17 @@
         {
             SuspendLayout();
             // 
-            // CustomerForm
+            // ConsomersForm
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            Appearance.BackColor = Color.LightGoldenrodYellow;
+            Appearance.Options.UseBackColor = true;
+            Appearance.Options.UseFont = true;
+            AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(298, 268);
-            Name = "CustomerForm";
+            ClientSize = new Size(1258, 756);
+            Font = new Font("IRANYekan Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(7, 9, 7, 9);
+            Name = "ConsomersForm";
             Text = "CustomerForm";
             Load += CustomerForm_Load;
             ResumeLayout(false);

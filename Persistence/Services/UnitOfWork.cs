@@ -24,6 +24,11 @@ namespace Persistence.Services
             return await _context.SaveChangesAsync(cancellationToken);
         }
 
+        public IRepository<T> GetRepository<T>() where T : Domain.BaseEntity
+        {
+            return new Repository<T>(_context);
+        }
+
         public void Dispose()
         {
             _context.Dispose();
