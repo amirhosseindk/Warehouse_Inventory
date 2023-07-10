@@ -7,7 +7,7 @@ namespace Infrastructure.Services
 {
     public class CountryService : GenericServices<MadeInCountry> , ICountryService
     {
-        public CountryService(ICountryRepository repository, IGenericCommandServices<MadeInCountry> commandService)
+        public CountryService(ICountryRepository repository, ICountryCommandService commandService)
             : base(repository, commandService)
         {
             

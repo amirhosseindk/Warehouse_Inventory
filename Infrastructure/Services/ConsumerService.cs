@@ -7,7 +7,7 @@ namespace Infrastructure.Services
 {
     public class ConsumerService : GenericServices<Consumer>, IConsumerService
     {
-        public ConsumerService(IConsumerRepository repository, IGenericCommandServices<Consumer> commandService)
+        public ConsumerService(IConsumerRepository repository, IConsumerCommandService commandService)
             : base(repository, commandService)
         {
         }

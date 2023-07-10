@@ -7,7 +7,7 @@ namespace Infrastructure.Services
 {
     public class SupplierService : GenericServices<Supplier>, ISupplierService
     {
-        public SupplierService(ISupplierRepository repository, IGenericCommandServices<Supplier> commandService)
+        public SupplierService(ISupplierRepository repository, ISupplierCommandService commandService)
             : base(repository, commandService)
         {
         }
