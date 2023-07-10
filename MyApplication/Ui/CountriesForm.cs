@@ -1,4 +1,7 @@
 ﻿using Application.IServices;
+using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Tile;
+using Domain.Entities;
 using System.Resources;
 
 namespace MyApplication
@@ -39,6 +42,39 @@ namespace MyApplication
             var countries = await _countryService.GetAllAsync(CancellationToken.None);
 
             CountriesGrid.DataSource = countries.ToList();
+
+            // Assuming CountriesView is your TileView
+            CountriesView.TileTemplate.Clear(); // Clear the existing template
+
+            TileViewItemElement mainElement = new TileViewItemElement();
+            mainElement.Column = CountriesView.Columns["Name"]; // Set the column to be displayed
+            mainElement.TextAlignment = TileItemContentAlignment.MiddleCenter; // Center the text
+
+
+            CountriesView.TileTemplate.Add(mainElement); // Add the element to the template
+        }
+
+        private async void CreateButton_Click(object sender, EventArgs e)
+        {
+            var country = new MadeInCountry
+            {
+                Name = CountryTextBox.Text,
+                Id = Guid.NewGuid(),
+                IsActive = ActiveCheckBox.Checked,
+                UsernameId = Program.usernameid
+            };
+            await _countryService.CreateAsync(country, CancellationToken.None);
+            RefreshFormAsync();
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
