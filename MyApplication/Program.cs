@@ -108,6 +108,9 @@ namespace MyApplication
             services.AddScoped<ISupplierService, SupplierService>();
             services.AddScoped<ISupplierRepository, SupplierRepository>();
             services.AddScoped<ISupplierCommandService, SupplierCommandService>();
+            services.AddScoped<ICountryService, CountryService>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<ICountryCommandService, CountryCommandService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IValidator<UserVMCU>, UserVMValidator>();
@@ -122,6 +125,8 @@ namespace MyApplication
             services.AddTransient<UsersAddOrEditForm>();
             services.AddTransient<LoginForm>();
             services.AddTransient<MainForm>();
+            services.AddTransient<CountriesForm>();
+
         }
     }
 }

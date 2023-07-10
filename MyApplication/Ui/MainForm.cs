@@ -144,7 +144,11 @@ namespace MyApplication
                         }
                     case "CountriesButton":
                         {
-                            new MadeinCountriesForm().ShowDialog();
+                            using (var scope = Program.ServiceProvider.CreateScope())
+                            {
+                                var form = scope.ServiceProvider.GetRequiredService<CountriesForm>();
+                                form.ShowDialog();
+                            }
                             break;
                         }
                 }
