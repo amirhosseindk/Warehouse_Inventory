@@ -8,7 +8,7 @@ namespace Domain.Entities
         /// The name of the unit of measurement.
         /// </summary>
         [Required]
-        public string UnitMeasureName { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The Commodities using this unit of measurement.

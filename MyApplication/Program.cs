@@ -11,8 +11,6 @@ using Application.ViewModels.UserViewModels;
 using MyApp.Ui;
 using Persistence.IServices;
 using Persistence.Services;
-using Application.ViewModels.ConsumerViewModels;
-using Application.ViewModels.SupplierViewModels;
 
 namespace MyApplication
 {
@@ -113,10 +111,6 @@ namespace MyApplication
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IValidator<UserVMCU>, UserVMValidator>();
-            services.AddTransient<IValidator<ConVMCU>, ConsumerVMValidator>();
-            services.AddTransient<IValidator<SupVMCU>, SupplierVMValidator>();
-            services.AddTransient<ISupplierVMValidator, SupplierVMValidator>();
-            services.AddTransient<IConsumerVMValidator, ConsumerVMValidator>();
             services.AddTransient<IUserVMValidator, UserVMValidator>();
 
 
