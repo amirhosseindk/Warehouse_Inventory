@@ -28,20 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan2 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             CountriesGrid = new DevExpress.XtraGrid.GridControl();
             CountriesView = new DevExpress.XtraGrid.Views.Tile.TileView();
             DeleteButton = new Usf.WinForms.Forms.ButtonSimlpe();
             CreateButton = new Usf.WinForms.Forms.ButtonSimlpe();
             EditButton = new Usf.WinForms.Forms.ButtonSimlpe();
-            CountryTextBox = new Usf.WinForms.Forms.TextBox();
-            ActiveCheckBox = new Usf.WinForms.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)CountriesGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CountriesView).BeginInit();
             SuspendLayout();
@@ -61,15 +59,15 @@
             CountriesView.Name = "CountriesView";
             CountriesView.OptionsTiles.ItemSize = new Size(100, 100);
             CountriesView.OptionsTiles.RowCount = 9;
-            CountriesView.TileColumns.Add(tableColumnDefinition4);
-            CountriesView.TileColumns.Add(tableColumnDefinition5);
-            CountriesView.TileColumns.Add(tableColumnDefinition6);
-            CountriesView.TileRows.Add(tableRowDefinition4);
-            CountriesView.TileRows.Add(tableRowDefinition5);
-            CountriesView.TileRows.Add(tableRowDefinition6);
-            tableSpan2.ColumnSpan = 3;
-            tableSpan2.RowSpan = 3;
-            CountriesView.TileSpans.Add(tableSpan2);
+            CountriesView.TileColumns.Add(tableColumnDefinition1);
+            CountriesView.TileColumns.Add(tableColumnDefinition2);
+            CountriesView.TileColumns.Add(tableColumnDefinition3);
+            CountriesView.TileRows.Add(tableRowDefinition1);
+            CountriesView.TileRows.Add(tableRowDefinition2);
+            CountriesView.TileRows.Add(tableRowDefinition3);
+            tableSpan1.ColumnSpan = 3;
+            tableSpan1.RowSpan = 3;
+            CountriesView.TileSpans.Add(tableSpan1);
             // 
             // DeleteButton
             // 
@@ -98,7 +96,7 @@
             CreateButton.Appearance.Options.UseBorderColor = true;
             CreateButton.Appearance.Options.UseFont = true;
             CreateButton.Appearance.Options.UseForeColor = true;
-            CreateButton.Location = new Point(336, 330);
+            CreateButton.Location = new Point(291, 367);
             CreateButton.Name = "CreateButton";
             CreateButton.Size = new Size(166, 62);
             CreateButton.TabIndex = 1;
@@ -115,33 +113,12 @@
             EditButton.Appearance.Options.UseBorderColor = true;
             EditButton.Appearance.Options.UseFont = true;
             EditButton.Appearance.Options.UseForeColor = true;
-            EditButton.Location = new Point(336, 398);
+            EditButton.Location = new Point(534, 367);
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(166, 62);
             EditButton.TabIndex = 1;
             EditButton.Text = "Edit";
             EditButton.Click += EditButton_Click;
-            // 
-            // CountryTextBox
-            // 
-            CountryTextBox.BackColor = Color.White;
-            CountryTextBox.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CountryTextBox.Location = new Point(508, 384);
-            CountryTextBox.Name = "CountryTextBox";
-            CountryTextBox.Size = new Size(137, 32);
-            CountryTextBox.TabIndex = 2;
-            CountryTextBox.TextAlign = HorizontalAlignment.Center;
-            // 
-            // ActiveCheckBox
-            // 
-            ActiveCheckBox.AutoSize = true;
-            ActiveCheckBox.ForeColor = Color.Teal;
-            ActiveCheckBox.Location = new Point(651, 388);
-            ActiveCheckBox.Name = "ActiveCheckBox";
-            ActiveCheckBox.Size = new Size(95, 28);
-            ActiveCheckBox.TabIndex = 3;
-            ActiveCheckBox.Text = "Active";
-            ActiveCheckBox.UseVisualStyleBackColor = true;
             // 
             // CountriesForm
             // 
@@ -151,8 +128,6 @@
             AutoScaleDimensions = new SizeF(13F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(747, 465);
-            Controls.Add(ActiveCheckBox);
-            Controls.Add(CountryTextBox);
             Controls.Add(EditButton);
             Controls.Add(CreateButton);
             Controls.Add(DeleteButton);
@@ -164,7 +139,6 @@
             ((System.ComponentModel.ISupportInitialize)CountriesGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)CountriesView).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -174,7 +148,5 @@
         private Usf.WinForms.Forms.ButtonSimlpe DeleteButton;
         private Usf.WinForms.Forms.ButtonSimlpe CreateButton;
         private Usf.WinForms.Forms.ButtonSimlpe EditButton;
-        private Usf.WinForms.Forms.TextBox CountryTextBox;
-        private Usf.WinForms.Forms.CheckBox ActiveCheckBox;
     }
 }

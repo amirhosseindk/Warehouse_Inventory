@@ -1,7 +1,9 @@
 ﻿using Application.IServices;
+using Application.ViewModels.UserViewModels;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Tile;
-using Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
+using MyApp.Ui;
 using System.Resources;
 
 namespace MyApplication
@@ -9,6 +11,7 @@ namespace MyApplication
     public partial class CountriesForm : Usf.WinForms.Forms.Form
     {
         private readonly ICountryService _countryService;
+
         public CountriesForm(ICountryService countryService)
         {
             _countryService = countryService;
@@ -56,25 +59,45 @@ namespace MyApplication
 
         private async void CreateButton_Click(object sender, EventArgs e)
         {
-            var country = new MadeInCountry
+            using (var scope = Program.ServiceProvider.CreateScope())
             {
-                Name = CountryTextBox.Text,
-                Id = Guid.NewGuid(),
-                IsActive = ActiveCheckBox.Checked,
-                UsernameId = Program.usernameid
-            };
-            await _countryService.CreateAsync(country, CancellationToken.None);
-            RefreshFormAsync();
+                var form = scope.ServiceProvider.GetRequiredService<CountryAddOrEditForm>();
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshFormAsync();
+                }
+            }
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            using (var scope = Program.ServiceProvider.CreateScope())
+            {
+                var form = scope.ServiceProvider.GetRequiredService<CountryAddOrEditForm>();
 
+                var CurrentID = (Guid)CountriesView.GetRowCellValue(CountriesView.FocusedRowHandle, "Id");
+
+                form.CountryIdForm = CurrentID;
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshFormAsync();
+                }
+            }
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private async void DeleteButton_Click(object sender, EventArgs e)
         {
+            var CurrentID = (Guid)CountriesView.GetRowCellValue(CountriesView.FocusedRowHandle, "Id");
+            string Name = (string)CountriesView.GetRowCellValue(CountriesView.FocusedRowHandle, "Name");
 
+            if (MessageBox.Show($"آیا {Name} حذف شود؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+            {
+                await _countryService.DeleteAsync(CurrentID, CancellationToken.None);
+
+                RefreshFormAsync();
+            }
         }
     }
 }

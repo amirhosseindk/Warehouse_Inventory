@@ -126,6 +126,7 @@ namespace MyApplication
             services.AddTransient<LoginForm>();
             services.AddTransient<MainForm>();
             services.AddTransient<CountriesForm>();
+            services.AddTransient<CountryAddOrEditForm>();
 
         }
     }

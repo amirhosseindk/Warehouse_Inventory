@@ -124,8 +124,6 @@ namespace MyApplication
         // Delete
         private async void DeleteButton_Click(object sender, EventArgs e)
         {
-            using (var scope = Program.ServiceProvider.CreateScope())
-            {
                 var CurrentID = (Guid)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colId);
                 string FName = (string)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colFirstName);
                 string LName = (string)UserGridView.GetRowCellValue(UserGridView.FocusedRowHandle, colLastName);
@@ -142,7 +140,6 @@ namespace MyApplication
 
                     RefreshFormAsync();
                 }
-            }
         }
     }
 }
