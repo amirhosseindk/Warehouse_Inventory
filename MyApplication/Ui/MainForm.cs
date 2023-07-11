@@ -1,5 +1,6 @@
 ﻿using Application.IServices;
 using Microsoft.Extensions.DependencyInjection;
+using MyApp.Ui;
 using MyApplication.Ui;
 using System.Resources;
 
@@ -22,14 +23,14 @@ namespace MyApplication
             UsersButton.Text =
                resource.GetString(name: nameof(UsersButton));
 
-            ConsomersButton.Text =
-                resource.GetString(name: nameof(ConsomersButton));
+            ConsumersButton.Text =
+                resource.GetString(name: nameof(ConsumersButton));
 
             CommoditiesButton.Text =
                 resource.GetString(name: nameof(CommoditiesButton));
 
-            SupplersButton.Text =
-                resource.GetString(name: nameof(SupplersButton));
+            SuppliersButton.Text =
+                resource.GetString(name: nameof(SuppliersButton));
 
             StoreroomsButton.Text =
                 resource.GetString(name: nameof(StoreroomsButton));
@@ -112,9 +113,13 @@ namespace MyApplication
                             }
                             break;
                         }
-                    case "ConsomersButton":
+                    case "ConsumersButton":
                         {
-                            new ConsumersForm().ShowDialog();
+                            using (var scope = Program.ServiceProvider.CreateScope())
+                            {
+                                var form = scope.ServiceProvider.GetRequiredService<ConsumersForm>();
+                                form.ShowDialog();
+                            }
                             break;
                         }
                     case "CommoditiesButton":
@@ -122,9 +127,13 @@ namespace MyApplication
                             new CommoditiesForm().ShowDialog();
                             break;
                         }
-                    case "SupplersButton":
+                    case "SuppliersButton":
                         {
-                            new SupplersForm().ShowDialog();
+                            using (var scope = Program.ServiceProvider.CreateScope())
+                            {
+                                var form = scope.ServiceProvider.GetRequiredService<SuppliersForm>();
+                                form.ShowDialog();
+                            }
                             break;
                         }
                     case "AccessButton":
@@ -147,6 +156,15 @@ namespace MyApplication
                             using (var scope = Program.ServiceProvider.CreateScope())
                             {
                                 var form = scope.ServiceProvider.GetRequiredService<CountriesForm>();
+                                form.ShowDialog();
+                            }
+                            break;
+                        }
+                    case "MaesureUnitsButton":
+                        {
+                            using (var scope = Program.ServiceProvider.CreateScope())
+                            {
+                                var form = scope.ServiceProvider.GetRequiredService<UnitsForm>();
                                 form.ShowDialog();
                             }
                             break;

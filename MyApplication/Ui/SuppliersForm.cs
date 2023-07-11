@@ -3,52 +3,52 @@ using Microsoft.Extensions.DependencyInjection;
 using MyApp.Ui;
 using System.Resources;
 
-namespace MyApplication
+namespace MyApplication.Ui
 {
-    public partial class ConsumersForm : Usf.WinForms.Forms.Form
+    public partial class SuppliersForm : Usf.WinForms.Forms.Form
     {
-        private readonly IConsumerService _consumerService;
-        public ConsumersForm(IConsumerService consumerService)
+        private readonly ISupplierService _supplierService;
+        public SuppliersForm(ISupplierService supplierService)
         {
-            _consumerService = consumerService;
+            _supplierService = supplierService;
 
             InitializeComponent();
 
             #region Language
 
             ResourceManager resource = new ResourceManager
-               ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
+                ("Resources.DataDictionary", typeof(Resources.DataDictionary).Assembly);
+
 
             this.Text =
-                resource.GetString(name: nameof(ConsumersForm));
+                resource.GetString(name: nameof(SuppliersForm));
 
-            #endregion / Language
+            #endregion /Language
         }
 
         // Loaded
-        private void CustomerForm_Load(object sender, EventArgs e)
+        private void SupplersButton_Load(object sender, EventArgs e)
         {
             if (ApplicationSettings.CurrentCulture == ApplicationSettings.Languages.Farsi)
             {
                 this.RightToLeft = RightToLeft.Yes;
                 this.RightToLeftLayout = true;
             }
+
             RefreshFormAsync();
         }
 
         private async void RefreshFormAsync()
         {
-            var usersUF = await _consumerService.GetAllAsync(CancellationToken.None);
-
-            ConsumerGridControl.DataSource = usersUF.ToList();
-
+            var usersUF = await _supplierService.GetAllAsync(CancellationToken.None);
+            SupplierGridControl.DataSource = usersUF.ToList();
         }
 
         private void UserNewButton_Click(object sender, EventArgs e)
         {
             using (var scope = Program.ServiceProvider.CreateScope())
             {
-                var form = scope.ServiceProvider.GetRequiredService<ConsumerAddOrEditForm>();
+                var form = scope.ServiceProvider.GetRequiredService<SupplierAddOrEditForm>();
 
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -61,11 +61,11 @@ namespace MyApplication
         {
             using (var scope = Program.ServiceProvider.CreateScope())
             {
-                var form = scope.ServiceProvider.GetRequiredService<ConsumerAddOrEditForm>();
+                var form = scope.ServiceProvider.GetRequiredService<SupplierAddOrEditForm>();
 
-                var CurrentID = (Guid)ConsumerGridView.GetRowCellValue(ConsumerGridView.FocusedRowHandle, colId);
+                var CurrentID = (Guid)SupplierGridView.GetRowCellValue(SupplierGridView.FocusedRowHandle, colId);
 
-                form.ConsumerIdForm = CurrentID;
+                form.SupplierIdForm = CurrentID;
 
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -76,14 +76,14 @@ namespace MyApplication
 
         private async void UserDeleteButton_Click(object sender, EventArgs e)
         {
-            var CurrentID = (Guid)ConsumerGridView.GetRowCellValue(ConsumerGridView.FocusedRowHandle, colId);
-            string FName = (string)ConsumerGridView.GetRowCellValue(ConsumerGridView.FocusedRowHandle, colFirstName);
-            string LName = (string)ConsumerGridView.GetRowCellValue(ConsumerGridView.FocusedRowHandle, colLastName);
+            var CurrentID = (Guid)SupplierGridView.GetRowCellValue(SupplierGridView.FocusedRowHandle, colId);
+            string FName = (string)SupplierGridView.GetRowCellValue(SupplierGridView.FocusedRowHandle, colFirstName);
+            string LName = (string)SupplierGridView.GetRowCellValue(SupplierGridView.FocusedRowHandle, colLastName);
             var FullName = FName + " " + LName;
 
             if (MessageBox.Show($"آیا {FullName} حذف شود؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
             {
-                await _consumerService.DeleteAsync(CurrentID, CancellationToken.None);
+                await _supplierService.DeleteAsync(CurrentID, CancellationToken.None);
 
                 RefreshFormAsync();
             }

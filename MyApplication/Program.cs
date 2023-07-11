@@ -11,6 +11,7 @@ using Application.ViewModels.UserViewModels;
 using MyApp.Ui;
 using Persistence.IServices;
 using Persistence.Services;
+using MyApplication.Ui;
 
 namespace MyApplication
 {
@@ -111,6 +112,9 @@ namespace MyApplication
             services.AddScoped<ICountryService, CountryService>();
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<ICountryCommandService, CountryCommandService>();
+            services.AddScoped<IMeasureService, MeasureService>();
+            services.AddScoped<IMeasureRepository, MeasureRepository>();
+            services.AddScoped<IMeasureCommandService, MeasureCommandService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IValidator<UserVMCU>, UserVMValidator>();
@@ -127,6 +131,12 @@ namespace MyApplication
             services.AddTransient<MainForm>();
             services.AddTransient<CountriesForm>();
             services.AddTransient<CountryAddOrEditForm>();
+            services.AddTransient<UnitsForm>();
+            services.AddTransient<UnitAddOrEditForm>();
+            services.AddTransient<SuppliersForm>();
+            services.AddTransient<SupplierAddOrEditForm>();
+            services.AddTransient<ConsumersForm>();
+            services.AddTransient<ConsumerAddOrEditForm>();
 
         }
     }

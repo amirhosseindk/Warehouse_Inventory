@@ -32,9 +32,9 @@
             toolStrip1 = new ToolStrip();
             MenuButton = new ToolStripDropDownButton();
             UsersButton = new ToolStripMenuItem();
-            ConsomersButton = new ToolStripMenuItem();
+            ConsumersButton = new ToolStripMenuItem();
             CommoditiesButton = new ToolStripMenuItem();
-            SupplersButton = new ToolStripMenuItem();
+            SuppliersButton = new ToolStripMenuItem();
             StoreroomsButton = new ToolStripMenuItem();
             StorekeepersButton = new ToolStripMenuItem();
             MaesureUnitsButton = new ToolStripMenuItem();
@@ -59,13 +59,14 @@
             // 
             toolStrip1.BackColor = Color.PowderBlue;
             resources.ApplyResources(toolStrip1, "toolStrip1");
+            toolStrip1.ImageScalingSize = new Size(20, 20);
             toolStrip1.Items.AddRange(new ToolStripItem[] { MenuButton, RequestInMainFormButton, InventoryTransferInMainFormButton, FactorInMainFormButton, ShopingInMainFormButton, ReportsInMainFormButton, MessagesInMainFormButton });
             toolStrip1.Name = "toolStrip1";
             // 
             // MenuButton
             // 
             resources.ApplyResources(MenuButton, "MenuButton");
-            MenuButton.DropDownItems.AddRange(new ToolStripItem[] { UsersButton, ConsomersButton, CommoditiesButton, SupplersButton, StoreroomsButton, StorekeepersButton, MaesureUnitsButton, CountriesButton, LoginsHistorButton, AccessButton, PasswordButton, BackupButton, AboutButton });
+            MenuButton.DropDownItems.AddRange(new ToolStripItem[] { UsersButton, ConsumersButton, CommoditiesButton, SuppliersButton, StoreroomsButton, StorekeepersButton, MaesureUnitsButton, CountriesButton, LoginsHistorButton, AccessButton, PasswordButton, BackupButton, AboutButton });
             MenuButton.Name = "MenuButton";
             MenuButton.TextDirection = ToolStripTextDirection.Horizontal;
             // 
@@ -76,12 +77,12 @@
             UsersButton.Name = "UsersButton";
             UsersButton.Click += MenuButton_Click;
             // 
-            // ConsomersButton
+            // ConsumersButton
             // 
-            ConsomersButton.BackColor = Color.DeepSkyBlue;
-            resources.ApplyResources(ConsomersButton, "ConsomersButton");
-            ConsomersButton.Name = "ConsomersButton";
-            ConsomersButton.Click += MenuButton_Click;
+            ConsumersButton.BackColor = Color.DeepSkyBlue;
+            resources.ApplyResources(ConsumersButton, "ConsumersButton");
+            ConsumersButton.Name = "ConsumersButton";
+            ConsumersButton.Click += MenuButton_Click;
             // 
             // CommoditiesButton
             // 
@@ -90,12 +91,12 @@
             CommoditiesButton.Name = "CommoditiesButton";
             CommoditiesButton.Click += MenuButton_Click;
             // 
-            // SupplersButton
+            // SuppliersButton
             // 
-            SupplersButton.BackColor = Color.DeepSkyBlue;
-            resources.ApplyResources(SupplersButton, "SupplersButton");
-            SupplersButton.Name = "SupplersButton";
-            SupplersButton.Click += MenuButton_Click;
+            SuppliersButton.BackColor = Color.DeepSkyBlue;
+            resources.ApplyResources(SuppliersButton, "SuppliersButton");
+            SuppliersButton.Name = "SuppliersButton";
+            SuppliersButton.Click += MenuButton_Click;
             // 
             // StoreroomsButton
             // 
@@ -228,14 +229,14 @@
         private ToolStripMenuItem BackupButton;
         private PictureBox pictureBox1;
         private ToolStripMenuItem AboutButton;
-        private ToolStripMenuItem SupplersButton;
+        private ToolStripMenuItem SuppliersButton;
         private ToolStripMenuItem StoreroomsButton;
         private ToolStripMenuItem StorekeepersButton;
         private ToolStripMenuItem MaesureUnitsButton;
         private ToolStripMenuItem CountriesButton;
         private ToolStripMenuItem LoginsHistorButton;
         private ToolStripButton RequestInMainFormButton;
-        private ToolStripMenuItem ConsomersButton;
+        private ToolStripMenuItem ConsumersButton;
         private ToolStripMenuItem CommoditiesButton;
         private ToolStripButton InventoryTransferInMainFormButton;
         private ToolStripButton FactorInMainFormButton;
