@@ -177,10 +177,10 @@
   <data name="CommodityStockForm" xml:space="preserve">
     <value>فرم  نمایش تعداد کالا</value>
   </data>
-  <data name="ConsomersButton" xml:space="preserve">
+  <data name="ConsumersButton" xml:space="preserve">
     <value>مصرف کنندگان</value>
   </data>
-  <data name="ConsomersForm" xml:space="preserve">
+  <data name="ConsumersForm" xml:space="preserve">
     <value>فرم نمایش مصرف کنندگان</value>
   </data>
   <data name="CountLabel" xml:space="preserve">
@@ -495,10 +495,10 @@
   <data name="StoreroomsButton" xml:space="preserve">
     <value>انبارها</value>
   </data>
-  <data name="SupplersButton" xml:space="preserve">
+  <data name="SuppliersButton" xml:space="preserve">
     <value>فروشندگان</value>
   </data>
-  <data name="SupplersForm" xml:space="preserve">
+  <data name="SuppliersForm" xml:space="preserve">
     <value>فرم فروشندگان</value>
   </data>
   <data name="SystemNameLabel" xml:space="preserve">

@@ -183,11 +183,11 @@
   <data name="CommodityStockForm" xml:space="preserve">
     <value>Commodity Stock Form</value>
   </data>
-  <data name="ConsomersButton" xml:space="preserve">
-    <value>Consomers</value>
+  <data name="ConsumersButton" xml:space="preserve">
+    <value>Consumers</value>
   </data>
-  <data name="ConsomersForm" xml:space="preserve">
-    <value>Consomers display Form</value>
+  <data name="ConsumersForm" xml:space="preserve">
+    <value>Consumers display Form</value>
   </data>
   <data name="CountLabel" xml:space="preserve">
     <value>Count</value>
@@ -504,10 +504,10 @@
   <data name="StoreroomsButton" xml:space="preserve">
     <value>Storerooms </value>
   </data>
-  <data name="SupplersButton" xml:space="preserve">
+  <data name="SuppliersButton" xml:space="preserve">
     <value>Supplers</value>
   </data>
-  <data name="SupplersForm" xml:space="preserve">
+  <data name="SuppliersForm" xml:space="preserve">
     <value>Supplers Form</value>
   </data>
   <data name="SystemNameLabel" xml:space="preserve">

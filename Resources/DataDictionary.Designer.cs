@@ -259,20 +259,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consomers.
+        ///   Looks up a localized string similar to Consumers.
         /// </summary>
-        public static string ConsomersButton {
+        public static string ConsumersButton {
             get {
-                return ResourceManager.GetString("ConsomersButton", resourceCulture);
+                return ResourceManager.GetString("ConsumersButton", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consomers display Form.
+        ///   Looks up a localized string similar to Consumers display Form.
         /// </summary>
-        public static string ConsomersForm {
+        public static string ConsumersForm {
             get {
-                return ResourceManager.GetString("ConsomersForm", resourceCulture);
+                return ResourceManager.GetString("ConsumersForm", resourceCulture);
             }
         }
         
@@ -1224,18 +1224,18 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Supplers.
         /// </summary>
-        public static string SupplersButton {
+        public static string SuppliersButton {
             get {
-                return ResourceManager.GetString("SupplersButton", resourceCulture);
+                return ResourceManager.GetString("SuppliersButton", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Supplers Form.
         /// </summary>
-        public static string SupplersForm {
+        public static string SuppliersForm {
             get {
-                return ResourceManager.GetString("SupplersForm", resourceCulture);
+                return ResourceManager.GetString("SuppliersForm", resourceCulture);
             }
         }
         
